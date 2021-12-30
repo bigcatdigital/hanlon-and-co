@@ -1,0 +1,107 @@
+.bc-site-header
+	position: relative
+	@include makeFlexbox($justify: space-between, $wrap: wrap)
+	color: var(--text-black) 
+	& &__home-link, & &__menu-link 
+		flex: 1 1 auto
+		@include makeFlexbox($align:center)
+	& &__menu-link
+		justify-content: flex-end
+	& &__menu-link
+		&__close
+			display: none
+			fill: var(--shade-60)
+		@media screen and (min-width: #{$tablet-large})
+			display: none
+	& &__main-navigation
+		--header-height: #{($vertical-unit * 3 + 2rem)} 
+		@include makeFlexbox($direction: column)
+		@include plainList
+		position: absolute
+		flex-direction: column
+		width: 100vw
+		height: 100vh
+		padding-top: var(--header-height)
+		
+		top: 0
+		left: auto
+		right: -100%
+		background-color: var(--white)
+		z-index: 10
+		transition: right var(--medtrans) ease-out
+		&__item
+			width: 100%
+			> a 
+				@include makeFlexbox($align: center, $justify: left)
+				padding: calc(#{$vertical-unit} / 2) var(--gutter)
+		@media screen and (min-width: #{$tablet-large}) 
+			flex-direction: row 
+			position: static
+			width: auto
+			height: auto
+			padding-top: 0
+			top: auto
+			left: auto
+			right: auto
+			background-color: transparent
+			transition: none
+			&__item
+				width: auto 
+				> a
+					justify-content: center
+	& &__title
+		width: 100%
+		margin-top: var(--vertical-unit)
+		margin-bottom: 0
+	&.bc-is-active
+		.bc-site-header__menu-link
+			&__close
+				display: block
+			&__menu
+				display: none
+		.bc-site-header__main-navigation
+			right: 0
+			opacity: 1
+	@media screen and (min-width: #{$tablet-large}) 
+		&.bc-container
+			padding-top: calc(var(--vertical-unit) / 2)	
+	&.bc-is-hero-overlay
+		position: absolute
+		top: 0
+		left: 0
+		width: 100%
+		color: var(--white)
+		z-index: 20
+		&.bc-is-active
+			.bc-site-header__menu-link
+				&__menu
+					fill: var(--black)
+				&__close
+					fill: var(--shade-06)
+		.svg-icon
+			fill: var(--white)
+		@media screen and (min-width: #{$tablet-large}) 
+			a
+				color: var(--white)
+		
+	
+.bc-breadcrummbs-nav
+	& &__list
+		@include makeFlexbox($align: center)
+		@include plainList
+		font-size: var(--text--1)
+		a
+			font-weight: var(--bold-font-weight)
+			text-decoration: none
+			@include linkHover
+				text-decoration: underline
+		li 
+			color: var(--shade-50)
+		.svg-icon
+			max-height: calc(var(--vertical-unit) / 2)
+			max-width: var(--gutter)
+			
+		
+			
+	
+			

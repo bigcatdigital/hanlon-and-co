@@ -1,0 +1,13 @@
+{
+	"ignore": [
+			"regex-selectors",
+			"universal-selector",
+			"unique-headings",
+			"order-alphabetical",
+			"box-sizing",
+			"fallback-colors"
+	],
+	"exclude-list": [
+		"./dist/css/style.css.map"
+	]
+}

@@ -1,0 +1,61 @@
+/** General content **/
+.bc-general-content-row
+	position: relative
+
+.bc-general-content
+	@include makeCols(8)
+	& &-wrap
+		h1, h2, h3, h4, h5, ul, p, blockquote, hr
+			max-width: 680px
+			margin-left: 	auto
+			margin-right: auto
+			
+			@media screen and (min-width: var(--tablet))
+				max-width: 700px
+			@media screen and (min-width: var(--laptop))
+				max-width: 740px
+			@media screen and (min-width: var(--laptop-large))
+				max-width: 820px
+			
+			@media screen and (min-width: var(--big-screen))
+				max-width: 1000px
+	
+blockquote
+	p:not(.blockquote-citation)
+		font-family: var(--serif-font)
+		font-size: 1.12rem
+		line-height: 1.5
+	
+	margin: calc(var(--gutter) * 1.5) 0 calc(var(--gutter) * 1.75)
+	padding-left: 	calc(var(--gutter) * 1.5)
+	padding-right: 	calc(var(--gutter) / 2)
+	position: relative
+	.svg-icon
+		max-height: 1rem
+		max-width: 	1rem
+		position: absolute
+		top: 	calc(var(--gutter) / 2)
+		left: 0.125rem
+@media screen and (min-width: var(--tablet))
+	.bc-general-content-row 
+		flex-direction: row 
+		align-items: stretch
+	blockquote
+		padding-left: 	calc(--gutter* 2)
+		padding-right: 	calc(--gutter* 2)
+		.svg-icon
+			top: 0.4rem
+			left: 0.5rem
+	.project-details
+		flex-direction: row
+		flex-wrap: wrap
+		align-items: stretch
+		padding-top:		var(--gutter)
+		padding-bottom:	var(--gutter)
+		p
+			flex-basis: 50%
+@media screen and (min-width: var(--tablet)
+	.bc-general-content-wrap picture
+		max-width: 90%
+		margin-left: 	auto
+		margin-right: auto

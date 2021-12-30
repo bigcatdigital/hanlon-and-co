@@ -1,0 +1,124 @@
+@mixin boxShadow($x: 0, $y: 0, $blur: 4px, $spread: 0, $color: $shade--a0, $inset: false)
+	@if ($inset != false)
+		box-shadow: inset $x $y $blur $spread $color
+	@else
+		box-shadow: $x $y $blur $spread $color
+//end boxShadow()
+
+@mixin makeFlexbox($direction: row, $justify: flex-start, $align: flex-start, $wrap: nowrap, $inline: false)
+	$display: flex
+	@if ($inline == true)
+		$display: inline-flex
+	display: $display
+	flex-direction: $direction
+	justify-content: $justify
+	flex-wrap: $wrap
+	align-items: $align
+//end makeFlexbox
+
+@mixin makeLabel($uppercase: false, $color: $text-black)
+	font-size: 0.8rem
+  color: $color
+  font-weight: 200
+	@if ($uppercase)
+		text-transform: uppercase
+//end makeLabel
+@mixin makeContainer()
+	padding: var(--gutter)
+	@media screen and (min-width: ($max-content-width +100px))
+		padding-left:  calc((100% - var(--max-content-width)) / 2)
+		padding-right: calc((100% - var(--max-content-width)) / 2)
+@mixin arContainer
+	position: relative
+	overflow: hidden
+	@content
+	picture, iframe, object, img
+		position: absolute
+		top: 0
+		left: 0
+		object-fit: cover
+		object-position: center
+		width: 100%
+		height: 100%
+@mixin is-1x1()
+	@include arContainer 
+	padding-top: #{(1 / 1 * 100%)}
+@mixin is-3x2()
+	@include arContainer 
+	padding-top: #{(2 / 3 * 100%)}
+@mixin is-4x3()
+	padding-top: #{(3 / 4 * 100%)}
+@mixin is-5x4()
+	padding-top: #{(4 / 5 * 100%)}
+@mixin is-16x9()
+	padding-top: #{(9 / 16 * 100%)}
+	
+//end is-1x1()
+@mixin objectEmbed($ar: #{(9 / 16) * 100%})
+	position: 		relative
+	overflow: hidden
+	padding-top: 	$ar
+	width: 				100%
+	object, iframe
+		position: 	absolute
+		top: 0
+		left: 0
+		object-fit: cover
+		object-position: center
+		width: 			100%
+		height: 		100%
+//objectEmbed
+
+@mixin mediaOverlay($bg-color: $black, $transparency: 0.24, $blend-mode: soft-light)
+	position: absolute
+	top: 0
+	left: 0
+	width: 100%
+	height: 100%
+	object-position: center
+	object-fit: cover
+	background-color: rgba($bg-color, $transparency)
+	z-index: 5
+	mix-blend-mode: $blend-mode
+@mixin makeInset()
+	box-shadow: inset 0 4px 4px -4px $shade-a0, inset 0 -4px 4px -4px $shade-40
+//end makeInset()
+@mixin centerObject()
+	top:  50%
+	left: 50%
+	transform: translate(-50%, -50%)
+//end centerObject
+@mixin linearGradient($deg: 0deg, $stops...)
+	background-image: #{linear-gradient($deg, $stops)}
+//end linearGradient
+
+@mixin arrowLink
+	@include makeFlexbox($justify: space-between, $align: center)
+	font-weight: var(--bold-font-weight) 
+	text-decoration: none
+	.svg-icon
+		max-width: #{$line-height}rem
+		max-height: #{$line-height}rem 
+		margin-left: calc(var(--gutter) / 2)
+	@include linkHover
+		text-decoration: underline
+@mixin linkHover() 
+	&:active, &:hover, &:focus
+		text-decoration: underline
+		@content
+
+@mixin plainList() 
+	list-style: none
+	margin: 0 
+	padding: 0
+	li 
+		list-style: none
+		margin: 0 
+		padding: 0
+
+	
+		
+@mixin makeTextComponent
+	max-width: var(--text-max-width)
+	margin-left: auto
+	margin-right: auto

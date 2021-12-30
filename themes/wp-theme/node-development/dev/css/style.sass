@@ -1,0 +1,54 @@
+/* Shades */
+@import 'partials/_project-globals.scss'
+@import 'partials/_grid.scss'
+* 
+  box-sizing: border-box
+
+html
+  font-size: 14px
+  line-height: var(--line-height)
+	color: var(--black)
+
+
+@media screen and (min-width: 320px)
+  html { 
+    font-size: calc(14px + 8 * ((100vw - 320px) / (1920 - 320)))
+ 
+
+//@media screen and (min-width: $tablet)
+//  html
+//    font-size: 16px
+//@media screen and (min-width: $large) 
+//  html {
+//    font-size: 18px
+//@media screen and (min-width: $xx-large)
+//  html 
+//    font-size: 22px
+
+body 
+  margin: 0
+  padding: 0
+  font-family: var(--base-font), serif
+  font-size: 100%
+	font-weight: var(--text-font-weight)
+  line-height: 1.45
+
+h1, h2, h3, h4, h5
+  font-family: var(--heading-font), sans-serif
+	font-weight: var(--heading-font)
+  line-height: var(----heading-line-height)
+h1
+  font-size: var(--h1-text)
+h2
+  font-size: var(--h2-text)
+h3
+  font-size: var(--h3-text)
+h4
+  font-size: var(--h4-text)
+h5
+  font-size: var(--h5-text)
+.svg-icon
+  max-width: 2rem
+  max-height: 2rem
+
+

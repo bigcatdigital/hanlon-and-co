@@ -1,0 +1,21 @@
+.bc-fade-in-up
+	top: var(--gutter)
+	opacity: 0
+	transition: top 400ms var(--easing), opacity 800ms var(--easing)
+	position: relative 
+	&.bc-fade-in-up--loaded
+		top: 0px
+		opacity: 1
+
+@keyframes caratbounce
+		25%
+			transform: translateY(12%)  
+		50%
+			transform: translateY(-10%)
+		75%
+			transform: translateY(0%)
+@keyframes fade-out
+	from
+		opacity: 1
+	to 
+		opacity: 0

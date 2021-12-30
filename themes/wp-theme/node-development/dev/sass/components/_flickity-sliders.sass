@@ -1,0 +1,45 @@
+.bc-flickity
+	
+	position: relative
+	& &__slide
+		width: 100%
+		margin-right: var(--gutter)
+	&.bc-flickity--text-slider
+		//max-width: var(--text-max-width)
+		//margin-left: auto
+		//margin-right: auto
+		.flickity-viewport
+			transition: height var(--medtrans) var(--easing) 
+	
+	&.bc-flickity--card-slider
+		.bc-flickity__slide
+			min-width: var(--min-col-width)
+		@media screen and (min-width: $small) 
+			.bc-flickity__slide
+				max-width: calc(50% - #{(($gutter * 1	) / 2)})
+		@media screen and (min-width: $tablet-large) 
+			.bc-flickity__slide
+				max-width: calc((100% * 0.333) - #{(($gutter * 2) / 3)}) 
+		@media screen and (min-width: $laptop) 
+			.bc-flickity__slide
+				max-width: calc((100% * 0.25) - #{(($gutter * 3) / 4)})
+		
+	@media screen and (max-width: calc(#{$tablet-large} - 1px))
+		padding-bottom: calc(var(--vertical-unit) * 2)
+		.flickity-button, .flickity-page-dots
+			bottom: var(--vertical-unit)
+			top: auto  
+			transform: translateY(50%)
+			background-color: transparent
+		.flickity-button
+			z-index: 10
+	
+	@at-root .bc-hero--full-screen
+		.bc-flickity 
+			flex: 1 1 100%
+			.bc-flickity__slide
+				height: 100%
+				padding-left: var(--gutter)
+				padding-right: var(--gutter)
+	
+	

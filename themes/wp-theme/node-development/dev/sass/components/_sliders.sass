@@ -1,0 +1,104 @@
+.bc-hero-slider
+	position: relative 
+	@include makeFlexbox(column)
+	&:focus 
+		outline: none 
+	padding-top: $vertical-unit
+	padding-bottom: 0
+	&--full-screen
+		@extend .bc-hero-slider
+		height: 100vh
+		padding-top: 0	
+		padding-bottom: 0
+	& &__slides
+		flex: 1 0 90%
+	& &__slide 
+		width: 100%
+		height: 100%
+		@include makeFlexbox(column, center, center)
+		margin-right: $gutter/2
+		img 
+			position: absolute
+			top: 0
+			left: 0
+			width: 100%
+			height: 100%
+			object-position: center
+			object-fit: cover
+			z-index: 0
+		&__slide-text
+			@include makeContainer
+			position: absolute
+			width: 100%
+			bottom: 0
+			padding: var(--gutter)
+	& &__controls 
+		flex: 0 1 10%
+		display: flex
+		justify-content: space-between
+		align-items: center
+		padding-top: 		$vertical-unit/2
+		padding-bottom: $vertical-unit/2
+	
+	& &__control 
+		flex: 0 1 auto
+		@include makeFlexbox(column, center, center)
+		padding: $vertical-unit/2
+		background-color: transparent
+		border-radius: 50%
+		transition: background-color $quicktrans $easing
+		&:not(.bc-slider-controls--disabled) 
+			&:hover, &:active, &:focus 
+				background-color: $shade-a0
+				//outline: 1px dotted $shade-light
+				
+		
+		&:hover 
+			cursor: pointer
+		
+		&.is-disabled 
+			opacity: 0.48
+		
+		.svg-icon 
+			max-width: 	1.618rem
+			max-height: 1.618rem
+		
+	
+	& &__counter 
+		flex: 1 1 50%
+		@include makeFlexbox(row, center, center)
+		font-size: 0.8rem
+		font-weight: 200
+		
+	
+	.bc-feature-footer 		
+		position: absolute
+		left: 0
+		right: 0
+		bottom: 0
+		width: 100%
+		margin-bottom: 0
+	
+	@media screen and (min-width: $desktop) 
+		& &--slides 
+			margin-bottom: $vertical-unit
+		
+		& &-slide 
+			width: calc(100% - #$gutter - 4rem - 4rem) 
+			margin-right: 6rem
+		
+		& &__control 
+			position: absolute
+			padding-left: $gutter/2
+			padding-right: $gutter/2
+			top: calc(50% - 1rem * 1.5)
+			transform: translateY(-50%)
+			&--next 
+				left: auto
+				right: 0
+			&--prev 
+				left: 0
+				right: auto
+			.svg-icon 
+				max-width: 	2rem
+				max-height: 2rem

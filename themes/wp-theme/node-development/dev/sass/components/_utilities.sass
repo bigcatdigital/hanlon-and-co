@@ -1,0 +1,86 @@
+/** Utilities **/
+/* Media */
+.bc-media-overlay 
+	@include mediaOverlay
+.bc-object-embed
+	@include objectEmbed
+.is-1x1 
+	@include is-1x1
+.is-3x2 
+	@include is-3x2
+.is-4x3 
+	@include is-4x3
+.is-5x4 
+	@include is-5x4
+.is-16x9 
+	@include is-16x9
+
+/* Lists */
+.bc-plain-list
+	@include plainList
+
+/* Featured links */
+.bc-icon-links
+	@include plainList
+	@include makeFlexbox($align: center)
+	.svg-icon
+		max-height: #{$line-height}rem
+		max-width: #{$line-height}rem
+	a 
+		@include makeFlexbox(row, center, center)
+		width: 2rem
+		height: 2rem
+		text-decoration: none
+		@include linkHover
+			text-decoration: none
+	
+.bc-arrow-link
+	@include arrowLink
+	
+/* Text component */
+.bc-text-component
+	@include makeTextComponent
+
+.bc-intro-paragraph
+	font-size: $text-01
+	font-weight: var(--bold-font-weight)
+
+/* Invisible content */
+.bc-is-hidden 
+	display: block
+	opacity: 0
+	height: 0
+	width: 0
+	margin: 0
+	padding: 0
+	line-height: 0
+	overflow: hidden
+
+/* Colours */
+/* Coloring */
+@each $name, $colour in $colours	
+	$colour-invert: nth($colour, 2) 
+	$colour: nth($colour, 1)
+	.has-#{$name}-background 
+		background-color: $colour
+		color: $colour-invert 	
+		a
+			color: $colour-invert 	
+		.svg-icon
+			fill: $colour-invert  	
+	
+/* Shading */
+@each $name, $shade in $shades	
+	$shade-invert: nth($shade, 2) 
+	$shade: nth($shade, 1)
+	.has-#{$name}-background 
+		background-color: $shade
+		h1, h2, h3, h4, h5, p, ul, blockquote, a
+			color: $shade-invert 	
+		a
+			color: $shade-invert 
+			@include linkHover
+				color: $shade-invert
+		.svg-icon
+			fill: $shade-invert  	
+	

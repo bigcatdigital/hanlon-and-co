@@ -1,0 +1,21 @@
+.bc-two-column-layout
+	margin-bottom: calc(var(--vertical-unit) * 2)
+	&:last-of-type
+		margin-bottom: 0
+	@media screen and (min-width: #{$tablet})
+		&:nth-child(odd)
+			.bc-two-column-layout__text-column			
+				order: 1
+	& &__col
+		
+	& &__text-column
+		@include makeFlexbox($direction: column)
+		order: 1
+		@media screen and (min-width: #{$tablet})
+			justify-content: center
+			order: 0
+			padding: var(--vertical-unit) var(--gutter)
+	& &__media-column
+		&__media
+			display: block
+	

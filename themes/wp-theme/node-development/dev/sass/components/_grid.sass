@@ -1,0 +1,54 @@
+.bc-body-wrap
+	position: relative
+	width: 100%
+	max-width: 100vw
+	overflow-x: hidden 
+.bc-container
+	width: 100%
+	padding: var(--gutter)
+	@media screen and (min-width: ($max-content-width +100px))
+		padding-left:  calc((100% - var(--max-content-width)) / 2)
+		padding-right: calc((100% - var(--max-content-width)) / 2)
+/* Grids */
+.bc-grid 
+	display: grid
+	grid-template-rows: auto 
+	gap: calc(var(--gutter)* 1.1)
+	grid-template-columns: repeat(auto-fill, minmax(var(--min-col-width), 1fr))
+		
+	&--narrow-cols
+		@extend .bc-grid
+		grid-template-columns: repeat(auto-fill, minmax(var(--min-col-width-narrow), 1fr))
+	&--collapsed 
+		@extend .bc-grid
+		gap: 0
+		margin-left: 	-$gutter
+		margin-right: -$gutter
+	&--auto, &--x2, &--x4
+		@extend .bc-grid
+	&--auto
+		grid-template-columns: repeat(auto-fill, minmax(var(--min-col-width), 1fr))
+	&--x2
+		@media screen and (min-width: $tablet)
+			grid-template-columns: repeat(2, 1fr)
+	&--x4
+		@media screen and (min-width: $tablet)
+			grid-template-columns: repeat(2, 1fr)
+		@media screen and (min-width: $laptop)
+			grid-template-columns: repeat(4, 1fr)
+	
+[class~="bc-grid--x"] 
+	@extend .bc-grid
+	display: block
+	@media screen and (min-width: #{$tablet})
+		display: grid
+	
+/* Grid items */
+//Span classes - effective from vw 1024px
+@media screen and (min-width: #{$tablet-large})
+	.bc-grid-span-2cols
+		grid-column-start: span 2
+	.bc-grid-span-3cols
+		grid-column-start: span 3
+	.bc-grid-span-4cols
+		grid-column-start: span 4
