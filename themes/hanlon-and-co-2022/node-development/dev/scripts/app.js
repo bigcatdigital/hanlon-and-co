@@ -1,6 +1,6 @@
-/* @preserve 
- * BC custom scripts - Hanlon & Co solicitors 2022
+/* * BC custom scripts - Hanlon & Co solicitors 2022
  * BigCat Design, Dublin
+ * @preserve 
 */
 (function bcAppJS() {
 	let debug = false; 
@@ -8,7 +8,7 @@
 		console.log('Hanlon & Co WP theme here');
 		console.log('Debug is go');
 		console.log('===========');
-		console.log('...');
+		console.log('...'); 
 	}
 	
 	/*** AJAX functions **/
@@ -152,7 +152,7 @@
 		target: target position
 		[speed]: scroll speed 
 		[cb]: callback function
-	*/
+	*/ 
 	function bcAdjustHeight($el, target, speed = 0.075, cb = null) {
 		bcLerpHeight($el, target, speed) ;	
 		function bcLerpHeight($el, target, speed = 0.075) {
@@ -217,7 +217,6 @@
 		}
 		return;
 	}//bcAdjustHeight
-	
 	
 	/* 
 		Scroll links
