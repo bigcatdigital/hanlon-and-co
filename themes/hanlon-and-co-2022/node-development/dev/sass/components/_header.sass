@@ -11,6 +11,9 @@
 		&__close
 			display: none
 			fill: var(--shade-60)
+		@include linkHover 
+			&::after 
+				height: 0
 		@media screen and (min-width: #{$tablet-large})
 			display: none
 	& &__main-navigation
@@ -22,7 +25,6 @@
 		width: 100vw
 		height: 100vh
 		padding-top: var(--header-height)
-		
 		top: 0
 		left: auto
 		right: -100%
@@ -55,6 +57,7 @@
 		margin-bottom: 0
 	&.bc-is-active
 		.bc-site-header__menu-link
+			z-index: 20 
 			&__close
 				display: block
 			&__menu
@@ -63,6 +66,7 @@
 			right: 0
 			opacity: 1
 	@media screen and (min-width: #{$tablet-large}) 
+		align-items: stretch
 		&.bc-container
 			padding-top: calc(var(--vertical-unit) / 2)	
 	&.bc-is-hero-overlay
@@ -72,12 +76,6 @@
 		width: 100%
 		color: var(--white)
 		z-index: 20
-		&.bc-is-active
-			.bc-site-header__menu-link
-				&__menu
-					fill: var(--black)
-				&__close
-					fill: var(--shade-06)
 		.svg-icon
 			fill: var(--white)
 		@media screen and (min-width: #{$tablet-large}) 

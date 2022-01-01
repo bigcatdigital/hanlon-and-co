@@ -1,10 +1,11 @@
+/* @preserve 
+ * BC custom scripts - Hanlon & Co solicitors 2022
+ * BigCat Design, Dublin
+*/
 (function bcAppJS() {
-	/*eslint no-unused-vars: ["error", { "varsIgnorePattern": "^bc" }]*/
-	/* global Flickity */
 	let debug = false; 
-
-	console.log('WP Base Theme here');
 	if (debug) {	
+		console.log('Hanlon & Co WP theme here');
 		console.log('Debug is go');
 		console.log('===========');
 		console.log('...');
@@ -327,11 +328,10 @@
 		if (($siteHeader && $siteHeader !== undefined) && ($siteHeaderMenuLink && $siteHeaderMenuLink !== undefined) && ($siteHeaderMainNav && $siteHeaderMainNav !== undefined)) {
 			if (debug) {
 				console.log(`Main navigation set up`);
-				console.log(`----------------------`);
+				console.log(`----------------------`); 
 				console.log(`window.outerWidth is ${window.outerWidth}`);
 			}
 		}	
-		
 		/* 
 			start
 			-- nav hidden --

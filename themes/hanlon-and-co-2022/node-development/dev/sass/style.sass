@@ -30,12 +30,29 @@ p, ul, ol, blockquote
 	margin-bottom: var(--vertical-unit)
 button
 	font-family: var(--base-font)
-a 
+a  
+	position: relative
+	font-weight: var(--bold-font-weight)
+	text-decoration: none  
 	color: var(--link-color)
 	transition: color var(--quicktrans) var(--easing)
-	@include linkHover
-		font-weight: var(--link-active-weight)
+	@include linkHover 
+		font-weight: var(--link-active-weight) 
 		color: var(--link-active-color)
+		text-decoration: none  
+		&::after
+			height: 0.300rem
+	&::after
+		content: " "
+		position: absolute
+		bottom: 0
+		left: 0
+		width: 100%
+		height: 0rem
+		opacity: 0.72
+		background-color: rgba($brand-secondary, 0.9)
+		transition: height 220ms ease-out
+
 blockquote
 	margin-left: 0
 	margin-top: calc(var(--vertical-unit) * 2)
@@ -73,11 +90,27 @@ iframe
 
 /* Inner page header */
 .bc-site-header
+	& &__home-link
+		
+		@include linkHover
+			&::after
+				height: 0
+	& &__menu-link
+		&__close
+			fill: var(--white)
 	& &__main-navigation
+		li
+			padding: calc(var(--vertical-unit)) var(--gutter) 
 		&__item
 			> a
-				@media screen and (max-width: calc(#{$tablet-large} - 1px))	
-					color: var(--text-black)
+				padding: 0
+			font-family: var(--serif-font)
+			font-size: var(--text-gr-01) 
+		@media screen and (max-width: calc(#{$tablet-large} - 1px))	
+			background-color: var(--brand-primary)
+		&__item
+			> a
+				color: var(--white)
 
 /* Hero components overlay */
 .bc-hero
