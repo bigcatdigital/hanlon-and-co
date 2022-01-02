@@ -52,3 +52,28 @@
 		grid-column-start: span 3
 	.bc-grid-span-4cols
 		grid-column-start: span 4
+
+/* Text and media components *
+.bc-content-component
+	width: 100%
+	margin-left: auto
+	margin-right: auto
+	padding-left: calc(var(--gutter) /2)
+	padding-right: calc(var(--gutter) /2)
+	&--media, &--media-padded, &--text
+		@extend .bc-content-component
+		@media screen and (min-width: $tablet-large) 
+			max-width: 70.72% 
+	&--text
+		.bc-text-block 
+			margin-left:  auto
+			margin-right: auto
+	&--media
+		@media screen and (max-width: 1023px)
+			width: calc(100% + var(--gutter) * 2)
+			margin-left: calc(var(--gutter) * -1)
+			margin-right: calc(var(--gutter) * -1) 
+	&--media:not(.bc-content-component--media-padded)
+		@media screen and (max-width: 1023px)
+			padding-left: 0
+			padding-right: 0

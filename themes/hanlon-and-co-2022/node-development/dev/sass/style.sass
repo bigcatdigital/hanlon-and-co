@@ -87,7 +87,16 @@ iframe
 @import 'components/bc-twin-component'; 
 @import 'components/tables';
 
-
+/* Hanlon & Co logo -- text */
+.bc-site-logo 
+	font-family: var(--serif-font)
+	font-size: var(--text-gr-01)
+	color: var(--text--black)
+	> span
+		color: var(--brand-secondary)
+	&--white
+		@extend .bc-site-logo
+		color: var(--white)
 /* Inner page header */
 .bc-site-header
 	& &__home-link
@@ -98,23 +107,52 @@ iframe
 		&__close
 			fill: var(--white)
 	& &__main-navigation
+		align-items: stretch
+		&__list 
+			margin: 0
+			padding: calc(var(--vertical-unit)) 0 calc(var(--vertical-unit) * 2) 
+			list-style: none	
+			font-size: var(--text-gr-01)
 		li
-			padding: calc(var(--vertical-unit)) var(--gutter) 
+			padding: calc(var(--vertical-unit) / 2) calc(var(--gutter))
 		&__item
 			> a
+				display: inline-flex
 				padding: 0
+				color: var(--white)
 			font-family: var(--serif-font)
 			font-size: var(--text-gr-01) 
+		&__contact
+			padding: calc(var(--vertical-unit) * 2) var(--gutter)
+			background-color: var(--white)
+			color: var(--text-black)
 		@media screen and (max-width: calc(#{$tablet-large} - 1px))	
 			background-color: var(--brand-primary)
-		&__item
-			> a
-				color: var(--white)
+		@media screen and (min-width: $tablet-large)	
+			&__list 
+				@include makeFlexbox()
+				padding-top: 0
+				padding-bottom: 0 
+			&__item
+				font-size: var(--text-00)
+				font-weight: var(--font-weight)
+			&__contact
+				display: none
+		
+			
 
 /* Hero components overlay */
 .bc-hero
-	.bc-media-overlay
-	
+	& &__heading
+		margin-bottom: 0 
+		font-size: var(--text-gr-03)
+	& &__body 
+		@include makeFlexbox($direction: column, $justify: center)
+		margin-left: calc(var(--gutter) / 2 * -1)
+		margin-right: calc(var(--gutter) / 2 * -1)
+	& &__footer
+		justify-content: center
+		
 .bc-card 
 	& &__media 
 		background-color: var(--shade-60) 

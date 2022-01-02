@@ -317,7 +317,7 @@
 	
 	/* Main site navigation */
 	function mainNavigationSetup() {
-		debug = true;
+		debug = false;
 		if (window.outerWidth >= 1024 ) {
 			return true;
 		}
@@ -342,9 +342,9 @@
 		function menuIconClickHandler(evt) {
 			evt.preventDefault();
 			$siteHeader.classList.toggle('bc-is-active'); 
-			//if (debug) {
-			console.log(`Header class list: ${$siteHeader.classList}`);
-			//}
+			if (debug) {
+				console.log(`Header class list: ${$siteHeader.classList}`);
+			}
 			
 		}
 		$siteHeaderMenuLink.removeEventListener('click', menuIconClickHandler);
