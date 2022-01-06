@@ -10,179 +10,190 @@
 	<link rel="stylesheet" href="./assets/css/style.css" />
 </head>  
 <body>
-	<nav class="bc-is-hidden" aria-label="Skip to main content link" >
-		<a href="#main-site-content" title="Skip site menu, go to to main site content"></a>	
-	</nav>
-	<!-- Site header  -->
-	<header class="bc-container bc-site-header has-shade-a0-background">
-		<a title="Site hompepage bc-site-header__home-link" href="/">
-			<svg class="svg-icon ">
-				<use xlink:href="assets/media/svg/icons/bc-svgs.svg#abstract"></use> 
-			</svg>
-		</a>
-		<a href="#main-site-content" class="bc-site-header__menu-skip bc-is-hidden" title="Skip site menu, to main site content"></a>
-		<a href="javascript:void(0)" aria-hidden="true" class="bc-site-header__menu-link" title="Site Menu">
-			<svg class="svg-icon bc-site-header__menu-link__menu ">
-				<use xlink:href="assets/media/svg/icons/bc-svgs.svg#menu-thin"></use>
-			</svg>
-			<svg class="svg-icon bc-site-header__menu-link__close ">
-				<use xlink:href="assets/media/svg/icons/bc-svgs.svg#close-x"></use>
-			</svg>
-		</a>
-		<ul id="site-main-navigation" role="navigation" aria-label="Main site navigation" class="bc-site-header__main-navigation">
-			<li class="bc-site-header__main-navigation__item"><a href="single-page.html">Single Page</a></li>
-			<li class="bc-site-header__main-navigation__item"><a href="single-page.html">Page #2</a></li>
-			<li class="bc-site-header__main-navigation__item"><a href="single-page.html">Page #3</a></li>
-			<li class="bc-site-header__main-navigation__item"><a href="single-page.html">Page #4</a></li>
-		</ul>	
-		<h1 class="bc-site-header__title">Page title</h1>
-	</header>
-	<!-- // Site header -->
-	<nav class="bc-breadcrummbs-nav bc-container" aria-label="Site breadcrumbs navigation" >
-		<ul class="bc-breadcrummbs-nav__list">
-			<li><a href="/">Home</a></li>
-			<svg class="svg-icon bc-site-header__menu-link__close ">
-				<use xlink:href="assets/media/svg/icons/bc-svgs.svg#carat"></use>
-			</svg>
-			<li>Single page</li>
-		</ul>
-	</nav>
-	<main id="main-site-content" class="bc-container">
-		<div class="bc-text-component">
-			<h1>Top heading</h1>	
-			<p class="bc-intro-paragraph">Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.</p>
-			<p>Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur?</p>
-			<p>Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?</p>
-			<ul>
-				<li>Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus.</li>
-				<li>Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae.</li>
-			</ul>
-			<ol>
-				<li>Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus.</li>
-				<li>Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae.</li>
-			</ol>
-			<table>
-				<caption class="bc-is-hidden">This is a table</caption>
-				<thead>
-					<tr>
-						<th>Col #1 heading</th>
-						<th>Col #2 heading</th>
-						<th>Col #3 heading</th>
-						<th>Col #4 heading</th>
-					</tr>
-				</thead>
-				<tbody>	
-					<tr>
-						<td>Neque porro quisquam est, qui dolorem.</td>
-						<td>Neque porro quisquam est, qui dolorem.</td>
-						<td>Neque porro quisquam est, qui dolorem.</td>
-						<td>Neque porro quisquam est, qui dolorem.</td>
-					
-					</tr>
-				</tbody>	
-			</table>
-			<blockquote>
-				<p>Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?</p>
-				<p><strong>- who said this</strong></p>
-			</blockquote>
-			<h2>Heading #2</h2>
-			<h3>Heading #3</h3>
-			<h4>Heading #4</h4>
-			<h5>Heading #5</h5>
-			<h6>Heading #6</h6>
-			<h2>Show/hide accordion component</h2>
-			<div class="bc-show-hide"> 
-				<a href="javascript:void(0)" class="bc-show-hide__header bc-show-hide__toggle" title="Click to show the block body">
-					Block header #1
-					<svg class="svg-icon bc-show-hide-icon bc-show-hide-icon__show">
-						<use xlink:href="assets/media/svg/icons/bc-svgs.svg#carat--down"></use>
-					</svg>	
-					<svg class="svg-icon bc-show-hide-icon bc-show-hide-icon__hide">
-						<use xlink:href="assets/media/svg/icons/bc-svgs.svg#carat--down"></use>
-					</svg>	
-				</a><!-- // .bc-show-hide__header -->
-				<article class="bc-show-hide__body">
-					<h2>Block body #1</h2>
-					<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>
-					<p>Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur?</p>
-					<p>Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur? At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.</p>
-					<p>Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae.</p>
-					<a href="javascript:void" class="bc-show-hide__hide" title="Close transcript">Close transcript</a>
-				</article><!-- // .bc-show-hide__body -->
-				<a href="javascript:void(0)" class="bc-show-hide__header bc-show-hide__toggle" title="Click to show the block body">
-					Block header #2
-					<svg class="svg-icon bc-show-hide-icon bc-show-hide-icon__show">
-						<use xlink:href="assets/media/svg/icons/bc-svgs.svg#carat--down"></use>
-					</svg>	
-					<svg class="svg-icon bc-show-hide-icon bc-show-hide-icon__hide">
-						<use xlink:href="assets/media/svg/icons/bc-svgs.svg#carat--down"></use>
-					</svg>	
-				</a><!-- // .bc-show-hide__header -->
-				<article class="bc-show-hide__body">
-					<h2>Block body #2</h2>
-					<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>
-					<p>Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur?</p>
-					<p>Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur? At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.</p>
-					<p>Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae.</p>
-					<a href="javascript:void" class="bc-show-hide__hide" title="Close transcript">Close transcript</a>
-				</article><!-- // .bc-show-hide__body -->
-			</div><!-- // .bc-show-hide -->
-		</div><!-- // .bc-text-component -->
-	</main>
-	
-	<footer class="bc-container">
-		<div class="bc-grid">
-			<div>
-				<h2>Contact</h2>
-				<p>
-					Address line #1<br />
-					Address line #2<br />
-					Address line #3<br />
-					<a href="tel:01234567">01234567</a><br />
-				</p>
-				<h3>Follow us</h3>
-				<ul class="bc-icon-links">
-					<li>
-						<a target="_blank" href="https://instagram.com">
-							<svg class="svg-icon">
-								<use xlink:href="assets/media/svg/icons/bc-svgs.svg#instagram"></use>
-							</svg>	
-						</a>
-					</li>		
-					<li>
-						<a target="_blank" href="https://twitter.com">
-							<svg class="svg-icon">
-								<use xlink:href="assets/media/svg/icons/bc-svgs.svg#twitter"></use>
-							</svg>	
-						</a>
-					</li>	
-					<li>
-						<a target="_blank" href="https://facebook.com">
-							<svg class="svg-icon">
-								<use xlink:href="assets/media/svg/icons/bc-svgs.svg#facebook"></use>
-							</svg>	
-						</a>
-					</li>		
+	<div class="bc-body-wrap">
+		<nav class="bc-is-hidden" aria-label="Skip to main content link" >
+			<a href="#main-site-content" title="Skip site menu, go to to main site content"></a>	
+		</nav>
+		<!-- Site header  -->
+		<header class="bc-site-header bc-site-header--inner-page bc-container">
+			<a title="Site hompepage " class="bc-site-header__home-link bc-site-logo" href="./">
+				Hanlon <span>&amp;</span> Co. 
+			</a>
+			<a href="#main-site-content" class="bc-site-header__menu-skip bc-is-hidden" title="Skip site menu, to main site content"></a>
+			<a href="javascript:void(0)" aria-hidden="true" class="bc-site-header__menu-link" title="Site Menu">
+				<svg class="svg-icon bc-site-header__menu-link__menu ">
+					<use xlink:href="assets/media/svg/icons/bc-svgs.svg#menu-thin"></use>
+				</svg>
+				<svg class="svg-icon bc-site-header__menu-link__close ">
+					<use xlink:href="assets/media/svg/icons/bc-svgs.svg#close-x"></use>
+				</svg>
+			</a>
+			<div id="site-main-navigation" aria-label="Main site navigation" class="bc-site-header__main-navigation">
+				<ul role="navigation"  class="bc-site-header__main-navigation__list">
+					<li class="bc-site-header__main-navigation__item"><a href="single-page.html">Single Page</a></li>
+					<li class="bc-site-header__main-navigation__item"><a href="javascript:void(0)">Page #2</a></li>
+					<li class="bc-site-header__main-navigation__item"><a href="javascript:void(0)">Page #3</a></li>
+					<li class="bc-site-header__main-navigation__item"><a href="javascript:void(0)">Page #4</a></li>
 				</ul>
+				<div class="bc-site-header__main-navigation__contact">
+					<h2>Hanlon &amp; Co Solicitors</h2>
+					<p>	6 Richmond road<br />
+					Drumcondra<br />
+					Dublin 3</p>
+	
+					<p>Tel 01 836 9300</p>
+					<p>Fax 01 810 1858</p> 
+					Email: graham@hanlonandco.com
+				</div>	
 			</div>
-			<div>
-				<h2>Footer heading 2</h2>
-				<ul class="bc-plain-list">
-					<li><a href="javascript:void(0)">Footer link</a></li>
-					<li><a href="javascript:void(0)">Footer link</a></li>
-					<li><a href="javascript:void(0)">Footer link</a></li>
-					<li><a href="javascript:void(0)">Footer link</a></li>
-				</ul>			
-			</div>
-			<div class="bc-grid-span-2cols">
-				<h2>Footer heading #3</h2>
-				<div class="bc-object-embed">
-					<iframe title="Location google map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d152515.9863410329!2d-6.3857876133026865!3d53.3242380660387!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48670e80ea27ac2f%3A0xa00c7a9973171a0!2sDublin!5e0!3m2!1sen!2sie!4v1613941604616!5m2!1sen!2sie" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+		</header><!-- // .bc-site-header -->
+		<!-- // Site header -->
+		<nav class="bc-breadcrummbs-nav bc-container" aria-label="Site breadcrumbs navigation" >
+			<ul class="bc-breadcrummbs-nav__list">
+				<li><a href="/">Home</a></li>
+				<svg class="svg-icon bc-site-header__menu-link__close ">
+					<use xlink:href="assets/media/svg/icons/bc-svgs.svg#carat"></use>
+				</svg>
+				<li>Single page</li>
+			</ul>
+		</nav>
+		<main id="main-site-content" class="bc-container">
+			<div class="bc-text-component">
+				<h1>Top heading</h1>	
+				<p class="bc-intro-paragraph">Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.</p>
+				<p>Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur?</p>
+				<p>Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?</p>
+				<ul>
+					<li>Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus.</li>
+					<li>Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae.</li>
+				</ul>
+				<ol>
+					<li>Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus.</li>
+					<li>Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae.</li>
+				</ol>
+				<table>
+					<caption class="bc-is-hidden">This is a table</caption>
+					<thead>
+						<tr>
+							<th>Col #1 heading</th>
+							<th>Col #2 heading</th>
+							<th>Col #3 heading</th>
+							<th>Col #4 heading</th>
+						</tr>
+					</thead>
+					<tbody>	
+						<tr>
+							<td>Neque porro quisquam est, qui dolorem.</td>
+							<td>Neque porro quisquam est, qui dolorem.</td>
+							<td>Neque porro quisquam est, qui dolorem.</td>
+							<td>Neque porro quisquam est, qui dolorem.</td>
+						
+						</tr>
+					</tbody>	
+				</table>
+				<blockquote>
+					<p>Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?</p>
+					<p><strong>- who said this</strong></p>
+				</blockquote>
+				<h2>Heading #2</h2>
+				<h3>Heading #3</h3>
+				<h4>Heading #4</h4>
+				<h5>Heading #5</h5>
+				<h6>Heading #6</h6>
+				<h2>Show/hide accordion component</h2>
+				<div class="bc-show-hide"> 
+					<a href="javascript:void(0)" class="bc-show-hide__header bc-show-hide__toggle" title="Click to show the block body">
+						Block header #1
+						<svg class="svg-icon bc-show-hide-icon bc-show-hide-icon__show">
+							<use xlink:href="assets/media/svg/icons/bc-svgs.svg#carat--down"></use>
+						</svg>	
+						<svg class="svg-icon bc-show-hide-icon bc-show-hide-icon__hide">
+							<use xlink:href="assets/media/svg/icons/bc-svgs.svg#carat--down"></use>
+						</svg>	
+					</a><!-- // .bc-show-hide__header -->
+					<article class="bc-show-hide__body">
+						<h2>Block body #1</h2>
+						<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>
+						<p>Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur?</p>
+						<p>Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur? At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.</p>
+						<p>Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae.</p>
+						<a href="javascript:void" class="bc-show-hide__hide" title="Close transcript">Close transcript</a>
+					</article><!-- // .bc-show-hide__body -->
+					<a href="javascript:void(0)" class="bc-show-hide__header bc-show-hide__toggle" title="Click to show the block body">
+						Block header #2
+						<svg class="svg-icon bc-show-hide-icon bc-show-hide-icon__show">
+							<use xlink:href="assets/media/svg/icons/bc-svgs.svg#carat--down"></use>
+						</svg>	
+						<svg class="svg-icon bc-show-hide-icon bc-show-hide-icon__hide">
+							<use xlink:href="assets/media/svg/icons/bc-svgs.svg#carat--down"></use>
+						</svg>	
+					</a><!-- // .bc-show-hide__header -->
+					<article class="bc-show-hide__body">
+						<h2>Block body #2</h2>
+						<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>
+						<p>Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur?</p>
+						<p>Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur? At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.</p>
+						<p>Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae.</p>
+						<a href="javascript:void" class="bc-show-hide__hide" title="Close transcript">Close transcript</a>
+					</article><!-- // .bc-show-hide__body -->
+				</div><!-- // .bc-show-hide -->
+			</div><!-- // .bc-text-component -->
+		</main>
+		
+		<footer class="bc-container">
+			<div class="bc-grid">
+				<div>
+					<h2>Contact</h2>
+					<p>
+						Address line #1<br />
+						Address line #2<br />
+						Address line #3<br />
+						<a href="tel:01234567">01234567</a><br />
+					</p>
+					<h3>Follow us</h3>
+					<ul class="bc-icon-links">
+						<li>
+							<a target="_blank" href="https://instagram.com">
+								<svg class="svg-icon">
+									<use xlink:href="assets/media/svg/icons/bc-svgs.svg#instagram"></use>
+								</svg>	
+							</a>
+						</li>		
+						<li>
+							<a target="_blank" href="https://twitter.com">
+								<svg class="svg-icon">
+									<use xlink:href="assets/media/svg/icons/bc-svgs.svg#twitter"></use>
+								</svg>	
+							</a>
+						</li>	
+						<li>
+							<a target="_blank" href="https://facebook.com">
+								<svg class="svg-icon">
+									<use xlink:href="assets/media/svg/icons/bc-svgs.svg#facebook"></use>
+								</svg>	
+							</a>
+						</li>		
+					</ul>
 				</div>
+				<div>
+					<h2>Footer heading 2</h2>
+					<ul class="bc-plain-list">
+						<li><a href="javascript:void(0)">Footer link</a></li>
+						<li><a href="javascript:void(0)">Footer link</a></li>
+						<li><a href="javascript:void(0)">Footer link</a></li>
+						<li><a href="javascript:void(0)">Footer link</a></li>
+					</ul>			
+				</div>
+				<div class="bc-grid-span-2cols">
+					<h2>Footer heading #3</h2>
+					<div class="bc-object-embed">
+						<iframe title="Location google map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d152515.9863410329!2d-6.3857876133026865!3d53.3242380660387!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48670e80ea27ac2f%3A0xa00c7a9973171a0!2sDublin!5e0!3m2!1sen!2sie!4v1613941604616!5m2!1sen!2sie" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+					</div>
+				</div>
+				
 			</div>
-			
-		</div>
-	</footer>
+		</footer>
+	</div><!-- // .bc-body-wrap-->
 	<script src="assets/scripts/app-concat.js"></script>  
 </body>
 </html> 
