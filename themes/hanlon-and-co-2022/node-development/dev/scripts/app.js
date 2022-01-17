@@ -459,6 +459,28 @@
 	window.addEventListener('resize', () => {
 		//mainNavigationSetup();
 	});
+	/* Window scroll events */
+	window.addEventListener('scroll', () => {
+		let heroFooterObsOpts = {
+			root: null,
+			rootMargin: '100px',
+			threshold: [0, 0.25, 0.5, 0.75] 
+		};
+		
+		function heroFooterIntersection(entries) {
+			entries.forEach((entry) => {
+				if (entry.isIntersecting) {
+					console.log(`${entry.target} is instersecting ${entry.intersectionRatio}`);
+					$heroFooter.style.opacity = entry.intersectionRatio;
+				}
+			});
+		}
+		
+		let heroFooterObserver = new IntersectionObserver(heroFooterIntersection, heroFooterObsOpts);
+		heroFooterObserver.observe(document.querySelector('.bc-hero'));
+		const $heroFooter = document.querySelector('.bc-hero__footer');
+
+	});
 	
 	
 })(window);

@@ -47,10 +47,13 @@
 	@include arContainer 
 	padding-top: #{(2 / 3 * 100%)}
 @mixin is-4x3()
+	@include arContainer 
 	padding-top: #{(3 / 4 * 100%)}
 @mixin is-5x4()
+	@include arContainer 
 	padding-top: #{(4 / 5 * 100%)}
 @mixin is-16x9()
+	@include arContainer 
 	padding-top: #{(9 / 16 * 100%)}
 	
 //end is-1x1()
@@ -101,12 +104,9 @@
 		max-height: #{$line-height}rem 
 		margin-left: calc(var(--gutter) / 2)
 	@include linkHover
-		text-decoration: underline
 @mixin linkHover() 
 	&:active, &:hover, &:focus
-		text-decoration: underline
 		@content
-
 @mixin plainList() 
 	list-style: none
 	margin: 0 
@@ -115,8 +115,6 @@
 		list-style: none
 		margin: 0 
 		padding: 0
-
-	
 		
 @mixin makeTextComponent
 	max-width: var(--text-max-width)
