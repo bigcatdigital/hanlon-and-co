@@ -526,7 +526,7 @@
 		function heroFooterIntersection(entries) {
 			entries.forEach((entry) => {
 				if (entry.isIntersecting) {
-					console.log(`${entry.target} is instersecting ${entry.intersectionRatio}`);
+					//console.log(`${entry.target} is instersecting ${entry.intersectionRatio}`);
 					$heroFooter.style.opacity = entry.intersectionRatio;
 				}
 			});

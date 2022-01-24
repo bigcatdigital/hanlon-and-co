@@ -19,6 +19,7 @@ h1, h2, h3, h4, h5
 	margin-bottom: var(--vertical-unit)
 	font-family: var(--heading-font) 
 	line-height: 1.35
+	color: var(--text-black)
 h1
 	font-size: 2.0581rem
 h2
@@ -28,6 +29,8 @@ h3
 p, ul, ol, blockquote 
 	margin-top: 0
 	margin-bottom: var(--vertical-unit)
+	color: var(--shade-50)
+
 button
 	font-family: var(--base-font)
 a  
@@ -110,8 +113,25 @@ iframe
 
 /* Utilities 	overwrites */
 .bc-media-overlay
-	background-color: rgba($brand-primary, 0.42)
-	mix-blend-mode: none 
+	background-color: rgba($black, 0.20) 
+	mix-blend-mode: normal
+.bc-cross-overlay
+	position: absolute
+	bottom: 0
+	left: 0
+	width: 100%
+	height: 12.5%
+	z-index: 10
+
+/* Custom utils */
+.bc-bg-brand-primary, .bc-bg-brand-primary
+	a, p, ul, li, blockquote, .svg-icon
+		color: inherit
+		fill: var(--white)
+.bc-bg-brand-primary
+	background-color: var(--brand-primary)
+	color: var(--white)
+
 /* Hanlon & Co logo -- text */
 .bc-site-logo 
 	font-family: var(--serif-font)
@@ -122,6 +142,7 @@ iframe
 	&--white
 		@extend .bc-site-logo
 		color: var(--white)
+	
 .bc-arrow-link
 	.svg-icon
 		max-width: 	calc(var(--text-gr-00) * 1.3)
@@ -172,51 +193,75 @@ iframe
 .bc-container 
 	padding-top: 		calc(var(--vertical-unit) * 2)
 	padding-bottom: calc(var(--vertical-unit) * 2)
+.bc-content-component
+	padding-left: var(--gutter)
+	padding-right: var(--gutter)
+	& &__text-part
+		max-width: var(--text-max-width)
+		margin-left: 	auto
+		margin-right: auto
+.bc-feature-header
+	& &__heading
+		position: relative
+		&::before 
+			content: " "
+			position: absolute
+			top: 0 
+			left: calc(var(--gutter) * -1) 
+			width: #{(2/14)}rem
+			height: 100%
+			background-color: var(--brand-primary) 
+	@media screen and (min-width: $tablet)
+		display: grid
+		gap: var(--gutter)
+		grid-template-columns: repeat(2, 1fr)
+		
 /* Hero components overlay */
-.bc-hero
+.bc-hero 
+	color: var(--white)
 	& &__heading
 		position: relative
 		margin-top: 6% //offset aganist the footer extra heignt
 		margin-bottom: 0 
-		font-size: var(--text-gr-03)
-		&::after
-			content: " "
-			width: 20%
-			height: calc(var(--text-gr-00) * (0.618 * 0.618))
-			background-color: var(--brand-secondary) 
-			position: absolute
-			bottom: calc(var(--vertical-unit) * -1)
-			left: 0
-			
+		font-size: var(--text-gr-04)
+		color: var(--white)	
+		max-width: var(--text-max-width)
+		&::before
+			background-color: var(--white) 
+	& &__tagline, & &__heading, .bc-brand-tagline 
+		color: inherit
+	&	&__tagline
+		font-size: var(--text-gr-01) 
+		font-weight: var(--light-weight)
+	.bc-site-logo, .bc-brand-tagline
+		color: inherit
+	.bc-site-logo
+		margin-bottom: calc(var(--vertical-unit) / 2)
+		line-height: 1.1
+	.bc-brand-tagline
+		font-size: var(--text-gr--1)
+		font-weight: var(--light-weight )
+		text-transform: uppercase
+		letter-spacing: calc(var(--gutter) / (1.618 * 1.618))
 	& &__body 
-		@include makeFlexbox($direction: column, $justify: center)
-		margin-left: calc(var(--gutter) / 2 * -1)
-		margin-right: calc(var(--gutter) / 2 * -1)
-	/*	&__content
-			position: relative 
-			&::after
-				content: " "
-				position: absolute
-				left: calc(var(--gutter) / 2) 
-				bottom: calc(var(--vertical-unit) * -1.5)
-				width: 20.1%
-				height: calc(var(--vertical-unit) / 3) 
-				background-color: var(--brand-primary) */
+		@include makeFlexbox($direction: column, $justify: center) 
 	& &__footer
 		flex-basis: 12.5%
 		justify-content: center
 		transition: opacity 320ms ease-out
 		&__scroll
-			font-size: var(--text--1)
-			font-weight: var(--bold-font-weight)
+			font-size: var(--text--2)
+			font-weight: var(--regular-font-weight)
 			text-transform: uppercase
 			.svg-icon
 				margin-top: calc(var(--vertical-unit) / 6)
 				max-width:  var(--text-02) 
 				max-height: var(--text-02)
-	.bc-media-overlay
-		background-color: rgba($black, 0.36) 
-		mix-blend-mode: overlay
+	@media screen and (min-width: $tablet) 
+		padding-bottom: 0 
+		.bc-hero__heading 
+			margin-top: 0 
+			margin-bottom: calc(var(--vertical-unit) / 2)
 .bc-card 
 	& &__media 
 		background-color: var(--shade-60) 
@@ -299,6 +344,19 @@ iframe
 			width: 80%
 			height: #{(1 / 14)}rem
 			background-color: var(--text-black) 
+/* Big text compoonent */
+.bc-big-text-feature
+	h1, h2, h3, h4, h5, p, a, ul, li, blockquote
+		color: inherit
+	&.bc-container
+		padding-top: 		calc(var(--vertical-unit) * 4)
+		padding-bottom: calc(var(--vertical-unit) * 4)
+	.bc-text-component
+		@include makeFlexbox(column)
+	.bc-arrow-link
+		margin-bottom: 0
+		> a 
+			font-weight: var(--font-weight)
 
 //Areas of practice component
 .bc-areas-of-practice
@@ -308,38 +366,28 @@ iframe
 	& &__header, & &__body
 		padding: var(--vertical-unit) var(--gutter) 
 	& &__header
-		position: absolute
-		top:  0
-		left: 0
-		width: 100%
 		padding-top: calc(var(--vertical-unit) * 2)
-		color: var(--white)
+		max-width: var(--text-max-width)
+		margin-left: auto
+		margin-right: auto
 		z-index: 20
+	&__heading
+		color: var(--brand-primary)
 	& &__body
 		@include makeFlexbox(column, $align: stretch)
+		margin-left: 	calc(var(--gutter) * -1)
+		margin-right: calc(var(--gutter) * -1)
 		padding: 0
-	& &__split-mobile
-		position: relative
-		z-index: 0
-		&__links
-			position: absolute
-			width: 100%
-			bottom: calc(var(--vertical-unit) * 2)
-			z-index: 20 
-		&__item 
-			position: relative
-			.svg-icon 
-				fill: var(--white) 
-		&__link 
-			font-size: var(--text-01) 
 	& &__split-left, & &__split-right
 		top: 0
 		position: relative
 		flex: 1 1 100%
 		width: 100%
 		height: 100%
-		padding-top: 40%
-
+		padding-top: 138.2% 
+		color: var(--white)
+		p, a, h1, h2, h3, h4, h4
+			color: inherit
 		@include arContainer 
 		@include linkHover() 
 			text-decoration: none
@@ -349,22 +397,6 @@ iframe
 				span
 					&::after
 						height: 0.300rem
-			.bc-media-overlay
-				background-color: rgba($black, 0.88)
-				
-	& &__split-left
-		.bc-split-container__split-head
-			justify-content: flex-end
-			&::before
-				left: auto
-				right: 0
-		.bc-split-container__split-description
-			padding-left: 20%
-			padding-right: 0
-			text-align: right
-	& &__split-right
-		.bc-media-overlay
-			background-color: rgba($brand-secondary, 0.48)
 			
 	& &__split__body
 		position: absolute
@@ -382,10 +414,13 @@ iframe
 				height: 0	
 	& &__split-head
 		position: relative
-		order: 1
-		width: 100%
 		@include makeFlexbox($align: center)
+		width: 100%
+		margin-bottom: 0 
+		font-size: var(--text-gr-00)
+		font-family: var(--sans-font)
 		text-decoration: none
+		order: 1
 		&::before
 			content: " "
 			position: absolute
@@ -403,10 +438,6 @@ iframe
 			fill: var(--white)
 			max-width:  calc(var(--text-gr-01) * 1)
 			max-height: calc(var(--text-gr-01) * 1)
-		margin-bottom: 0 
-		font-size: var(--text-gr-01)
-		font-family: var(--sans-font)
-		
 	& &__split-description
 		opacity: 0
 		padding-right: 20%
@@ -420,23 +451,20 @@ iframe
 				color: var(--white)
 			&::after
 				background-color: var(--white) 
-	.bc-media-overlay
-		transition: background-color 580ms ease-out
-		mix-blend-mode: soft-light
 	@media screen and (max-width: calc(#{$tablet} - 1px))
 		& &__header
 			padding-top: calc(var(--vertical-unit) * 2)
-		& &__split-left, & &__split-right
-			display: none
-		& &__description, & &__split-right
-			display: none
+	@media screen and (max-width: calc(#{$tablet-large} - 1px))
+		& &__split-description
+			opacity: 1
 	@media screen and (min-width: $tablet)
-		& &__split-mobile
-			display: none
 		& &__body
 			flex-direction: row 
 		& &__split-left, & &__split-right
-		 	flex: 1 1 50%
+		 	padding-top: 61.8%
+	@media screen and (min-width: $tablet-large)
+		& &__split-left, & &__split-right
+		 	padding-top: 50%
 .bc-areas-of-practice
 	& &--other
 		padding: calc(var(--vertical-unit) * 2) var(--gutter)
