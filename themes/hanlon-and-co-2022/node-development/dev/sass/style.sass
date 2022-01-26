@@ -122,6 +122,9 @@ iframe
 	width: 100%
 	height: 12.5%
 	z-index: 10
+	.cross-over-element
+		fill: var(--brand-primary)
+		opacity: 1
 
 /* Custom utils */
 .bc-bg-brand-primary, .bc-bg-brand-primary
@@ -147,6 +150,7 @@ iframe
 	.svg-icon
 		max-width: 	calc(var(--text-gr-00) * 1.3)
 		max-height: calc(var(--text-gr-00) * 1.3)
+		fill: var(--brand-primary)
 /* Inner page header */
 .bc-site-header
 	& &__home-link
@@ -188,34 +192,44 @@ iframe
 				font-weight: var(--font-weight)
 			&__contact
 				display: none
-		
-/* Layout */
-.bc-container 
-	padding-top: 		calc(var(--vertical-unit) * 2)
-	padding-bottom: calc(var(--vertical-unit) * 2)
-.bc-content-component
-	padding-left: var(--gutter)
-	padding-right: var(--gutter)
-	& &__text-part
-		max-width: var(--text-max-width)
-		margin-left: 	auto
-		margin-right: auto
 .bc-feature-header
+	position: relative
+	& &__col
+		max-width: #{(520 /18)}rem
+		p:last-child
+			margin-bottom: 0
 	& &__heading
 		position: relative
-		&::before 
-			content: " "
-			position: absolute
-			top: 0 
-			left: calc(var(--gutter) * -1) 
-			width: #{(2/14)}rem
-			height: 100%
-			background-color: var(--brand-primary) 
+		color: var(--brand-primary)
+	&::before 
+		content: " "
+		position: absolute
+		top: auto 
+		left: 0 
+		bottom: calc((var(--gutter) + #{(3/14)}rem)  * -1) 
+		width: calc(var(--text-gr-04) * 1)
+		height: #{(6/14)}rem
+		background-color: rgba($brand-secondary, 1) 
 	@media screen and (min-width: $tablet)
-		display: grid
+		//display: grid
 		gap: var(--gutter)
-		grid-template-columns: repeat(2, 1fr)
-		
+		grid-template-columns: repeat(2, 1fr)	
+.bc-intro-paragraph		
+	font-size: var(--text-gr-01)
+	font-weight: var(--light-weight)
+	color: inherit
+/* Layout */
+.bc-container 
+	padding: calc(var(--vertical-unit) * 2) calc(var(--gutter) * 1)
+.bc-content-component
+	@include makeFlexbox(column)
+	
+	margin-bottom: calc(var(--vertical-unit) * 2) 
+	padding-left:  0
+	padding-right: 0
+	&:last-of-type, &:last-child
+		margin-bottom: 0
+
 /* Hero components overlay */
 .bc-hero 
 	color: var(--white)
@@ -262,6 +276,32 @@ iframe
 		.bc-hero__heading 
 			margin-top: 0 
 			margin-bottom: calc(var(--vertical-unit) / 2)
+	.bc-feature-header
+		color: inherit
+.bc-grad-bottom
+	position: relative
+	&::after
+		content: " "
+		position: absolute
+		width: 120%
+		height: 100px
+		bottom: calc(var(--vertical-unit) * -1)
+		left: -10%
+		right: -10%
+		background-color: var(--shade-e0)
+		z-index: -1
+		background-image: linear-gradient(0deg, transparent, $shade-f0)
+.bc-two-column-layout
+	& &__text-column
+		@media screen and (min-width: $tablet)
+			justify-content: center
+	& &__sub-head
+		margin-bottom: calc(var(--vertical-unit) / 2)
+		font-size: var(--text-gr-01)
+		font-family: var(--sans-font)
+		color: var(--brand-primary)
+	.bc-arrow-link, p:last-child
+		margin-bottom: 0
 .bc-card 
 	& &__media 
 		background-color: var(--shade-60) 
@@ -319,31 +359,10 @@ iframe
 		transition: padding var(--medtrans) var(--easing), height var(--medtrans) var(--easing)
 		&.bc-is-active
 			padding-top: 		var(--vertical-unit)
-			padding-bottom: var(--vertical-unit)
-			
-/* Custom components */
-//Homepage CTA links - for Areas of Practice
-.bc-feature-links
-	@include makeFlexbox(column, $align: stretch)
-	margin-top: calc(var(--vertical-unit) * 2)
-	margin-bottom: 0
-	padding-left: 0
-	list-style: none
-	& &__item
-		position: relative
-		flex: 1 1 100%
-		padding: calc(var(--vertical-unit) / 1.5) var(--gutter)
-		list-style: none
-		> a
-			color: var(--text-black)
-		&::after
-			position: absolute
-			content: " "
-			right: 0
-			bottom: 0
-			width: 80%
-			height: #{(1 / 14)}rem
-			background-color: var(--text-black) 
+			padding-bottom: var(--vertical-unit)			
+
+	
+/** Custom components **/
 /* Big text compoonent */
 .bc-big-text-feature
 	h1, h2, h3, h4, h5, p, a, ul, li, blockquote
@@ -358,148 +377,6 @@ iframe
 		> a 
 			font-weight: var(--font-weight)
 
-//Areas of practice component
-.bc-areas-of-practice
-	padding: 0 
-.bc-split-container
-	position: relative
-	& &__header, & &__body
-		padding: var(--vertical-unit) var(--gutter) 
-	& &__header
-		padding-top: calc(var(--vertical-unit) * 2)
-		max-width: var(--text-max-width)
-		margin-left: auto
-		margin-right: auto
-		z-index: 20
-	&__heading
-		color: var(--brand-primary)
-	& &__body
-		@include makeFlexbox(column, $align: stretch)
-		margin-left: 	calc(var(--gutter) * -1)
-		margin-right: calc(var(--gutter) * -1)
-		padding: 0
-	& &__split-left, & &__split-right
-		top: 0
-		position: relative
-		flex: 1 1 100%
-		width: 100%
-		height: 100%
-		padding-top: 138.2% 
-		color: var(--white)
-		p, a, h1, h2, h3, h4, h4
-			color: inherit
-		@include arContainer 
-		@include linkHover() 
-			text-decoration: none
-			.bc-split-container__split-description
-				opacity: 1
-			.bc-split-container__split-head
-				span
-					&::after
-						height: 0.300rem
-			
-	& &__split__body
-		position: absolute
-		top: 0
-		left: 0
-		width: 100%
-		height: 100%
-		padding: var(--vertical-unit) var(--gutter) calc(var(--vertical-unit) * 2)
-		color: var(--white)
-		z-index: 20
-		@include makeFlexbox(column, $justify: flex-end)
-		@include linkHover 
-			text-decoration: none
-			&::after
-				height: 0	
-	& &__split-head
-		position: relative
-		@include makeFlexbox($align: center)
-		width: 100%
-		margin-bottom: 0 
-		font-size: var(--text-gr-00)
-		font-family: var(--sans-font)
-		text-decoration: none
-		order: 1
-		&::before
-			content: " "
-			position: absolute
-			top: calc(var(--vertical-unit) / 2 * -1)
-			left: 0
-			width: 80% 
-			height: #{(1 / 14)}rem
-			background-color: var(--white)
-		&__wrap, .svg-icon-wrap
-			@include makeFlexbox($align: center, $inline: true)
-		&__wrap
-			margin-right: calc(var(--text-gr-00) / 2)
-			@include makeLinkActive
-		.svg-icon 
-			fill: var(--white)
-			max-width:  calc(var(--text-gr-01) * 1)
-			max-height: calc(var(--text-gr-01) * 1)
-	& &__split-description
-		opacity: 0
-		padding-right: 20%
-		padding-bottom: calc(var(--gutter) / 2)
-		font-weight: var(--font-weight)
-		transition: opacity 560ms ease-out
-	.bc-feature-links 
-		margin-top: 0
-		.bc-feature-links__item
-			> a
-				color: var(--white)
-			&::after
-				background-color: var(--white) 
-	@media screen and (max-width: calc(#{$tablet} - 1px))
-		& &__header
-			padding-top: calc(var(--vertical-unit) * 2)
-	@media screen and (max-width: calc(#{$tablet-large} - 1px))
-		& &__split-description
-			opacity: 1
-	@media screen and (min-width: $tablet)
-		& &__body
-			flex-direction: row 
-		& &__split-left, & &__split-right
-		 	padding-top: 61.8%
-	@media screen and (min-width: $tablet-large)
-		& &__split-left, & &__split-right
-		 	padding-top: 50%
-.bc-areas-of-practice
-	& &--other
-		padding: calc(var(--vertical-unit) * 2) var(--gutter)
-		&__body
-			&--mobile
-				margin-left:  calc(var(--gutter) * -1)
-				margin-right: calc(var(--gutter) * -1)
-		@media screen and (max-width: calc(#{$tablet} - 1px))
-			&__description
-				display: none
-			.bc-feature-links 
-				&__item
-					> .svg-icon
-							display: none
-					&__link
-						display: none
-			.bc-arrow-link
-				margin-bottom: 0
-		@media screen and (min-width: $tablet)
-			.bc-feature-links
-				flex-direction: row 
-				&__item
-					flex-direction: column
-					justify-content: flex-start
-					align-items: flex-start
-					> .svg-icon
-						display: none
-					&__mobile-link
-						margin-bottom: var(--vertical-unit)
-						font-size: var(--text-gr-01) 
-					&::after
-						display: none
-						
-			&__description
-				font-weight: var(--font-weight)
 			
 			
 
