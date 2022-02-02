@@ -19,7 +19,7 @@
 	<nav class="bc-is-hidden" aria-label="Skip to main content link">
 		<a href="#main-site-content" title="Skip site menu, go to to main site content"></a>	
 	</nav>
-	<header class="bc-site-header bc-is-hero-overlay bc-container">
+	<header class="bc-site-header bc-container">
 		<a title="Site hompepage " class="bc-site-header__home-link bc-site-logo" href="./">
 			Hanlon <span>&amp;</span> Co. 
 		</a>
@@ -82,18 +82,25 @@
 		<svg id="cross-over-svg" class="bc-cross-overlay" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 8"><defs><style>.cross-over-element{fill:#231f20;opacity:0.36;}</style></defs><title>cross-over</title><polygon id="cross-over-svg__left" class="cross-over-element" points="0 0 0 40 400 40 0 0"/><polygon id="cross-over-svg__right" class="cross-over-element" points="400 0 400 40 0 40 400 0"/></svg>
 	</section>
 	<!-- // Hero -->
-	<section id="" class="bc-container">
+	<section id="" class="bc-container bc-areas-of-practice">
 		<article class="bc-content-component">
 			<div class="bc-content-component--text bc-feature-header"> 
 				<div class="bc-feature-header__col">
 					<h1 class="bc-feature-header__heading">Areas of practice</h1>
+					 
 					<p class="bc-intro-paragraph">Nemo enim <strong>ipsam voluptatem</strong> quia voluptas sit aspernatur aut odit aut fugit.</p>
 				</div><!-- // .bc-feature-header__col -->
 			</div><!-- // .bc-feature-header -->
-			<div class="bc-grid--x2 bc-two-column-layout">
+			<div class="bc-two-column-layout">
+				
+				<div class="bc-two-column-layout__col bc-two-column-layout__media-column" id="1">
+					<picture class="bc-two-column-layout__media-column__media is-3x2">
+						<img src="assets/media/irish-family.jpg" alt="Placeholder image">
+					</picture>
+				</div><!-- // .bc-two-column-layout__media-column -->
 				<div class="bc-two-column-layout__col bc-two-column-layout__text-column">
 					<h2 class="bc-two-column-layout__sub-head">Family Law</h2>
-					<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+					<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore.</p>
 					<p class="bc-arrow-link">
 						<a class="bc-arrow-link" href="javascript:void()">
 							Link to follow
@@ -104,16 +111,17 @@
 					</p>
 					
 				</div><!-- // .bc-two-column-layout__text-column -->
+			</div><!-- // .bc-two-column-layout -->	
+			<div class="bc-two-column-layout" aria-label="Two column layout #2">  
+				
 				<div class="bc-two-column-layout__col bc-two-column-layout__media-column" id="1">
 					<picture class="bc-two-column-layout__media-column__media is-3x2">
 						<img src="assets/media/irish-family.jpg" alt="Placeholder image">
 					</picture>
 				</div><!-- // .bc-two-column-layout__media-column -->
-			</div><!-- // .bc-two-column-layout -->	
-			<div class="bc-grid--x2 bc-two-column-layout" aria-label="Two column layout #2">  
 				<div class="bc-two-column-layout__col bc-two-column-layout__text-column">
 					<h2 class="bc-two-column-layout__sub-head">Insolvency</h2>
-					<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+					<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.</p>
 					<a class="bc-arrow-link" href="javascript:void()">
 						Link to follow
 						<svg class="svg-icon">
@@ -121,202 +129,77 @@
 						</svg>
 					</a>
 				</div><!-- // .bc-two-column-layout__text-column -->
-				<div class="bc-two-column-layout__col bc-two-column-layout__media-column" id="1">
-					<picture class="bc-two-column-layout__media-column__media is-3x2">
-						<img src="assets/media/irish-family.jpg" alt="Placeholder image">
-					</picture>
-				</div><!-- // .bc-two-column-layout__media-column -->
 			</div><!-- // .bc-grid.bc-two-column-layout -->
-			<div class="bc-content-component--text">
-				<h2>Our other areas of practice</h1>
-			</div>
-			<div class="bc-grid bc-content-component">
-				<div>
-					<h2>Litigation</h2>
-					<p class="">Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>
-				</div>
-				<div>
-					<h2>Probate</h2>
-					<p class="">Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>
-				</div>
-				<div>
-					<h2>Conveyancing</h2>
-					<p class="">Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>
-				</div>
-				
-			</div>
-		</article>
-		
-	</section>
-	<section class="bc-container bc-bg-brand-primary bc-big-text-feature">
-		<article class="bc-text-component">
-			<h2>These cases are perfectly simple and easy to distinguish. In a free hour, when our power of choice is untrammelled.</h2>
-			<p class="bc-arrow-link">
-				<a href="javascript:void(0)">Read about our approach</a>
-				<svg class="svg-icon">
-					<use xlink:href="assets/media/svg/icons/bc-svgs.svg#arrow"></use>
-				</svg>
-			</p>
-		</article>
-	</section>
-	<!-- Two column layout --> 
-	<section class="bc-container" id="body-content" aria-label="Our specialist areas of practice">
-		
-		<article class="bc-content-component" aria-label="Two column layout #1"> 
-			<div class="bc-feature-header bc-content-component__text-part"> 
-				<div class="bc-feature-header__col">
-					<h1 class="bc-feature-header__heading">Areas of Practice</h1> 
-					<p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>
-				</div><!-- // .bc-feature-header__col -->
-				
-			</div>
 			
-			<div class="bc-grid--x2 bc-two-column-layout">
-				<div class="bc-two-column-layout__col bc-two-column-layout__text-column">
-					<h2>Column heading#1</h2>
-					<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+			<div class="bc-content-component--text bc-areas-of-practice__other">
+				<hr />
+				<div class="bc-areas-of-practice__other__area">
+					<h3>Litigation</h3>
+					<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.</p>
 					<a class="bc-arrow-link" href="javascript:void()">
 						Link to follow
 						<svg class="svg-icon">
 							<use xlink:href="assets/media/svg/icons/bc-svgs.svg#arrow"></use>
 						</svg>
 					</a>
-				</div><!-- // .bc-two-column-layout__text-column -->
-				<div class="bc-two-column-layout__col bc-two-column-layout__media-column" id="1">
-					<picture class="bc-two-column-layout__media-column__media is-3x2">
-						<img src="assets/media/irish-family.jpg" alt="Placeholder image">
-					</picture>
-				</div><!-- // .bc-two-column-layout__media-column -->
-			</div><!-- // .bc-two-column-layout -->	
-			<div class="bc-grid--x2 bc-two-column-layout" aria-label="Two column layout #2">  
-				<div class="bc-two-column-layout__col bc-two-column-layout__text-column">
-					<h2>Column heading#2</h2>
-					<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+				</div>
+				<div class="bc-areas-of-practice__other__area">
+					<h3>Probate</h3>
+					<p class="">Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>
 					<a class="bc-arrow-link" href="javascript:void()">
 						Link to follow
 						<svg class="svg-icon">
 							<use xlink:href="assets/media/svg/icons/bc-svgs.svg#arrow"></use>
 						</svg>
 					</a>
-				</div><!-- // .bc-two-column-layout__text-column -->
-				<div class="bc-two-column-layout__col bc-two-column-layout__media-column" id="1">
-					<picture class="bc-two-column-layout__media-column__media is-3x2">
-						<img src="assets/media/irish-family.jpg" alt="Placeholder image">
-					</picture>
-				</div><!-- // .bc-two-column-layout__media-column -->
-			</div><!-- // .bc-grid.bc-two-column-layout -->
-		</article><!-- //  -->
-	</section><!-- //Two column layout --> 
-	<section class="bc-container" id="media-ars" aria-label="Media aspect ratios">
-		<h1 class><code>Media aspect ratios</code></h1>
-		<div class="bc-grid--auto"> 
-			<article class="bc-card" aria-label="Aspect ratio card #1">
-				<h2 class="bc-card__heading"><code>1x1</code></h2>	
-				<picture class="bc-card__media is-1x1"></picture>
-			</article>
-			<article class="bc-card" aria-label="Aspect ratio card #2">
-				<h2 class="bc-card__heading"><code>3x2</code></h2>	
-				<picture class="bc-card__media is-3x2"></picture>
-			</article>
-			<article class="bc-card" aria-label="Aspect ratio card #3">
-				<h2 class="bc-card__heading"><code>4x3</code></h2>	
-				<picture class="bc-card__media is-4x3"></picture>
-			</article>
-			<article class="bc-card" aria-label="Aspect ratio card #4">
-				<h2 class="bc-card__heading"><code>5x4</code></h2>	
-				<picture class="bc-card__media is-5x4"></picture>
-			</article>
-			<article class="bc-card" aria-label="Aspect ratio card #5">
-				<h2 class="bc-card__heading"><code>16x9</code></h2>	
-				<picture class="bc-card__media is-16x9"></picture>
-			</article>
-		</div>
-	</section><!-- //Plain cards -->
-	<section class="bc-hero--full-screen" aria-label="Flickity hero media slider">
-			<h1><code>Flickity hero slider</code></h1>
-		<div class="bc-flickity">
-			<article class="bc-hero__body bc-grid--x4 bc-flickity__slide" aria-label="Hero slide #1">
-				<picture class="bc-hero__media">
-					<img src="assets/media/irish-family.jpg" alt="Placeholder image">
-				</picture><!-- // .bc-hero__media -->
-				<div class="bc-hero__body__content">
-					<h1 class="bc-hero__heading">Hero slide #1</h1>
-					<p class="bc-hero__tagline">Hero tagline</p>
-					<a class="bc-hero__link bc-arrow-link" href="javascript:void()">
+				</div>
+				<div class="bc-areas-of-practice__other__area">
+					<h3>Conveyancing</h3>
+					<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.</p>
+					<a class="bc-arrow-link" href="javascript:void()">
 						Link to follow
 						<svg class="svg-icon">
 							<use xlink:href="assets/media/svg/icons/bc-svgs.svg#arrow"></use>
 						</svg>
 					</a>
-				</div><!-- // .bc-hero__body__content -->
-				<div class="bc-media-overlay"></div>
-			</article><!-- // .bc-flickity__slide -->
-			<article class="bc-hero__body bc-grid--x4 bc-flickity__slide" aria-label="Hero slide #2">
-				<picture class="bc-hero__media">
-					<img src="assets/media/irish-family.jpg" alt="Placeholder image">
-				</picture><!-- // .bc-hero__media -->
-				<div class="bc-hero__body__content">
-					<h1 class="bc-hero__heading">Hero slide #2</h1>
-					<p class="bc-hero__tagline">Hero tagline</p>
-					<a class="bc-hero__link bc-arrow-link" href="javascript:void()">
-						Link to follow
-						<svg class="svg-icon">
-							<use xlink:href="assets/media/svg/icons/bc-svgs.svg#arrow"></use>
-						</svg>
-					</a>
-				</div><!-- // .bc-hero__body__content -->
-				<div class="bc-media-overlay"></div><!-- // .bc-media-overlay -->
-			</article><!-- // .bc-flickity__slide -->
-			<article class="bc-hero__body bc-grid--x4 bc-flickity__slide bc-flickity__slide--video" aria-label="Hero slide #3">
-				<div class="bc-hero__media">
-					<iframe title="Bruno Gonzalez" width height src="https://www.youtube.com/embed/zDfQ6WIBAfE?rel=0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-				</div><!-- // .bc-hero__media -->
-			</article><!-- // .bc-flickity__slide -->
-		</div><!-- //.bc-flickity -->
+				</div>
+			</div>
+		</article>
 	</section>
-	<!-- // Flickity hero slider -->
-	<section class="bc-container" aria-label="Flickity card slider">
-		<h1><code>Flickity card slider</code></h1>
-		<div class="bc-flickity bc-flickity--card-slider">
-			<article class="bc-card bc-flickity__slide" aria-label="Card slide #1">
-				<picture class="bc-card__media is-3x2"></picture>
-				<h2 class="bc-card__heading">Hello heading #1</h2>	
-				<p>Hello paragraph</p>
-				<a href="javascript:void()">Link right here</a>
-			</article>
-			<article class="bc-card bc-flickity__slide" aria-label="Card slide #2">
-				<picture class="bc-card__media is-3x2"></picture>
-				<h2 class="bc-card__heading">Hello heading #2</h2>	
-				<p>Hello paragraph</p>
-				<a href="javascript:void()">Link right here</a>
-			</article>
-			<article class="bc-card bc-flickity__slide" aria-label="Card slide #3">
-				<picture class="bc-card__media is-3x2"></picture>
-				<h2 class="bc-card__heading">Hello heading #3</h2>	
-				<p>Hello paragraph</p>
-				<a href="single-page.html">Link right here</a>
-			</article>
-			<article class="bc-card bc-flickity__slide" aria-label="Card slide #4">
-				<picture class="bc-card__media is-3x2"></picture>
-				<h2 class="bc-card__heading">Hello heading #4</h2>	
-				<p>Hello paragraph</p>
-				<a href="single-page.html">Link right here</a>
-			</article>
-		</div><!-- // .bc-flickity -->
-	</section><!-- // Flickity card slider -->
-	<section class="bc-container bc-text-component" aria-label="Flickity text slider">
-		<h1><code>Flickity text slider</code></h1>
+	<section class="bc-container bc-about-us bc-bg-brand-primary">
+		<article class="bc-two-column-layout--wide">
+			<div class="bc-two-column-layout--wide__media">
+				<picture class="bc-two-column-layout--wide__media__media is-1x1">
+					<img src="assets/media/irish-family.jpg" alt="Placeholder image">
+				</picture>
+			</div>
+			<div class="bc-two-column-layout--wide__text">
+				<p class="bc-content-label">How we work</p>
+				<h2 class="bc-bg-text bc-two-column-layout--wide__heading">These cases are perfectly simple and easy to distinguish. In a free hour, when our power of choice is untrammelled.</h2>
+				<p class="bc-arrow-link">
+					<a href="javascript:void(0)">Read about our approach</a>
+					<svg class="svg-icon">
+						<use xlink:href="assets/media/svg/icons/bc-svgs.svg#arrow"></use>
+					</svg>
+				</p>
+			</div>
+		</article>
+	</section>
+	
+	
+	<section class="bc-container bc-testimonials bc-bg-shade-f0" aria-label="Flickity text slider">
+		<div class="bc-content-component--text">
+			<h1 class="bc-content-label">Testimonials</h1> 
+		</div>
 		<div class="bc-flickity bc-flickity--text-slider"> 
-				<article class="bc-card bc-card--plain-text bc-flickity__slide" aria-label="Text slide #1"> 
-					<h2 class="bc-card__heading">Text slide #1</h2>	
-					<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
-					<a href="single-page.html">Link right here</a>
+				<article class="bc-flickity__slide" aria-label="Text slide #1"> 
+					
+					<p class="bc-testimonials__text">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+					
 				</article><!-- // .bc-card bc-card--plain-text -->
-				<article class="bc-card bc-card--plain-text bc-flickity__slide" aria-label="Text slide #2"> 
-					<h2 class="bc-card__heading">Text slide #2</h2>	
-					<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
-					<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
-					<a href="single-page.html">Link right here</a>
+				<article class="bc-flickity__slide" aria-label="Text slide #2"> 
+					<p class="bc-testimonials__text">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+					<p class="bc-testimonials__text">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
 				</article><!-- // .bc-card bc-card--plain-text -->
 		</div><!-- //.bc-flickity -->
 	</section><!-- // Flickity text slider -->

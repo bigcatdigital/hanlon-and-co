@@ -428,13 +428,11 @@
 				cellAlign: (sliderType === 'card-slider' ) ? 'left' : 'center',
 				groupCells: true
 			});
+			
 			flkSlider.select(0);
-			//const $button = $bcFlkSlider.querySelector('.flickity-button');
 			
 			flkSlider.on('change', () => {
-				
 				const videoSlides = $bcFlkSlider.querySelectorAll('.bc-flickity__slide--video');
-				
 				if (videoSlides && videoSlides.length > 0) {
 					Array.from(videoSlides).forEach((slide) => {
 						slide.querySelector('iframe').stopVideo();
