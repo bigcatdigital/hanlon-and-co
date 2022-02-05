@@ -108,10 +108,10 @@ iframe
 @media screen and (min-width: 600px) 
 	html
 		font-size: 16px
-@media screen and (min-width: 1200px) 
+@media screen and (min-width: 1400px) 
 	html
 		font-size: 18px
-@media screen and (min-width: 1400px) 
+@media screen and (min-width: 1800px) 
 	html
 		font-size: 20px
 
@@ -174,7 +174,7 @@ iframe
 .bc-content-label
 	margin-bottom: calc(var(--vertical-unit) * 0.25 )
 	font-family: var(--sans-font) 
-	font-size: var(--text-gr--1)
+	font-size: var(--text-gr--2) 
 	font-weight: var(--light-weight)
 	text-transform: uppercase
 	
@@ -269,6 +269,17 @@ iframe
 /* Hero components overlay */
 .bc-hero 
 	padding-top: calc(var(--vertical-unit) * 8) 
+	&.bc-inner-page-heading 
+		padding-top: 		var(--vertical-unit)
+		padding-bottom: var(--vertical-unit)
+		.bc-hero__heading
+			font-size: var(--text-gr-03)
+			margin-bottom: 0
+		.bc-media-overlay
+			background-color: rgba($brand-primary, 0.72)
+		.bc-content-label
+			color: inherit
+			margin-bottom: calc(var(--vertical-unit) * 0)
 	color: var(--white)
 	.bc-cross-overlay
 		display: none
@@ -320,6 +331,9 @@ iframe
 		padding-bottom: 0 
 		& &__body
 			padding-bottom: calc(var(--vertical-unit) * 4)
+		&.bc-inner-page-heading
+			.bc-hero__body
+				padding-bottom: 0
 		.bc-hero__heading 
 			margin-top: 0 
 			margin-bottom: calc(var(--vertical-unit) / 2)
@@ -370,7 +384,11 @@ iframe
 					order: 0
 				&__media-column
 					order: 1	
-		
+.bc-breadcrumbs-nav
+	&.bc-container
+		padding-top: calc(var(--vertical-unit) * 0.618)
+		padding-bottom: calc(var(--vertical-unit) * 0.618)
+
 .bc-card 
 	& &__media 
 		background-color: var(--shade-60) 
@@ -463,28 +481,90 @@ iframe
 			
 .bc-areas-of-practice
 	background-color: var(--white)
-	& &__more
-		&.bc-content-component--text
-			margin-bottom: var(--vertical-unit)
-		@media screen and (max-width: calc(#{$tablet-large} -1px))
-			padding-top: calc(var(--vertical-unit) * 2)
+	& &__main
+		&.bc-content-component
+			margin-bottom: calc(var(--vertical-unit) * 1)
+		&__area
+			width: 100%
+			position: relative
+		&__media
+			picture
+				display: block
+		&__text
+			position: absolute
+			z-index: 20
+			height: 100%
+			width: 100%
+			top: 0
+			left: 0
+			color: var(--white)	
+			padding-left:  var(--gutter)
+			padding-right: var(--gutter)
+			@include makeFlexbox(column, flex-end, stretch)
+			p 
+				font-weight: var(--font-weight)
+			.bc-arrow-link
+				> span
+					font-weight: var(--bold-font-weight)
+					@include makeLinkActive
+			.svg-icon
+				fill: white
+			&::after
+				display: none
+			@include linkHover()
+				.bc-arrow-link
+					> span
+						&::after
+							height: 0.300rem
+				.bc-media-overlay
+					background-color: rgba($black, 0.4) 
+		&__sub-head
+			margin-bottom: 0
+			padding-bottom: calc(var(--vertical-unit) * 0.382)
+			border-bottom: #{(1/14)}rem solid var(--white)
+		&__description
+			height: 0
+			overflow: hidden	
+			transition: height 420ms ease-out
+		&__sub-head, p
+			color: inherit
+		.bc-media-overlay
+			z-index: -1
+		@media screen and (min-width: $tablet)
+			@include makeGrid($grid-columns: repeat(2, 1fr), $grid-rows: auto, $gap: 0)
+			
+		
 	& &__other
-		width: calc(100% + var(--gutter) * 3)
-		margin-left: calc(var(--gutter) * -1.5)
-		margin-right: calc(var(--gutter) * -1.5)
-		padding-left: calc(var(--gutter) * 1.5)
-		padding-right: calc(var(--gutter) * 1.5)
 		background-image: linear-gradient(0deg, rgba($white, 0), var(--white))
+		&__area
+			@include makeFlexbox(column, space-between)
 		hr
 			margin-bottom: calc(var(--vertical-unit) * 2)
 			border-top-color: var(--brand-primary)
+		&__icon
+			@include makeFlexbox(row, flex-start, center)
+			margin-bottom: calc(var(--vertical-unit) * 0.5)
+			height: calc(var(--text-gr-04) * 1.382 * 1)
+			width:  calc(var(--text-gr-04) * 1.382 * 1)
+			.svg-icon
+				height: calc(var(--text-gr-04) * 1.382 * 1)
+				width:  calc(var(--text-gr-04) * 1.382 * 1)
+				max-width: none
+				max-height: none
+				fill: var(--brand-primary)
+	.bc-areas-of-practice__litigation
+		.bc-areas-of-practice__other__icon
+			
+			.svg-icon
+				height: calc(var(--text-gr-04) * 1.282 * 1)
+				width:  calc(var(--text-gr-04) * 1.282 * 1)
 		&__area
 			margin-bottom: calc(var(--vertical-unit) * 1)
 	@media screen and (min-width: $tablet)
 		& &__other
 			margin-left: auto
 			margin-right: auto
-			padding-top: calc(var(--vertical-unit) * 3)
+			padding-top: calc(var(--vertical-unit) * 1)
 			padding-left: 0
 			padding-right: 0
 			@include makeGrid($grid-columns: repeat(3, 1fr))

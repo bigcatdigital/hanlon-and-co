@@ -453,9 +453,50 @@
 		});// end $bcTwinComponents for each
 	}//end if $bcTwinComponents is > 0
 
-
+	/* Areas of Practice descriptions */
+	
+	
+	const $mainAreasTexts = Array.from(document.querySelectorAll('.bc-areas-of-practice__main__text'));
+	function showHideDescriptionText($mainAreasText) {
+		const $descriptionText = $mainAreasText.querySelector('.bc-areas-of-practice__main__description');
+		console.log(`Description style.height: ${$descriptionText.style.height}`);
+		if ($descriptionText.getAttribute('data-hidden') === 'true') {
+			console.log($descriptionText.scrollHeight); 
+			$descriptionText.style.height = $descriptionText.scrollHeight + 'px';
+			$descriptionText.setAttribute('data-hidden', 'false');
+		} else {
+			console.log(`Is hidden ${$descriptionText.getAttribute('data-hidden')}`); 
+			$descriptionText.style.height = null;
+			$descriptionText.setAttribute('data-hidden', 'true');
+		}
+		
+	}
+	function setUpPracticeAreas() {
+		$mainAreasTexts.forEach(($textArea) => {
+			if (window.outerWidth < 768) {
+				$textArea.addEventListener('click', (evt) => {
+					evt.preventDefault();
+					if ($textArea.getAttribute('data-click-trapped')) {
+						window.location = $textArea.getAttribute('href');
+						return;
+					}
+					showHideDescriptionText($textArea) ;
+					$textArea.setAttribute('data-click-trapped', true);	
+				});	
+			} else {
+				$textArea.addEventListener('mouseenter', (evt) => {
+					showHideDescriptionText($textArea) ;
+				});
+				$textArea.addEventListener('mouseleave', (evt) => {
+					showHideDescriptionText($textArea) ;
+				});
+			}
+		});
+	}
+	setUpPracticeAreas();
 	window.addEventListener('resize', () => {
-		//mainNavigationSetup();
+		console.log(`Window resize`);
+		setUpPracticeAreas();
 	});
 	/* Window scroll events */
 	window.addEventListener('scroll', () => {
@@ -477,7 +518,6 @@
 		let heroFooterObserver = new IntersectionObserver(heroFooterIntersection, heroFooterObsOpts);
 		heroFooterObserver.observe(document.querySelector('.bc-hero'));
 		const $heroFooter = document.querySelector('.bc-hero__footer');
-
 	});
 	
 	
