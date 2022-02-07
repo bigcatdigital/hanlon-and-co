@@ -1,0 +1,31 @@
+@import '_globals.scss'
+/* Project global variables */
+
+--content-max-width: 88%;
+--text-max-width: 	 44rem;
+
+/* Spacing */
+--line-height:			1.45;
+--feature-padding: calc(var(--gutter) * 3);
+
+/* Colour */
+--brand-primary: 		var(--brand-primary);	
+--brand-darker: 		var(--brand-darker);
+--brand-secondary: 	var(--brand-secondary);
+
+/* Spot colours */
+--red: 					#EC1C24;
+--dark-red:			#CA1622;
+--orange:				#F6921E;
+
+--light-green:	#37B34A;
+--green:				green;
+--mid-green:		#3B857E;
+
+--light-blue:		#05D1D1;
+--purple:				#651A7B	;
+--indigo:				#2E3191;
+--violet:				#C934F5;
+
+
+/*$colors: ('primary': ($brand-primary, $brand-primary-invert), 'secondary': ($brand-secondary, $brand-secondary-invert), 'brand-darker': ($brand-darker, $brand-darker-invert), 'red':  ($red, $red-invert), 'orange': ($orange, $orange-invert), 'yellow': ($yellow, $yellow-invert), 'green': ($green, $green-invert), 'mid-green': ($mid-green, $mid-green-invert), 'blue': ($blue, $blue-invert), 'purple': ($purple, $purple-invert), 'violet': ($violet, $violet-invert))*/

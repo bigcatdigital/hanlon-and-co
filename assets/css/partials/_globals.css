@@ -1,0 +1,121 @@
+/* Global variables */
+
+/* Layout */
+--body-margin:		0; 			
+--body-padding:		0; 			
+--content-max-width: 1600px;
+--text-max-width: 	 none;  	
+
+--base-cols: 4;	
+
+//* Spacing */
+--line-height: 		1.5;	
+--vertical-unit: 	1rem * var(--line-height);
+--gutter: 				var(--vertical-unit);
+
+
+--heading-line-height: 1.3;
+
+//*Responsive */
+--x-small: 		340px;		
+--small: 			540px;		
+--tablet: 			768px;		
+--large: 			1024px;	
+--x-large: 		1240px;		
+--xx-large:	 	1366px;	
+--xxx-large: 	1440px;	
+--big-screen: 	1600px;		
+
+//** Colour */
+--black: 			#000; 			
+--text-black:	#303030; 	
+
+//* Colours */
+--brand-primary: 		var(--black);	
+/* --brand-darker: 			darken($brand-primary, 16.8%) */
+--brand-secondary: 	#707070;	
+
+--red: 							#f00;		
+--orange:						#f60; 		
+--yellow:						#ff0; 		
+--green:						#0f0; 		
+--blue:							#00f; 		
+--purple:						#4B0082;	
+--violet:						#9400D3;	
+
+/*--colors: ('primary': $brand-primary, 'secondary': $brand-secondary, 'red':  $red, 'orange': $orange, 'yellow': $yellow, 'green': $green, 'blue': $blue, 'purple': $purple, 'violet': $violet)*/
+
+
+/* Shades */
+--white:				 #fff;			
+--shade-01:		#f6f6f6;		
+--shade-02:		#f0f0f0;		
+--shade-03:		#e0e0e0;		 
+--shade-04:		#e0e0e0;		
+--shade-05:		#808080;		
+
+/*--shades: ('white': $white, 'shade-01': $shade-01, 'shade-02': $shade-02, 'shade-03': $shade-03, 'shade-04': $shade-04, 'shade-05': $shade-05)*/
+
+/*--white-inverse: 	invert($white)
+--black-inverse: 	invert($black)
+--red-inverse: 		invert($red)
+--orange-inverse: 	invert($orange)
+--yellow-inverse: 	invert($yellow)
+--green-inverse: 	invert($green)
+--blue-inverse: 		invert($blue)
+--purple-inverse: 	invert($purple)
+--violet-inverse: 	invert($violet) */
+
+/*
+$colours: $white, $black, $red, $orange, $yellow, $green, $blue, $purple, $violet 
+$colour-inverses: $white-inverse, $black-inverse, $red-inverse, $orange-inverse, $yellow-inverse, $green-inverse, $blue-inverse, $purple-inverse, $violet-inverse	
+*/
+
+
+//** Typography  **/
+--serif-font-family: 			'Quattrocento';
+--sans-font-family: 			'Quattrocento Sans';
+
+--base-font-family: 		var(--serif-font-family);
+--heading-font-family: 	var(--sans-font-family);
+
+--text-colour: 		var(--text-black);	
+--heading-colour: var(--text-colour);		
+--link-color:			var(--brand-primary);		
+/*--link-active-color:			darken($brand-primary, 20%)*/
+
+--text-line-height: var(--line-height);
+--heading-line-height: 1.3;
+--heading-font-weight: 700;
+
+//* Pentatonic scale n = 5; r = 2 */
+--text--2:		0.758rem;		
+--text--1:		0.8706rem;		
+--text-00: 			 1rem;				
+--text-01: 	1.1487rem;		
+--text-02: 	1.3195rem;		
+--text-03: 	1.5157rem;  	
+--text-04: 	1.7411rem;		
+--text-10: 	2.0rem;			
+--text-11: 	2.2974rem;		 
+--text-12: 	2.6390rem;		
+
+--x-small-text:			var(--text--2);
+--small-text:				var(--text--1);
+--regular-text: 		var(--text-00);
+--h5-text: 					var(--text-01);
+--h4-text: 					var(--text-02);
+--h3-text: 					var(--text-03);
+--h2-text: 					var(--text-04);
+--h1-text: 					var(--text-10);
+--large-text: 			var(--text-11);
+--super-large-text: var(--text-12);
+
+--h5:			var(--h5-text);
+--h4:			var(--h4-text);
+--h3:			var(--h3-text);
+--h2:			var(--h2-text);
+--h1:			var(--h1-text);
+
+/* Project overrides */
+--heading-font-weight: 300

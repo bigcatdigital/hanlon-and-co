@@ -99,7 +99,7 @@
     "copy:githubroot": "rsync -av --exclude={'node-development','*.php'} ../ ../../../",
     "criticalcss": "node ./bc_modules/critical-css.js",
     "server": "node live-server.js",
-    "copy:docs": "cp -r ./dist/. ./docs/"
+    "copy:docs": "cp -r --exclude={'node-development','*.php'} themes/handlon-and-co-2022/. ./"
   },
   "dependencies": {
     "flickity": "^2.2.2",

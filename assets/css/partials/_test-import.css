@@ -1,0 +1,4 @@
+@import '_global-vars.css';
+article > * {
+	margin-top: 1.5rem;
+}
