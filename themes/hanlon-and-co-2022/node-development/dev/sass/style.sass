@@ -460,16 +460,34 @@ iframe
 			margin-bottom: 0
 .bc-flickity--text-slider
 	padding-bottom: calc(var(--vertical-unit) * 3)
-	@media screen and (max-width: calc(#{$tablet-large} - 1px))
+	@media screen and (max-width: calc(#{$tablet} - 1px))
 		.flickity-prev-next-button
 			&.previous 
 				transform: translate(-25%, 50%)
 			&.next 
 				transform: translate(25%, 50%)
-	@media screen and (min-width: $tablet-large)
+	@media screen and (min-width: $tablet)
 		margin-left:  auto
 		margin-right: auto
-		max-width: 70.72%
+		padding-bottom: 0
+		margin-bottom: calc(var(--vertical-unit) * 2)
+		max-width: 90%
+		.flickity-button
+			bottom: auto
+			top: 50%
+			transform: translateY(-50%)
+		.flickity-prev-next-button
+			&.previous
+				//left: calc(var(--gutter) * -1.618)
+				left: -10%
+				transform: translateX(50%)
+			&.next
+				//right: calc(var(--gutter) * -1.618)
+				right: -10%
+				transform: translateX(-50%)
+		.flickity-page-dots
+			bottom: calc(var(--vertical-unit) * -1.618)
+
 	.bc-flickity__slide
 		padding: 0 calc(var(--gutter) / 2)
 		background-color: transparent
@@ -483,13 +501,19 @@ iframe
 	background-color: var(--white)
 	& &__main
 		&.bc-content-component
-			margin-bottom: calc(var(--vertical-unit) * 1)
+			width: calc(100% + var(--gutter) * 3)
+			margin-right: 	calc(var(--gutter) * -1.5)
+			margin-bottom: 	calc(var(--vertical-unit) * 1)
+			margin-left: 		calc(var(--gutter) * -1.5)
 		&__area
 			width: 100%
 			position: relative
 		&__media
 			picture
 				display: block
+			&__media
+				@include objectEmbed
+				padding-top: 100%
 		&__text
 			position: absolute
 			z-index: 20
@@ -498,8 +522,8 @@ iframe
 			top: 0
 			left: 0
 			color: var(--white)	
-			padding-left:  var(--gutter)
-			padding-right: var(--gutter)
+			padding-left:  calc(var(--gutter) * 1.5)
+			padding-right: calc(var(--gutter) * 1.5)
 			@include makeFlexbox(column, flex-end, stretch)
 			p 
 				font-weight: var(--font-weight)
@@ -532,12 +556,19 @@ iframe
 			z-index: -1
 		@media screen and (min-width: $tablet)
 			@include makeGrid($grid-columns: repeat(2, 1fr), $grid-rows: auto, $gap: 0)
-			
-		
+			.bc-areas-of-practice__main__media__media
+				padding-top: calc(5 / 4 * 100%)
+		@media screen and (min-width: $tablet-large)	
+			.bc-areas-of-practice__main__media__media
+				padding-top: calc(4 / 5 * 100%)
+
 	& &__other
+		&.bc-content-component
+			padding-top: calc(var(--vertical-unit) * 2)
 		background-image: linear-gradient(0deg, rgba($white, 0), var(--white))
 		&__area
 			@include makeFlexbox(column, space-between)
+			margin-bottom: calc(var(--vertical-unit) * 1)
 		hr
 			margin-bottom: calc(var(--vertical-unit) * 2)
 			border-top-color: var(--brand-primary)
