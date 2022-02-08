@@ -9,7 +9,7 @@
 	<link rel="stylesheet" href="./assets/css/vendor/flickity.min.css" />
 	<link rel="stylesheet" href="./assets/css/style.css" />
 </head>  
-<body>
+<body class="bc-inner-page">
 	<div class="bc-body-wrap">
 		<nav class="bc-is-hidden" aria-label="Skip to main content link" >
 			<a href="#main-site-content" title="Skip site menu, go to to main site content"></a>	
@@ -71,89 +71,95 @@
 				<li>Single page</li>
 			</ul>
 		</nav>
-		<main id="main-site-content" class="bc-container">
-			<div class="bc-text-component">
-				<h1>Top heading</h1>	
-				<p class="bc-intro-paragraph">Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.</p>
-				<p>Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur?</p>
-				<p>Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?</p>
-				<ul>
-					<li>Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus.</li>
-					<li>Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae.</li>
-				</ul>
-				<ol>
-					<li>Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus.</li>
-					<li>Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae.</li>
-				</ol>
-				<table>
-					<caption class="bc-is-hidden">This is a table</caption>
-					<thead>
-						<tr>
-							<th>Col #1 heading</th>
-							<th>Col #2 heading</th>
-							<th>Col #3 heading</th>
-							<th>Col #4 heading</th>
-						</tr>
-					</thead>
-					<tbody>	
-						<tr>
-							<td>Neque porro quisquam est, qui dolorem.</td>
-							<td>Neque porro quisquam est, qui dolorem.</td>
-							<td>Neque porro quisquam est, qui dolorem.</td>
-							<td>Neque porro quisquam est, qui dolorem.</td>
-						
-						</tr>
-					</tbody>	
-				</table>
-				<blockquote>
+		<main id="main-site-content" class="">
+			<section class="bc-container bc-inner-page__main-section">
+				<article class="bc-text-component">
+					<h1>Top heading</h1>	
+					<p class="bc-intro-paragraph">Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.</p>
+					<p>Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur?</p>
 					<p>Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?</p>
-					<p><strong>- who said this</strong></p>
-				</blockquote>
-				<h2>Heading #2</h2>
-				<h3>Heading #3</h3>
-				<h4>Heading #4</h4>
-				<h5>Heading #5</h5>
-				<h6>Heading #6</h6>
-				<h2>Show/hide accordion component</h2>
-				<div class="bc-show-hide"> 
-					<a href="javascript:void(0)" class="bc-show-hide__header bc-show-hide__toggle" title="Click to show the block body">
-						Block header #1
-						<svg class="svg-icon bc-show-hide-icon bc-show-hide-icon__show">
-							<use xlink:href="assets/media/svg/icons/bc-svgs.svg#carat--down"></use>
-						</svg>	
-						<svg class="svg-icon bc-show-hide-icon bc-show-hide-icon__hide">
-							<use xlink:href="assets/media/svg/icons/bc-svgs.svg#carat--down"></use>
-						</svg>	
-					</a><!-- // .bc-show-hide__header -->
-					<article class="bc-show-hide__body">
-						<h2>Block body #1</h2>
-						<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>
-						<p>Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur?</p>
-						<p>Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur? At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.</p>
-						<p>Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae.</p>
-						<a href="javascript:void" class="bc-show-hide__hide" title="Close transcript">Close transcript</a>
-					</article><!-- // .bc-show-hide__body -->
-					<a href="javascript:void(0)" class="bc-show-hide__header bc-show-hide__toggle" title="Click to show the block body">
-						Block header #2
-						<svg class="svg-icon bc-show-hide-icon bc-show-hide-icon__show">
-							<use xlink:href="assets/media/svg/icons/bc-svgs.svg#carat--down"></use>
-						</svg>	
-						<svg class="svg-icon bc-show-hide-icon bc-show-hide-icon__hide">
-							<use xlink:href="assets/media/svg/icons/bc-svgs.svg#carat--down"></use>
-						</svg>	
-					</a><!-- // .bc-show-hide__header -->
-					<article class="bc-show-hide__body">
-						<h2>Block body #2</h2>
-						<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>
-						<p>Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur?</p>
-						<p>Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur? At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.</p>
-						<p>Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae.</p>
-						<a href="javascript:void" class="bc-show-hide__hide" title="Close transcript">Close transcript</a>
-					</article><!-- // .bc-show-hide__body -->
-				</div><!-- // .bc-show-hide -->
-			</div><!-- // .bc-text-component -->
-			
-		</main>
+					<ul>
+						<li>Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus.</li>
+						<li>Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae.</li>
+					</ul>
+					<ol>
+						<li>Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus.</li>
+						<li>Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae.</li>
+					</ol>
+					<table>
+						<caption class="bc-is-hidden">This is a table</caption>
+						<thead>
+							<tr>
+								<th>Col #1 heading</th>
+								<th>Col #2 heading</th>
+								<th>Col #3 heading</th>
+								<th>Col #4 heading</th>
+							</tr>
+						</thead>
+						<tbody>	
+							<tr>
+								<td>Neque porro quisquam est, qui dolorem.</td>
+								<td>Neque porro quisquam est, qui dolorem.</td>
+								<td>Neque porro quisquam est, qui dolorem.</td>
+								<td>Neque porro quisquam est, qui dolorem.</td>
+							
+							</tr>
+						</tbody>	
+					</table>
+					<blockquote>
+						<p>Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?</p>
+						<p><strong>- who said this</strong></p>
+					</blockquote>
+					<h2>Heading #2</h2>
+					<h3>Heading #3</h3>
+					<h4>Heading #4</h4>
+					<h5>Heading #5</h5>
+					<h6>Heading #6</h6>
+					
+				</article><!-- // .bc-text-component -->
+			</section><!-- // . bc-inner-page__main-->
+			<section class="bc-container bc-inner-page__section">
+				<article class="bc-text-component">
+					<h2>Show/hide accordion component</h2>
+					<div class="bc-show-hide"> 
+						<a href="javascript:void(0)" class="bc-show-hide__header bc-show-hide__toggle" title="Click to show the block body">
+							Block header #1
+							<svg class="svg-icon bc-show-hide-icon bc-show-hide-icon__show">
+								<use xlink:href="assets/media/svg/icons/bc-svgs.svg#carat--down"></use>
+							</svg>	
+							<svg class="svg-icon bc-show-hide-icon bc-show-hide-icon__hide">
+								<use xlink:href="assets/media/svg/icons/bc-svgs.svg#carat--down"></use>
+							</svg>	
+						</a><!-- // .bc-show-hide__header -->
+						<article class="bc-show-hide__body">
+							<h2>Block body #1</h2>
+							<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>
+							<p>Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur?</p>
+							<p>Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur? At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.</p>
+							<p>Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae.</p>
+							<a href="javascript:void" class="bc-show-hide__hide" title="Close transcript">Close transcript</a>
+						</article><!-- // .bc-show-hide__body -->
+						<a href="javascript:void(0)" class="bc-show-hide__header bc-show-hide__toggle" title="Click to show the block body">
+							Block header #2
+							<svg class="svg-icon bc-show-hide-icon bc-show-hide-icon__show">
+								<use xlink:href="assets/media/svg/icons/bc-svgs.svg#carat--down"></use>
+							</svg>	
+							<svg class="svg-icon bc-show-hide-icon bc-show-hide-icon__hide">
+								<use xlink:href="assets/media/svg/icons/bc-svgs.svg#carat--down"></use>
+							</svg>	
+						</a><!-- // .bc-show-hide__header -->
+						<article class="bc-show-hide__body">
+							<h2>Block body #2</h2>
+							<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>
+							<p>Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur?</p>
+							<p>Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur? At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.</p>
+							<p>Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae.</p>
+							<a href="javascript:void" class="bc-show-hide__hide" title="Close transcript">Close transcript</a>
+						</article><!-- // .bc-show-hide__body -->
+					</div><!-- // .bc-show-hide -->
+				</article><!-- // .bc-text-component-->
+			</section><!-- // .bc-inner-page__section -->
+		</main><!-- // #main-site-content -->
 		<section class="bc-container bc-testimonials bc-bg-shade-f0" aria-label="Flickity text slider">
 			<div class="bc-content-component--text">
 				<h1 class="bc-content-label">Testimonials</h1> 

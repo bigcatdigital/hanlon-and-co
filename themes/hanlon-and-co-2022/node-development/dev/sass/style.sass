@@ -13,7 +13,7 @@ body
 	font-size: 100% 
 	line-height: 1.45  
 	background-color: var(--shade-f0)
-
+	color: var(--text-black)
 h1, h2, h3, h4, h5
 	margin-top: 0
 	line-height: 1.35
@@ -172,10 +172,10 @@ iframe
 .bc-bg-shade-f0
 	@include makeBackgroundFill($shade-f0, $text-black)
 .bc-content-label
-	margin-bottom: calc(var(--vertical-unit) * 0.25 )
+	margin-bottom: calc(var(--vertical-unit) * 0.618 )
 	font-family: var(--sans-font) 
 	font-size: var(--text-gr--2) 
-	font-weight: var(--light-weight)
+	font-weight: var(--bold-font-weight)
 	text-transform: uppercase
 	
 /* Hanlon & Co logo -- text */
@@ -448,6 +448,9 @@ iframe
 			padding-top: 		var(--vertical-unit)
 			padding-bottom: var(--vertical-unit)
 .bc-testimonials		
+	&.bc-container
+		padding-top: 		calc(var(--vertical-unit) * 3)
+		padding-bottom: calc(var(--vertical-unit) * 3)
 	& .bc-content-component--text
 		margin-bottom: calc(var(--vertical-unit) * 0)	
 	& &__heading
@@ -480,13 +483,17 @@ iframe
 			&.previous
 				//left: calc(var(--gutter) * -1.618)
 				left: -10%
-				transform: translateX(50%)
+				transform: translate(50%, -50%)
 			&.next
 				//right: calc(var(--gutter) * -1.618)
 				right: -10%
-				transform: translateX(-50%)
+				transform: translate(-50%, -50)
 		.flickity-page-dots
 			bottom: calc(var(--vertical-unit) * -1.618)
+	@media screen and (min-width: $tablet-large)
+		margin-left: auto
+		margin-right: auto
+		max-width: 70.72%
 
 	.bc-flickity__slide
 		padding: 0 calc(var(--gutter) / 2)
@@ -564,7 +571,7 @@ iframe
 
 	& &__other
 		&.bc-content-component
-			padding-top: calc(var(--vertical-unit) * 2)
+			padding-top: 0
 		background-image: linear-gradient(0deg, rgba($white, 0), var(--white))
 		&__area
 			@include makeFlexbox(column, space-between)
@@ -574,21 +581,24 @@ iframe
 			border-top-color: var(--brand-primary)
 		&__icon
 			@include makeFlexbox(row, flex-start, center)
-			margin-bottom: calc(var(--vertical-unit) * 0.5)
 			height: calc(var(--text-gr-04) * 1.382 * 1)
-			width:  calc(var(--text-gr-04) * 1.382 * 1)
+			width:  calc(100% + 1.5rem)
+			margin-right: calc(var(--gutter) * -0.5)
+			margin-left: 	calc(var(--gutter) * -0.5)
+			margin-bottom: calc(var(--vertical-unit) * 1)
+			padding: calc(var(--vertical-unit) * 1.618) calc(var(--gutter) * 0.5)
+			background-color: var(--brand-primary)
 			.svg-icon
 				height: calc(var(--text-gr-04) * 1.382 * 1)
 				width:  calc(var(--text-gr-04) * 1.382 * 1)
 				max-width: none
 				max-height: none
-				fill: var(--brand-primary)
+				fill: var(--white)
 	.bc-areas-of-practice__litigation
 		.bc-areas-of-practice__other__icon
-			
 			.svg-icon
-				height: calc(var(--text-gr-04) * 1.282 * 1)
-				width:  calc(var(--text-gr-04) * 1.282 * 1)
+				height: calc(var(--text-gr-04) * 1.2 * 1)
+				width:  calc(var(--text-gr-04) * 1.2 * 1)
 		&__area
 			margin-bottom: calc(var(--vertical-unit) * 1)
 	@media screen and (min-width: $tablet)
@@ -650,8 +660,65 @@ iframe
 			padding-left:  calc(var(--gutter) * 2)
 			padding-right: calc(var(--gutter) * 2)
 		
-
-
+.bc-inner-page
+	.bc-breadcrumbs-nav, & &__main-section
+		background-color: var(--white)
+	.bc-container
+		padding-top: calc(var(--vertical-unit) * 1)
+		padding-bottom: calc(var(--vertical-unit) * 1)
+	& &__section:not(.bc-inner-page__main-section)
+		background-image: linear-gradient(180deg, var(--white), $shade-f0)
+	& &__feature-image
+		margin-bottom: calc(var(--vertical-unit) * 1)
+	.bc-object-embed
+		margin-bottom: var(--vertical-unit)
+	
+.bc-media-embed--placeholder
+	background-color: var(--text-black)
+	> p 
+		position: absolute
+		left: var(--gutter)
+		bottom: var(--vertical-unit)
+		color: var(--white)
+.bc-show-hide
+	&.bc-areas-of-practice 
+		background-color: transparent
+		.bc-show-hide__header
+			justify-content: flex-end
+			font-family: var(--sans-font)
+			font-size: var(--text--2)
+			@include linkHover()
+				&::after
+					height: 0
+	& &__hide
+		margin-bottom: 0
+	& &__hide__wrap
+		@include makeFlexbox($justify: flex-end, $align: center)
+		.bc-show-hide-icon
+			margin-left: calc(var(--gutter) * 0.618)
+			transform: none
+	.bc-show-hide-icon__wrap
+		@include makeFlexbox(row, center, center, $inline: true)
+		margin-left: var(--gutter)
+		padding: calc(var(--gutter) * (0.382 * 0.5)) calc(var(--gutter) * 0.618)
+		border-radius: calc(var(--text-gr-04) / 2)
+		border: #{(1/14)}rem solid var(--black)
+		background-color: var(--brand-secondary)
+	.bc-show-hide-icon
+		position: static
+		width: auto
+		height: auto
+		transform: rotate(45deg)
+		max-width:  calc(var(--text-gr--2) * 1.25)
+		max-height: calc(var(--text-gr--2) * 1.25)
+		transition: transform 420ms ease-out
+	
+	& &__toggle
+		&.bc-is-active
+			.bc-show-hide-icon
+				opacity: 1
+				transform: rotate(90deg)
+			
 
 
 

@@ -29,8 +29,10 @@
 		padding-left:  calc((100% - var(--max-content-width)) / 2)
 		padding-right: calc((100% - var(--max-content-width)) / 2)
 @mixin arContainer
+	display: block
 	position: relative
 	overflow: hidden
+	min-width: 100%
 	@content
 	picture, iframe, object, img
 		position: absolute
@@ -61,7 +63,7 @@
 	position: 		relative
 	overflow: hidden
 	padding-top: 	$ar
-	width: 				100%
+	min-width: 				100%
 	object, iframe, img
 		position: 	absolute
 		top: 0
