@@ -224,48 +224,112 @@ iframe
 	color: inherit
 /* Inner page header */
 .bc-site-header
+	align-items: center
+	height: 7vh
 	padding-top: 		calc(var(--vertical-unit) /2 )
 	padding-bottom: calc(var(--vertical-unit) /2 )
 	background-color: var(--white)
+	
+	.bc-site-logo
+		transition: none
 	& &__home-link
 		@include linkHover
 			&::after
 				height: 0
 	& &__menu-link
+		z-index: 35
 		&__close
-			//fill: var(--white)
+			fill: var(--white)
 	& &__main-navigation
 		align-items: stretch
+		padding-top: 7vh
+		background-color: var(--brand-primary)
+		z-index: 30
+		hr
+			border-top: 1px solid var(--white)
+			width: 100%
+			padding: 0
+			margin: 0 
 		&__list 
 			margin: 0
 			padding: calc(var(--vertical-unit)) 0 calc(var(--vertical-unit) * 2) 
 			list-style: none	
 			font-size: var(--text-gr-01)
+			a
+				display: inline-flex
+				padding: 0
+				color: var(--white)
 		li
 			padding: calc(var(--vertical-unit) / 2) calc(var(--gutter))
 		&__item
-			> a
-				display: inline-flex
-				padding: 0
-				//color: var(--white)
 			font-family: var(--serif-font)
 			font-size: var(--text-gr-01) 
+			> ul 
+				margin-top: 	 calc(var(--vertical-unit) * 0.5)
+				margin-bottom: calc(var(--vertical-unit) * 0)
+				padding-left: 0
+				li 
+					padding-top: calc(var(--vertical-unit) / 4)
+					padding-bottom: calc(var(--vertical-unit) / 4)
+				a 
+					font-size: var(--text-gr-00)
+					font-family: var(--base-font)
+					font-weight: var(--font-weight)
+			&.bc-contact-link
+				display: none
 		&__contact
 			padding: calc(var(--vertical-unit) * 2) var(--gutter)
 			background-color: var(--white)
 			color: var(--text-black)
-		@media screen and (max-width: calc(#{$tablet-large} - 1px))	
-			background-color: var(--brand-primary)
-		@media screen and (min-width: $tablet-large)	
-			&__list 
-				@include makeFlexbox()
-				padding-top: 0
-				padding-bottom: 0 
+			
+		@media screen and (min-width: $tablet-large)
+			padding-top: 10vh	
+	&.bc-is-active
+		.bc-site-logo
+			color: var(--white)
+			z-index: 35
+		& .bc-site-header__menu-link
+			z-index: 35
+	@media screen and (min-width: $tablet-large)
+		height: 10vh
+		& &__main-navigation
+			left: 0
+			right: 0
+			width: 100%
+			height: 0
+			opacity: 0
+			overflow: hidden
+			transition: opacity 600ms ease-out
 			&__item
-				font-size: var(--text-00)
-				font-weight: var(--font-weight)
+				&.bc-contact-link
+					display: initial
+			&-wrap
+				flex: 1 1 100%
+				@include makeFlexbox(row, $align: stretch)
+			&__list 
+				flex: 1 1 61.8%
+				opacity: 0
+				transform-origin: 0 0  
+				transform: translateY(calc(var(--vertical-unit) * 1))
+				transition: opacity 840ms ease-out 420ms, transform 840ms ease-out 420ms 
 			&__contact
-				display: none
+				flex: 1 1 38.2%
+				color: var(--white)
+				opacity: 0
+				background-color: lighten($brand-primary, 4%)  
+				transition: opacity 1600ms ease-out 1000ms
+				h1, h2, h3, h4, p, a
+					color: inherit
+		&.bc-is-active
+			& .bc-site-header__main-navigation
+				height: auto 
+				background-color: var(--brand-primary)
+				&__list 
+					border-color: var(--white)
+					opacity: 1
+					transform: translateY(0)
+				&__contact
+					opacity: 1
 /* Hero components overlay */
 .bc-hero 
 	padding-top: calc(var(--vertical-unit) * 8) 
@@ -462,7 +526,7 @@ iframe
 		&:last-child
 			margin-bottom: 0
 .bc-flickity--text-slider
-	padding-bottom: calc(var(--vertical-unit) * 3)
+	padding-bottom: calc(var(--vertical-unit) * 4)
 	@media screen and (max-width: calc(#{$tablet} - 1px))
 		.flickity-prev-next-button
 			&.previous 
@@ -508,10 +572,7 @@ iframe
 	background-color: var(--white)
 	& &__main
 		&.bc-content-component
-			width: calc(100% + var(--gutter) * 3)
-			margin-right: 	calc(var(--gutter) * -1.5)
-			margin-bottom: 	calc(var(--vertical-unit) * 1)
-			margin-left: 		calc(var(--gutter) * -1.5)
+			margin-bottom: 	calc(var(--vertical-unit) * 2)
 		&__area
 			width: 100%
 			position: relative
@@ -562,7 +623,7 @@ iframe
 		.bc-media-overlay
 			z-index: -1
 		@media screen and (min-width: $tablet)
-			@include makeGrid($grid-columns: repeat(2, 1fr), $grid-rows: auto, $gap: 0)
+			@include makeGrid($grid-columns: repeat(2, 1fr), $grid-rows: auto, $gap: $gutter)
 			.bc-areas-of-practice__main__media__media
 				padding-top: calc(5 / 4 * 100%)
 		@media screen and (min-width: $tablet-large)	
@@ -570,37 +631,20 @@ iframe
 				padding-top: calc(4 / 5 * 100%)
 
 	& &__other
+		background-image: linear-gradient(0deg, rgba($white, 0), var(--white))
 		&.bc-content-component
 			padding-top: 0
-		background-image: linear-gradient(0deg, rgba($white, 0), var(--white))
 		&__area
 			@include makeFlexbox(column, space-between)
 			margin-bottom: calc(var(--vertical-unit) * 1)
-		hr
-			margin-bottom: calc(var(--vertical-unit) * 2)
-			border-top-color: var(--brand-primary)
 		&__icon
-			@include makeFlexbox(row, flex-start, center)
-			height: calc(var(--text-gr-04) * 1.382 * 1)
-			width:  calc(100% + 1.5rem)
-			margin-right: calc(var(--gutter) * -0.5)
-			margin-left: 	calc(var(--gutter) * -0.5)
+			height: calc(var(--text-gr-04) * 1.382)
+			width:  calc(var(--text-gr-04) * 1.382)
 			margin-bottom: calc(var(--vertical-unit) * 1)
-			padding: calc(var(--vertical-unit) * 1.618) calc(var(--gutter) * 0.5)
-			background-color: var(--brand-primary)
-			.svg-icon
-				height: calc(var(--text-gr-04) * 1.382 * 1)
-				width:  calc(var(--text-gr-04) * 1.382 * 1)
-				max-width: none
-				max-height: none
-				fill: var(--white)
-	.bc-areas-of-practice__litigation
-		.bc-areas-of-practice__other__icon
-			.svg-icon
-				height: calc(var(--text-gr-04) * 1.2 * 1)
-				width:  calc(var(--text-gr-04) * 1.2 * 1)
-		&__area
-			margin-bottom: calc(var(--vertical-unit) * 1)
+			max-width: none
+			max-height: none
+			fill: var(--brand-primary)
+
 	@media screen and (min-width: $tablet)
 		& &__other
 			margin-left: auto
@@ -609,8 +653,10 @@ iframe
 			padding-left: 0
 			padding-right: 0
 			@include makeGrid($grid-columns: repeat(3, 1fr))
-			hr 
-				display: none
+			&__area
+				margin-bottom: 0
+				.bc-arrow-link
+					margin-bottom: 0
 /** Custom components **/
 .bc-bg-text
 	font-family: var(--heading-font)

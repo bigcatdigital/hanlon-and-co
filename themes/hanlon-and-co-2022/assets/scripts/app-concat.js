@@ -374,9 +374,9 @@
 	/* Main site navigation */
 	function mainNavigationSetup() {
 		debug = false;
-		if (window.outerWidth >= 1024 ) {
-			return true;
-		}
+		//if (window.outerWidth >= 1024 ) {
+		//	return true;
+		//}
 		const $siteHeader = document.querySelector('.bc-site-header');
 		const $siteHeaderMenuLink = document.querySelector('.bc-site-header__menu-link');
 		const $siteHeaderMainNav = document.querySelector('.bc-site-header__main-navigation');
@@ -397,7 +397,10 @@
 		*/
 		function menuIconClickHandler(evt) {
 			evt.preventDefault();
-			$siteHeader.classList.toggle('bc-is-active'); 
+			requestAnimationFrame(() => {
+				$siteHeader.classList.toggle('bc-is-active'); 
+			});
+			
 			if (debug) {
 				console.log(`Header class list: ${$siteHeader.classList}`);
 			}

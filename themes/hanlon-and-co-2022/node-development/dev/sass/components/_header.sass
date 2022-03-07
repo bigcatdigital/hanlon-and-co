@@ -14,8 +14,6 @@
 		@include linkHover 
 			&::after 
 				height: 0
-		@media screen and (min-width: #{$tablet-large})
-			display: none
 	& &__main-navigation
 		--header-height: #{($vertical-unit * 3 + 2rem)} 
 		@include makeFlexbox($direction: column)
@@ -36,21 +34,6 @@
 			> a 
 				@include makeFlexbox($align: center, $justify: left)
 				padding: calc(#{$vertical-unit} / 2) var(--gutter)
-		@media screen and (min-width: #{$tablet-large}) 
-			flex-direction: row 
-			position: static
-			width: auto
-			height: auto
-			padding-top: 0
-			top: auto
-			left: auto
-			right: auto
-			background-color: transparent
-			transition: none
-			&__item
-				width: auto 
-				> a
-					justify-content: center
 	& &__title
 		width: 100%
 		margin-top: var(--vertical-unit)
