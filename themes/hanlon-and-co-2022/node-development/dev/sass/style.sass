@@ -127,7 +127,7 @@ iframe
 
 /* Layout */
 .bc-container 
-	padding: calc(var(--vertical-unit) * 2) calc(var(--gutter) * 1)
+	padding: calc(var(--vertical-unit) * 3) calc(var(--gutter) * 1)
 .bc-content-component
 	margin-bottom: calc(var(--vertical-unit) * 2) 
 	&:last-of-type, &:last-child
@@ -513,18 +513,35 @@ iframe
 			padding-bottom: var(--vertical-unit)
 .bc-testimonials		
 	&.bc-container
-		padding-top: 		calc(var(--vertical-unit) * 3)
-		padding-bottom: calc(var(--vertical-unit) * 3)
+		padding-top: 		calc(var(--vertical-unit) * 5)
+		padding-bottom: calc(var(--vertical-unit) * 5)
 	& .bc-content-component--text
 		margin-bottom: calc(var(--vertical-unit) * 0)	
+	& &__quote-icon 
+		&.bc-content-component--text
+			display: block
+		position: absolute
+		top: 0
+		left: 0
+		.svg-icon
+			fill: var(--shade-d0)
+			
+			max-width: 8rem
+			max-height: 8rem
+			z-index: -1
 	& &__heading
 		margin-bottom: 0
 	& &__text
-		font-family: var(--serif-font)
+		font-family: var(--serif-font) 
 		font-size: var(--text-gr-02)
 		font-weight: var(--bold-font-weight)
 		&:last-child
 			margin-bottom: 0
+	.bc-flickity--text-slider
+		padding-top: 2rem
+		@media screen and (min-width: $tablet)
+			.flickity-button
+				top: calc(50% + 1rem)
 .bc-flickity--text-slider
 	padding-bottom: calc(var(--vertical-unit) * 4)
 	@media screen and (max-width: calc(#{$tablet} - 1px))
@@ -551,7 +568,7 @@ iframe
 			&.next
 				//right: calc(var(--gutter) * -1.618)
 				right: -10%
-				transform: translate(-50%, -50)
+				transform: translate(-50%, -50%)
 		.flickity-page-dots
 			bottom: calc(var(--vertical-unit) * -1.618)
 	@media screen and (min-width: $tablet-large)
@@ -570,6 +587,8 @@ iframe
 			
 .bc-areas-of-practice
 	background-color: var(--white)
+	@media screen and (max-width: calc(#{$tablet-large} - 1px))
+		padding-bottom: calc(var(--vertical-unit) * 1)
 	& &__main
 		&.bc-content-component
 			margin-bottom: 	calc(var(--vertical-unit) * 2)
@@ -581,7 +600,7 @@ iframe
 				display: block
 			&__media
 				@include objectEmbed
-				padding-top: 100%
+				padding-top: calc(10/8*100%)
 		&__text
 			position: absolute
 			z-index: 20
@@ -628,7 +647,7 @@ iframe
 				padding-top: calc(5 / 4 * 100%)
 		@media screen and (min-width: $tablet-large)	
 			.bc-areas-of-practice__main__media__media
-				padding-top: calc(4 / 5 * 100%)
+				padding-top: calc(8 / 10 * 100%)
 
 	& &__other
 		background-image: linear-gradient(0deg, rgba($white, 0), var(--white))
@@ -638,8 +657,8 @@ iframe
 			@include makeFlexbox(column, space-between)
 			margin-bottom: calc(var(--vertical-unit) * 1)
 		&__icon
-			height: calc(var(--text-gr-04) * 1.382)
-			width:  calc(var(--text-gr-04) * 1.382)
+			height: calc(var(--text-gr-04) * 1)
+			width:  calc(var(--text-gr-04) * 1)
 			margin-bottom: calc(var(--vertical-unit) * 1)
 			max-width: none
 			max-height: none
@@ -680,16 +699,15 @@ iframe
 		> a 
 			font-weight: var(--font-weight)
 .bc-about-us
+	background-color: var(--white)
 	&.bc-container
 		padding-top: 0
-		padding-bottom: 0
 .bc-two-column-layout--wide
-	width: calc(100% + (var(--gutter)* 3))
-	margin-left:  calc(var(--gutter) * -1.5)
-	margin-right: calc(var(--gutter) * -1.5)
 	& &__media
 		&__media
 			display: block
+			@include objectEmbed
+			padding-top: 100% 
 	& &__text
 		@include makeFlexbox(column, center, flex-start)
 		padding: calc(var(--vertical-unit)*3) calc((var(--gutter) * 2)
@@ -702,6 +720,9 @@ iframe
 		gap: 0
 		grid-template-columns: 1fr 1fr
 		grid-template-rows: auto
+		& &__media
+			&__media
+				padding-top: calc(8/10*100%)
 		& &__text
 			padding-left:  calc(var(--gutter) * 2)
 			padding-right: calc(var(--gutter) * 2)
