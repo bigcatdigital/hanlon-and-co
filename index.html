@@ -12,7 +12,7 @@
 	<noscript><link rel="stylesheet" href="./assets/css/vendor/flickity.min.css"></noscript>
 	<link rel="preload" href="./assets/css/style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
 	<noscript><link rel="stylesheet" href="./assets/css/style.css"></noscript>
-<script>!function(n){"use strict";n.loadCSS||(n.loadCSS=function(){});var o=loadCSS.relpreload={};if(o.support=function(){var e;try{e=n.document.createElement("link").relList.supports("preload")}catch(t){e=!1}return function(){return e}}(),o.bindMediaToggle=function(t){var e=t.media||"all";function a(){t.addEventListener?t.removeEventListener("load",a):t.attachEvent&&t.detachEvent("onload",a),t.setAttribute("onload",null),t.media=e}t.addEventListener?t.addEventListener("load",a):t.attachEvent&&t.attachEvent("onload",a),setTimeout(function(){t.rel="stylesheet",t.media="only x"}),setTimeout(a,3e3)},o.poly=function(){if(!o.support())for(var t=n.document.getElementsByTagName("link"),e=0;e<t.length;e++){var a=t[e];"preload"!==a.rel||"style"!==a.getAttribute("as")||a.getAttribute("data-loadcss")||(a.setAttribute("data-loadcss",!0),o.bindMediaToggle(a))}},!o.support()){o.poly();var t=n.setInterval(o.poly,500);n.addEventListener?n.addEventListener("load",function(){o.poly(),n.clearInterval(t)}):n.attachEvent&&n.attachEvent("onload",function(){o.poly(),n.clearInterval(t)})}"undefined"!=typeof exports?exports.loadCSS=loadCSS:n.loadCSS=loadCSS}("undefined"!=typeof global?global:this);</script>
+	<script>!function(n){"use strict";n.loadCSS||(n.loadCSS=function(){});var o=loadCSS.relpreload={};if(o.support=function(){var e;try{e=n.document.createElement("link").relList.supports("preload")}catch(t){e=!1}return function(){return e}}(),o.bindMediaToggle=function(t){var e=t.media||"all";function a(){t.addEventListener?t.removeEventListener("load",a):t.attachEvent&&t.detachEvent("onload",a),t.setAttribute("onload",null),t.media=e}t.addEventListener?t.addEventListener("load",a):t.attachEvent&&t.attachEvent("onload",a),setTimeout(function(){t.rel="stylesheet",t.media="only x"}),setTimeout(a,3e3)},o.poly=function(){if(!o.support())for(var t=n.document.getElementsByTagName("link"),e=0;e<t.length;e++){var a=t[e];"preload"!==a.rel||"style"!==a.getAttribute("as")||a.getAttribute("data-loadcss")||(a.setAttribute("data-loadcss",!0),o.bindMediaToggle(a))}},!o.support()){o.poly();var t=n.setInterval(o.poly,500);n.addEventListener?n.addEventListener("load",function(){o.poly(),n.clearInterval(t)}):n.attachEvent&&n.attachEvent("onload",function(){o.poly(),n.clearInterval(t)})}"undefined"!=typeof exports?exports.loadCSS=loadCSS:n.loadCSS=loadCSS}("undefined"!=typeof global?global:this);</script>
 </head>  
 <body>
 <div class="bc-body-wrap">
@@ -67,13 +67,13 @@
 		</div><!-- // .bc-site-header__main-navigation  -->
 	</header><!-- // .bc-site-header -->
 	<!-- Hero -->
-	<section id="main-site-content" class="bc-hero bc-landing-hero" aria-label="Full screen hero">
+	<section id="main-site-content" class="bc-hero bc-hero--full-screen" aria-label="Full screen hero">
 		<picture class="bc-hero__media">
 			<img src="assets/media/irish-family.jpg" alt="Placeholder image">
 		</picture>
 		<article class="bc-hero__body bc-content-component--media-padded" aria-label="Main page hero body">
 			<div class="bc-hero__body__content ">
-				<div class="bc-feature-header">
+				<div class="bc-feature-header--hero">
 					<div class="bc-feature-header__col">
 						<h1 class="bc-hero__heading bc-site-logo">
 							Hanlon<span>&amp;</span><br />
@@ -85,16 +85,24 @@
 				</div><!-- // .bc-feature-header -->
 			</div><!-- // .bc-hero__body__content -->
 		</article>
-		<footer class="bc-hero__footer">
+		<!-- <footer class="bc-hero__footer">
 			<a href="#body-content" class="bc-hero__footer__scroll bc-scroll-link">
 				More about us
 				<svg class="svg-icon">
 					<use xlink:href="assets/media/svg/icons/bc-svgs.svg#carat--down"></use>
 				</svg>
 			</a>
-		</footer><!-- // .bc-hero__footer -->
+		</footer> // .bc-hero__footer -->
 		<div class="bc-media-overlay"></div> 
-		<svg id="cross-over-svg" class="bc-cross-overlay" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 8"><defs><style>.cross-over-element{fill:#231f20;opacity:0.36;}</style></defs><title>cross-over</title><polygon id="cross-over-svg__left" class="cross-over-element" points="0 0 0 40 400 40 0 0"/><polygon id="cross-over-svg__right" class="cross-over-element" points="400 0 400 40 0 40 400 0"/></svg>
+		<!-- Generator: Adobe Illustrator 22.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+		<svg version="1.1" id="cross-over-svg" class="bc-cross-overlay" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"  viewBox="0 0 400 100">
+			<style type="text/css">
+				.cross-over-element{opacity:0.36;fill:#231F20;enable-background:new    ;}
+			</style>
+			<title>cross-over</title>
+			<polygon id="cross-over-svg__left"  class="cross-over-element" points="0,0 0,100 247,100 "/>
+			<polygon id="cross-over-svg__right" class="cross-over-element" points="400,0 400,100 0,100 "/>
+		</svg>
 	</section>
 	<!-- // Hero -->
 	<section id="" class="bc-container bc-areas-of-practice">
@@ -190,6 +198,14 @@
 				</div><!-- // .bc-areas-of-practice__other__area -->
 			</div><!-- .bc-areas-of-practice__other -->
 		</article><!-- // .bc-content-component -->
+		<svg version="1.1" id="cross-over-svg" class="bc-cross-overlay" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"  viewBox="0 0 400 100">
+			<style type="text/css">
+				.cross-over-element{opacity:0.36;fill:#231F20;enable-background:new    ;}
+			</style>
+			<title>cross-over</title>
+			<polygon id="cross-over-svg__left"  class="cross-over-element" points="0,0 0,100 247,100 "/>
+			<polygon id="cross-over-svg__right" class="cross-over-element" points="400,0 400,100 0,100 "/>
+		</svg>
 	</section><!-- // .bc-container.bc-areas-of-practice -->
 	<section class="bc-container bc-about-us ">
 		<article class="bc-two-column-layout--wide bc-bg-brand-primary"> 

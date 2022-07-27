@@ -4,7 +4,7 @@
 
 *
 	box-sizing: border-box
-$small-font-size: 16px
+$small-font-size: 15px 
 html
 	font-size: $small-font-size
 body
@@ -128,7 +128,7 @@ iframe
 
 /* Layout */
 .bc-container 
-	padding: calc(var(--vertical-unit) * 3) calc(var(--gutter) * 1)
+	padding: calc(var(--vertical-unit) * 3) calc(var(--gutter) * 0.5)
 .bc-content-component
 	margin-bottom: calc(var(--vertical-unit) * 2) 
 	&:last-of-type, &:last-child
@@ -152,7 +152,7 @@ iframe
 	z-index: 10
 	.cross-over-element
 		fill: var(--brand-primary)
-		opacity: 1
+		
 
 /* Custom utils */
 @mixin makeBackgroundFill($fill-color, $fill-invert)
@@ -220,6 +220,10 @@ iframe
 		width: calc(var(--text-gr-04) * 1)
 		height: #{(6/14)}rem
 		background-color: rgba($brand-secondary, 1) 
+	&--hero
+		@extend .bc-feature-header
+		&::before 
+			height: 0
 	@media screen and (min-width: $tablet)
 		//display: grid
 		gap: var(--gutter)
@@ -338,6 +342,7 @@ iframe
 					opacity: 1
 /* Hero components overlay */
 .bc-hero 
+	color: var(--white)
 	padding-top: calc(var(--vertical-unit) * 8) 
 	&.bc-inner-page-heading 
 		padding-top: 		var(--vertical-unit)
@@ -350,12 +355,12 @@ iframe
 		.bc-content-label
 			color: inherit
 			margin-bottom: calc(var(--vertical-unit) * 0)
-	color: var(--white)
+	& &__media
+		img
+			filter: grayscale(100%)
 	.bc-cross-overlay
-		display: none
-	&.bc-landing-hero
-		padding-bottom: 0
-		background-color: var(--white) 
+		display: initial
+	
 	& &__heading
 		position: relative
 		margin-top: 6% //offset aganist the footer extra heignt
@@ -381,10 +386,9 @@ iframe
 		text-transform: uppercase
 		letter-spacing: calc(var(--gutter) / (1.618 * 1.618))
 	& &__body 
-		@include makeFlexbox($direction: column, $justify: center) 
-		padding-left:  calc(var(--gutter) / 2)
-		padding-right: calc(var(--gutter) / 2)
-		padding-bottom: calc(var(--vertical-unit) * 4)
+		@include makeFlexbox($direction: column, $justify: flex-end) 
+		padding-left:  calc(var(--gutter) * 0.5)
+		padding-right: calc(var(--gutter) * 0.5)
 	& &__footer
 		flex-basis: 12.5%
 		justify-content: center
@@ -397,6 +401,8 @@ iframe
 				margin-top: calc(var(--vertical-unit) / 6)
 				max-width:  var(--text-02) 
 				max-height: var(--text-02)
+	&.bc-hero--full-screen
+		height: calc(100vh - 7vh)
 	@media screen and (min-width: $tablet) 
 		padding-bottom: 0 
 		& &__body
@@ -589,6 +595,7 @@ iframe
 	
 			
 .bc-areas-of-practice
+	position: relative
 	background-color: var(--white)
 	@media screen and (max-width: calc(#{$tablet-large} - 1px))
 		padding-bottom: calc(var(--vertical-unit) * 1)
