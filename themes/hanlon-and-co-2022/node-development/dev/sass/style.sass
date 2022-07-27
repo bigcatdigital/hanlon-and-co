@@ -4,8 +4,9 @@
 
 *
 	box-sizing: border-box
+$small-font-size: 15px
 html
-	font-size: 14px
+	font-size: $small-font-size
 body
 	margin: var(--body-margin, 0) 
 	padding: var(--body-margin, 0)
@@ -171,7 +172,12 @@ iframe
 	@include makeBackgroundFill($brand-primary, $white)
 .bc-bg-shade-f0
 	@include makeBackgroundFill($shade-f0, $text-black)
+	
 .bc-content-label
+	&__wrap
+		@media screen and (min-width: $tablet-large)
+			@include makeFlexbox($align: center)
+
 	margin-bottom: calc(var(--vertical-unit) * 0.618 )
 	font-family: var(--sans-font) 
 	font-size: var(--text-gr--2) 
@@ -520,14 +526,11 @@ iframe
 	& &__quote-icon 
 		&.bc-content-component--text
 			display: block
-		position: absolute
-		top: 0
-		left: 0
+		
 		.svg-icon
-			fill: rgba($brand-primary, 0.36)
-			
-			max-width: 8rem
-			max-height: 8rem
+			fill: rgba($shade-a0, 0.64)			
+			max-width: 	4rem
+			max-height: 4rem
 			z-index: -1
 	& &__heading
 		margin-bottom: 0
