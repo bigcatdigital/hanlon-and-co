@@ -524,7 +524,7 @@
   box-sizing: border-box; }
 
 html {
-  font-size: 14px; }
+  font-size: 15px; }
 
 body {
   margin: var(--body-margin, 0);
@@ -1207,6 +1207,13 @@ table {
   font-size: var(--text-gr--2);
   font-weight: var(--bold-font-weight);
   text-transform: uppercase; }
+  @media screen and (min-width: 1024px) {
+    .bc-content-label__wrap {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      flex-wrap: nowrap;
+      align-items: center; } }
 
 /* Hanlon & Co logo -- text */
 .bc-site-logo, .bc-site-logo--white {
@@ -1561,17 +1568,14 @@ table {
 .bc-testimonials .bc-content-component--text {
   margin-bottom: calc(var(--vertical-unit) * 0); }
 
-.bc-testimonials .bc-testimonials__quote-icon {
-  position: absolute;
-  top: 0;
-  left: 0; }
-  .bc-testimonials .bc-testimonials__quote-icon.bc-content-component--text {
-    display: block; }
-  .bc-testimonials .bc-testimonials__quote-icon .svg-icon {
-    fill: var(--shade-d0);
-    max-width: 8rem;
-    max-height: 8rem;
-    z-index: -1; }
+.bc-testimonials .bc-testimonials__quote-icon.bc-content-component--text {
+  display: block; }
+
+.bc-testimonials .bc-testimonials__quote-icon .svg-icon {
+  fill: rgba(159, 159, 160, 0.64);
+  max-width: 4rem;
+  max-height: 4rem;
+  z-index: -1; }
 
 .bc-testimonials .bc-testimonials__heading {
   margin-bottom: 0; }
