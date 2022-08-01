@@ -1170,7 +1170,8 @@ table {
   height: 12.5%;
   z-index: 10; }
   .bc-cross-overlay .cross-over-element {
-    fill: var(--brand-primary); }
+    fill: var(--brand-primary);
+    opacity: 0.36; }
 
 /* Custom utils */
 .bc-bg-brand-secondary {
@@ -1369,6 +1370,9 @@ table {
         .bc-site-header.bc-is-active .bc-site-header__main-navigation__contact {
           opacity: 1; } }
 
+.bc-is-filterable {
+  transition: filter 800ms ease-in-out; }
+
 /* Hero components overlay */
 .bc-hero, .bc-hero--full-screen {
   color: var(--white);
@@ -1385,7 +1389,7 @@ table {
       color: inherit;
       margin-bottom: calc(var(--vertical-unit) * 0); }
   .bc-hero .bc-hero__media img, .bc-hero--full-screen .bc-hero__media img {
-    filter: grayscale(100%); }
+    transition: filter 800ms ease-in-out; }
   .bc-hero .bc-cross-overlay, .bc-hero--full-screen .bc-cross-overlay {
     display: initial; }
   .bc-hero .bc-hero__heading, .bc-hero--full-screen .bc-hero__heading {

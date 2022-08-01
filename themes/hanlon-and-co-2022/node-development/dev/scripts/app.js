@@ -489,9 +489,11 @@
 				});	
 			} else {
 				$textArea.addEventListener('mouseenter', (evt) => {
+					evt.preventDefault();
 					showHideDescriptionText($textArea) ;
 				});
 				$textArea.addEventListener('mouseleave', (evt) => {
+					evt.preventDefault();
 					showHideDescriptionText($textArea) ;
 				});
 			}
@@ -499,32 +501,38 @@
 	}
 	setUpPracticeAreas();
 	window.addEventListener('resize', () => {
-		console.log(`Window resize`);
+		//console.log(`Window resize`);
 		setUpPracticeAreas();
 	});
-	/* Window scroll events */
-	window.addEventListener('scroll', () => {
-		let heroFooterObsOpts = {
+	function createFilterableElsObserver($filterableElement) {
+		/* Intersection Observer for filterable images */
+		let isFilterableOpts = {
 			root: null,
-			rootMargin: '100px',
-			threshold: [0, 0.25, 0.5, 0.75] 
+			rootMargin: '0px',
+			threshold: [0, 0.5, 1]
 		};
-		
-		function heroFooterIntersection(entries) {
+		function isFilterableIntersection(entries) {
 			entries.forEach((entry) => {
 				if (entry.isIntersecting) {
-					//console.log(`${entry.target} is instersecting ${entry.intersectionRatio}`);
-					$heroFooter.style.opacity = entry.intersectionRatio;
+					console.log(entry.target);
+					console.log(` is instersecting ${(entry.intersectionRatio)}`);
+					if (entry.intersectionRatio <= 1) {
+						entry.target.style.filter = `grayscale(${1 - entry.intersectionRatio})`;
+					} 
+					
+					//$filterableElement.style.filter = `grayscale(${100 - Number.parseFloat(entry.intersectionRatio).toFixed(1) * 100}%)`;
 				}
 			});
 		}
-		
-		let heroFooterObserver = new IntersectionObserver(heroFooterIntersection, heroFooterObsOpts);
-		heroFooterObserver.observe(document.querySelector('.bc-hero'));
-		const $heroFooter = document.querySelector('.bc-hero__footer');
+		let isFilterableObserver = new IntersectionObserver(isFilterableIntersection, isFilterableOpts);
+		isFilterableObserver.observe($filterableElement);
+	}//createFilterableElsObserver()
+	const $filterableElsArr = Array.from(document.querySelectorAll('.bc-is-filterable'));
+	$filterableElsArr.forEach(($el) => {
+		createFilterableElsObserver($el);
 	});
-	
-	
+
+	/* Window scroll events */
 })(window);
 /* App.js */
 
