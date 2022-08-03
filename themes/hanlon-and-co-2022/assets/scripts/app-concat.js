@@ -567,14 +567,26 @@
 			rootMargin: '0px',
 			threshold: [0, 0.5, 1]
 		};
+		//let lastIR = 0;
 		function isFilterableIntersection(entries) {
 			entries.forEach((entry) => {
 				if (entry.isIntersecting) {
-					console.log(entry.target);
-					console.log(` is instersecting ${(entry.intersectionRatio)}`);
-					if (entry.intersectionRatio <= 1) {
-						entry.target.style.filter = `grayscale(${1 - entry.intersectionRatio})`;
-					} 
+					let entryTarget = entry.target;
+					
+					//let IR = entry.intersectionRatio;
+					if (entryTarget.classList.contains('bc-is-filterable--full-screen')) {
+						if (entry.intersectionRatio <= 0.6) {
+							entryTarget.style.filter = `grayscale(100%)`;
+						} else {
+							entryTarget.style.filter = '';
+						}	
+					} else {
+						if (entry.intersectionRatio >= 0.75) {
+							entryTarget.style.filter = `grayscale(0)`;
+						} else {
+							entryTarget.style.filter = 'grayscale(100%)';
+						}
+					}
 					
 					//$filterableElement.style.filter = `grayscale(${100 - Number.parseFloat(entry.intersectionRatio).toFixed(1) * 100}%)`;
 				}
@@ -583,7 +595,7 @@
 		let isFilterableObserver = new IntersectionObserver(isFilterableIntersection, isFilterableOpts);
 		isFilterableObserver.observe($filterableElement);
 	}//createFilterableElsObserver()
-	const $filterableElsArr = Array.from(document.querySelectorAll('.bc-is-filterable'));
+	const $filterableElsArr = Array.from(document.querySelectorAll('.bc-is-filterable, .bc-is-filterable--full-screen'));
 	$filterableElsArr.forEach(($el) => {
 		createFilterableElsObserver($el);
 	});
