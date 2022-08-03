@@ -15,6 +15,8 @@ body
 	line-height: 1.45  
 	background-color: var(--shade-f0)
 	color: var(--text-black)
+	//local variables
+	--header-height: 8vh
 h1, h2, h3, h4, h5
 	margin-top: 0
 	line-height: 1.35
@@ -236,7 +238,7 @@ iframe
 /* Inner page header */
 .bc-site-header
 	align-items: center
-	height: 7vh
+	height: var(--header-height)
 	padding-top: 		calc(var(--vertical-unit) /2 )
 	padding-bottom: calc(var(--vertical-unit) /2 )
 	background-color: var(--white)
@@ -253,7 +255,7 @@ iframe
 			fill: var(--white)
 	& &__main-navigation
 		align-items: stretch
-		padding-top: 7vh
+		padding-top: var(--header-height)
 		background-color: var(--brand-primary)
 		z-index: 30
 		hr
@@ -292,17 +294,27 @@ iframe
 			padding: calc(var(--vertical-unit) * 2) var(--gutter)
 			background-color: var(--white)
 			color: var(--text-black)
-			
-		@media screen and (min-width: $tablet-large)
-			padding-top: 10vh	
+
+	
 	&.bc-is-active
 		.bc-site-logo
 			color: var(--white)
 			z-index: 35
+			transition: color 340ms ease-in
 		& .bc-site-header__menu-link
 			z-index: 35
+	@media screen and (min-width: $tablet)
+		& &__main-navigation
+			flex-direction: row
+			flex-wrap: wrap
+			align-items: flex-start
+			height: auto
+		&	&__main-navigation-wrap.bc-content-component--text
+			width: auto
+			flex: 0 0 61.8%
+		& &__main-navigation__contact, & &__main-navigation-wrap
+			align-self: stretch
 	@media screen and (min-width: $tablet-large)
-		height: 10vh
 		& &__main-navigation
 			left: 0
 			right: 0
@@ -342,7 +354,9 @@ iframe
 				&__contact
 					opacity: 1
 .bc-is-filterable
-	transition: filter 800ms ease-in
+	transition: filter 640ms ease-in
+	&--full-screen
+		transition: filter 820ms ease-in
 /* Hero components overlay */
 .bc-hero 
 	color: var(--white)
@@ -358,10 +372,7 @@ iframe
 		.bc-content-label
 			color: inherit
 			margin-bottom: calc(var(--vertical-unit) * 0)
-	& &__media
-		img
-			//filter: grayscale(100%)
-			transition: filter 800ms ease-in-out
+	
 	.bc-cross-overlay
 		display: initial
 	
@@ -406,7 +417,7 @@ iframe
 				max-width:  var(--text-02) 
 				max-height: var(--text-02)
 	&.bc-hero--full-screen
-		height: calc(100vh - 7vh)
+		height: calc(100vh - var(--header-height))
 	@media screen and (min-width: $tablet) 
 		padding-bottom: 0 
 		& &__body
@@ -531,16 +542,16 @@ iframe
 	&.bc-container
 		padding-top: 		calc(var(--vertical-unit) * 5)
 		padding-bottom: calc(var(--vertical-unit) * 5)
+		position: relative
 	& .bc-content-component--text
 		margin-bottom: calc(var(--vertical-unit) * 0)	
 	& &__quote-icon 
 		&.bc-content-component--text
 			display: block
-		
 		.svg-icon
 			fill: rgba($shade-a0, 0.64)			
-			max-width: 	4rem
-			max-height: 4rem
+			max-width: 	3rem
+			max-height: 3rem
 			z-index: -1
 	& &__heading
 		margin-bottom: 0
@@ -550,19 +561,30 @@ iframe
 		font-weight: var(--bold-font-weight)
 		&:last-child
 			margin-bottom: 0
+	.flickity-prev-next-button
+		transition: opacity 220ms ease-in
+		left: auto 
+		top: auto
+		bottom: 0
+		border: 1px solid var(--shade-30)
+		width:  calc(var(--text-gr-04) * 1.382)
+		height: calc(var(--text-gr-04) * 1.382)
+		&.previous
+			right: calc(var(--text-gr-04) * 1.382 + (var(--gutter)/1.5)) 
+		&.next 
+			right: calc(var(--gutter)/2)
+			transform: translateY(-50%) rotate(180deg) 
 	.bc-flickity--text-slider
-		padding-top: 2rem
 		@media screen and (min-width: $tablet)
 			.flickity-button
 				top: calc(50% + 1rem)
+	//@media screen and (max-width: calc(#{$tablet} - 1px))
+		
+				
 .bc-flickity--text-slider
-	padding-bottom: calc(var(--vertical-unit) * 4)
 	@media screen and (max-width: calc(#{$tablet} - 1px))
-		.flickity-prev-next-button
-			&.previous 
-				transform: translate(-25%, 50%)
-			&.next 
-				transform: translate(25%, 50%)
+		.flickity-page-dots
+			bottom: calc(var(--vertical-unit)*0.75*-1)
 	@media screen and (min-width: $tablet)
 		margin-left:  auto
 		margin-right: auto
@@ -574,10 +596,11 @@ iframe
 			top: 50%
 			transform: translateY(-50%)
 		.flickity-prev-next-button
+			z-index: 100
 			&.previous
 				//left: calc(var(--gutter) * -1.618)
 				left: -10%
-				transform: translate(50%, -50%)
+				transform: translate(50%, -50%) 
 			&.next
 				//right: calc(var(--gutter) * -1.618)
 				right: -10%
@@ -596,7 +619,8 @@ iframe
 		width: #{(44 / 14)}rem
 		height: #{(44 / 14)}rem
 		background-color: transparent 
-	
+		z-index: 100
+		
 			
 .bc-areas-of-practice
 	position: relative
