@@ -17,6 +17,8 @@ body
 	color: var(--text-black)
 	//local variables
 	--header-height: 8vh
+	@media screen and (min-width: 600px) 
+		--header-height: 10vh
 h1, h2, h3, h4, h5
 	margin-top: 0
 	line-height: 1.35
@@ -28,7 +30,8 @@ h1
 	font-family: var(--heading-font)
 	font-size: var(--text-10)
 h2
-	font-size: var(--text-02) 
+	font-family: var(--heading-font)
+	font-size: var(--text-03) 
 h3
 	font-size: var(--text-01)
 p, ul, ol, blockquote 
@@ -158,24 +161,33 @@ iframe
 		
 
 /* Custom utils */
-@mixin makeBackgroundFill($fill-color, $fill-invert)
-	@content
-	background-color: $fill-color
-	color: $fill-invert
+@mixin makeTextColor($text-color)
+	color: $text-color
 	h1, h2, h3, h4, h5, a, p, ul, li, blockquote, .bc-arrow-link .svg-icon, .flickity-button-icon
 		color: inherit
-		fill: $fill-invert
+		fill: $text-color
 	.flickity-page-dots .dot
-		background-color: $fill-invert
-
-.bc-bg-brand-secondary	
-	@include makeBackgroundFill($brand-secondary, $white)
+		background-color: $text-color
+@mixin makeBackgroundFill($fill-color-start, $fill-color-end, $fill-invert)
+	@content
+	background-color: $fill-color-start
+	background-image: linear-gradient(315deg, $fill-color-end 0%, $fill-color-start 50%, $fill-color-end 100%)
+	@include makeTextColor($fill-invert)
 
 .bc-bg-brand-primary
-	@include makeBackgroundFill($brand-primary, $white)
+	@include makeBackgroundFill($brand-primary, $brand-darker, $white) 
 .bc-bg-shade-f0
-	@include makeBackgroundFill($shade-f0, $text-black)
-	
+	@include makeBackgroundFill($shade-f0, darken($shade-f0, 10%), $text-black)
+.bc-bg-brand-primary, .bc-bg-brand-secondary, .bc-bg-shade-f0
+	.bc-object-embed
+		@include is-16x9()
+		background-color: var(--white)
+		iframe, img 
+			top:  	calc(var(--gutter) * 0.25)
+			left: 	calc(var(--gutter) * 0.25)
+			width: 	calc(100% - (var(--gutter)*0.5)
+			height: calc(100% - (var(--gutter)*0.5)
+
 .bc-content-label
 	&__wrap
 		@media screen and (min-width: $tablet-large)
@@ -574,10 +586,18 @@ iframe
 		&.next 
 			right: calc(var(--gutter)/2)
 			transform: translateY(-50%) rotate(180deg) 
-	.bc-flickity--text-slider
-		@media screen and (min-width: $tablet)
-			.flickity-button
-				top: calc(50% + 1rem)
+	@media screen and (min-width: $tablet)
+		.flickity-prev-next-button  
+			&.previous
+				right: calc((100% - 90%)/2 + var(--text-gr-04) * 1.382 + (var(--gutter)/1.5))
+			&.next 
+				right: calc((100% - 90%)/2)
+	@media screen and (min-width: $tablet-large)
+		.flickity-prev-next-button  
+			&.previous
+				right: calc((100% - 70.2%)/2 + var(--text-gr-04) * 1.382 + (var(--gutter)/1.5))
+			&.next 
+				right: calc((100% - 70.2%)/2)
 	//@media screen and (max-width: calc(#{$tablet} - 1px))
 		
 				
@@ -592,9 +612,14 @@ iframe
 		margin-bottom: calc(var(--vertical-unit) * 2)
 		max-width: 90%
 		.flickity-button
+			width: #{(44 / 14)}rem
+			height: #{(44 / 14)}rem
 			bottom: auto
 			top: 50%
+			background-color: transparent 
+			
 			transform: translateY(-50%)
+			z-index: 100
 		.flickity-prev-next-button
 			z-index: 100
 			&.previous
@@ -605,8 +630,7 @@ iframe
 				//right: calc(var(--gutter) * -1.618)
 				right: -10%
 				transform: translate(-50%, -50%)
-		.flickity-page-dots
-			bottom: calc(var(--vertical-unit) * -1.618)
+		
 	@media screen and (min-width: $tablet-large)
 		margin-left: auto
 		margin-right: auto
@@ -615,12 +639,7 @@ iframe
 	.bc-flickity__slide
 		padding: 0 calc(var(--gutter) / 2)
 		background-color: transparent
-	.flickity-prev-next-button
-		width: #{(44 / 14)}rem
-		height: #{(44 / 14)}rem
-		background-color: transparent 
-		z-index: 100
-		
+	
 			
 .bc-areas-of-practice
 	position: relative
