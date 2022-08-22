@@ -227,41 +227,64 @@ iframe
 		position: relative
 		margin-bottom: calc(var(--vertical-unit) * 0.382)
 		color: var(--brand-primary)
-	&::before 
+	&::before, &::after
 		content: " "
 		position: absolute
 		top: auto 
 		left: 0 
-		bottom: calc((var(--gutter) )  * -1.382) 
-		width: calc(var(--text-gr-04) * 1)
+		width: calc(var(--gutter) * 2)
+		background-color: var(--brand-secondary)
+	&::before 
+		bottom: calc((var(--gutter) )  * (-1.382 * 0.75)) 
 		height: #{(3/14)}rem
-		background-color: rgba($brand-secondary, 1) 
+	&::after
+		bottom: calc((var(--gutter) )  * -1.382 * 1) 
+		height: #{(1/14)}rem
 	&--hero
 		@extend .bc-feature-header
 		&::before 
 			height: 0
 	&.bc-has-dots
 		position: relative
-		padding-top: calc(var(--vertical-unit) *4)
+		padding-top: calc(var(--vertical-unit) *3.5)
+		.bc-feature-header__heading
+			background-color: rgba($white, 1)
 		#abstract-dots, .bc-abstract-dots
 			position: absolute
 			top: 0
 			left: 0
 			max-width: 	calc(var(--gutter)*3)
 			max-height: calc(var(--gutter)*3)
+			fill: var(--shade-d0)
+			&.bc-abstract-dots-4 
+				max-width: calc(var(--gutter)*6)
+		@media screen and (min-width: $tablet-large)
+			padding-top: calc(var(--vertical-unit) * (3.5 * 0.55))
+			.bc-feature-header__heading
+				margin-left:  calc(var(--gutter) *  0.33 * -1) 
+				margin-right: calc(var(--gutter) *  0.33 * -1) 
+				padding-left:  calc(var(--gutter) * 0.33) 
+				padding-right: calc(var(--gutter) * 0.33) 
+			#abstract-dots, .bc-abstract-dots
+				max-width: calc(var(--gutter)*7)
+				max-height: calc(var(--gutter) * 3.5)
+				left: calc(var(--gutter) * 2 * -1)
 	@media screen and (min-width: $tablet)
 		//display: grid
 		gap: var(--gutter)
 		grid-template-columns: repeat(2, 1fr)	
+		&::before, &::after
+			width: calc(var(--gutter) * 3)
 .bc-intro-paragraph		
 	font-size: var(--text-gr-00-5)
 	font-weight: var(--light-weight)
 	color: inherit
 
 #abstract-dots, .bc-abstract-dots
-	fill: var(--shade-c0)
+	fill: var(--shade-d0)
 	.abstract-dot
 		fill: var(--shade-e0)
+	
 /* Inner page header */
 .bc-site-header
 	align-items: center
