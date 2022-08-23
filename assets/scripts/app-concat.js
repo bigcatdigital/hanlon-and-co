@@ -544,55 +544,53 @@
 		});// end $bcTwinComponents for each
 	}//end if $bcTwinComponents is > 0
 
-	/* Areas of Practice descriptions */
-	
-	
-	const $mainAreasTexts = Array.from(document.querySelectorAll('.bc-areas-of-practice__main__text'));
-	function showHideDescriptionText($mainAreasText) {
-		const $descriptionText = $mainAreasText.querySelector('.bc-areas-of-practice__main__description');
-		console.log(`Description style.height: ${$descriptionText.style.height}`);
-		if ($descriptionText.getAttribute('data-hidden') === 'true') {
-			console.log($descriptionText.scrollHeight); 
-			$descriptionText.style.height = $descriptionText.scrollHeight + 'px';
-			$descriptionText.setAttribute('data-hidden', 'false');
-		} else {
-			console.log(`Is hidden ${$descriptionText.getAttribute('data-hidden')}`); 
-			$descriptionText.style.height = null;
-			$descriptionText.setAttribute('data-hidden', 'true');
-		}
-		
-	}
-	function setUpPracticeAreas() {
-		$mainAreasTexts.forEach(($textArea) => {
-			if (window.outerWidth < 768) {
-				$textArea.addEventListener('click', (evt) => {
-					evt.preventDefault();
-					if ($textArea.getAttribute('data-click-trapped')) {
-						window.location = $textArea.getAttribute('href');
+	/* Match height elements */
+	if (document.querySelectorAll('.bc-match-height-wrap')) {
+		let matchHeightWraps = Array.from(document.querySelectorAll('.bc-match-height-wrap'));
+		console.log('Found '+ matchHeightWraps.length + ' match height wrap(s)');
+		let targetHeight = 0;
+		matchHeightWraps.forEach((el, idx) => {
+			let $thisWrapper = el;
+			let matchElements = [];
+			if ($thisWrapper.querySelectorAll('.bc-match-height')) {
+				matchElements = Array.from($thisWrapper.querySelectorAll('.bc-match-height'));
+				matchElements.forEach((matchElement, idx, thisArr) => {
+					console.log(matchElement.style.height);
+					matchElement.style.height = null;
+					console.log(matchElement.clientHeight);
+					console.log(matchElement);
+					let thisElementStyles = getComputedStyle(matchElement);
+					let thisElHeight = matchElement.scrollHeight;
+					console.log('This matchElement height is ' + thisElHeight + ' Index is '+idx); 
+					console.log('This matchElement paddingTop is ' + thisElementStyles.paddingTop + ' Index is '+idx); 
+					console.log('This matchElement paddingBottom is ' + thisElementStyles.paddingBottom + ' Index is '+idx); 
+					//thisElHeight = thisElHeight - parseFloat(thisElementStyles.paddingTop) - parseFloat(thisElementStyles.paddingBottom);
+					console.log('This matchElement height is ' + thisElHeight + ' minus padding '+idx); 
+					if (thisElHeight > targetHeight) {
+						targetHeight = thisElHeight;
+					} else {
 						return;
 					}
-					showHideDescriptionText($textArea) ;
-					$textArea.setAttribute('data-click-trapped', true);	
-				});	
+					console.log(targetHeight + ' after ' + idx);
+				});//matchElements foreach
+				if (targetHeight > 0) {
+					matchElements.forEach((el) => {
+						console.log('Hello');
+						el.style.height = targetHeight + 'px';
+					});
+				} else {
+					return;
+				}
+				
 			} else {
-				$textArea.addEventListener('mouseenter', (evt) => {
-					evt.preventDefault();
-					showHideDescriptionText($textArea) ;
-				});
-				$textArea.addEventListener('mouseleave', (evt) => {
-					evt.preventDefault();
-					showHideDescriptionText($textArea) ;
-				});
+				return;
 			}
-		});
-	}
-	setUpPracticeAreas();
-	window.addEventListener('resize', () => {
-		//console.log(`Window resize`);
-		setUpPracticeAreas();
-	});
+
+		});//matchHeightWraps forewach
+	}//end if .bc-match-height-wrap
+	/* Intersection Observer for filterable images */
 	function createFilterableElsObserver($filterableElement) {
-		/* Intersection Observer for filterable images */
+	
 		let isFilterableOpts = {
 			root: null,
 			rootMargin: '0px',
@@ -603,11 +601,7 @@
 			entries.forEach((entry) => {
 				if (entry.isIntersecting) {
 					let entryTarget = entry.target;
-					let winWidth = window.outerWidth;
-					console.log(winWidth);
-					if (winWidth >= 768 ) {
-						console.log('Table portriat or greater');
-					}
+					
 					//let IR = entry.intersectionRatio;
 					if (entryTarget.classList.contains('bc-is-filterable--full-screen')) {
 						if (entry.intersectionRatio <= 0.6) {

@@ -141,7 +141,6 @@ iframe
 	.bc-content-component
 		padding-left: 0
 		padding-right: 0
-		
 .bc-content-component
 	@include makeFlexbox(column)
 /* Utilities 	overwrites */
@@ -158,7 +157,6 @@ iframe
 	.cross-over-element
 		fill: var(--brand-primary)
 		opacity: 0.36
-		
 
 /* Custom utils */
 @mixin makeTextColor($text-color)
@@ -192,12 +190,14 @@ iframe
 	&__wrap
 		@media screen and (min-width: $tablet-large)
 			@include makeFlexbox($align: center)
-
 	margin-bottom: calc(var(--vertical-unit) * 0.618 )
 	font-family: var(--sans-font) 
 	font-size: var(--text-gr--2) 
 	font-weight: var(--light-weight)
 	text-transform: uppercase
+
+	.bc-match-height
+		transition: height 360ms ease-out
 	
 /* Hanlon & Co logo -- text */
 .bc-site-logo 
@@ -246,11 +246,12 @@ iframe
 			height: 0
 	&.bc-has-dots
 		position: relative
-		padding-top: calc(var(--vertical-unit) *3.5)
+		
 		.bc-feature-header__heading
 			background-color: rgba($white, 1)
 		#abstract-dots, .bc-abstract-dots
 			position: absolute
+			display: none
 			top: 0
 			left: 0
 			max-width: 	calc(var(--gutter)*3)
@@ -266,9 +267,10 @@ iframe
 				padding-left:  calc(var(--gutter) * 0.33) 
 				padding-right: calc(var(--gutter) * 0.33) 
 			#abstract-dots, .bc-abstract-dots
+				display: block
 				max-width: calc(var(--gutter)*7)
 				max-height: calc(var(--gutter) * 3.5)
-				left: calc(var(--gutter) * 2 * -1)
+				left: calc(var(--gutter) * 1.5 * -1)
 	@media screen and (min-width: $tablet)
 		//display: grid
 		gap: var(--gutter)
@@ -517,8 +519,8 @@ iframe
 .bc-container.bc-has-footer
 	padding-bottom: 0
 	footer
-		height: 6vh
-		margin-top: calc(var(--vertical-unit)*1)
+		height: 8vh
+		margin-top: calc(var(--vertical-unit)*3)
 		.bc-footer__scroll
 			flex: 1 1 100%
 			width: 100%
@@ -666,7 +668,7 @@ iframe
 			padding-bottom: var(--vertical-unit)
 .bc-testimonials		
 	&.bc-container
-		padding-top: 		calc(var(--vertical-unit) * 5)
+		padding-top: 		calc(var(--vertical-unit) * 4)
 		padding-bottom: calc(var(--vertical-unit) * 5)
 		position: relative
 	& .bc-content-component--text
@@ -687,11 +689,14 @@ iframe
 		font-weight: var(--bold-font-weight)
 		&:last-child
 			margin-bottom: 0
+	.flickity-page-dots
+		bottom: calc(var(--vertical-unit) * 2 * -1)
 	.flickity-prev-next-button
 		transition: opacity 220ms ease-in
 		left: auto 
 		top: auto
 		bottom: 0
+		background-color: rgba($white, 0.64)
 		border: 1px solid var(--shade-30)
 		width:  calc(var(--text-gr-04) * 1.382)
 		height: calc(var(--text-gr-04) * 1.382)
@@ -754,7 +759,6 @@ iframe
 		padding: 0 calc(var(--gutter) / 2)
 		background-color: transparent
 	
-			
 .bc-areas-of-practice
 	position: relative
 	background-color: var(--white)
@@ -762,10 +766,12 @@ iframe
 		padding-bottom: calc(var(--vertical-unit) * 1)
 	& &__main
 		&.bc-content-component
-			margin-bottom: 	calc(var(--vertical-unit) * 2)
+			margin-bottom: 	calc(var(--vertical-unit) * 2.25)
 		&__area
-			width: 100%
 			position: relative
+			width: 100%
+			padding-bottom: calc(var(--vertical-unit)*4)
+			
 		&__media
 			picture
 				display: block
@@ -774,53 +780,61 @@ iframe
 				padding-top: calc(10/8*100%)
 		&__text
 			position: absolute
+			@include makeFlexbox(column, space-between)
+			height: auto
+			width: calc(100% - (var(--gutter)*1.5)
+			top: auto
+			left: calc(var(--gutter)*0.75)
+			right: 0
+			bottom: 0
+			padding: calc(var(--gutter)) calc(var(--vertical-unit))
+			background-color: var(--white) 
 			z-index: 20
-			height: 100%
-			width: 100%
-			top: 0
-			left: 0
-			color: var(--white)	
-			padding-left:  calc(var(--gutter) * 1.5)
-			padding-right: calc(var(--gutter) * 1.5)
-			@include makeFlexbox(column, flex-end, stretch)
-			p 
-				font-weight: var(--font-weight)
 			.bc-arrow-link
+				margin-bottom: 0
+				color: var(--brand-primary)
 				> span
 					font-weight: var(--bold-font-weight)
 					@include makeLinkActive
 			.svg-icon
-				fill: white
+				fill: var(--brand-primary)
 			&::after
 				display: none
+			.bc-media-overlay
+				opacity: 0
+				background-color: var(--shade-e0)
+				transition: opacity 380ms ease-out
+				z-index: -1
+
 			@include linkHover()
 				.bc-arrow-link
 					> span
 						&::after
 							height: 0.300rem
 				.bc-media-overlay
-					background-color: rgba($black, 0.4) 
+					opacity: 0.8
 		&__sub-head
-			font-size: var(--text-gr-02-5) 
+			font-size: var(--text-gr-02) 
 			margin-bottom: 0
-			padding-bottom: calc(var(--vertical-unit) * 0.382)
-			border-bottom: #{(1/14)}rem solid var(--white)
-		&__description
-			height: 0
-			overflow: hidden	
-			transition: height 420ms ease-out
-		&__sub-head, p
+			margin-bottom: calc(var(--vertical-unit)*0.5)
+			line-height: 1
 			color: inherit
-		.bc-media-overlay
-			z-index: -1
+		&__description
+			font-weight: var(--font-weight)
+			overflow: hidden	
+			margin-bottom: calc(var(--vertical-unit)*0.5)
+			transition: height 420ms ease-out
 		@media screen and (min-width: $tablet)
 			@include makeGrid($grid-columns: repeat(2, 1fr), $grid-rows: auto, $gap: $gutter)
 			.bc-areas-of-practice__main__media__media
 				padding-top: calc(5 / 4 * 100%)
 		@media screen and (min-width: $tablet-large)	
+			gap: 3rem
+			.bc-areas-of-practice__main__text
+				left: calc(var(--gutter) * 1.5)
+				width: calc(100% - (var(--gutter)*1.5))
 			.bc-areas-of-practice__main__media__media
 				padding-top: calc(8 / 10 * 100%)
-
 	& &__other
 		background-image: linear-gradient(0deg, rgba($white, 0), var(--white))
 		&.bc-content-component
