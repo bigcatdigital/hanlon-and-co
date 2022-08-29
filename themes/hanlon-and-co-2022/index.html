@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html class="bc-page-loading" lang="en">
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -37,33 +37,26 @@
 			<div class="bc-site-header__main-navigation-wrap bc-content-component--text">
 				<ul role="navigation"  class="bc-site-header__main-navigation__list">
 					<li class="bc-site-header__main-navigation__item"><a href="/">Home</a></li>
-					<li class="bc-site-header__main-navigation__item">
-						<a href="javascript:void(0)">Areas of Practice</a>
-						<ul>
-							<li class=""><a href="family-law.html">Family Law</a></li>
-							<li class=""><a href="insolvency.html">Insolvency</a></li>
-							<li class=""><a href="#">Litgation</a></li>
-							<li class=""><a href="#">Probate</a></li>
-							<li class=""><a href="#">Conveyancing</a></li>
+					<li class="bc-site-header__main-navigation__item bc-show-hide">
+						<a href="javascript:void(0)" class="bc-show-hide__header bc-show-hide__toggle">Areas of Practice
+							<div class="bc-show-hide-icon__wrap">
+								<svg class="svg-icon bc-show-hide-icon bc-show-hide-icon__show">
+									<use xlink:href="assets/media/svg/icons/bc-svgs.svg#close-x"></use>
+								</svg>	
+							</div>
+						</a>
+						<ul class="bc-show-hide__body">
+							<li class="bc-site-header__main-navigation__item bc-show-hide__menu-item"><a href="family-law.html">Family Law</a></li>
+							<li class="bc-site-header__main-navigation__item bc-show-hide__menu-item"><a href="insolvency.html">Insolvency</a></li>
+							<li class="bc-site-header__main-navigation__item bc-show-hide__menu-item"><a href="#">Litgation</a></li>
+							<li class="bc-site-header__main-navigation__item bc-show-hide__menu-item"><a href="#">Probate</a></li>
+							<li class="bc-site-header__main-navigation__item bc-show-hide__menu-item"><a href="#">Conveyancing</a></li>
 						</ul>	
 					</li>
-					<li class="bc-site-header__main-navigation__item"><a href="single-page.html">Single Page</a></li>
 					<li class="bc-site-header__main-navigation__item"><a href="#">About</a></li>
 					<li class="bc-site-header__main-navigation__item bc-contact-link"><a href="#">Contact</a></li>
 				</ul>	
 			</div><!-- // .bc-site-header__main-navigation-wrap -->
-			<div class="bc-site-header__main-navigation__contact">
-				<div class="bc-contact-wrap">
-					<h3>Hanlon &amp; Co Solicitors</h3>
-					<p>	6 Richmond road<br />
-					Drumcondra<br />
-					Dublin 3</p>
-
-					<p>Tel 01 836 9300</p>
-					<p>Fax 01 810 1858</p> 
-					Email: <a href="mailto:graham@hanlonandco.com">graham@hanlonandco.com</a>
-				</div>
-			</div><!-- // .bc-site-header__main-navigation__contact-->
 		</div><!-- // .bc-site-header__main-navigation  -->
 	</header><!-- // .bc-site-header -->
 	<!-- Hero -->
@@ -137,6 +130,7 @@
 					
 				</div><!-- // .bc-areas-of-practice__main__area -->
 				<div class="bc-areas-of-practice__main__area">  
+
 					<div class="bc-areas-of-practice__main__media">
 						<picture class="bc-areas-of-practice__main__media__media">
 							<img class="bc-is-filterable" data-filter-at="1" src="assets/media/irish-family.jpg" alt="Placeholder image">
@@ -159,6 +153,11 @@
 					</a><!-- // .bc-areas-of-practice__main__text -->
 				</div><!-- // .bc-areas-of-practice__main__area -->
 			</div><!-- // .bc-areas-of-practice__main -->	
+			<div class="bc-content-component--text bc-feature-sub-header bc-areas-of-practice__other__header"> 
+				<div class="bc-feature-header__col">
+					<h2 class="bc-feature-sub-header__heading">We also practice...</h2>
+				</div><!-- // .bc-feature-header__col -->
+			</div><!-- // .bc-feature-header -->
 			<div class="bc-content-component bc-areas-of-practice__other">
 				<div class="bc-areas-of-practice__other__area bc-areas-of-practice__litigation">
 					<svg class="svg-icon bc-areas-of-practice__other__icon">
@@ -216,6 +215,9 @@
 				</picture>
 			</div>
 			<div class="bc-two-column-layout--wide__text">
+				<svg class="svg-icon bc-abstract-dots bc-abstract-dots-2">  
+					<use href="assets/media/svg/abstract-dots-all.svg#abstract-dots-4"></use>
+				</svg>
 				<p class="bc-content-label">How we work</p>
 				<h2 class="bc-bg-text bc-two-column-layout--wide__heading">These cases are perfectly simple and easy to distinguish. In a free hour, when our power of choice is untrammelled.</h2>
 				<p class="bc-arrow-link">
@@ -228,8 +230,6 @@
 		</article>
 	</section>
 	<section class="bc-container bc-testimonials bc-bg-shade-f0" aria-label="Flickity text slider">
-		
-		
 		<div class="bc-content-component--text">
 			<h1 class="bc-content-label">Testimonials</h1> 
 		</div>
@@ -249,8 +249,6 @@
 				<p class="bc-testimonials__text">#3 Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
 			</article><!-- // .bc-card bc-card--plain-text -->
 		</div><!-- //.bc-flickity -->
-		<button class="flickity-button flickity-prev-next-button previous" type="button" disabled="" aria-label="Previous"><svg class="flickity-button-icon" viewBox="0 0 100 100"><path d="M 10,50 L 60,100 L 70,90 L 30,50  L 70,10 L 60,0 Z" class="arrow"></path></svg></button>
-		<button class="flickity-button flickity-prev-next-button next" type="button" aria-label="Previous"><svg class="flickity-button-icon" viewBox="0 0 100 100"><path d="M 10,50 L 60,100 L 70,90 L 30,50  L 70,10 L 60,0 Z" class="arrow"></path></svg></button>
 	</section><!-- // Flickity text slider -->
 	
 	<footer class="bc-container bc-bg-brand-primary">

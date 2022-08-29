@@ -132,7 +132,7 @@
 	S48.1,4.5,50,4.5z"/>
 </symbol><symbol id="long-arrow" viewBox="0 0 100 100"><path d="M87 0l26 26h-113v8h113l-26 26h11l30-30-30-30h-11z" transform="translate(0 33)"/></symbol><symbol id="menu-thin" viewBox="0 0 100 100">
 <path d="M99,22v6H1v-6H99z M99,47v6H1v-6H99z M1,74.5v6h98v-6H1z"/>
-</symbol><symbol id="move-icon" viewBox="0 0 100 100">
+</symbol><symbol id="minus" viewBox="0 0 100 100"><path d="M46.819,53.197l-0,-0.016l-41.599,0l-0,-6.362l41.599,-0l-0,-0.012l6.362,-0l0,0.012l41.599,-0l0,6.362l-41.599,0l0,0.016l-6.362,0Z"/></symbol><symbol id="move-icon" viewBox="0 0 100 100">
 <path d="M52.5,83.7l15.4-15.4l3.5,3.5L50,93.1L28.7,71.8l3.5-3.5l15.4,15.4V55.9h4.9V83.7z M1,41.2v-4.9h98v4.9H1z M1,11.8V6.9h98
 	v4.9H1z"/>
 </symbol><symbol id="move-right-icon" viewBox="0 0 100 100">

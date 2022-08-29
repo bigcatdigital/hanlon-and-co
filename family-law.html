@@ -1,16 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
+<html class="bc-page-loading" lang="en"> 
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Hanlon & Co Solicitors</title>
 	<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&display=swap" rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'">
-<noscript><link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&display=swap" rel="stylesheet"></noscript>
+	<noscript><link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&display=swap" rel="stylesheet"></noscript>
 	<link rel="preload" href="./assets/css/vendor/flickity.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
 	<noscript><link rel="stylesheet" href="./assets/css/vendor/flickity.min.css"></noscript>
 	<link rel="preload" href="./assets/css/style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
 	<noscript><link rel="stylesheet" href="./assets/css/style.css"></noscript>
-<script>!function(n){"use strict";n.loadCSS||(n.loadCSS=function(){});var o=loadCSS.relpreload={};if(o.support=function(){var e;try{e=n.document.createElement("link").relList.supports("preload")}catch(t){e=!1}return function(){return e}}(),o.bindMediaToggle=function(t){var e=t.media||"all";function a(){t.addEventListener?t.removeEventListener("load",a):t.attachEvent&&t.detachEvent("onload",a),t.setAttribute("onload",null),t.media=e}t.addEventListener?t.addEventListener("load",a):t.attachEvent&&t.attachEvent("onload",a),setTimeout(function(){t.rel="stylesheet",t.media="only x"}),setTimeout(a,3e3)},o.poly=function(){if(!o.support())for(var t=n.document.getElementsByTagName("link"),e=0;e<t.length;e++){var a=t[e];"preload"!==a.rel||"style"!==a.getAttribute("as")||a.getAttribute("data-loadcss")||(a.setAttribute("data-loadcss",!0),o.bindMediaToggle(a))}},!o.support()){o.poly();var t=n.setInterval(o.poly,500);n.addEventListener?n.addEventListener("load",function(){o.poly(),n.clearInterval(t)}):n.attachEvent&&n.attachEvent("onload",function(){o.poly(),n.clearInterval(t)})}"undefined"!=typeof exports?exports.loadCSS=loadCSS:n.loadCSS=loadCSS}("undefined"!=typeof global?global:this);</script>
+	<script>!function(n){"use strict";n.loadCSS||(n.loadCSS=function(){});var o=loadCSS.relpreload={};if(o.support=function(){var e;try{e=n.document.createElement("link").relList.supports("preload")}catch(t){e=!1}return function(){return e}}(),o.bindMediaToggle=function(t){var e=t.media||"all";function a(){t.addEventListener?t.removeEventListener("load",a):t.attachEvent&&t.detachEvent("onload",a),t.setAttribute("onload",null),t.media=e}t.addEventListener?t.addEventListener("load",a):t.attachEvent&&t.attachEvent("onload",a),setTimeout(function(){t.rel="stylesheet",t.media="only x"}),setTimeout(a,3e3)},o.poly=function(){if(!o.support())for(var t=n.document.getElementsByTagName("link"),e=0;e<t.length;e++){var a=t[e];"preload"!==a.rel||"style"!==a.getAttribute("as")||a.getAttribute("data-loadcss")||(a.setAttribute("data-loadcss",!0),o.bindMediaToggle(a))}},!o.support()){o.poly();var t=n.setInterval(o.poly,500);n.addEventListener?n.addEventListener("load",function(){o.poly(),n.clearInterval(t)}):n.attachEvent&&n.attachEvent("onload",function(){o.poly(),n.clearInterval(t)})}"undefined"!=typeof exports?exports.loadCSS=loadCSS:n.loadCSS=loadCSS}("undefined"!=typeof global?global:this);</script>
 	<link rel="stylesheet" href="./assets/css/vendor/flickity.min.css" />
 	<link rel="stylesheet" href="./assets/css/style.css" />
 </head>  
@@ -20,7 +20,7 @@
 			<a href="#main-site-content" title="Skip site menu, go to to main site content"></a>	
 		</nav>
 		<!-- Site header  -->
-		<header class="bc-site-header bc-site-header--inner-page bc-container">
+		<header class="bc-site-header bc-container">
 			<a title="Site hompepage " class="bc-site-header__home-link bc-site-logo" href="./">
 				Hanlon <span>&amp;</span> Co. 
 			</a>
@@ -33,22 +33,32 @@
 					<use xlink:href="assets/media/svg/icons/bc-svgs.svg#close-x"></use>
 				</svg>
 			</a>
-			<div id="site-main-navigation" aria-label="Main site navigation" class="bc-site-header__main-navigation">
-				<ul role="navigation"  class="bc-site-header__main-navigation__list">
-					<li class="bc-site-header__main-navigation__item"><a href="family-law.html">Family Law</a></li>
-					<li class="bc-site-header__main-navigation__item"><a href="single-page.html">Single Page</a></li>
-				</ul>
-				<div class="bc-site-header__main-navigation__contact">
-					<h2>Hanlon &amp; Co Solicitors</h2>
-					<p>	6 Richmond road<br />
-					Drumcondra<br />
-					Dublin 3</p>
-	
-					<p>Tel 01 836 9300</p>
-					<p>Fax 01 810 1858</p> 
-					Email: graham@hanlonandco.com
-				</div>	
-			</div>
+			<div id="site-main-navigation" aria-label="Main site navigation" class="bc-site-header__main-navigation ">
+				<hr />
+				<div class="bc-site-header__main-navigation-wrap bc-content-component--text">
+					<ul role="navigation"  class="bc-site-header__main-navigation__list">
+						<li class="bc-site-header__main-navigation__item"><a href="/">Home</a></li>
+						<li class="bc-site-header__main-navigation__item bc-show-hide">
+							<a href="javascript:void(0)" class="bc-show-hide__header bc-show-hide__toggle">Areas of Practice
+								<div class="bc-show-hide-icon__wrap">
+									<svg class="svg-icon bc-show-hide-icon bc-show-hide-icon__show">
+										<use xlink:href="assets/media/svg/icons/bc-svgs.svg#close-x"></use>
+									</svg>	
+								</div>
+							</a>
+							<ul class="bc-show-hide__body">
+								<li class="bc-site-header__main-navigation__item bc-show-hide__menu-item"><a href="family-law.html">Family Law</a></li>
+								<li class="bc-site-header__main-navigation__item bc-show-hide__menu-item"><a href="insolvency.html">Insolvency</a></li>
+								<li class="bc-site-header__main-navigation__item bc-show-hide__menu-item"><a href="#">Litgation</a></li>
+								<li class="bc-site-header__main-navigation__item bc-show-hide__menu-item"><a href="#">Probate</a></li>
+								<li class="bc-site-header__main-navigation__item bc-show-hide__menu-item"><a href="#">Conveyancing</a></li>
+							</ul>	
+						</li>
+						<li class="bc-site-header__main-navigation__item"><a href="#">About</a></li>
+						<li class="bc-site-header__main-navigation__item bc-contact-link"><a href="#">Contact</a></li>
+					</ul>	
+				</div><!-- // .bc-site-header__main-navigation-wrap -->
+			</div><!-- // .bc-site-header__main-navigation  -->
 		</header><!-- // .bc-site-header -->
 		<section class="bc-hero bc-inner-page-heading" aria-title="Hanlon & Co Family Law">
 			<picture class="bc-hero__media">
@@ -80,23 +90,20 @@
 					<h1>We work with you through difficult times</h1>	
 					<p class="bc-intro-paragraph">I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness.</p>
 					<p>Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur?</p>
-					<picture class="is-16x9 bc-inner-page__feature-image">
-						<img src="assets/media/irish-family.jpg" alt="A family law team working for you">
-					</picture>
-				</article><!-- // .bc-text-component -->
-			</section><!-- // . bc-inner-page__main-->
-			<section class="bc-container bc-inner-page__section">
-				<article class="bc-text-component">
-					<h2>Our Family Law practice</h2>
-					
-					<p>But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born.</p>
-					<p>I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness.</p>
-					<h3>Our legal specialist</h3>
+					<h2>Our Family Law specialist</h2>
 					<p>But who has any right to find fault with a man who chooses to enjoy a pleasure that has no annoying consequences, or one who avoids a pain that produces no resultant pleasure?</p>
 					<p>I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness.</p>
 					<div class="bc-object-embed bc-media-embed--placeholder">
 						<p><code>Video content here</code></p>
 					</div>
+				</article><!-- // .bc-text-component -->
+			</section><!-- // . bc-inner-page__main-->
+			<section class="bc-container bc-inner-page__section">
+				<article class="bc-text-component">
+					<h2>Our Family Law practice</h2>
+					<p>But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born.</p>
+					<p>I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness.</p>
+					
 					<div class="bc-show-hide  bc-areas-of-practice "> 
 						<a href="javascript:void(0)" class="bc-content-label bc-show-hide__header bc-show-hide__toggle" title="Click to show the block body">
 							Read more
@@ -126,27 +133,32 @@
 			<div class="bc-content-component--text">
 				<h1 class="bc-content-label">Testimonials</h1> 
 			</div>
+			<div class="bc-testimonials__quote-icon bc-content-component--text">
+				<svg class="svg-icon">
+					<use xlink:href="assets/media/svg/icons/bc-svgs.svg#quote-left-serif"></use>
+				</svg>
+			</div>	
 			<div class="bc-flickity bc-flickity--text-slider"> 
-					<article class="bc-flickity__slide" aria-label="Text slide #1"> 
-						
-						<p class="bc-testimonials__text">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
-						
-					</article><!-- // .bc-card bc-card--plain-text -->
-					<article class="bc-flickity__slide" aria-label="Text slide #2"> 
-						<p class="bc-testimonials__text">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
-						<p class="bc-testimonials__text">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
-					</article><!-- // .bc-card bc-card--plain-text -->
+				<article class="bc-flickity__slide" aria-label="Text slide #1"> 
+					<p class="bc-testimonials__text">#1 Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+				</article><!-- // .bc-card bc-card--plain-text -->
+				<article class="bc-flickity__slide" aria-label="Text slide #2"> 
+					<p class="bc-testimonials__text">#2 Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+				</article><!-- // .bc-card bc-card--plain-text -->
+				<article class="bc-flickity__slide" aria-label="Text slide #2"> 
+					<p class="bc-testimonials__text">#3 Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+				</article><!-- // .bc-card bc-card--plain-text -->
 			</div><!-- //.bc-flickity -->
 		</section><!-- // Flickity text slider -->
-		<footer class="bc-container">
+		<footer class="bc-container bc-bg-brand-primary">
 			<div class="bc-grid">
 				<div>
 					<h2>Contact</h2>
 					<p>
-						Address line #1<br />
-						Address line #2<br />
-						Address line #3<br />
-						<a href="tel:01234567">01234567</a><br />
+						Address line #1<br>
+						Address line #2<br>
+						Address line #3<br>
+						<a href="tel:01234567">01234567</a><br>
 					</p>
 					<h3>Follow us</h3>
 					<ul class="bc-icon-links">
@@ -172,7 +184,7 @@
 							</a>
 						</li>		
 					</ul>
-				</div>
+				</div><!-- // grid column -->
 				<div>
 					<h2>Footer heading 2</h2>
 					<ul class="bc-plain-list">
@@ -181,15 +193,14 @@
 						<li><a href="javascript:void(0)">Footer link</a></li>
 						<li><a href="javascript:void(0)">Footer link</a></li>
 					</ul>			
-				</div>
+				</div><!-- // grid column -->
 				<div class="bc-grid-span-2cols">
 					<h2>Footer heading #3</h2>
-					<div class="bc-object-embed">
-						<iframe title="Location google map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d152515.9863410329!2d-6.3857876133026865!3d53.3242380660387!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48670e80ea27ac2f%3A0xa00c7a9973171a0!2sDublin!5e0!3m2!1sen!2sie!4v1613941604616!5m2!1sen!2sie" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+					<div class="bc-object-embed is-16x9">
+						<iframe title="Google map location" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d152515.9863410329!2d-6.3857876133026865!3d53.3242380660387!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48670e80ea27ac2f%3A0xa00c7a9973171a0!2sDublin!5e0!3m2!1sen!2sie!4v1613941604616!5m2!1sen!2sie" width="600" height="450" style="border:0;" allowfullscreen loading="lazy"></iframe>
 					</div>
-				</div>
-				
-			</div>
+				</div><!-- // .bc-grid-span-2cols -->
+			</div><!-- // .bc-grid -->
 		</footer>
 	</div><!-- // .bc-body-wrap-->
 	<script src="assets/scripts/app-concat.js"></script>  

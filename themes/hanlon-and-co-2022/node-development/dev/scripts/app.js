@@ -283,13 +283,16 @@
 		showHideToggles.forEach(($showHideToggle) => {
 			const $showHideBody = $showHideToggle.nextElementSibling;
 			//Accordion closer in the accordion body - always closes the body if it is open
-			const $showHideBodyClose = $showHideBody.querySelector('.bc-show-hide__hide');
-			$showHideBodyClose.addEventListener('click', () => {
-				if ($showHideToggle.classList.contains('bc-is-active')) { 
-					bcShowHide($showHideBody, 0);
-					$showHideToggle.classList.remove('bc-is-active');
-				}
-			});
+			if ($showHideBody.querySelector('.bc-show-hide__hide')) {
+				const $showHideBodyClose = $showHideBody.querySelector('.bc-show-hide__hide');
+				$showHideBodyClose.addEventListener('click', () => {
+					if ($showHideToggle.classList.contains('bc-is-active')) { 
+						bcShowHide($showHideBody, 0);
+						$showHideToggle.classList.remove('bc-is-active');
+					}
+				});
+			}
+			
 			if (debug) {
 				console.log('Accordion body scrollHeight: ');
 				console.log($showHideBody.scrollHeight);
@@ -355,7 +358,6 @@
 		
 		debug = false;
 	}//mainNavigationSetup()
-	mainNavigationSetup();
 	
 	/* Flickity Sliders */
 	const $bcFlkSliders = document.querySelectorAll('.bc-flickity');
@@ -381,35 +383,35 @@
 			if (sliderType === 'text-slider') {
 				const nextButton = document.querySelector('.flickity-prev-next-button.next');
 				const prevButton = document.querySelector('.flickity-prev-next-button.previous');
-				console.log(nextButton);
-				nextButton.addEventListener('click', (e) => {
-					e.preventDefault();
-					console.log('click');
-					flkSlider.next();
-				});
-				prevButton.addEventListener('click', (e) => {
-					e.preventDefault();
-					flkSlider.previous();
-				});
-				prevButton.setAttribute('disabled', '');
-				flkSlider.on('change', (idx) => {
-					console.log(idx);
-					if (idx === flkSlider.cells.length - 1) {
-						nextButton.setAttribute('disabled', '');
-					} else {
-						nextButton.removeAttribute('disabled');
-					}
-					if (idx === 0) {
-						prevButton.setAttribute('disabled', '');
-					} else {
-						prevButton.removeAttribute('disabled');
-					}
-					
-				});
+				if ((prevButton !== null && prevButton !== undefined) && (nextButton == null && nextButton !== undefined)) {
+					nextButton.addEventListener('click', (e) => {
+						e.preventDefault();
+						console.log('click');
+						flkSlider.next();
+					});
+					prevButton.addEventListener('click', (e) => {
+						e.preventDefault();
+						flkSlider.previous();
+					});
+					prevButton.setAttribute('disabled', '');
+					flkSlider.on('change', (idx) => {
+						console.log(idx);
+						if (idx === flkSlider.cells.length - 1) {
+							nextButton.setAttribute('disabled', '');
+						} else {
+							nextButton.removeAttribute('disabled');
+						}
+						if (idx === 0) {
+							prevButton.setAttribute('disabled', '');
+						} else {
+							prevButton.removeAttribute('disabled');
+						}
+					});
+				}
+				
 			}
 
 			flkSlider.select(0);
-			
 			flkSlider.on('change', () => {
 				const videoSlides = $bcFlkSlider.querySelectorAll('.bc-flickity__slide--video');
 				if (videoSlides && videoSlides.length > 0) {
@@ -489,49 +491,66 @@
 	}//end if $bcTwinComponents is > 0
 
 	/* Match height elements */
-	if (document.querySelectorAll('.bc-match-height-wrap')) {
-		let matchHeightWraps = Array.from(document.querySelectorAll('.bc-match-height-wrap'));
-		console.log('Found '+ matchHeightWraps.length + ' match height wrap(s)');
-		let targetHeight = 0;
-		matchHeightWraps.forEach((el, idx) => {
-			let $thisWrapper = el;
-			let matchElements = [];
-			if ($thisWrapper.querySelectorAll('.bc-match-height')) {
-				matchElements = Array.from($thisWrapper.querySelectorAll('.bc-match-height'));
-				matchElements.forEach((matchElement, idx, thisArr) => {
-					console.log(matchElement.style.height);
-					matchElement.style.height = null;
-					console.log(matchElement.clientHeight);
-					console.log(matchElement);
-					let thisElementStyles = getComputedStyle(matchElement);
-					let thisElHeight = matchElement.scrollHeight;
-					console.log('This matchElement height is ' + thisElHeight + ' Index is '+idx); 
-					console.log('This matchElement paddingTop is ' + thisElementStyles.paddingTop + ' Index is '+idx); 
-					console.log('This matchElement paddingBottom is ' + thisElementStyles.paddingBottom + ' Index is '+idx); 
-					//thisElHeight = thisElHeight - parseFloat(thisElementStyles.paddingTop) - parseFloat(thisElementStyles.paddingBottom);
-					console.log('This matchElement height is ' + thisElHeight + ' minus padding '+idx); 
-					if (thisElHeight > targetHeight) {
-						targetHeight = thisElHeight;
+	function matchHeights() {
+		if (document.querySelectorAll('.bc-match-height-wrap')) { 
+			let matchHeightWraps = Array.from(document.querySelectorAll('.bc-match-height-wrap'));
+
+			if (debug) {
+				console.log('Found '+ matchHeightWraps.length + ' match height wrap(s)');
+			}
+			
+			let targetHeight = 0;
+			matchHeightWraps.forEach((el, idx) => {
+				let $thisWrapper = el;
+				let matchElements = [];
+				if ($thisWrapper.querySelectorAll('.bc-match-height')) {
+					matchElements = Array.from($thisWrapper.querySelectorAll('.bc-match-height'));
+					matchElements.forEach((matchElement, idx, thisArr) => {
+						if (debug) {
+							console.log('Target height: '+ targetHeight);
+							console.log(matchElement.style.height);
+						}
+						matchElement.style.height = null;
+						if (debug) {
+							console.log(matchElement.clientHeight);
+							console.log(matchElement);
+						}
+						let thisElementStyles = getComputedStyle(matchElement);
+						let thisElHeight = matchElement.scrollHeight;
+						if (debug) {
+							console.log('This matchElement height is ' + thisElHeight + ' Index is '+idx); 
+							console.log('This matchElement paddingTop is ' + thisElementStyles.paddingTop + ' Index is '+idx); 
+							console.log('This matchElement paddingBottom is ' + thisElementStyles.paddingBottom + ' Index is '+idx); 
+							console.log('This matchElement height is ' + thisElHeight + ' minus padding '+idx); 
+						}
+						if (thisElHeight > targetHeight) {
+							targetHeight = thisElHeight;
+						} else {
+							return;
+						}
+						console.log(targetHeight + ' after ' + idx);
+					});//matchElements foreach
+					if (targetHeight > 0) {
+						matchElements.forEach((el) => {
+							console.log('Hello');
+							el.style.height = targetHeight + 'px';
+						});
 					} else {
 						return;
 					}
-					console.log(targetHeight + ' after ' + idx);
-				});//matchElements foreach
-				if (targetHeight > 0) {
-					matchElements.forEach((el) => {
-						console.log('Hello');
-						el.style.height = targetHeight + 'px';
-					});
 				} else {
 					return;
 				}
-				
-			} else {
-				return;
-			}
-
-		});//matchHeightWraps forewach
-	}//end if .bc-match-height-wrap
+	
+			});//matchHeightWraps forewach
+			
+		}//end if .bc-match-height-wrap
+		window.addEventListener('resize', () => {
+			matchHeights();
+		});
+	}//matchHeights()
+	
+	
 	/* Intersection Observer for filterable images */
 	function createFilterableElsObserver($filterableElement) {
 	
@@ -571,7 +590,20 @@
 	$filterableElsArr.forEach(($el) => {
 		createFilterableElsObserver($el);
 	});
-
+	window.addEventListener('load', () => {
+		if (debug) {
+			console.log('[debug]: Window loaded');
+		}
+		mainNavigationSetup();
+		matchHeights();
+		let theBody = document.querySelector('.bc-page-loading');
+		if (theBody) {
+			theBody.classList.remove('bc-page-loading');
+			theBody.classList.add('bc-page-loaded');
+		}
+		
+		
+	});
 	/* Window scroll events */
 })(window);
 /* App.js */

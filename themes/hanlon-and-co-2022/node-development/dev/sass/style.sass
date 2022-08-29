@@ -21,17 +21,18 @@ body
 		--header-height: 10vh
 h1, h2, h3, h4, h5
 	margin-top: 0
+	margin-bottom: var(--vertical-unit)
 	line-height: 1.35
 	color: var(--text-black)
 h2, h3, h4, h5
 	margin-bottom: calc(var(--vertical-unit) * 0.382 )
-	font-family: var(--sans-font	) 
+	font-family: var(--sans-font)
 h1
 	font-family: var(--heading-font)
-	font-size: var(--text-10)
+	font-size: var(--text-gr-03)
 h2
 	font-family: var(--heading-font)
-	font-size: var(--text-gr-02-5) 
+	font-size: var(--text-gr-02)  
 h3
 	font-size: var(--text-gr-00-5)
 p, ul, ol, blockquote 
@@ -157,7 +158,32 @@ iframe
 	.cross-over-element
 		fill: var(--brand-primary)
 		opacity: 0.36
-
+.bc-show-hide
+	& &__body
+		height: 0
+		overflow: hidden
+		transition: height 320ms ease-in
+	& &__hide
+		margin-bottom: 0
+	& &__hide__wrap
+		@include makeFlexbox($justify: flex-end, $align: center)
+		.bc-show-hide-icon
+			margin-left: calc(var(--gutter) * 0.618)
+			transform: none
+	.bc-show-hide-icon__wrap
+		@include makeFlexbox(row, center, center, $inline: true)
+		margin-left: calc(var(--gutter) * 0.5)
+		padding: calc(var(--gutter) * 0.25)
+	.bc-show-hide-icon
+		width: auto
+		height: auto
+		max-width:  calc(var(--gutter) * 0.5)
+		max-height: calc(var(--vertical-unit) * 0.5)
+		transform: rotate(45deg)
+		transition: transform 420ms ease-out
+	& &__toggle.bc-is-active
+		.bc-show-hide-icon
+			transform: rotate(0)
 /* Custom utils */
 @mixin makeTextColor($text-color)
 	color: $text-color
@@ -202,7 +228,7 @@ iframe
 /* Hanlon & Co logo -- text */
 .bc-site-logo 
 	font-family: var(--serif-font)
-	font-size: var(--text-gr-01)
+	font-size: var(--text-gr-00-5)
 	color: var(--text--black)
 	> span
 		color: var(--brand-secondary)
@@ -246,7 +272,6 @@ iframe
 			height: 0
 	&.bc-has-dots
 		position: relative
-		
 		.bc-feature-header__heading
 			background-color: rgba($white, 1)
 		#abstract-dots, .bc-abstract-dots
@@ -277,16 +302,44 @@ iframe
 		grid-template-columns: repeat(2, 1fr)	
 		&::before, &::after
 			width: calc(var(--gutter) * 3)
+
+.bc-feature-sub-header
+	margin-bottom: calc(var(--vertical-unit) * 2
+	& &__heading
+		position: relative
+		color: var(--shade-50)
+		margin-bottom: var(--vertical-unit)
+		&::before, &::after
+			content: " "
+			position: absolute
+			top: auto 
+			left: 0 
+			width: calc(var(--gutter) * 2)
+			background-color: var(--shade-b0)
+		&::before 
+			bottom: calc((var(--gutter) )  * (-1.382 * 0.5)) 
+			height: #{(3/14)}rem
+		&::after
+			bottom: calc((var(--gutter) )  * -1.382 * 0.75) 
+			height: #{(1/14)}rem
 .bc-intro-paragraph		
 	font-size: var(--text-gr-00-5)
 	font-weight: var(--light-weight)
 	color: inherit
-
 #abstract-dots, .bc-abstract-dots
 	fill: var(--shade-d0)
 	.abstract-dot
 		fill: var(--shade-e0)
 	
+.bc-page-loading
+	visibility: hidden
+	opacity: 0
+	
+.bc-page-loaded
+	visibility: visible
+	opacity: 1
+	transition: opacity 480ms ease-out
+
 /* Inner page header */
 .bc-site-header
 	align-items: center
@@ -294,9 +347,9 @@ iframe
 	padding-top: 		calc(var(--vertical-unit) /2 )
 	padding-bottom: calc(var(--vertical-unit) /2 )
 	background-color: var(--white)
-	
 	.bc-site-logo
 		transition: none
+		
 	& &__home-link
 		@include linkHover
 			&::after
@@ -305,10 +358,20 @@ iframe
 		z-index: 35
 		&__close
 			fill: var(--white)
+
+		.svg-icon
+			max-width:  calc(var(--gutter) * 1.125)
+			max-height: calc(var(--gutter) * 1.125)
 	& &__main-navigation
+		height: auto
+		left: auto
+		right: auto
+		transform: translateX(120%)
 		align-items: stretch
 		padding-top: var(--header-height)
 		background-color: var(--brand-primary)
+		opacity: 0
+		transition: transform 360ms ease-in, opacity 360ms ease-in
 		z-index: 30
 		hr
 			border-top: 1px solid var(--white)
@@ -316,39 +379,96 @@ iframe
 			padding: 0
 			margin: 0 
 		&__list 
+			flex: 1 1 100%
 			margin: 0
 			padding: calc(var(--vertical-unit)) 0 calc(var(--vertical-unit) * 2) 
 			list-style: none	
 			font-size: var(--text-gr-01)
 			a
-				display: inline-flex
 				padding: 0
 				color: var(--white)
 		li
 			padding: calc(var(--vertical-unit) / 2) calc(var(--gutter))
 		&__item
+			@include makeFlexbox(column)
 			font-family: var(--serif-font)
 			font-size: var(--text-gr-01) 
+			opacity: 0
+			transform-origin: 0 0  
+			transform: translateY(calc(var(--vertical-unit) * 0.5))
+			transition-duration: 0ms 
+			transition-delay: 0ms
 			> ul 
 				margin-top: 	 calc(var(--vertical-unit) * 0.5)
 				margin-bottom: calc(var(--vertical-unit) * 0)
 				padding-left: 0
-				li 
+				li
 					padding-top: calc(var(--vertical-unit) / 4)
 					padding-bottom: calc(var(--vertical-unit) / 4)
 				a 
 					font-size: var(--text-gr-00)
 					font-family: var(--base-font)
 					font-weight: var(--font-weight)
-			&.bc-contact-link
-				display: none
-		&__contact
-			padding: calc(var(--vertical-unit) * 2) var(--gutter)
-			background-color: var(--white)
-			color: var(--text-black)
-
-	
+		.bc-show-hide
+			.bc-show-hide__header
+				@include linkHover
+					text-decoration: none
+					&::after
+						height: 0
+			.bc-show-hide__body
+				transition-duration: 240ms
+			.bc-show-hide-icon
+				fill: var(--white)
+			.bc-show-hide__menu-item.bc-site-header__main-navigation__item
+				opacity: 0
+				transform: translateY(calc(var(--vertical-unit) * 0.5))
+				transition-duration: 0ms
+				transition-delay: 	 0ms
+			.bc-show-hide__toggle.bc-is-active + .bc-show-hide__body
+				.bc-show-hide__menu-item.bc-site-header__main-navigation__item
+					opacity: 1
+					transform: translateY(0)
+					--delay: 240ms
+					transition: opacity 0ms ease-in 220ms, transform 480ms ease-out 280ms 
+					&:nth-of-type(1)
+						transition-delay: calc(var(--delay))
+					&:nth-of-type(2)
+						transition-delay: calc(var(--delay) * 2)
+					&:nth-of-type(3)
+						transition-delay: calc(var(--delay) * 3)
+					&:nth-of-type(4)
+						transition-delay: calc(var(--delay) * 4)
+					&:nth-of-type(5)
+						transition-delay: calc(var(--delay) * 5)
+					&:nth-of-type(6)
+						transition-delay: calc(var(--delay) * 7)
+			
 	&.bc-is-active
+		.bc-site-header__main-navigation
+			left: 0
+			transform: translateX(0)
+			opacity: 1
+			transition-timing-function: ease-in
+			background-color: var(--brand-primary)
+			&__item
+				border-color: var(--white)
+				opacity: 1
+				transform: translateY(0)
+				--delay: 280ms
+				transition: opacity 320ms ease-out var(--delay), transform 380ms ease-out var(--delay) 
+				&:nth-of-type(1)
+					transition-delay: calc(var(--delay))
+				&:nth-of-type(2)
+					transition-delay: calc(var(--delay) * 2)
+				&:nth-of-type(3)
+					transition-delay: calc(var(--delay) * 3)
+				&:nth-of-type(4)
+					transition-delay: calc(var(--delay) * 4)
+				&:nth-of-type(5)
+					transition-delay: calc(var(--delay) * 5)
+				&:nth-of-type(6)
+					transition-delay: calc(var(--delay) * 7)
+			
 		.bc-site-logo
 			color: var(--white)
 			z-index: 35
@@ -364,47 +484,17 @@ iframe
 		&	&__main-navigation-wrap.bc-content-component--text
 			width: auto
 			flex: 0 0 61.8%
-		& &__main-navigation__contact, & &__main-navigation-wrap
-			align-self: stretch
 	@media screen and (min-width: $tablet-large)
 		& &__main-navigation
-			left: 0
-			right: 0
-			width: 100%
-			height: 0
-			opacity: 0
 			overflow: hidden
-			transition: opacity 600ms ease-out
-			&__item
-				&.bc-contact-link
-					display: initial
+			//transition: opacity 600ms ease-out
+			
 			&-wrap
 				flex: 1 1 100%
 				@include makeFlexbox(row, $align: stretch)
 			&__list 
 				flex: 1 1 61.8%
-				opacity: 0
-				transform-origin: 0 0  
-				transform: translateY(calc(var(--vertical-unit) * 1))
-				transition: opacity 840ms ease-out 420ms, transform 840ms ease-out 420ms 
-			&__contact
-				flex: 1 1 38.2%
-				color: var(--white)
-				opacity: 0
-				background-color: lighten($brand-primary, 4%)  
-				transition: opacity 1600ms ease-out 1000ms
-				h1, h2, h3, h4, p, a
-					color: inherit
-		&.bc-is-active
-			& .bc-site-header__main-navigation
-				height: auto 
-				background-color: var(--brand-primary)
-				&__list 
-					border-color: var(--white)
-					opacity: 1
-					transform: translateY(0)
-				&__contact
-					opacity: 1
+		
 .bc-is-filterable
 	transition: filter 640ms ease-in
 	&--full-screen
@@ -413,21 +503,8 @@ iframe
 .bc-hero 
 	@include makeFlexbox(column, flex-end, center) 
 	color: var(--white)
-	&.bc-inner-page-heading 
-		padding-top: 		var(--vertical-unit)
-		padding-bottom: var(--vertical-unit)
-		.bc-hero__heading
-			font-size: var(--text-gr-03)
-			margin-bottom: 0
-		.bc-media-overlay
-			background-color: rgba($brand-primary, 0.72)
-		.bc-content-label
-			color: inherit
-			margin-bottom: calc(var(--vertical-unit) * 0)
-	
 	.bc-cross-overlay
 		display: initial
-	
 	& &__heading
 		position: relative
 		margin-top: 6% //offset aganist the footer extra heignt
@@ -619,53 +696,7 @@ iframe
 			a 
 				text-decoration: underline
 				font-weight: var(--link-active-weight)
-		
-/* Transcript for object embeds */
-.bc-show-hide
-	margin-top: calc(var(--vertical-unit) / 2 * -1)
-	margin-bottom: calc(var(--vertical-unit) / 2)
-	& &__toggle
-		position: relative
-		@include makeFlexbox($align: center)
-		padding-top: calc(var(--vertical-unit) / 2)
-		padding-bottom: calc(var(--vertical-unit) / 2)
-		font-family: var(--heading-font)
-		font-size: var(--text-01)
-		font-weight: var(--bold-font-weight)
-		text-decoration: none
-		@include linkHover
-			text-decoration: underline
-			cursor: pointer
-		&.bc-is-active 
-			.bc-show-hide-icon
-				&.bc-show-hide-icon__hide
-					opacity: 1
-				&.bc-show-hide-icon__show
-					opacity: 0
-			+ .bc-show-hide__body
-				margin-bottom: var(--vertical-unit)
-	& &-icon
-		position: absolute
-		right: 0
-		width:  var(--text-02)
-		height: var(--text-02)  
-		opacity: 1
-		z-index: 10		
-		//transition: opacity var(--quicktrans) var(--easing)
-		&.bc-show-hide-icon__hide
-			opacity: 0
-			transform: rotate(180deg)
-	& &__hide-icon
-		opacity: 0	
-	& &__body
-		height: 0
-		overflow: hidden 
-		padding-left:  calc(var(--gutter) / 2)
-		padding-right: calc(var(--gutter) / 2)
-		transition: padding var(--medtrans) var(--easing), height var(--medtrans) var(--easing)
-		&.bc-is-active
-			padding-top: 		var(--vertical-unit)
-			padding-bottom: var(--vertical-unit)
+
 .bc-testimonials		
 	&.bc-container
 		padding-top: 		calc(var(--vertical-unit) * 4)
@@ -696,25 +727,28 @@ iframe
 		left: auto 
 		top: auto
 		bottom: 0
-		background-color: rgba($white, 0.64)
-		border: 1px solid var(--shade-30)
+		background-color: transparent
+		border: none
+		border-radius: 0
 		width:  calc(var(--text-gr-04) * 1.382)
 		height: calc(var(--text-gr-04) * 1.382)
 		&.previous
-			right: calc(var(--text-gr-04) * 1.382 + (var(--gutter)/1.5)) 
+			right: calc(var(--text-gr-04) * 1.382 ) 
 		&.next 
 			right: calc(var(--gutter)/2)
 			transform: translateY(-50%) rotate(180deg) 
+		&:focus 
+			0 0 0 #{(4/14)}rem var(--brand-secondary)
 	@media screen and (min-width: $tablet)
 		.flickity-prev-next-button  
 			&.previous
-				right: calc((100% - 90%)/2 + var(--text-gr-04) * 1.382 + (var(--gutter)/1.5))
+				right: calc((100% - 90%)/2 + var(--text-gr-04) * 1.382 )
 			&.next 
 				right: calc((100% - 90%)/2)
 	@media screen and (min-width: $tablet-large)
 		.flickity-prev-next-button  
 			&.previous
-				right: calc((100% - 70.2%)/2 + var(--text-gr-04) * 1.382 + (var(--gutter)/1.5))
+				right: calc((100% - 70.2%)/2 + var(--text-gr-04) * 1.382 )
 			&.next 
 				right: calc((100% - 70.2%)/2)
 	//@media screen and (max-width: calc(#{$tablet} - 1px))
@@ -766,12 +800,11 @@ iframe
 		padding-bottom: calc(var(--vertical-unit) * 1)
 	& &__main
 		&.bc-content-component
-			margin-bottom: 	calc(var(--vertical-unit) * 2.25)
+			margin-bottom: 	calc(var(--vertical-unit) * 2)
 		&__area
 			position: relative
 			width: 100%
 			padding-bottom: calc(var(--vertical-unit)*4)
-			
 		&__media
 			picture
 				display: block
@@ -782,7 +815,7 @@ iframe
 			position: absolute
 			@include makeFlexbox(column, space-between)
 			height: auto
-			width: calc(100% - (var(--gutter)*1.5)
+			width: calc(100% - (var(--gutter)*1.25))
 			top: auto
 			left: calc(var(--gutter)*0.75)
 			right: 0
@@ -790,6 +823,8 @@ iframe
 			padding: calc(var(--gutter)) calc(var(--vertical-unit))
 			background-color: var(--white) 
 			z-index: 20
+			--this-timing: 360ms
+			transition: box-shadow var(--this-timing) ease-out
 			.bc-arrow-link
 				margin-bottom: 0
 				color: var(--brand-primary)
@@ -803,16 +838,32 @@ iframe
 			.bc-media-overlay
 				opacity: 0
 				background-color: var(--shade-e0)
-				transition: opacity 380ms ease-out
+				transition: opacity 320ms ease-out
 				z-index: -1
-
+			//Faux borders
+			&::before
+				//content: "" 
+				position: absolute
+				width: 38.2%
+				height: 38.2%
+				right:  calc(var(--gutter) * 0.3 * -1)
+				bottom: calc(var(--gutter) * 0.6 * -1)
+				border-right:  1px solid rgba($black, 1)
+				border-bottom: 2px solid rgba($black, 1)
+				opacity: 0.1
+				transition: opacity 280ms ease-in, width 280ms ease-in, height 280ms ease-in
 			@include linkHover()
+				box-shadow: 2px 1px 16px 4px rgba($black,0.28)
+				.bc-media-overlay
+					opacity: 0.2
+				&::before
+					width: 	61.8%
+					height: 61.8%
+					opacity: 0.3
 				.bc-arrow-link
 					> span
 						&::after
 							height: 0.300rem
-				.bc-media-overlay
-					opacity: 0.8
 		&__sub-head
 			font-size: var(--text-gr-02) 
 			margin-bottom: 0
@@ -831,8 +882,8 @@ iframe
 		@media screen and (min-width: $tablet-large)	
 			gap: 3rem
 			.bc-areas-of-practice__main__text
+				width: calc(100% - (var(--gutter)*1))
 				left: calc(var(--gutter) * 1.5)
-				width: calc(100% - (var(--gutter)*1.5))
 			.bc-areas-of-practice__main__media__media
 				padding-top: calc(8 / 10 * 100%)
 	& &__other
@@ -894,11 +945,27 @@ iframe
 			display: block
 			@include objectEmbed
 			padding-top: 100% 
+			@media screen and (min-width: $tablet) and (orientation: portrait)
+				padding-top: calc(9 / 16 * 100%)
 	& &__text
+		position: relative
 		@include makeFlexbox(column, center, flex-start)
-		padding: calc(var(--vertical-unit)*3) calc((var(--gutter) * 2)
+		padding: calc(var(--vertical-unit)*3) calc((var(--gutter) * 2))
 		.bc-arrow-link
 			margin-bottom: 0
+		.bc-abstract-dots
+			display: none
+			position: absolute
+			top: 		calc((var(--gutter) * 1))
+			right: 	calc((var(--gutter) * 1))
+			max-width:  7rem
+			max-height: 3.5rem
+			fill: var(--white)
+			opacity: 0.44
+			@media screen and (min-width: $tablet-large)
+				display: block
+				top: 		calc((var(--gutter) * 1.75))
+				right: 	calc((var(--gutter) * 2))
 	& &__heading
 		margin-bottom: calc(var(--vertical-unit) * 1)
 	@media screen and (min-width: $tablet-large)
@@ -914,13 +981,38 @@ iframe
 			padding-right: calc(var(--gutter) * 2)
 		
 .bc-inner-page
+	h1, h2
+		font-family: var(--sans-font)
+	.bc-text-component
+		max-width: none
+		@media screen and (min-width: 860px)
+			max-width: var(--text-max-width)
+	.bc-media-overlay
+		background-color: rgba($brand-primary, 0.72)
+	.bc-content-label
+		color: inherit
+		margin-bottom: calc(var(--vertical-unit) * 0) 
 	.bc-breadcrumbs-nav, & &__main-section
 		background-color: var(--white)
-	.bc-container
+	.bc-container:not(.bc-site-header):not(.bc-breadcrumbs-nav):not(.bc-inner-page-heading):not(footer):not(.bc-inner-page__main-section)
 		padding-top: calc(var(--vertical-unit) * 1)
-		padding-bottom: calc(var(--vertical-unit) * 1)
+		padding-bottom: calc(var(--vertical-unit) * 2)
+	.bc-hero
+		&.bc-inner-page-heading 
+			padding-top: calc(var(--vertical-unit) * 3) 
+			padding-bottom: var(--vertical-unit)
+			.bc-hero__heading
+				margin-bottom: 0
+				font-family: var(--serif-font)
+				font-size: var(--text-gr-02-5)
+				color: #eaeaea
+	.bc-container
+		&.bc-inner-page__main-section
+			padding-top: calc(var(--vertical-unit) * 2)
+			padding-bottom: calc(var(--vertical-unit) * 1) 
 	& &__section:not(.bc-inner-page__main-section)
 		background-image: linear-gradient(180deg, var(--white), $shade-f0)
+	
 	& &__feature-image
 		margin-bottom: calc(var(--vertical-unit) * 1)
 	.bc-object-embed
@@ -933,47 +1025,10 @@ iframe
 		left: var(--gutter)
 		bottom: var(--vertical-unit)
 		color: var(--white)
-.bc-show-hide
-	&.bc-areas-of-practice 
-		background-color: transparent
-		.bc-show-hide__header
-			justify-content: flex-end
-			font-family: var(--sans-font)
-			font-size: var(--text--2)
-			@include linkHover()
-				&::after
-					height: 0
-	& &__hide
-		margin-bottom: 0
-	& &__hide__wrap
-		@include makeFlexbox($justify: flex-end, $align: center)
-		.bc-show-hide-icon
-			margin-left: calc(var(--gutter) * 0.618)
-			transform: none
-	.bc-show-hide-icon__wrap
-		@include makeFlexbox(row, center, center, $inline: true)
-		margin-left: var(--gutter)
-		padding: calc(var(--gutter) * (0.382 * 0.5)) calc(var(--gutter) * 0.618)
-		border-radius: calc(var(--text-gr-04) / 2)
-		border: #{(1/14)}rem solid var(--black)
-		background-color: var(--brand-secondary)
-	.bc-show-hide-icon
-		position: static
-		width: auto
-		height: auto
-		transform: rotate(45deg)
-		max-width:  calc(var(--text-gr--2) * 1.25)
-		max-height: calc(var(--text-gr--2) * 1.25)
-		transition: transform 420ms ease-out
-	
-	& &__toggle
-		&.bc-is-active
-			.bc-show-hide-icon
-				opacity: 1
-				transform: rotate(90deg)
-			
 
-
-
+footer
+	h2 
+		font-family: var(--base-font)
+		font-size: var(--text-gr-01)  
 		
 		
