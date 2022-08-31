@@ -1,6 +1,6 @@
 //** Hero component *//
 .bc-hero
-	--hero-text-color: #{$white}
+	--hero-text-color: $white
 	position: relative
 	overflow: hidden
 	@extend .bc-container
@@ -55,7 +55,6 @@
 		&__scroll
 			@include makeFlexbox(column, center, center)
 			padding: calc(var(--vertical-unit) / 2) calc(var(--gutter) * 2)
-			
 			text-decoration: none
 			transition: background-color var(--medtrans) var(--easing)
 			.svg-icon
