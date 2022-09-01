@@ -421,15 +421,15 @@ iframe
 				fill: var(--white)
 			.bc-show-hide__menu-item.bc-site-header__main-navigation__item
 				opacity: 0
-				transform: translateY(calc(var(--vertical-unit) * 0.5))
+				//transform: translateY(calc(var(--vertical-unit) * 0.5))
 				transition-duration: 0ms
 				transition-delay: 	 0ms
 			.bc-show-hide__toggle.bc-is-active + .bc-show-hide__body
 				.bc-show-hide__menu-item.bc-site-header__main-navigation__item
 					opacity: 1
-					transform: translateY(0)
+					//transform: translateY(0)
 					--delay: 240ms
-					transition: opacity 0ms ease-in 220ms, transform 480ms ease-out 280ms 
+					transition: opacity 160ms ease-in 220ms, transform 480ms ease-out 280ms 
 					&:nth-of-type(1)
 						transition-delay: calc(var(--delay))
 					&:nth-of-type(2)
@@ -827,7 +827,7 @@ iframe
 			bottom: 0
 			padding: calc(var(--gutter)) calc(var(--vertical-unit))
 			background-color: var(--white) 
-			box-shadow: 3px 3px 0 0 rgba($brand-primary, 0.8)
+			box-shadow: 2px 2px 0 0 rgba($brand-primary, 0.64)
 			z-index: 20
 			--this-timing: 60ms
 			transition: box-shadow var(--this-timing) ease-in
@@ -848,7 +848,7 @@ iframe
 				z-index: -1
 			
 			@include linkHover()
-				box-shadow: 1px 1px 0 var(--brand-primary)
+				box-shadow: 1px 1px 0 rgba($brand-primary, 0.94)
 				.bc-media-overlay
 					opacity: 0.2
 				.bc-arrow-link

@@ -20,7 +20,7 @@
 			<a href="#main-site-content" title="Skip site menu, go to to main site content"></a>	
 		</nav>
 		<!-- Site header  -->
-		<header class="bc-site-header bc-site-header--inner-page bc-container">
+		<header class="bc-site-header bc-container">
 			<a title="Site hompepage " class="bc-site-header__home-link bc-site-logo" href="./">
 				Hanlon <span>&amp;</span> Co. 
 			</a>
@@ -33,24 +33,32 @@
 					<use xlink:href="assets/media/svg/icons/bc-svgs.svg#close-x"></use>
 				</svg>
 			</a>
-			<div id="site-main-navigation" aria-label="Main site navigation" class="bc-site-header__main-navigation">
-				<ul role="navigation"  class="bc-site-header__main-navigation__list">
-					<li class="bc-site-header__main-navigation__item"><a href="single-page.html">Single Page</a></li>
-					<li class="bc-site-header__main-navigation__item"><a href="javascript:void(0)">Page #2</a></li>
-					<li class="bc-site-header__main-navigation__item"><a href="javascript:void(0)">Page #3</a></li>
-					<li class="bc-site-header__main-navigation__item"><a href="javascript:void(0)">Page #4</a></li>
-				</ul>
-				<div class="bc-site-header__main-navigation__contact">
-					<h2>Hanlon &amp; Co Solicitors</h2>
-					<p>	6 Richmond road<br />
-					Drumcondra<br />
-					Dublin 3</p>
-	
-					<p>Tel 01 836 9300</p>
-					<p>Fax 01 810 1858</p> 
-					Email: graham@hanlonandco.com
-				</div>	
-			</div>
+			<div id="site-main-navigation" aria-label="Main site navigation" class="bc-site-header__main-navigation ">
+				<hr />
+				<div class="bc-site-header__main-navigation-wrap bc-content-component--text">
+					<ul role="navigation"  class="bc-site-header__main-navigation__list">
+						<li class="bc-site-header__main-navigation__item"><a href="index.html">Home</a></li>
+						<li class="bc-site-header__main-navigation__item bc-show-hide">
+							<a href="javascript:void(0)" class="bc-show-hide__header bc-show-hide__toggle">Areas of Practice
+								<div class="bc-show-hide-icon__wrap">
+									<svg class="svg-icon bc-show-hide-icon bc-show-hide-icon__show">
+										<use xlink:href="assets/media/svg/icons/bc-svgs.svg#close-x"></use>
+									</svg>	
+								</div>
+							</a>
+							<ul class="bc-show-hide__body">
+								<li class="bc-site-header__main-navigation__item bc-show-hide__menu-item"><a href="family-law.html">Family Law</a></li>
+								<li class="bc-site-header__main-navigation__item bc-show-hide__menu-item"><a href="insolvency.html">Insolvency</a></li>
+								<li class="bc-site-header__main-navigation__item bc-show-hide__menu-item"><a href="litigation-practice.html">Litgation</a></li>
+								<li class="bc-site-header__main-navigation__item bc-show-hide__menu-item"><a href="probate.html">Probate</a></li>
+								<li class="bc-site-header__main-navigation__item bc-show-hide__menu-item"><a href="conveyancing.html">Conveyancy</a></li>
+							</ul>	
+						</li>
+						<li class="bc-site-header__main-navigation__item"><a href="about.html">About</a></li>
+						<li class="bc-site-header__main-navigation__item bc-contact-link"><a href="contact.html">Contact</a></li>
+					</ul>	
+				</div><!-- // .bc-site-header__main-navigation-wrap -->
+			</div><!-- // .bc-site-header__main-navigation  -->
 		</header><!-- // .bc-site-header -->
 		<section class="bc-hero bc-inner-page-heading" aria-title="Hanlon & Co Family Law">
 			<picture class="bc-hero__media">
