@@ -334,18 +334,19 @@ iframe
 			height: 0
 	&.bc-has-dots
 		position: relative
+		padding-top: calc(var(--vertical-unit) * 2.5)
 		.bc-feature-header__heading
 			background-color: rgba($white, 1)
 		#abstract-dots, .bc-abstract-dots
 			position: absolute
-			display: none
+			//display: none
 			top: 0
 			left: 0
-			max-width: 	calc(var(--gutter)*3)
-			max-height: calc(var(--gutter)*3)
+			max-width: 	calc(var(--gutter)*4)
+			max-height: calc(var(--gutter)*2)
 			fill: var(--shade-d0)
 			&.bc-abstract-dots-4 
-				max-width: calc(var(--gutter)*6)
+				max-width: calc(var(--gutter)*4)
 		@media screen and (min-width: $tablet-large)
 			padding-top: calc(var(--vertical-unit) * (3.5 * 0.55))
 			.bc-feature-header__heading
@@ -854,6 +855,8 @@ iframe
 		background-color: transparent
 	
 .bc-areas-of-practice
+	&.bc-container
+		padding-top: calc(var(--vertical-unit) * 2)
 	position: relative
 	background-color: var(--white)
 	@media screen and (max-width: calc(#{$tablet-large} - 1px))
@@ -941,10 +944,6 @@ iframe
 		margin-right: calc(var(--gutter) * 0.5 * -1)
 		width: calc(100% + var(--gutter))
 		background-image: linear-gradient(0deg, rgba($white, 0), var(--white))
-		h2, h3
-			margin-top: 0
-		h3
-			font-size: var(--text-gr-01)
 		&.bc-content-component
 			padding-top: 0
 		&__area
@@ -957,13 +956,21 @@ iframe
 				background-color: var(--shade-e0)
 				a:after 
 					height: 0.3rem
+			&__header
+				@include makeFlexbox($align: center)
+				margin-bottom: calc(var(--vertical-unit)*0.5)
+			&__heading
+				margin-top: 0
+				margin-bottom: 0
+				font-size: var(--text-gr-01-5)
+				@media screen and (min-width: $tablet-large)
+					font-size: var(--text-gr-01)
 		&__icon
 			height: calc(var(--text-gr-04-5) * 1)
 			width:  calc(var(--text-gr-04-5) * 1)
-			margin-bottom: calc(var(--vertical-unit) * 1)
+			margin-right: calc(var(--vertical-unit) * 1)
 			max-width: none
 			max-height: none
-			fill: var(--brand-primary)
 
 	@media screen and (min-width: $tablet)
 		& &__other
@@ -1118,8 +1125,9 @@ iframe
 			@media screen and (min-width: $tablet)
 				max-width: calc(38.2% - var(--gutter))
 		@media screen and (min-width: $tablet) 
-			@include makeFlexbox($justify: space-between)
+			@include makeFlexbox()
 			& &__text
+				max-width: var(--text-max-width)
 				padding-top: var(--vertical-unit)
 		@media screen and (min-width: $tablet-large) 
 			& &__text

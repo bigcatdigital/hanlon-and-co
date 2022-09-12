@@ -84,6 +84,7 @@
   --text-gr-00: 1rem;
   --text-gr-00-5: 1.128rem;
   --text-gr-01: 1.272rem;
+  --text-gr-01-5: 1.435rem;
   --text-gr-02: 1.618rem;
   --text-gr-02-5: 1.82rem;
   --text-gr-03: 2.058rem;
@@ -1374,19 +1375,19 @@ table {
   .bc-feature-header--hero::after {
     height: 0; }
   .bc-feature-header.bc-has-dots, .bc-has-dots.bc-feature-header--hero {
-    position: relative; }
+    position: relative;
+    padding-top: calc(var(--vertical-unit) * 2.5); }
     .bc-feature-header.bc-has-dots .bc-feature-header__heading, .bc-has-dots.bc-feature-header--hero .bc-feature-header__heading {
       background-color: white; }
     .bc-feature-header.bc-has-dots #abstract-dots, .bc-has-dots.bc-feature-header--hero #abstract-dots, .bc-feature-header.bc-has-dots .bc-abstract-dots, .bc-has-dots.bc-feature-header--hero .bc-abstract-dots {
       position: absolute;
-      display: none;
       top: 0;
       left: 0;
-      max-width: calc(var(--gutter)*3);
-      max-height: calc(var(--gutter)*3);
+      max-width: calc(var(--gutter)*4);
+      max-height: calc(var(--gutter)*2);
       fill: var(--shade-d0); }
       .bc-feature-header.bc-has-dots #abstract-dots.bc-abstract-dots-4, .bc-has-dots.bc-feature-header--hero #abstract-dots.bc-abstract-dots-4, .bc-feature-header.bc-has-dots .bc-abstract-dots.bc-abstract-dots-4, .bc-has-dots.bc-feature-header--hero .bc-abstract-dots.bc-abstract-dots-4 {
-        max-width: calc(var(--gutter)*6); }
+        max-width: calc(var(--gutter)*4); }
     @media screen and (min-width: 1024px) {
       .bc-feature-header.bc-has-dots, .bc-has-dots.bc-feature-header--hero {
         padding-top: calc(var(--vertical-unit) * (3.5 * 0.55)); }
@@ -1913,6 +1914,8 @@ table {
 .bc-areas-of-practice {
   position: relative;
   background-color: var(--white); }
+  .bc-areas-of-practice.bc-container, .bc-areas-of-practice.bc-hero, .bc-areas-of-practice.bc-hero--full-screen {
+    padding-top: calc(var(--vertical-unit) * 2); }
   @media screen and (max-width: calc(1024px - 1px)) {
     .bc-areas-of-practice {
       padding-bottom: calc(var(--vertical-unit) * 1); } }
@@ -2027,10 +2030,6 @@ table {
     margin-right: calc(var(--gutter) * 0.5 * -1);
     width: calc(100% + var(--gutter));
     background-image: linear-gradient(0deg, rgba(255, 255, 255, 0), var(--white)); }
-    .bc-areas-of-practice .bc-areas-of-practice__other h2, .bc-areas-of-practice .bc-areas-of-practice__other h3 {
-      margin-top: 0; }
-    .bc-areas-of-practice .bc-areas-of-practice__other h3 {
-      font-size: var(--text-gr-01); }
     .bc-areas-of-practice .bc-areas-of-practice__other.bc-content-component, .bc-areas-of-practice .bc-areas-of-practice__other.bc-content-component--media, .bc-areas-of-practice .bc-areas-of-practice__other.bc-content-component--media-padded, .bc-areas-of-practice .bc-areas-of-practice__other.bc-content-component--text {
       padding-top: 0; }
     .bc-areas-of-practice .bc-areas-of-practice__other__area {
@@ -2047,13 +2046,26 @@ table {
         background-color: var(--shade-e0); }
         .bc-areas-of-practice .bc-areas-of-practice__other__area:active a:after, .bc-areas-of-practice .bc-areas-of-practice__other__area:hover a:after, .bc-areas-of-practice .bc-areas-of-practice__other__area:focus a:after {
           height: 0.3rem; }
+      .bc-areas-of-practice .bc-areas-of-practice__other__area__header {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        flex-wrap: nowrap;
+        align-items: center;
+        margin-bottom: calc(var(--vertical-unit)*0.5); }
+      .bc-areas-of-practice .bc-areas-of-practice__other__area__heading {
+        margin-top: 0;
+        margin-bottom: 0;
+        font-size: var(--text-gr-01-5); }
+        @media screen and (min-width: 1024px) {
+          .bc-areas-of-practice .bc-areas-of-practice__other__area__heading {
+            font-size: var(--text-gr-01); } }
     .bc-areas-of-practice .bc-areas-of-practice__other__icon {
       height: calc(var(--text-gr-04-5) * 1);
       width: calc(var(--text-gr-04-5) * 1);
-      margin-bottom: calc(var(--vertical-unit) * 1);
+      margin-right: calc(var(--vertical-unit) * 1);
       max-width: none;
-      max-height: none;
-      fill: var(--brand-primary); }
+      max-height: none; }
   @media screen and (min-width: 768px) {
     .bc-areas-of-practice .bc-areas-of-practice__other {
       display: grid;
@@ -2258,10 +2270,11 @@ table {
   .bc-profile-detail__intro {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: flex-start;
     flex-wrap: nowrap;
     align-items: flex-start; }
     .bc-profile-detail__intro .bc-profile-detail__intro__text {
+      max-width: var(--text-max-width);
       padding-top: var(--vertical-unit); } }
 
 @media screen and (min-width: 1024px) {
