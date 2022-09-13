@@ -609,7 +609,7 @@
 	
 	/* Intersection Observer for filterable images */
 	function createFilterableElsObserver($filterableElement) {
-	
+
 		let isFilterableOpts = {
 			root: null,
 			rootMargin: '0px',
@@ -652,15 +652,60 @@
 		}
 		mainNavigationSetup();
 		matchHeights();
-		let theBody = document.querySelector('.bc-page-loading');
+		let theBody = document.querySelector('html');
 		if (theBody) {
 			theBody.classList.remove('bc-page-loading');
 			theBody.classList.add('bc-page-loaded');
 		}
-		
-		
+		window.setTimeout(() => {
+			checkCookies(() => {
+				theBody.classList.add('bc-cookies-not-set');
+			});
+		}, 3000);
+		let cookiesConsent = document.querySelector('#bc-cookies-consent');
+		if (cookiesConsent) {
+			cookiesConsent.addEventListener('click', (evt) => {
+				theBody.classList.toggle('bc-cookies-not-set');
+			}); 
+		}
 	});
-	/* Window scroll events */
+	let cookiesDone = false;
+	function checkCookies(cbFn) {
+		if (cookiesDone) {
+			return;
+		}
+		cbFn();
+	}
+
+	/* Cookie funcitons */
+	function bcSetCookie(cname, cvalue, opts) {
+		let newCookie = cname + '=' + encodeURI(cvalue);
+		if (typeof opts === 'object') {
+			if (debug) {
+				console.log('opts is an object');
+			}
+			let optNames = Object.getOwnPropertyNames(opts);
+			optNames.forEach((key) => {
+				newCookie += '; ' + key + '=' + opts[key];
+			});
+		}
+		if (debug) {
+			console.log('New cookie is: '+newCookie);
+		}
+		document.cookie	= newCookie; 
+		if (debug) {
+			console.log('setCookie() document.cookie = '+ document.cookie);
+		}
+	}
+	function bcGetCookie(cname) {
+		const allCookies = document.cookie.split('; ');
+		const thisCookie = allCookies.find((row) => {
+			return row.startsWith(cname);
+		}); 
+		return (thisCookie) ? thisCookie.split('=')[1] : undefined ;
+	}
+	
+
 })(window);
 /* App.js */
 
