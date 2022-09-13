@@ -1152,5 +1152,62 @@ footer
 	font-size: var(--text-gr--1)
 	color: var(--white)
 	background-color: var(--brand-darker)
-		
+
+/* Cookies notification */
+.bc-cookies-consent
+	position: fixed
+	top: 100%
+	left: 0
+	bottom: 0
+	width: 100%
+	height: 100%
+	padding: var(--vertical-unit) 0 0
+	background-color: rgba($black, 0.24)
+	opacity: 0
+	transition: opacity 360ms ease-in 360ms, top 0ms ease-out 720ms
+	z-index: 1000
+	@include makeFlexbox(column, $justify: flex-end)
+	& &__block
+		transform: translateY(100%)
+		padding: var(--gutter) var(--vertical-unit)
+		background-color: var(--white)
+		border-top: 1px solid var(--brand-primary)
+		transition: transform 360ms ease-out 360ms
+	& &__btns
+		a 
+			font-size: var(--text--1)
+			font-weight: var(--font-weight)
+		button
+			padding: calc(var(--vertical-unit) * 0.5) calc(var(--gutter) * 1)
+			border-color: var(--brand-primary)
+			background-color: var(--white)
+			color: var(--brand-primary)
+			transition: background-color 360ms ease-out
+			@include linkHover
+				color: var(--white)
+				background-color: var(--brand-primary)
+	& &__btns-wrap
+		@include makeFlexbox($justify: space-around, $align: center)
+	@media screen and (min-width: $tablet)
+		padding-bottom: calc(var(--vertical-unit) * 2)
+.bc-cookies-not-set
+	.bc-cookies-consent
+		top: 0
+		opacity: 1
+		transition: opacity 360ms ease-in 0ms
+		.bc-cookies-consent__block
+			transform: translateY(0)
+			transition-delay: 360ms 
+
+.bc-button
+	padding: calc(var(--vertical-unit) * 0.5) calc(var(--gutter) * 1)
+	border-color: var(--brand-primary)
+	background-color: var(--white)
+	color: var(--brand-primary)
+	transition: background-color 360ms ease-out
+	@include linkHover
+		color: var(--white)
+		background-color: var(--brand-primary)
+
+
 		
