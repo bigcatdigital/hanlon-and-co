@@ -224,7 +224,24 @@ iframe
 		opacity: 1
 		padding-top: 		var(--vertical-unit)
 		padding-bottom: var(--vertical-unit)
-		
+.bc-button
+	padding: calc(var(--vertical-unit) * 0.5) calc(var(--gutter) * 1.25)
+	font-weight: var(--bold-font-weight)
+	border: 1px solid var(--brand-primary)
+	//border-radius: #{(4/14)}rem
+	border-radius: var(--gutter)
+	background-color: var(--white)
+	color: var(--brand-primary)
+	transition: background-color 360ms ease-out
+	@include linkHover
+		color: var(--white)
+		background-color: var(--brand-primary)
+	&--secondary 
+		@extend .bc-button
+		font-weight: var(--font-weight)
+		color: var(--text-black)
+		background-color: #ededed
+		border-color: var(--shade-08) 
 /* Custom utils */
 @mixin makeTextColor($text-color)
 	color: $text-color
@@ -284,10 +301,8 @@ iframe
 		fill: var(--brand-primary)
 .bc-feature-header
 	position: relative
-	margin-bottom: calc(var(--vertical-unit) * 3)
 	& &__col
 		max-width: #{(520 /18)}rem
-		
 	& &__heading
 		font-size: var(--text-gr-03-5)
 		position: relative
@@ -1169,23 +1184,21 @@ footer
 	@include makeFlexbox(column, $justify: flex-end)
 	& &__block
 		transform: translateY(100%)
-		padding: var(--gutter) var(--vertical-unit)
+		padding: calc(var(--gutter) * 1.5) var(--vertical-unit)
 		background-color: var(--white)
-		border-top: 1px solid var(--brand-primary)
+		border-top: #{(6/14)}rem solid var(--brand-primary)
 		transition: transform 360ms ease-out 360ms
+	& &__heading
+		font-size: var(--text-gr-01-5)
+	& &__heading, p
+		margin-bottom: calc(var(--vertical-unit) * 0.5)
+	p:last-of-type
+		margin-bottom: calc(var(--vertical-unit) * 1)
 	& &__btns
 		a 
 			font-size: var(--text--1)
 			font-weight: var(--font-weight)
-		button
-			padding: calc(var(--vertical-unit) * 0.5) calc(var(--gutter) * 1)
-			border-color: var(--brand-primary)
-			background-color: var(--white)
-			color: var(--brand-primary)
-			transition: background-color 360ms ease-out
-			@include linkHover
-				color: var(--white)
-				background-color: var(--brand-primary)
+		
 	& &__btns-wrap
 		@include makeFlexbox($justify: space-around, $align: center)
 	@media screen and (min-width: $tablet)
@@ -1198,16 +1211,13 @@ footer
 		.bc-cookies-consent__block
 			transform: translateY(0)
 			transition-delay: 360ms 
+.bc-privacy-form
+	.bc-button
+		margin-top: var(--vertical-unit)
+		&:first-of-type
+			margin-right: calc(var(--vertical-unit) * 0.25)
 
-.bc-button
-	padding: calc(var(--vertical-unit) * 0.5) calc(var(--gutter) * 1)
-	border-color: var(--brand-primary)
-	background-color: var(--white)
-	color: var(--brand-primary)
-	transition: background-color 360ms ease-out
-	@include linkHover
-		color: var(--white)
-		background-color: var(--brand-primary)
 
+		
 
 		

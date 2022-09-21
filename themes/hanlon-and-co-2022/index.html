@@ -21,50 +21,51 @@
 <body>
 	<script>
 		//window['ga-disable-G-EB511QMQDJ'] = true;
-		window.dataLayer = window.dataLayer || [];
-		function gtag(){dataLayer.push(arguments);}
-		gtag('js', new Date());
-		gtag('config', 'G-EB511QMQDJ'); 
-		let cookiesPreferences = document.cookie.split('; ').find((row) => {
-			return row.startsWith('fwc-cookies-preferences');
-		}); 
-		cookiesPreferences = (cookiesPreferences) ? cookiesPreferences.split('=')[1] : undefined ;
-		console.log(cookiesPreferences);
-		if (cookiesPreferences === 'submitted') {
-			const gaAnalytics = document.cookie.split('; ').find((row) => {
-				return row.startsWith('fwc-ga-analytics');
-			}).split('=')[1]; 
-			if (gaAnalytics === 'denied') {
-				gtag('consent', 'update', {
-					'analytics_storage': 'denied'
-				});
-			} else {
-				gtag('consent', 'update', {
-					'analytics_storage': 'granted'
-				});
-			}
-			const gaAdStorage = document.cookie.split('; ').find((row) => {
-				return row.startsWith('fwc-goolge-ad-storage');
-			}).split('=')[1]; 
-			if (gaAdStorage === 'denied') {
-				gtag('consent', 'update', {
-					'ad_storage': 'denied'
-				});
-			} else {
-				gtag('consent', 'update', {
-					'ad_storage': 'granted'
-				});
-			}
-		} else {
-			gtag('consent', 'default', {
-				'ad_storage': 'denied',
-				'analytics_storage': 'denied'
-			});
-			let theBody = document.querySelector('html');
-			window.setTimeout(() => {
-				theBody.classList.add('bc-cookies-not-set');	
-			}, 3000);
-		}
+		/* Analytics gtag object */
+		// window.dataLayer = window.dataLayer || [];
+		// function gtag(){dataLayer.push(arguments);}
+		// gtag('js', new Date());
+		// gtag('config', 'G-EB511QMQDJ'); 
+		// let cookiesPreferences = document.cookie.split('; ').find((row) => {
+		// 	return row.startsWith('bc-cookies-preferences');
+		// }); 
+		// cookiesPreferences = (cookiesPreferences) ? cookiesPreferences.split('=')[1] : undefined ;
+		// console.log(cookiesPreferences);
+		// if (cookiesPreferences === 'submitted') {
+		// 	const gaAnalytics = document.cookie.split('; ').find((row) => {
+		// 		return row.startsWith('fwc-ga-analytics');
+		// 	}).split('=')[1]; 
+		// 	if (gaAnalytics === 'denied') {
+		// 		gtag('consent', 'update', {
+		// 			'analytics_storage': 'denied'
+		// 		});
+		// 	} else {
+		// 		gtag('consent', 'update', {
+		// 			'analytics_storage': 'granted'
+		// 		});
+		// 	}
+		// 	const gaAdStorage = document.cookie.split('; ').find((row) => {
+		// 		return row.startsWith('bc-google-ad-storage');
+		// 	}).split('=')[1]; 
+		// 	if (gaAdStorage === 'denied') {
+		// 		gtag('consent', 'update', {
+		// 			'ad_storage': 'denied'
+		// 		});
+		// 	} else {
+		// 		gtag('consent', 'update', {
+		// 			'ad_storage': 'granted'
+		// 		});
+		// 	}
+		// } else {
+		// 	gtag('consent', 'default', {
+		// 		'ad_storage': 'denied',
+		// 		'analytics_storage': 'denied'
+		// 	});
+		// 	let theBody = document.querySelector('html');
+		// 	window.setTimeout(() => {
+		// 		theBody.classList.add('bc-cookies-not-set');	
+		// 	}, 3000);
+		// }
 	</script>
 <div class="bc-body-wrap">
 	<nav class="bc-is-hidden" aria-label="Skip to main content link">
@@ -353,22 +354,22 @@
 	<!-- Cookies consent -->
 	<section class="bc-cookies-consent">
 		<article class="bc-cookies-consent__block bc-text-component">
-				<h2>About your data</h2>
+				<h2 class="bc-cookies-consent__heading">About your data</h2>
 				<p>We use cookies to improve your experience and to learn more about what you like.</p>
+				<p>You can manage your prefrences here.</p>
 			<div class="bc-cookies-consent__btns">
 				<div class="bc-cookies-consent__btns-wrap">
-					<a href="#">Manage your options</a>
-					<button id="bc-cookies-consent">
+					<a href="privacy-page.html">Find out more</a>
+					<button class="bc-button" id="bc-cookies-consent">
 						I'm happy with that
 					</button>
 				</div>
-				
 			</div>
 		</article>
 	</section>
 
 	<script src="assets/scripts/app-concat.js"></script>  
-
+	
 </div><!-- //. bc-body-wrap --> 
 
 </body>

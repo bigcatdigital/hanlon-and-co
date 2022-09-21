@@ -104,9 +104,36 @@
 								<input type="checkbox" name="google-ad-storage" id="google-ad-storage" />
 								<label for="google-analytics">Disable Google ad storage</label>
 							</div>
-							<input class="bc-button" type="reset">
+							<input class="bc-button--secondary" type="reset">
 							<input class="bc-button" type="submit">
 						</form>		
+						<script>
+							const privacyForm = document.querySelector('#bc-privacy-form');
+							privacyForm.addEventListener('submit', (evt) => {
+								evt.preventDefault();
+								console.log(evt.currentTarget);
+								console.log(privacyForm['google-analytics'].checked);
+								console.log(privacyForm['google-ad-storage'].checked);
+								if (privacyForm['google-analytics'].checked) {
+									const expiryDate = new Date(Date.now() + (7 * 24 * 60 * 60 * 1000)).toUTCString();
+									bcFunctions.setCookie('bc-ga-analytics', 'denied', {
+										expires: expiryDate
+									});
+									bcFunctions.setCookie('bc-cookies-preferences', 'submitted', {
+										expires: expiryDate
+									});
+								}
+								if (privacyForm['google-ad-storage'].checked) {
+									const expiryDate = new Date(Date.now() + (7 * 24 * 60 * 60 * 1000)).toUTCString();
+									bcFunctions.setCookie('bc-google-ad-storage', 'denied', {
+										expires: expiryDate
+									});
+									bcFunctions.setCookie('bc-cookies-preferences', 'submitted', {
+										expires: expiryDate
+									});
+								}
+							});
+						</script>
 					</article><!-- // .bc-text-component -->
 				</div><!-- // .bc-content-component -->
 			</section><!-- // . bc-inner-page__main-->

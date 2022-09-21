@@ -2,7 +2,7 @@
  * BigCat Design, Dublin
  * @preserve 
 */
-(function bcAppJS() {
+const bcFunctions = (function bcAppJS() {
 	let debug = false; 
 	if (debug) {	
 		console.log('Hanlon & Co WP theme here');
@@ -601,21 +601,26 @@
 			theBody.classList.remove('bc-page-loading');
 			theBody.classList.add('bc-page-loaded');
 		}
+
 		window.setTimeout(() => {
-			checkCookies(() => {
+			checkCookies('bc-cookies-preferences', () => {
 				theBody.classList.add('bc-cookies-not-set');
 			});
 		}, 3000);
 		let cookiesConsent = document.querySelector('#bc-cookies-consent');
 		if (cookiesConsent) {
 			cookiesConsent.addEventListener('click', (evt) => {
+				if (bcGetCookie('bc-cookies-preferences') !== undefined && bcGetCookie('bc-cookies-preferences') !== '') {
+					bcSetCookie('bc-cookies-preferences', 'submitted');
+				}
 				theBody.classList.toggle('bc-cookies-not-set');
 			}); 
 		}
 	});
 	let cookiesDone = false;
-	function checkCookies(cbFn) {
-		if (cookiesDone) {
+	function checkCookies(cookieName, cbFn) {
+		console.log(bcGetCookie(cookieName));
+		if (bcGetCookie(cookieName) !== undefined && bcGetCookie(cookieName) !== '') {
 			return;
 		}
 		cbFn();
@@ -639,7 +644,7 @@
 		document.cookie	= newCookie; 
 		if (debug) {
 			console.log('setCookie() document.cookie = '+ document.cookie);
-		}
+		} 
 	}
 	function bcGetCookie(cname) {
 		const allCookies = document.cookie.split('; ');
@@ -648,8 +653,12 @@
 		}); 
 		return (thisCookie) ? thisCookie.split('=')[1] : undefined ;
 	}
-	
 
+	/* Return protected functions */
+	return {
+		getCookie: bcGetCookie,
+		setCookie: bcSetCookie
+	};
 })(window);
 /* App.js */
 
