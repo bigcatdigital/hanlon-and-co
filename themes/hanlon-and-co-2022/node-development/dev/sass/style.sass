@@ -228,14 +228,13 @@ iframe
 	padding: calc(var(--vertical-unit) * 0.5) calc(var(--gutter) * 1.25)
 	font-weight: var(--bold-font-weight)
 	border: 1px solid var(--brand-primary)
-	//border-radius: #{(4/14)}rem
-	border-radius: var(--gutter)
-	background-color: var(--white)
-	color: var(--brand-primary)
-	transition: background-color 360ms ease-out
+	background-color: var(--brand-primary)
+	color: var(--white)
+	transition: background-color 360ms ease-out, box-shadow 220ms ease-out
 	@include linkHover
-		color: var(--white)
-		background-color: var(--brand-primary)
+		cursor: pointer
+		background-color: darken($brand-primary, 10%)
+		box-shadow: 3px 3px 8px 4px rgba($black, 0.12), -3px -3px 8px 4px rgba($black, 0.12)
 	&--secondary 
 		@extend .bc-button
 		font-weight: var(--font-weight)
@@ -255,7 +254,8 @@ iframe
 	background-color: $fill-color-start
 	background-image: linear-gradient(315deg, $fill-color-end 0%, $fill-color-start 50%, $fill-color-end 100%)
 	@include makeTextColor($fill-invert)
-
+.bc-text-component
+	width: 100% 
 .bc-bg-brand-primary
 	@include makeBackgroundFill($brand-primary, $brand-darker, $white) 
 .bc-bg-shade-f0
@@ -401,8 +401,8 @@ iframe
 			bottom: calc((var(--gutter) )  * -1.382 * 0.75) 
 			height: #{(1/14)}rem
 .bc-intro-paragraph		
-	font-size: var(--text-gr-00-5)
-	font-weight: var(--light-weight)
+	font-size: var(--text-gr-01)
+	//font-weight: var(--light-weight)
 	color: inherit
 #abstract-dots, .bc-abstract-dots
 	fill: var(--shade-d0)
@@ -658,7 +658,7 @@ iframe
 			margin-top: 0 
 			margin-bottom: calc(var(--vertical-unit) / 2)
 	.bc-feature-header
-		margin-bottom: calc(var(--vertical-unit)*3)
+		//margin-bottom: calc(var(--vertical-unit)*0)
 		color: inherit
 /* Content sections */
 .bc-container.bc-has-footer
@@ -920,8 +920,7 @@ iframe
 				transition: opacity 240ms ease-out
 				z-index: -1
 			
-			@include linkHover()
-				@debug "Hover"
+			@include linkHover() 
 				0px 1px 0px 0px rgba($brand-primary, 80%) 
 				.bc-media-overlay
 					opacity: 0.2
@@ -1060,7 +1059,7 @@ iframe
 			&__media
 				padding-top: calc(8/10*100%)
 		& &__text
-			padding-left:  calc(var(--gutter) * 2)
+			padding-left:  calc(var(--gutter) * 2) 
 			padding-right: calc(var(--gutter) * 2)
 		
 .bc-inner-page
@@ -1073,7 +1072,8 @@ iframe
 	.bc-feature-header
 		margin-bottom: calc(var(--vertical-unit) * 2)
 	.bc-media-overlay
-		background-color: rgba($brand-primary, 0.72)
+		background-color: rgba($brand-primary, 0.8) 
+		mix-blend-mode: none
 	.bc-content-label
 		color: inherit
 	.bc-breadcrumbs-nav, & &__main-section
@@ -1084,20 +1084,22 @@ iframe
 	#main-site-content
 		.bc-container
 			&:first-of-type
-				padding-top: calc(var(--vertical-unit) * 3)
+				padding-top: calc(var(--vertical-unit) * 2)
 			&:last-of-type
 				padding-bottom: calc(var(--vertical-unit) * 2)
 	.bc-hero
 		&.bc-inner-page-heading 
-			padding-top: calc(var(--vertical-unit) * 5) 
-			padding-bottom: var(--vertical-unit)
+			padding-top: calc(var(--vertical-unit) * 3) 
+			padding-bottom: calc(var(--vertical-unit) * 3)
+			//border-bottom: 4px solid var(--brand-primary)
 			.bc-hero__heading
 				margin-bottom: 0
 				font-family: var(--serif-font)
-				font-size: var(--text-gr-03-5)
+				//font-size: var(--text-gr-03-5)
 				color: #eaeaea
 			.bc-content-label
 				margin-bottom: calc(var(--vertical-unit) * 0.125)
+				
 	.bc-container
 		&.bc-inner-page__main-section
 			padding-top: calc(var(--vertical-unit) * 1)
@@ -1158,7 +1160,7 @@ iframe
 footer
 	h2 
 		font-family: var(--base-font)
-		font-size: var(--text-gr-01)  
+		font-size: var(--text-gr-01)
 	&.bc-container
 		padding-bottom: calc(var(--vertical-unit) * 1.5)
 .bc-footer-footer
@@ -1168,8 +1170,8 @@ footer
 	color: var(--white)
 	background-color: var(--brand-darker)
 
-/* Cookies notification */
-.bc-cookies-consent
+/* Modal window notification */
+.bc-cookies-consent, .bc-modal
 	position: fixed
 	top: 100%
 	left: 0
@@ -1183,32 +1185,36 @@ footer
 	z-index: 1000
 	@include makeFlexbox(column, $justify: flex-end)
 	& &__block
-		transform: translateY(100%)
+		transform: translateY(150%)
 		padding: calc(var(--gutter) * 1.5) var(--vertical-unit)
 		background-color: var(--white)
 		border-top: #{(6/14)}rem solid var(--brand-primary)
 		transition: transform 360ms ease-out 360ms
 	& &__heading
-		font-size: var(--text-gr-01-5)
+		font-size: var(--text-gr-02-5)
 	& &__heading, p
 		margin-bottom: calc(var(--vertical-unit) * 0.5)
 	p:last-of-type
 		margin-bottom: calc(var(--vertical-unit) * 1)
 	& &__btns
 		a 
+			margin-right: var(--gutter)
 			font-size: var(--text--1)
 			font-weight: var(--font-weight)
-		
 	& &__btns-wrap
-		@include makeFlexbox($justify: space-around, $align: center)
-	@media screen and (min-width: $tablet)
+		@include makeFlexbox($justify: flex-end, $align: center)
+	@media screen and (min-width: $tablet) 
 		padding-bottom: calc(var(--vertical-unit) * 2)
-.bc-cookies-not-set
-	.bc-cookies-consent
+#bc-cookies-consent-block
+	&.bc-cookies-set
+		.bc-cookies-consent__block
+			transform: translateY(150%) !important 
+.bc-modal-visible
+	.bc-modal
 		top: 0
 		opacity: 1
 		transition: opacity 360ms ease-in 0ms
-		.bc-cookies-consent__block
+		.bc-modal__block
 			transform: translateY(0)
 			transition-delay: 360ms 
 .bc-privacy-form

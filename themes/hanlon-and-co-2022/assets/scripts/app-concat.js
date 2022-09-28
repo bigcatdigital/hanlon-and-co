@@ -283,13 +283,16 @@ const bcFunctions = (function bcAppJS() {
 		console.log('------------');
 	}
 	const scrollLinks = Array.from(document.querySelectorAll('.bc-scroll-link'));
+	debug = true;
 	if (debug) {
 		console.log(`scrollLinks length: ${scrollLinks.length}`);
+		console.log(`scrollLinks length: ${scrollLinks[0]}`);
 	}
 	
 	scrollLinks.forEach(($link) => {
+		
 		if (debug) {
-			console.log($link);
+			console.log($link); 
 		}
 		if (document.getElementById($link.getAttribute('href').substr(1))) {
 			$link.addEventListener('click', (evt) => {
@@ -657,19 +660,33 @@ const bcFunctions = (function bcAppJS() {
 			theBody.classList.remove('bc-page-loading');
 			theBody.classList.add('bc-page-loaded');
 		}
-
+		/* Temporary - to make cookies block always show */
+		//set main cookie
+		bcSetCookie('bc-cookies-preferences', '', {
+			expires: new Date(Date.now() - (1 * 24 * 60 * 60 * 1000)).toUTCString()
+		});
+		if (bcGetCookie('bc-cookies-preferences') !== undefined || bcGetCookie('bc-cookies-preferences') !== '' ) {
+			bcSetCookie('bc-cookies-preferences', '', {
+				expires: new Date(Date.now() - (1 * 24 * 60 * 60 * 1000)).toUTCString()
+			});
+		}
+		//show the consent block
 		window.setTimeout(() => {
 			checkCookies('bc-cookies-preferences', () => {
-				theBody.classList.add('bc-cookies-not-set');
+				theBody.classList.add('bc-cookies-not-set', 'bc-modal-visible');
 			});
 		}, 3000);
+		//Consent button click handler
 		let cookiesConsent = document.querySelector('#bc-cookies-consent');
 		if (cookiesConsent) {
 			cookiesConsent.addEventListener('click', (evt) => {
+				evt.preventDefault();
 				if (bcGetCookie('bc-cookies-preferences') !== undefined && bcGetCookie('bc-cookies-preferences') !== '') {
 					bcSetCookie('bc-cookies-preferences', 'submitted');
 				}
 				theBody.classList.toggle('bc-cookies-not-set');
+				theBody.classList.toggle('bc-modal-visible');
+				document.querySelector('#bc-cookies-consent-block').classList.add('bc-cookies-set');
 			}); 
 		}
 	});
@@ -677,7 +694,7 @@ const bcFunctions = (function bcAppJS() {
 	function checkCookies(cookieName, cbFn) {
 		console.log(bcGetCookie(cookieName));
 		if (bcGetCookie(cookieName) !== undefined && bcGetCookie(cookieName) !== '') {
-			return;
+			return true;
 		}
 		cbFn();
 	}

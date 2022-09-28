@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="bc-page-loading" lang="en">
+<html class="bc-page-loading " lang="en">
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -15,56 +15,57 @@
 	<noscript><link rel="stylesheet" href="./assets/css/style.css"></noscript>
 	<script>!function(n){"use strict";n.loadCSS||(n.loadCSS=function(){});var o=loadCSS.relpreload={};if(o.support=function(){var e;try{e=n.document.createElement("link").relList.supports("preload")}catch(t){e=!1}return function(){return e}}(),o.bindMediaToggle=function(t){var e=t.media||"all";function a(){t.addEventListener?t.removeEventListener("load",a):t.attachEvent&&t.detachEvent("onload",a),t.setAttribute("onload",null),t.media=e}t.addEventListener?t.addEventListener("load",a):t.attachEvent&&t.attachEvent("onload",a),setTimeout(function(){t.rel="stylesheet",t.media="only x"}),setTimeout(a,3e3)},o.poly=function(){if(!o.support())for(var t=n.document.getElementsByTagName("link"),e=0;e<t.length;e++){var a=t[e];"preload"!==a.rel||"style"!==a.getAttribute("as")||a.getAttribute("data-loadcss")||(a.setAttribute("data-loadcss",!0),o.bindMediaToggle(a))}},!o.support()){o.poly();var t=n.setInterval(o.poly,500);n.addEventListener?n.addEventListener("load",function(){o.poly(),n.clearInterval(t)}):n.attachEvent&&n.attachEvent("onload",function(){o.poly(),n.clearInterval(t)})}"undefined"!=typeof exports?exports.loadCSS=loadCSS:n.loadCSS=loadCSS}("undefined"!=typeof global?global:this);</script>
 
-	<!-- Global site tag (gtag.js) - Google Analytics -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=G-EB511QMQDJ"></script>
+	<!-- Global site tag (gtag.js) - Google Analytics 
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-EB511QMQDJ"></script> -->
 </head>  
 <body>
 	<script>
 		//window['ga-disable-G-EB511QMQDJ'] = true;
-		window.dataLayer = window.dataLayer || [];
-		function gtag(){dataLayer.push(arguments);}
-		gtag('js', new Date());
-		gtag('config', 'G-EB511QMQDJ'); 
-		let cookiesPreferences = document.cookie.split('; ').find((row) => {
-			return row.startsWith('fwc-cookies-preferences');
-		}); 
-		cookiesPreferences = (cookiesPreferences) ? cookiesPreferences.split('=')[1] : undefined ;
-		console.log(cookiesPreferences);
-		if (cookiesPreferences === 'submitted') {
-			const gaAnalytics = document.cookie.split('; ').find((row) => {
-				return row.startsWith('fwc-ga-analytics');
-			}).split('=')[1]; 
-			if (gaAnalytics === 'denied') {
-				gtag('consent', 'update', {
-					'analytics_storage': 'denied'
-				});
-			} else {
-				gtag('consent', 'update', {
-					'analytics_storage': 'granted'
-				});
-			}
-			const gaAdStorage = document.cookie.split('; ').find((row) => {
-				return row.startsWith('fwc-goolge-ad-storage');
-			}).split('=')[1]; 
-			if (gaAdStorage === 'denied') {
-				gtag('consent', 'update', {
-					'ad_storage': 'denied'
-				});
-			} else {
-				gtag('consent', 'update', {
-					'ad_storage': 'granted'
-				});
-			}
-		} else {
-			gtag('consent', 'default', {
-				'ad_storage': 'denied',
-				'analytics_storage': 'denied'
-			});
-			let theBody = document.querySelector('html');
-			window.setTimeout(() => {
-				theBody.classList.add('bc-cookies-not-set');	
-			}, 3000);
-		}
+		/* Analytics gtag object */
+		// window.dataLayer = window.dataLayer || [];
+		// function gtag(){dataLayer.push(arguments);}
+		// gtag('js', new Date());
+		// gtag('config', 'G-EB511QMQDJ'); 
+		// let cookiesPreferences = document.cookie.split('; ').find((row) => {
+		// 	return row.startsWith('bc-cookies-preferences');
+		// }); 
+		// cookiesPreferences = (cookiesPreferences) ? cookiesPreferences.split('=')[1] : undefined ;
+		// console.log(cookiesPreferences);
+		// if (cookiesPreferences === 'submitted') {
+		// 	const gaAnalytics = document.cookie.split('; ').find((row) => {
+		// 		return row.startsWith('bc-ga-analytics');
+		// 	}).split('=')[1]; 
+		// 	if (gaAnalytics === 'denied') {
+		// 		gtag('consent', 'update', {
+		// 			'analytics_storage': 'denied'
+		// 		});
+		// 	} else {
+		// 		gtag('consent', 'update', {
+		// 			'analytics_storage': 'default'
+		// 		});
+		// 	}
+		// 	const gaAdStorage = document.cookie.split('; ').find((row) => {
+		// 		return row.startsWith('bc-google-ad-storage');
+		// 	}).split('=')[1]; 
+		// 	if (gaAdStorage === 'denied') {
+		// 		gtag('consent', 'update', {
+		// 			'ad_storage': 'denied'
+		// 		});
+		// 	} else {
+		// 		gtag('consent', 'update', {
+		// 			'ad_storage': 'granted'
+		// 		});
+		// 	}
+		// } else {
+		// 	gtag('consent', 'default', {
+		// 		'ad_storage': 'denied',
+		// 		'analytics_storage': 'denied'
+		// 	});
+		// 	let theBody = document.querySelector('html');
+		// 	window.setTimeout(() => {
+		// 		theBody.classList.add('bc-cookies-not-set');	
+		// 	}, 3000);
+		// }
 	</script>
 <div class="bc-body-wrap">
 	<nav class="bc-is-hidden" aria-label="Skip to main content link">
@@ -105,7 +106,7 @@
 						</ul>	
 					</li>
 					<li class="bc-site-header__main-navigation__item"><a href="about.html">About</a></li>
-					<li class="bc-site-header__main-navigation__item bc-contact-link"><a href="contact.html">Contact</a></li>
+					<li class="bc-site-header__main-navigation__item bc-contact-link "><a class="bc-scroll-link" href="#contact-us">Contact</a></li>
 				</ul>	
 			</div><!-- // .bc-site-header__main-navigation-wrap -->
 		</div><!-- // .bc-site-header__main-navigation  -->
@@ -256,7 +257,7 @@
 			</div>
 		</footer>	
 	</section><!-- // .bc-container.bc-areas-of-practice -->
-	<section class="bc-container bc-about-us ">
+	<section class="bc-container bc-about-us">
 		<article class="bc-two-column-layout--wide bc-bg-brand-primary"> 
 			<div class="bc-two-column-layout--wide__media">
 				<picture class="bc-two-column-layout--wide__media__media">
@@ -274,7 +275,7 @@
 				</p>
 			</div>
 		</article>
-	</section>
+	</section><!-- // .bc-container.bc-about-us -->
 	<section class="bc-container bc-testimonials bc-bg-shade-f0" aria-label="Flickity text slider">
 		<div class="bc-content-component--text">
 			<h1 class="bc-content-label">Testimonials</h1> 
@@ -300,7 +301,7 @@
 		</div><!-- //.bc-flickity -->
 	</section><!-- // Flickity text slider -->
 	
-	<footer class="bc-container bc-bg-brand-primary">
+	<footer id="contact-us" class="bc-container bc-bg-brand-primary">
 		<div class="bc-grid">
 			<div>
 				<h2>Contact</h2>
@@ -351,24 +352,24 @@
 		&#169; 2022 Hanlon & Co Solicitors
 	</div><!-- // .bc-footer-footer-->
 	<!-- Cookies consent -->
-	<section class="bc-cookies-consent">
-		<article class="bc-cookies-consent__block bc-text-component">
-				<h2>About your data</h2>
+	<section id="bc-cookies-consent-block" class="bc-cookies-consent bc-modal">
+		<article class="bc-cookies-consent__block bc-modal__block bc-text-component">
+				<h2 class="bc-cookies-consent__heading bc-modal__heading">About your data</h2>
 				<p>We use cookies to improve your experience and to learn more about what you like.</p>
-			<div class="bc-cookies-consent__btns">
+				<p>You can manage your prefrences here.</p>
+			<div class="bc-cookies-consent__btns bc-modal__btns">
 				<div class="bc-cookies-consent__btns-wrap">
-					<a href="#">Manage your options</a>
-					<button id="bc-cookies-consent">
+					<a href="privacy-page.html">Find out more</a>
+					<button class="bc-button" id="bc-cookies-consent">
 						I'm happy with that
 					</button>
 				</div>
-				
 			</div>
 		</article>
 	</section>
 
 	<script src="assets/scripts/app-concat.js"></script>  
-
+	
 </div><!-- //. bc-body-wrap --> 
 
 </body>

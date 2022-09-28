@@ -273,7 +273,8 @@
 .bc-text-component {
   max-width: var(--text-max-width);
   margin-left: auto;
-  margin-right: auto; }
+  margin-right: auto;
+  width: 100%; }
 
 .bc-intro-paragraph {
   font-size: 1.1487rem;
@@ -1260,7 +1261,27 @@ table {
     padding-top: var(--vertical-unit);
     padding-bottom: var(--vertical-unit); }
 
+.bc-button, .bc-button--secondary {
+  padding: calc(var(--vertical-unit) * 0.5) calc(var(--gutter) * 1.25);
+  font-weight: var(--bold-font-weight);
+  border: 1px solid var(--brand-primary);
+  background-color: var(--brand-primary);
+  color: var(--white);
+  transition: background-color 360ms ease-out, box-shadow 220ms ease-out; }
+  .bc-button:active, .bc-button--secondary:active, .bc-button:hover, .bc-button--secondary:hover, .bc-button:focus, .bc-button--secondary:focus {
+    cursor: pointer;
+    background-color: #172b55;
+    box-shadow: 3px 3px 8px 4px rgba(0, 0, 16, 0.12), -3px -3px 8px 4px rgba(0, 0, 16, 0.12); }
+  .bc-button--secondary {
+    font-weight: var(--font-weight);
+    color: var(--text-black);
+    background-color: #ededed;
+    border-color: var(--shade-08); }
+
 /* Custom utils */
+.bc-text-component {
+  width: 100%; }
+
 .bc-bg-brand-primary {
   background-color: #22407D;
   background-image: linear-gradient(315deg, #15274d 0%, #22407D 50%, #15274d 100%);
@@ -1334,8 +1355,7 @@ table {
   fill: var(--brand-primary); }
 
 .bc-feature-header, .bc-feature-header--hero {
-  position: relative;
-  margin-bottom: calc(var(--vertical-unit) * 3); }
+  position: relative; }
   .bc-feature-header .bc-feature-header__col, .bc-feature-header--hero .bc-feature-header__col {
     max-width: 28.88889rem; }
   .bc-feature-header .bc-feature-header__heading, .bc-feature-header--hero .bc-feature-header__heading {
@@ -1429,8 +1449,7 @@ table {
       height: 0.07143rem; }
 
 .bc-intro-paragraph {
-  font-size: var(--text-gr-00-5);
-  font-weight: var(--light-weight);
+  font-size: var(--text-gr-01);
   color: inherit; }
 
 #abstract-dots, .bc-abstract-dots {
@@ -1692,7 +1711,6 @@ table {
       margin-top: 0;
       margin-bottom: calc(var(--vertical-unit) / 2); } }
   .bc-hero .bc-feature-header, .bc-hero--full-screen .bc-feature-header, .bc-hero .bc-feature-header--hero, .bc-hero--full-screen .bc-feature-header--hero {
-    margin-bottom: calc(var(--vertical-unit)*3);
     color: inherit; }
 
 /* Content sections */
@@ -2188,7 +2206,8 @@ table {
   margin-bottom: calc(var(--vertical-unit) * 2); }
 
 .bc-inner-page .bc-media-overlay {
-  background-color: rgba(34, 64, 125, 0.72); }
+  background-color: rgba(34, 64, 125, 0.8);
+  mix-blend-mode: none; }
 
 .bc-inner-page .bc-content-label {
   color: inherit; }
@@ -2201,18 +2220,17 @@ table {
   padding-bottom: calc(var(--vertical-unit) * 0); }
 
 .bc-inner-page #main-site-content .bc-container:first-of-type, .bc-inner-page #main-site-content .bc-hero:first-of-type, .bc-inner-page #main-site-content .bc-hero--full-screen:first-of-type {
-  padding-top: calc(var(--vertical-unit) * 3); }
+  padding-top: calc(var(--vertical-unit) * 2); }
 
 .bc-inner-page #main-site-content .bc-container:last-of-type, .bc-inner-page #main-site-content .bc-hero:last-of-type, .bc-inner-page #main-site-content .bc-hero--full-screen:last-of-type {
   padding-bottom: calc(var(--vertical-unit) * 2); }
 
 .bc-inner-page .bc-hero.bc-inner-page-heading, .bc-inner-page .bc-inner-page-heading.bc-hero--full-screen {
-  padding-top: calc(var(--vertical-unit) * 5);
-  padding-bottom: var(--vertical-unit); }
+  padding-top: calc(var(--vertical-unit) * 3);
+  padding-bottom: calc(var(--vertical-unit) * 3); }
   .bc-inner-page .bc-hero.bc-inner-page-heading .bc-hero__heading, .bc-inner-page .bc-inner-page-heading.bc-hero--full-screen .bc-hero__heading {
     margin-bottom: 0;
     font-family: var(--serif-font);
-    font-size: var(--text-gr-03-5);
     color: #eaeaea; }
   .bc-inner-page .bc-hero.bc-inner-page-heading .bc-content-label, .bc-inner-page .bc-inner-page-heading.bc-hero--full-screen .bc-content-label {
     margin-bottom: calc(var(--vertical-unit) * 0.125); }
@@ -2307,8 +2325,8 @@ footer.bc-container, footer.bc-hero, footer.bc-hero--full-screen {
   color: var(--white);
   background-color: var(--brand-darker); }
 
-/* Cookies notification */
-.bc-cookies-consent {
+/* Modal window notification */
+.bc-cookies-consent, .bc-modal {
   position: fixed;
   top: 100%;
   left: 0;
@@ -2325,50 +2343,46 @@ footer.bc-container, footer.bc-hero, footer.bc-hero--full-screen {
   justify-content: flex-end;
   flex-wrap: nowrap;
   align-items: flex-start; }
-  .bc-cookies-consent .bc-cookies-consent__block {
-    transform: translateY(100%);
-    padding: var(--gutter) var(--vertical-unit);
+  .bc-cookies-consent .bc-cookies-consent__block, .bc-modal .bc-cookies-consent__block, .bc-cookies-consent .bc-modal__block, .bc-modal .bc-modal__block {
+    transform: translateY(150%);
+    padding: calc(var(--gutter) * 1.5) var(--vertical-unit);
     background-color: var(--white);
-    border-top: 1px solid var(--brand-primary);
+    border-top: 0.42857rem solid var(--brand-primary);
     transition: transform 360ms ease-out 360ms; }
-  .bc-cookies-consent .bc-cookies-consent__btns a {
+  .bc-cookies-consent .bc-cookies-consent__heading, .bc-modal .bc-cookies-consent__heading, .bc-cookies-consent .bc-modal__heading, .bc-modal .bc-modal__heading {
+    font-size: var(--text-gr-02-5); }
+  .bc-cookies-consent .bc-cookies-consent__heading, .bc-cookies-consent p, .bc-modal .bc-cookies-consent__heading, .bc-modal p, .bc-cookies-consent .bc-modal__heading, .bc-modal .bc-modal__heading {
+    margin-bottom: calc(var(--vertical-unit) * 0.5); }
+  .bc-cookies-consent p:last-of-type, .bc-modal p:last-of-type {
+    margin-bottom: calc(var(--vertical-unit) * 1); }
+  .bc-cookies-consent .bc-cookies-consent__btns a, .bc-modal .bc-cookies-consent__btns a, .bc-cookies-consent .bc-modal__btns a, .bc-modal .bc-modal__btns a {
+    margin-right: var(--gutter);
     font-size: var(--text--1);
     font-weight: var(--font-weight); }
-  .bc-cookies-consent .bc-cookies-consent__btns button {
-    padding: calc(var(--vertical-unit) * 0.5) calc(var(--gutter) * 1);
-    border-color: var(--brand-primary);
-    background-color: var(--white);
-    color: var(--brand-primary);
-    transition: background-color 360ms ease-out; }
-    .bc-cookies-consent .bc-cookies-consent__btns button:active, .bc-cookies-consent .bc-cookies-consent__btns button:hover, .bc-cookies-consent .bc-cookies-consent__btns button:focus {
-      color: var(--white);
-      background-color: var(--brand-primary); }
-  .bc-cookies-consent .bc-cookies-consent__btns-wrap {
+  .bc-cookies-consent .bc-cookies-consent__btns-wrap, .bc-modal .bc-cookies-consent__btns-wrap, .bc-cookies-consent .bc-modal__btns-wrap, .bc-modal .bc-modal__btns-wrap {
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: flex-end;
     flex-wrap: nowrap;
     align-items: center; }
   @media screen and (min-width: 768px) {
-    .bc-cookies-consent {
+    .bc-cookies-consent, .bc-modal {
       padding-bottom: calc(var(--vertical-unit) * 2); } }
 
-.bc-cookies-not-set .bc-cookies-consent {
+#bc-cookies-consent-block.bc-cookies-set .bc-cookies-consent__block {
+  transform: translateY(150%) !important; }
+
+.bc-modal-visible .bc-modal {
   top: 0;
   opacity: 1;
   transition: opacity 360ms ease-in 0ms; }
-  .bc-cookies-not-set .bc-cookies-consent .bc-cookies-consent__block {
+  .bc-modal-visible .bc-modal .bc-modal__block {
     transform: translateY(0);
     transition-delay: 360ms; }
 
-.bc-button {
-  padding: calc(var(--vertical-unit) * 0.5) calc(var(--gutter) * 1);
-  border-color: var(--brand-primary);
-  background-color: var(--white);
-  color: var(--brand-primary);
-  transition: background-color 360ms ease-out; }
-  .bc-button:active, .bc-button:hover, .bc-button:focus {
-    color: var(--white);
-    background-color: var(--brand-primary); }
+.bc-privacy-form .bc-button, .bc-privacy-form .bc-button--secondary {
+  margin-top: var(--vertical-unit); }
+  .bc-privacy-form .bc-button:first-of-type, .bc-privacy-form .bc-button--secondary:first-of-type {
+    margin-right: calc(var(--vertical-unit) * 0.25); }
 
 /*# sourceMappingURL=style.css.map */

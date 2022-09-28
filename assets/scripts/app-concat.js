@@ -58,7 +58,7 @@
  * BigCat Design, Dublin
  * @preserve 
 */
-(function bcAppJS() {
+const bcFunctions = (function bcAppJS() {
 	let debug = false; 
 	if (debug) {	
 		console.log('Hanlon & Co WP theme here');
@@ -283,13 +283,16 @@
 		console.log('------------');
 	}
 	const scrollLinks = Array.from(document.querySelectorAll('.bc-scroll-link'));
+	debug = true;
 	if (debug) {
 		console.log(`scrollLinks length: ${scrollLinks.length}`);
+		console.log(`scrollLinks length: ${scrollLinks[0]}`);
 	}
 	
 	scrollLinks.forEach(($link) => {
+		
 		if (debug) {
-			console.log($link);
+			console.log($link); 
 		}
 		if (document.getElementById($link.getAttribute('href').substr(1))) {
 			$link.addEventListener('click', (evt) => {
@@ -657,22 +660,41 @@
 			theBody.classList.remove('bc-page-loading');
 			theBody.classList.add('bc-page-loaded');
 		}
+		/* Temporary - to make cookies block always show */
+		//set main cookie
+		bcSetCookie('bc-cookies-preferences', '', {
+			expires: new Date(Date.now() - (1 * 24 * 60 * 60 * 1000)).toUTCString()
+		});
+		if (bcGetCookie('bc-cookies-preferences') !== undefined || bcGetCookie('bc-cookies-preferences') !== '' ) {
+			bcSetCookie('bc-cookies-preferences', '', {
+				expires: new Date(Date.now() - (1 * 24 * 60 * 60 * 1000)).toUTCString()
+			});
+		}
+		//show the consent block
 		window.setTimeout(() => {
-			checkCookies(() => {
-				theBody.classList.add('bc-cookies-not-set');
+			checkCookies('bc-cookies-preferences', () => {
+				theBody.classList.add('bc-cookies-not-set', 'bc-modal-visible');
 			});
 		}, 3000);
+		//Consent button click handler
 		let cookiesConsent = document.querySelector('#bc-cookies-consent');
 		if (cookiesConsent) {
 			cookiesConsent.addEventListener('click', (evt) => {
+				evt.preventDefault();
+				if (bcGetCookie('bc-cookies-preferences') !== undefined && bcGetCookie('bc-cookies-preferences') !== '') {
+					bcSetCookie('bc-cookies-preferences', 'submitted');
+				}
 				theBody.classList.toggle('bc-cookies-not-set');
+				theBody.classList.toggle('bc-modal-visible');
+				document.querySelector('#bc-cookies-consent-block').classList.add('bc-cookies-set');
 			}); 
 		}
 	});
 	let cookiesDone = false;
-	function checkCookies(cbFn) {
-		if (cookiesDone) {
-			return;
+	function checkCookies(cookieName, cbFn) {
+		console.log(bcGetCookie(cookieName));
+		if (bcGetCookie(cookieName) !== undefined && bcGetCookie(cookieName) !== '') {
+			return true;
 		}
 		cbFn();
 	}
@@ -695,7 +717,7 @@
 		document.cookie	= newCookie; 
 		if (debug) {
 			console.log('setCookie() document.cookie = '+ document.cookie);
-		}
+		} 
 	}
 	function bcGetCookie(cname) {
 		const allCookies = document.cookie.split('; ');
@@ -704,8 +726,12 @@
 		}); 
 		return (thisCookie) ? thisCookie.split('=')[1] : undefined ;
 	}
-	
 
+	/* Return protected functions */
+	return {
+		getCookie: bcGetCookie,
+		setCookie: bcSetCookie
+	};
 })(window);
 /* App.js */
 
