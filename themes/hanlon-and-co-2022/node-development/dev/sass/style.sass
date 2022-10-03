@@ -1223,7 +1223,22 @@ footer
 		&:first-of-type
 			margin-right: calc(var(--vertical-unit) * 0.25)
 
-
-		
+#menu-main-site-navigation.menu
+	padding-top: calc(var(--vertical-unit) * 2)
+	ul
+		ul
+			margin-top: 0
+	a 
+		padding: 0
+		color: var(--white)
+		@include linkHover
+			text-decoration: none
+	.bc-site-header__main-navigation__item
+		> a 
+			color: var(--white)
+		.bc-site-header__main-navigation__item
+			> a 
+				flex: 1 1 100%
+				
 
 		

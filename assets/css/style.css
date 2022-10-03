@@ -2385,4 +2385,18 @@ footer.bc-container, footer.bc-hero, footer.bc-hero--full-screen {
   .bc-privacy-form .bc-button:first-of-type, .bc-privacy-form .bc-button--secondary:first-of-type {
     margin-right: calc(var(--vertical-unit) * 0.25); }
 
+#menu-main-site-navigation.menu {
+  padding-top: calc(var(--vertical-unit) * 2); }
+  #menu-main-site-navigation.menu ul ul {
+    margin-top: 0; }
+  #menu-main-site-navigation.menu a {
+    padding: 0;
+    color: var(--white); }
+    #menu-main-site-navigation.menu a:active, #menu-main-site-navigation.menu a:hover, #menu-main-site-navigation.menu a:focus {
+      text-decoration: none; }
+  #menu-main-site-navigation.menu .bc-site-header__main-navigation__item > a {
+    color: var(--white); }
+  #menu-main-site-navigation.menu .bc-site-header__main-navigation__item .bc-site-header__main-navigation__item > a {
+    flex: 1 1 100%; }
+
 /*# sourceMappingURL=style.css.map */
