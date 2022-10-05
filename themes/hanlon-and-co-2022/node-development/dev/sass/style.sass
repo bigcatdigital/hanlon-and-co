@@ -144,6 +144,7 @@ iframe
 	.bc-content-component
 		padding-left: 0
 		padding-right: 0
+	
 .bc-content-component
 	@include makeFlexbox(column)
 /* Utilities 	overwrites */
@@ -274,7 +275,7 @@ iframe
 	&__wrap
 		@media screen and (min-width: $tablet-large)
 			@include makeFlexbox($align: center)
-	margin-bottom: calc(var(--vertical-unit) * 0.618 )
+	margin-bottom: calc(var(--vertical-unit) * 0.382 )
 	font-family: var(--sans-font) 
 	font-size: var(--text-gr--2) 
 	font-weight: var(--light-weight)
@@ -312,6 +313,7 @@ iframe
 		position: relative
 		margin-bottom: 0
 		padding-bottom: calc(var(--vertical-unit))
+		font-weight: var(--light-weight)
 		//border-bottom: #{(3/14)}rem solid var(--shade-e0)
 		&::after
 			//content: " "
@@ -425,9 +427,9 @@ iframe
 	padding-top: 		calc(var(--vertical-unit) /2 )
 	padding-bottom: calc(var(--vertical-unit) /2 )
 	background-color: var(--white)
+	border-bottom: 1px solid #efefef
 	.bc-site-logo
 		transition: none
-		
 	& &__home-link
 		@include linkHover
 			&::after
@@ -436,7 +438,6 @@ iframe
 		z-index: 35
 		&__close
 			fill: var(--white)
-
 		.svg-icon
 			max-width:  calc(var(--gutter) * 1.125)
 			max-height: calc(var(--gutter) * 1.125)
@@ -509,8 +510,6 @@ iframe
 				opacity: 1
 				transform: translateY(0)
 				transition: height 280ms ease-out 0ms, opacity 160ms ease-in 220ms, transform 480ms ease-out 280ms 
-				
-			
 	&.bc-is-active
 		.bc-site-header__main-navigation
 			left: 0
@@ -562,7 +561,7 @@ iframe
 				@include makeFlexbox(row, $align: stretch)
 			&__list 
 				flex: 1 1 61.8%
-		
+
 .bc-is-filterable
 	transition: filter 640ms ease-in
 	&--full-screen
@@ -750,9 +749,23 @@ iframe
 					order: 1	
 .bc-breadcrumbs-nav
 	&.bc-container
-		padding-top: calc(var(--vertical-unit) * 0.618)
-		padding-bottom: calc(var(--vertical-unit) * 0.618)
-
+		padding-top: 		calc(var(--vertical-unit) * 0.0)
+		padding-bottom: calc(var(--vertical-unit) * 0.0)
+		background-color: var(--white)
+		.bc-breadcrumbs-nav__list 
+			display: inline-flex
+			margin-left: 		calc(var(--vertical-unit) * 0.5 * -1)
+			margin-right: 	calc(var(--vertical-unit) * 0.5 * -1)
+			padding-top: 		calc(var(--vertical-unit) * 0.125)
+			padding-bottom: calc(var(--vertical-unit) * 0.125)
+			padding-left: 	calc(var(--vertical-unit) * 0.5)
+			padding-right: 	calc(var(--vertical-unit) * 0.5)
+			flex: 0 1 auto
+			background-color: var(--shade-f0)
+			//font-size: var(--text-gr--2)
+			font-weight: var(--light-weight)
+		a 
+			font-weight: var(--font-weight)
 .bc-card 
 	& &__media 
 		background-color: var(--shade-60) 
@@ -1065,28 +1078,45 @@ iframe
 .bc-inner-page
 	h2
 		font-family: var(--sans-font)
+	.bc-content-component
+		&--media-padded 
+			@media screen and (min-width: $tablet-large) 
+				max-width: calc(100% - ((100% - 70.72%) / 2))
 	.bc-text-component
 		max-width: none
 		@media screen and (min-width: 860px)
 			max-width: var(--text-max-width)
 	.bc-feature-header
 		margin-bottom: calc(var(--vertical-unit) * 2)
+	.bc-inner-page-heading
+		padding-bottom: calc(var(--vertical-unit) * 1)
+		@media screen and (min-width: $tablet-large) 
+			max-width: calc(100% - ((100% - 70.72%) / 2))
+			.bc-text-component
+				max-width: 70.72%
+		.bc-content-label
+			margin-bottom: 0
+		&__heading
+			margin-bottom: calc(var(--vertical-unit) * 0.5)
+			font-size: var(--text-gr-04)
+			color: var(--brand-primary)
 	.bc-media-overlay
 		background-color: rgba($brand-primary, 0.8) 
 		mix-blend-mode: none
 	.bc-content-label
+
 		color: inherit
-	.bc-breadcrumbs-nav, & &__main-section
+	& &__main-section
 		background-color: var(--white)
 	.bc-container:not(.bc-site-header):not(.bc-breadcrumbs-nav):not(.bc-inner-page-heading):not(footer):not(.bc-testimonials)
 		padding-top: calc(var(--vertical-unit) * 1)
 		padding-bottom: calc(var(--vertical-unit) * 0)
-	#main-site-content
+	&#main-site-content
 		.bc-container
 			&:first-of-type
-				padding-top: calc(var(--vertical-unit) * 2)
+				padding-top: calc(var(--vertical-unit) * 3)
 			&:last-of-type
-				padding-bottom: calc(var(--vertical-unit) * 2)
+				padding-bottom: calc(var(--vertical-unit) * 3)
 	.bc-hero
 		&.bc-inner-page-heading 
 			padding-top: calc(var(--vertical-unit) * 3) 
@@ -1224,16 +1254,17 @@ footer
 			margin-right: calc(var(--vertical-unit) * 0.25)
 
 #menu-main-site-navigation.menu
-	padding-top: calc(var(--vertical-unit) * 2)
+	padding-top: calc(var(--vertical-unit) * 1)
 	ul
-		ul
-			margin-top: 0
+			margin-top: 0 
 	a 
 		padding: 0
 		color: var(--white)
 		@include linkHover
 			text-decoration: none
 	.bc-site-header__main-navigation__item
+		> ul
+			margin-top: calc(var(--vertical-unit) * 0.5)
 		> a 
 			color: var(--white)
 		.bc-site-header__main-navigation__item
