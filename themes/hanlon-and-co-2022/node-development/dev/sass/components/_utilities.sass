@@ -26,6 +26,8 @@
 	.svg-icon
 		max-height: #{$line-height}rem
 		max-width: #{$line-height}rem
+	li
+		@include makeFlexbox($align: center)
 	a 
 		@include makeFlexbox(row, center, center)
 		width: 2rem
@@ -33,6 +35,8 @@
 		text-decoration: none
 		@include linkHover
 			text-decoration: none
+			&::after
+				height: 0
 	
 .bc-arrow-link
 	@include arrowLink() 

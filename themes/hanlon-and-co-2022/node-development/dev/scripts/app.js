@@ -324,9 +324,6 @@ const bcFunctions = (function bcAppJS() {
 	/* Main site navigation */
 	function mainNavigationSetup() {
 		debug = false;
-		//if (window.outerWidth >= 1024 ) {
-		//	return true;
-		//}
 		const $siteHeader = document.querySelector('.bc-site-header');
 		const $siteHeaderMenuLink = document.querySelector('.bc-site-header__menu-link');
 		const $siteHeaderMainNav = document.querySelector('.bc-site-header__main-navigation');
@@ -348,7 +345,9 @@ const bcFunctions = (function bcAppJS() {
 		function menuIconClickHandler(evt) {
 			evt.preventDefault();
 			requestAnimationFrame(() => {
-				$siteHeader.classList.toggle('bc-is-active'); 
+				$siteHeader.classList.toggle('bc-is-active');
+				let $bodyWrap = document.querySelector('.bc-body-wrap');
+				$bodyWrap.classList.toggle('bc-main-nav-open'); 
 			});
 			
 			if (debug) {
@@ -597,7 +596,24 @@ const bcFunctions = (function bcAppJS() {
 		if (debug) {
 			console.log('[debug]: Window loaded');
 		}
+		//Main nav set up
 		mainNavigationSetup();
+		let $bodyWrap = document.querySelector('.bc-body-wrap');
+		let $siteHeader = document.querySelector('.bc-site-header');
+
+		$bodyWrap.addEventListener('click', (evt) => {
+			if ($bodyWrap.classList.contains('bc-main-nav-open')) {
+				let $eventTarget = evt.target;
+				if ($eventTarget.closest('.bc-site-header')){
+					return; 
+				} else {
+					$siteHeader.classList.remove('bc-is-active');
+					$bodyWrap.classList.remove('bc-main-nav-open');
+				}
+			} else {
+				return;
+			}
+		});
 		matchHeights();
 		let theBody = document.querySelector('html');
 		if (theBody) {
@@ -619,7 +635,7 @@ const bcFunctions = (function bcAppJS() {
 			checkCookies('bc-cookies-preferences', () => {
 				theBody.classList.add('bc-cookies-not-set', 'bc-modal-visible');
 			});
-		}, 3000);
+		}, 0);
 		//Consent button click handler
 		let cookiesConsent = document.querySelector('#bc-cookies-consent');
 		if (cookiesConsent) {

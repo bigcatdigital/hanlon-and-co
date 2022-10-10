@@ -136,10 +136,7 @@
 	<!-- // Hero -->
 	<section id="" class="bc-container bc-areas-of-practice bc-has-footer">
 		<article class="bc-content-component">
-			<div class="bc-content-component--text bc-feature-header bc-has-dots"> 
-				<svg class="svg-icon bc-abstract-dots bc-abstract-dots-4">  
-					<use href="assets/media/svg/abstract-dots-all.svg#abstract-dots-4"></use>
-				</svg>
+			<div class="bc-content-component--text bc-feature-header"> 
 				<div class="bc-feature-header__col">
 					<h1 class="bc-feature-header__heading">Areas of practice</h1>
 					<p class="bc-intro-paragraph">Nemo enim <strong>ipsam voluptatem</strong> quia voluptas sit aspernatur aut odit aut fugit.</p>
@@ -307,11 +304,18 @@
 					D03 C434<br />
 					<a href="tel:018369300">(01) 836 9300</a><br>
 				</p>
-				
+				<p class="bc-privacy-policy-link"><a href="privacy-page.html">Privacy policy</a></p>
 			</div><!-- // grid column -->
 			<div>
 				<h2>Follow us</h2>
 				<ul class="bc-icon-links">
+					<li class="bc-icon-links__linkedin">
+						<a target="_blank" href="https://linkedin.com">
+							<svg class="svg-icon">
+								<use xlink:href="assets/media/svg/icons/bc-svgs.svg#linkedin-plain"></use>
+							</svg>	
+						</a>
+					</li>		
 					<li>
 						<a target="_blank" href="https://instagram.com">
 							<svg class="svg-icon">
@@ -344,24 +348,28 @@
 		</div><!-- // .bc-grid -->
 	</footer>
 	<div class="bc-footer-footer bc-container">
-		&#169; 2022 Hanlon & Co Solicitors
-	</div><!-- // .bc-footer-footer-->
+		<div>&#169; 2022 Hanlon & Co Solicitors</div> 
+		
+	</div><!-- // .bc-footer-footer--> 
+	<!-- Cookies consent -->
 	<!-- Cookies consent -->
 	<section id="bc-cookies-consent-block" class="bc-cookies-consent bc-modal">
-		<article class="bc-cookies-consent__block bc-modal__block bc-text-component">
+		<article class="bc-cookies-consent__block bc-modal__block ">
+			<div class="bc-cookies-consent__content bc-text-component">
 				<h2 class="bc-cookies-consent__heading bc-modal__heading">About your data</h2>
 				<p>We use cookies to improve your experience and to learn more about what you like.</p>
 				<p>You can manage your prefrences here.</p>
-			<div class="bc-cookies-consent__btns bc-modal__btns">
-				<div class="bc-cookies-consent__btns-wrap">
-					<a href="privacy-page.html">Find out more</a>
-					<button class="bc-button" id="bc-cookies-consent">
-						I'm happy with that
-					</button>
+				<div class="bc-cookies-consent__btns bc-modal__btns">
+					<div class="bc-cookies-consent__btns-wrap">
+						<a href="privacy-page.html">Find out more</a>
+						<button class="bc-button" id="bc-cookies-consent">
+							I'm happy with that
+						</button>
+					</div>
 				</div>
-			</div>
-		</article>
-	</section>
+			</div><!-- // .bc-cookies-consent__content -->	
+		</article><!-- // .bc-cookies-consent__block -->
+	</section><!-- // .bc-cookies-consent -->
 
 	<script src="assets/scripts/app-concat.js"></script>  
 	
