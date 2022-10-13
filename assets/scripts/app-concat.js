@@ -586,11 +586,9 @@ const bcFunctions = (function bcAppJS() {
 						} else {
 							return;
 						}
-						console.log(targetHeight + ' after ' + idx);
 					});//matchElements foreach
 					if (targetHeight > 0) {
 						matchElements.forEach((el) => {
-							console.log('Hello');
 							el.style.height = targetHeight + 'px';
 						});
 					} else {
@@ -708,7 +706,6 @@ const bcFunctions = (function bcAppJS() {
 	});
 	let cookiesDone = false;
 	function checkCookies(cookieName, cbFn) {
-		console.log(bcGetCookie(cookieName));
 		if (bcGetCookie(cookieName) !== undefined && bcGetCookie(cookieName) !== '') {
 			return true;
 		}
@@ -743,10 +740,27 @@ const bcFunctions = (function bcAppJS() {
 		return (thisCookie) ? thisCookie.split('=')[1] : undefined ;
 	}
 
+	/* Snack bar */
+	if (document.querySelector('.bc-snack-bar__close')) {
+		let $snackBarClose = document.querySelector('.bc-snack-bar__close');
+		$snackBarClose.addEventListener('click', (evt) => {
+			evt.preventDefault();
+			let $docBody = document.querySelector('body');
+			$docBody.classList.remove('bc-snack-bar-visible');
+		});
+	}
+	
+	
+	function showSnackBar($trigger) {
+		let $docBody = document.querySelector('body');
+		$docBody.classList.add('bc-snack-bar-visible');
+	}
+
 	/* Return protected functions */
 	return {
 		getCookie: bcGetCookie,
-		setCookie: bcSetCookie
+		setCookie: bcSetCookie,
+		showSnackBar: showSnackBar
 	};
 })(window);
 /* App.js */

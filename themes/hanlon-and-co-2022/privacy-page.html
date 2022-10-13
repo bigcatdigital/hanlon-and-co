@@ -161,6 +161,10 @@
 										});
 									}
 									expiryDate = new Date(Date.now() + (7 * 24 * 60 * 60 * 1000)).toUTCString();
+									/* Show confirmation */
+									let $docBody = document.querySelector('body');
+									$docBody.classList.add('bc-snack-bar-visible');
+
 									// if (privacyForm['google-ad-storage'].checked) {
 										
 									// 	bcFunctions.setCookie('bc-google-ad-storage', 'denied', {
@@ -209,6 +213,7 @@
 				</article><!-- // .bc-card bc-card--plain-text -->
 			</div><!-- //.bc-flickity -->
 		</section><!-- // Flickity text slider -->
+
 		<footer class="bc-container bc-bg-brand-primary">
 			<div class="bc-grid">
 				<div>
@@ -256,6 +261,19 @@
 			</div><!-- // .bc-grid -->
 		</footer>
 	</div><!-- // .bc-body-wrap-->
+	<div class="bc-snack-bar__wrap">
+		<div class="bc-snack-bar">
+			<a href="javascript:void(0)" class="bc-snack-bar__close">
+				<svg class="svg-icon">
+					<use xlink:href="assets/media/svg/icons/bc-svgs.svg#close-x"></use>
+				</svg>	
+			</a><!-- // .bc-snack-bar__close -->
+			<svg class="svg-icon check">
+				<use xlink:href="assets/media/svg/icons/bc-svgs.svg#check"></use>
+			</svg>	
+			<p class="bc-snack-bar__text">We have saved your preferences, thank you!</p>
+		</div><!-- // .bc-snack-bar -->
+	</div><!-- // .bc-snack-bar__wrap -->
 	<script src="assets/scripts/app-concat.js"></script>  
 </body>
 </html> 
