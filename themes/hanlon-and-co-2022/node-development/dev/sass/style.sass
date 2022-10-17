@@ -324,7 +324,7 @@ iframe
 			font-size: var(--text-gr-01)
 			font-weight: var(--light-weight)
 	& &__heading
-		font-size: var(--text-gr-03-5)
+		font-size: var(--text-gr-03)
 		position: relative
 		margin-bottom: calc(var(--vertical-unit) * 0.382)
 		color: var(--brand-primary)
@@ -405,6 +405,7 @@ iframe
 .bc-feature-sub-header
 	margin-bottom: calc(var(--vertical-unit) * 2
 	& &__heading
+		font-family: var(--serif-font)
 		position: relative
 		color: var(--shade-50)
 		margin-bottom: var(--vertical-unit)
@@ -640,7 +641,7 @@ iframe
 					width: 100%
 					height: 0
 					top: 0
-					left: 0
+					left: 0 
 					right: 0
 					bottom: 0
 					background-color: rgba($white, 1)
@@ -901,9 +902,9 @@ iframe
 	@media screen and (max-width: calc(#{$tablet-large} - 1px))
 		padding-bottom: calc(var(--vertical-unit) * 1)
 	& &__main
-		&.bc-content-component
+		&.bc-content-component, &.bc-content-component:last-of-type
 			width: calc(100% + 3rem)
-			margin-bottom: 	0 
+			margin-bottom: 	0 !important
 			margin-left: 	calc(var(--gutter) * -1)
 			margin-right: calc(var(--gutter) * -1) 
 			gap: 0
@@ -917,49 +918,53 @@ iframe
 				@include objectEmbed
 				padding-top: 100%
 		&__text
-			@include makeFlexbox(column, space-between)
-			height: auto
+			position: absolute
+			@include makeFlexbox(column, flex-end)
+			height: 100%
 			width: 100%
+			bottom: 0
 			padding: calc(var(--gutter) * 1.5) calc(var(--vertical-unit))
-			background-color: var(--white) 
+			background-color: transparent
 			z-index: 20
 			--this-timing: 200ms
 			transition: box-shadow var(--this-timing) ease-in
 			.bc-arrow-link
 				margin-bottom: 0
-				color: var(--brand-primary)
+				color: var(--white)
 				> span
 					font-weight: var(--bold-font-weight)
 					@include makeLinkActive
 			.svg-icon
-				fill: var(--brand-primary)
+				fill: var(--white)
 			&::after
 				display: none
 			.bc-media-overlay
-				opacity: 0
-				background-color: var(--shade-e0)
+				opacity: 0.24
+				background-color: var(--black)
 				transition: opacity 240ms ease-out
 				z-index: -1
-			
 			@include linkHover() 
 				0px 1px 0px 0px rgba($brand-primary, 80%) 
 				.bc-media-overlay
-					opacity: 0.2
+					opacity: 0.48
 				.bc-arrow-link
 					> span
 						&::after
 							height: 0.300rem
 		&__sub-head
+			font-family: var(--serif-font)
 			font-size: var(--text-gr-02) 
 			margin-bottom: 0
 			margin-bottom: calc(var(--vertical-unit)*0.5)
 			line-height: 1
-			color: inherit
+			color: var(--white)
 		&__description
 			font-weight: var(--font-weight)
 			overflow: hidden	
 			margin-bottom: calc(var(--vertical-unit)*0.5)
 			transition: height 420ms ease-out
+			color: var(--white)
+		
 		@media screen and (min-width: $tablet)
 			@include makeGrid($grid-columns: repeat(2, 1fr), $grid-rows: auto, $gap: $gutter)
 			
@@ -980,15 +985,14 @@ iframe
 			&.bc-content-component--text.bc-feature-sub-header
 				margin-left:  calc(var(--gutter) * -1)
 				margin-right: calc(var(--gutter) * -1)
-				padding-top: 			calc(var(--vertical-unit) * 3)
-				padding-bottom: 	calc(var(--vertical-unit) * 3)
+				padding-top: 			calc(var(--vertical-unit) * 1.5)
+				padding-bottom: 	calc(var(--vertical-unit) * 1.5)
 				width: calc(100% + (var(--gutter) * 2))
-				background-color: var(--brand-primary)
-				color: var(--white)
 				.bc-feature-header__col
 					padding-left:  var(--gutter)
 					padding-right: var(--gutter)
 				.bc-feature-sub-header__heading
+					//color: var(--text-black)
 					margin-bottom: 0
 				@media screen and (min-width: $tablet-large)
 					max-width: none
@@ -998,8 +1002,6 @@ iframe
 						padding-left:  calc(var(--gutter) * 0.5)
 						padding-right: calc(var(--gutter) * 0.5)
 						width: 70.72%
-				.bc-feature-sub-header__heading 
-					color: var(--white)
 		&__area
 			@include makeFlexbox(column, space-between)
 			padding: calc(var(--vertical-unit) * 1)  calc(var(--vertical-unit) * 0.5) 
@@ -1020,8 +1022,8 @@ iframe
 				@media screen and (min-width: $tablet-large)
 					font-size: var(--text-gr-01)
 		&__icon
-			height: calc(var(--text-gr-04-5) * 1)
-			width:  calc(var(--text-gr-04-5) * 1)
+			height: calc(var(--text-gr-04) * 1)
+			width:  calc(var(--text-gr-04) * 1)
 			margin-right: calc(var(--vertical-unit) * 1)
 			max-width: none
 			max-height: none
@@ -1131,7 +1133,7 @@ iframe
 		color: inherit
 	& &__main-section
 		background-color: var(--white)
-	.bc-container:not(.bc-site-header):not(.bc-breadcrumbs-nav):not(.bc-inner-page-heading):not(footer):not(.bc-testimonials)
+	.bc-container:not(.bc-site-header):not(.bc-breadcrumbs-nav):not(.bc-inner-page-heading):not(footer):not(.bc-testimonials):not(.bc-profiles)
 		padding-top: calc(var(--vertical-unit) * 1)
 		padding-bottom: calc(var(--vertical-unit) * 0)
 	&#main-site-content
@@ -1180,6 +1182,8 @@ iframe
 		margin-bottom: var(--vertical-unit)
 
 .bc-profiles
+	.bc-content-component:first-of-type
+		margin-bottom: calc(var(--vertical-unit) * 1) 
 	.bc-grid
 		@media screen and (min-width: 860px)
 			grid-template-columns: repeat(3, 1fr) 
@@ -1188,22 +1192,26 @@ iframe
 .bc-profile-detail
 	&__intro
 		margin-bottom: var(--vertical-unit)
-		background-color: var(--shade-f0)
 		& &__image
 			margin-bottom: 0
 		& &__text
-			p 
-				margin-bottom: 0
-			padding: calc(var(--vertical-unit) * 0.5) calc(var(--vertical-unit) * 0.5)
+			background-color: var(--shade-f0)
+			padding: calc(var(--vertical-unit) * 1) calc(var(--vertical-unit) * 0.5)
 			font-weight: var(--light-weight)
 			font-style: italic
+			.svg-icon
+				fill: var(--shade-d0)
+			p 
+				margin-bottom: 0
+			
 		@media screen and (min-width: $tablet) 
-			@include makeFlexbox($align: center)
+			@include makeFlexbox($align: stretch)
 			& &__text
+				@include makeFlexbox($direction: column, $justify: flex-end, $align: flex-start)
 				width: 50%
-				padding-top: var(--vertical-unit)
-				padding-right:  var(--gutter)
-				padding-left: 	var(--gutter)
+				
+				padding: calc(var(--vertical-unit) * 2 ) calc(var(--vertical-unit) * 1.5 )
+				
 			& &__image
 				width: 50%
 		@media screen and (min-width: $tablet-large) 
@@ -1255,7 +1263,6 @@ footer
 		background-color: var(--white)
 		border-top: #{(6/14)}rem solid var(--brand-primary)
 		transition: transform 360ms ease-out 360ms
-		
 	& &__heading
 		font-size: var(--text-gr-02-5)
 	& &__heading, p

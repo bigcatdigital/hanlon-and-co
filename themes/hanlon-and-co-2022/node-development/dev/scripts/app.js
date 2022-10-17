@@ -227,7 +227,6 @@ const bcFunctions = (function bcAppJS() {
 		console.log('------------');
 	}
 	const scrollLinks = Array.from(document.querySelectorAll('.bc-scroll-link'));
-	debug = true;
 	if (debug) {
 		console.log(`scrollLinks length: ${scrollLinks.length}`);
 		console.log(`scrollLinks length: ${scrollLinks[0]}`);
