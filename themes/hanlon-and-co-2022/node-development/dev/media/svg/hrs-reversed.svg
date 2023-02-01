@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 7.5">
+  <defs>
+    <style>
+      .cls-1 {
+        clip-path: url(#clip-hrs-reversed);
+      }
+
+      .cls-2, .cls-3, .cls-4 {
+        fill: none;
+        stroke: #22407d;
+      }
+
+      .cls-2 {
+        stroke-width: 2px;
+      }
+
+      .cls-4 {
+        stroke-width: 0.5px;
+      }
+    </style>
+    <clipPath id="clip-hrs-reversed">
+      <rect width="24" height="7.5"/>
+    </clipPath>
+  </defs>
+  <g id="hrs-reversed" class="cls-1">
+    <line id="Line_1" data-name="Line 1" class="cls-2" x2="24" transform="translate(24 7.25) rotate(180)"/>
+    <line id="Line_2" data-name="Line 2" class="cls-3" x2="24" transform="translate(24 3.75) rotate(180)"/>
+    <line id="Line_3" data-name="Line 3" class="cls-4" x2="24" transform="translate(24 1) rotate(180)"/>
+  </g>
+</svg>

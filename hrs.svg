@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 11.5">
+  <defs>
+    <style>
+      .cls-1 {
+        clip-path: url(#clip-hrs);
+      }
+
+      .cls-2, .cls-3, .cls-4 {
+        fill: none;
+        stroke: #22407d;
+      }
+
+      .cls-2 {
+        stroke-width: 4px;
+      }
+
+      .cls-3 {
+        stroke-width: 2px;
+      }
+
+      .cls-5 {
+        fill: #fff;
+      }
+    </style>
+    <clipPath id="clip-hrs">
+      <rect width="24" height="11.5"/>
+    </clipPath>
+  </defs>
+  <g id="hrs" class="cls-1">
+    <rect class="cls-5" width="24" height="11.5"/>
+    <line id="Line_1" data-name="Line 1" class="cls-2" x2="24" transform="translate(0 2)"/>
+    <line id="Line_2" data-name="Line 2" class="cls-3" x2="24" transform="translate(0 7)"/>
+    <line id="Line_3" data-name="Line 3" class="cls-4" x2="24" transform="translate(0 11)"/>
+  </g>
+</svg>

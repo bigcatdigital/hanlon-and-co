@@ -659,6 +659,8 @@ iframe
 	&.bc-hero--full-screen
 		height: calc(100vh - var(--header-height))
 		padding-bottom: 0
+		box-shadow: 0px 16px 24px rgba($black, 0.12) 
+		z-index: 2
 	@media screen and (min-width: $tablet) 
 		&.bc-inner-page-heading
 			.bc-hero__body
@@ -669,6 +671,16 @@ iframe
 	.bc-feature-header
 		//margin-bottom: calc(var(--vertical-unit)*0)
 		color: inherit
+
+/* Section hrs */
+.bc-section-hrs 
+	padding-top: #{(14/14)}rem 
+	background-image: url(../media/svg/hrs.svg)
+	background-repeat: repeat-x
+	&--reversed 
+		@extend .bc-section-hrs
+		background-image: url(../media/svg/hrs-reversed.svg)
+
 /* Content sections */
 .bc-container.bc-has-footer
 	padding-bottom: 0
@@ -953,12 +965,13 @@ iframe
 							height: 0.300rem
 		&__sub-head
 			font-family: var(--serif-font)
-			font-size: var(--text-gr-02) 
+			font-size: var(--text-gr-02-5)  
 			margin-bottom: 0
 			margin-bottom: calc(var(--vertical-unit)*0.5)
 			line-height: 1
 			color: var(--white)
 		&__description
+			font-size: var(--text-gr-00-5) 
 			font-weight: var(--font-weight)
 			overflow: hidden	
 			margin-bottom: calc(var(--vertical-unit)*0.5)
@@ -1226,6 +1239,7 @@ iframe
 		color: var(--white)
 
 footer
+	box-shadow: 0px -16px 24px rgba($black, 0.12) 
 	h2 
 		font-family: var(--base-font)
 		font-size: var(--text-gr-01)
