@@ -3,7 +3,7 @@
  * @preserve 
 */
 const bcFunctions = (function bcAppJS() {
-	let debug = false; 
+	let debug = false;
 	if (debug) {	
 		console.log('Hanlon & Co WP theme here');
 		console.log('Debug is go');
