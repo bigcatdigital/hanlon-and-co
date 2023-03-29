@@ -658,7 +658,6 @@ iframe
 						opacity: 0.76
 	&.bc-hero--full-screen
 		height: calc(100vh - var(--header-height))
-		padding-bottom: 0
 		box-shadow: 0px 16px 24px rgba($black, 0.12) 
 		z-index: 2
 	@media screen and (min-width: $tablet) 
@@ -906,7 +905,8 @@ iframe
 	
 .bc-areas-of-practice
 	&.bc-container
-		padding-top: calc(var(--vertical-unit) * 2.5)
+		padding-top: 		calc(var(--vertical-unit) * 3.5)
+		padding-bottom: calc(var(--vertical-unit) * 2.5)
 	position: relative
 	background-color: var(--white)
 	.bc-feature-header
@@ -956,7 +956,6 @@ iframe
 				transition: opacity 240ms ease-out
 				z-index: -1
 			@include linkHover() 
-				0px 1px 0px 0px rgba($brand-primary, 80%) 
 				.bc-media-overlay
 					opacity: 0.48
 				.bc-arrow-link
@@ -985,6 +984,7 @@ iframe
 			.bc-areas-of-practice__main__media__media
 				padding-top: calc(8 / 10 * 100%)
 	.bc-feature-sub-header__heading
+		margin-bottom: 0 
 		font-size: var(--text-gr-02)
 		color: var(--brand-primary)
 	& &__other
@@ -998,14 +998,15 @@ iframe
 			&.bc-content-component--text.bc-feature-sub-header
 				margin-left:  calc(var(--gutter) * -1)
 				margin-right: calc(var(--gutter) * -1)
+				margin-bottom: calc(var(--vertical-unit) * 1)
 				padding-top: 			calc(var(--vertical-unit) * 1.5)
 				padding-bottom: 	calc(var(--vertical-unit) * 1.5)
 				width: calc(100% + (var(--gutter) * 2))
+				@media screen and (min-width: $tablet)
+					margin-bottom: calc(var(--vertical-unit) * 2)
 				.bc-feature-header__col
 					padding-left:  var(--gutter)
 					padding-right: var(--gutter)
-				.bc-feature-sub-header__heading
-					//color: var(--text-black)
 					margin-bottom: 0
 				@media screen and (min-width: $tablet-large)
 					max-width: none
@@ -1018,33 +1019,30 @@ iframe
 		&__area
 			@include makeFlexbox(column, space-between)
 			padding: calc(var(--vertical-unit) * 1)  calc(var(--vertical-unit) * 0.5) 
-			margin-bottom: calc(var(--vertical-unit) * 1)
 			transition: background-color 360ms ease-in
-			@include linkHover()
-				cursor: pointer
-				background-color: var(--shade-e0)
-				a:after 
-					height: 0.3rem
 			&__header
 				@include makeFlexbox($align: center)
 				margin-bottom: calc(var(--vertical-unit)*0.5)
 			&__heading
 				margin-top: 0
 				margin-bottom: 0
-				font-size: var(--text-gr-01-5)
-				@media screen and (min-width: $tablet-large)
-					font-size: var(--text-gr-01)
+				font-size: var(--text-gr-00-5)
+				color: var(--brand-primary)
 		&__icon
 			height: calc(var(--text-gr-04) * 1)
 			width:  calc(var(--text-gr-04) * 1)
 			margin-right: calc(var(--vertical-unit) * 1)
 			max-width: none
 			max-height: none
+			fill: var(--brand-primary)
+		.bc-arrow-link
+			margin-bottom: 0
 
 	@media screen and (min-width: $tablet)
 		& &__other
 			@include makeGrid($grid-columns: repeat(3, 1fr))
-			gap: 0
+			gap: calc(var(--gutter) * 0.5)
+			row-gap: calc(var(--vertical-unit) * 1)
 			&__area
 				margin-bottom: 0
 				.bc-arrow-link
@@ -1127,12 +1125,13 @@ iframe
 	.bc-text-component
 		max-width: none
 		@media screen and (min-width: 860px)
-			max-width: var(--text-max-width)
+			max-width: var(--text-max-width)	
 	.bc-feature-header
 		margin-bottom: calc(var(--vertical-unit) * 2)
 	.bc-inner-page-heading
-		padding-bottom: calc(var(--vertical-unit) * 1)
 		.bc-content-label
+			margin-bottom: 0
+		.bc-intro-paragraph
 			margin-bottom: 0
 		&__heading
 			margin-bottom: calc(var(--vertical-unit) * 0.5)
@@ -1142,13 +1141,7 @@ iframe
 		background-color: rgba($brand-primary, 0.8) 
 		mix-blend-mode: none
 	.bc-content-label
-
 		color: inherit
-	& &__main-section
-		background-color: var(--white)
-	.bc-container:not(.bc-site-header):not(.bc-breadcrumbs-nav):not(.bc-inner-page-heading):not(footer):not(.bc-testimonials):not(.bc-profiles)
-		padding-top: calc(var(--vertical-unit) * 1)
-		padding-bottom: calc(var(--vertical-unit) * 0)
 	&#main-site-content
 		.bc-container
 			&:first-of-type
@@ -1172,7 +1165,7 @@ iframe
 		&.bc-inner-page__main-section
 			padding-top: calc(var(--vertical-unit) * 1)
 			padding-bottom: calc(var(--vertical-unit) * 1) 
-	& &__section:not(.bc-inner-page__main-section)
+	& &__section
 		background-image: linear-gradient(180deg, var(--white), $shade-f0)
 	& &__main-section
 		.bc-content-component:not(:last-of-type)
@@ -1180,7 +1173,7 @@ iframe
 			&:last-of-type
 				margin-bottom: calc(var(--vertical-unit) * 2)
 			&.bc-inner-page__feature-image
-				margin-bottom: 0
+				margin-top: calc(var(--vertical-unit) * 2)
 	& &__feature-image
 		.bc-text-component
 			width: 100%
@@ -1193,7 +1186,13 @@ iframe
 			padding-bottom: calc(var(--vertical-unit) * 0.25)
 	.bc-object-embed
 		margin-bottom: var(--vertical-unit)
-
+	.bc-inner-page-hr
+		margin-left: auto
+		margin-right: auto
+		margin-top: 		calc(var(--vertical-unit) * 2)
+		margin-bottom: 	calc(var(--vertical-unit) * 2)
+		hr
+			max-width: 50%
 .bc-profiles
 	.bc-content-component:first-of-type
 		margin-bottom: calc(var(--vertical-unit) * 1) 
@@ -1273,10 +1272,17 @@ footer
 	@include makeFlexbox(column, $justify: flex-end)
 	& &__block
 		width: 100%
- 		padding: calc(var(--gutter) * 1.5) var(--vertical-unit)
+		padding: calc(var(--gutter) * 1.5) var(--vertical-unit)
 		background-color: var(--white)
 		border-top: #{(6/14)}rem solid var(--brand-primary)
 		transition: transform 360ms ease-out 360ms
+		@media screen and (min-width: 839px)
+			padding-top: 		calc(var(--vertical-unit) * 0.75)
+			padding-bottom: calc(var(--vertical-unit))
+			margin-left: auto
+			margin-bottom: var(--vertical-unit)
+			margin-right: auto
+			max-width: var(--text-max-width)
 	& &__heading
 		font-size: var(--text-gr-02-5)
 	& &__heading, p
@@ -1284,12 +1290,23 @@ footer
 	p:last-of-type
 		margin-bottom: calc(var(--vertical-unit) * 1)
 	& &__btns
-		a 
-			margin-right: var(--gutter)
+		justify-content: space-between
+		align-items: stretch
+		.bc-button, a 
+			flex: 1 1 50%
 			font-size: var(--text--1)
 			font-weight: var(--font-weight)
+			text-align: center	
+			@include linkHover
+				&::after
+					height: 0
+			
+	& &__learn-more
+		background-color: var(--white)
+		color: var(--brand-primary)
 	& &__btns-wrap
-		@include makeFlexbox($justify: flex-end, $align: center)
+		@include makeFlexbox($align: stretch)
+		gap: calc(var(--gutter) * 0.25)
 #bc-cookies-consent-block
 	&.bc-cookies-set
 		.bc-cookies-consent__block
