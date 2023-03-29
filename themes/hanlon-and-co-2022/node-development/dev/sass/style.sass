@@ -154,7 +154,7 @@ iframe
 .bc-container 
 	padding: calc(var(--vertical-unit) * 3) calc(var(--gutter) * 0.5)
 .bc-content-component
-	margin-bottom: calc(var(--vertical-unit) * 3) 
+	margin-bottom: calc(var(--vertical-unit) * 2) 
 	&:last-of-type, &:last-child
 		margin-bottom: 0
 	.bc-content-component
@@ -1175,6 +1175,8 @@ iframe
 			&.bc-inner-page__feature-image
 				margin-top: calc(var(--vertical-unit) * 2)
 	& &__feature-image
+		margin-top: calc(var(--vertical-unit) * 2)
+		margin-bottom: calc(var(--vertical-unit))
 		.bc-text-component
 			width: 100%
 			.bc-object-embed
@@ -1197,6 +1199,7 @@ iframe
 	.bc-content-component:first-of-type
 		margin-bottom: calc(var(--vertical-unit) * 1) 
 	.bc-grid
+		width: 100%
 		@media screen and (min-width: 860px)
 			grid-template-columns: repeat(3, 1fr) 
 	.bc-profile__title

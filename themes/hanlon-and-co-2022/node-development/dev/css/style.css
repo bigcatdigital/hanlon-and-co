@@ -1186,7 +1186,7 @@ table {
   padding: calc(var(--vertical-unit) * 3) calc(var(--gutter) * 0.5); }
 
 .bc-content-component, .bc-content-component--media, .bc-content-component--media-padded, .bc-content-component--text {
-  margin-bottom: calc(var(--vertical-unit) * 3); }
+  margin-bottom: calc(var(--vertical-unit) * 2); }
   .bc-content-component:last-of-type, .bc-content-component--media:last-of-type, .bc-content-component--media-padded:last-of-type, .bc-content-component--text:last-of-type, .bc-content-component:last-child, .bc-content-component--media:last-child, .bc-content-component--media-padded:last-child, .bc-content-component--text:last-child {
     margin-bottom: 0; }
   .bc-content-component .bc-content-component, .bc-content-component--media .bc-content-component, .bc-content-component--media-padded .bc-content-component, .bc-content-component--text .bc-content-component, .bc-content-component .bc-content-component--media, .bc-content-component--media .bc-content-component--media, .bc-content-component--media-padded .bc-content-component--media, .bc-content-component--text .bc-content-component--media, .bc-content-component .bc-content-component--media-padded, .bc-content-component--media .bc-content-component--media-padded, .bc-content-component--media-padded .bc-content-component--media-padded, .bc-content-component--text .bc-content-component--media-padded, .bc-content-component .bc-content-component--text, .bc-content-component--media .bc-content-component--text, .bc-content-component--media-padded .bc-content-component--text, .bc-content-component--text .bc-content-component--text {
@@ -2322,20 +2322,22 @@ table {
   .bc-inner-page .bc-inner-page__main-section .bc-content-component:not(:last-of-type).bc-inner-page__feature-image, .bc-inner-page .bc-inner-page__main-section .bc-content-component--media:not(:last-of-type).bc-inner-page__feature-image, .bc-inner-page .bc-inner-page__main-section .bc-content-component--media-padded:not(:last-of-type).bc-inner-page__feature-image, .bc-inner-page .bc-inner-page__main-section .bc-content-component--text:not(:last-of-type).bc-inner-page__feature-image {
     margin-top: calc(var(--vertical-unit) * 2); }
 
-.bc-inner-page .bc-inner-page__feature-image .bc-text-component {
-  width: 100%; }
-  .bc-inner-page .bc-inner-page__feature-image .bc-text-component .bc-object-embed {
-    margin-bottom: 0; }
-
-.bc-inner-page .bc-inner-page__feature-image__caption {
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  flex-wrap: nowrap;
-  align-items: center;
-  padding-top: calc(var(--vertical-unit) * 0.25);
-  padding-bottom: calc(var(--vertical-unit) * 0.25); }
+.bc-inner-page .bc-inner-page__feature-image {
+  margin-top: calc(var(--vertical-unit) * 2);
+  margin-bottom: calc(var(--vertical-unit)); }
+  .bc-inner-page .bc-inner-page__feature-image .bc-text-component {
+    width: 100%; }
+    .bc-inner-page .bc-inner-page__feature-image .bc-text-component .bc-object-embed {
+      margin-bottom: 0; }
+  .bc-inner-page .bc-inner-page__feature-image__caption {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    align-items: center;
+    padding-top: calc(var(--vertical-unit) * 0.25);
+    padding-bottom: calc(var(--vertical-unit) * 0.25); }
 
 .bc-inner-page .bc-object-embed {
   margin-bottom: var(--vertical-unit); }
@@ -2351,9 +2353,11 @@ table {
 .bc-profiles .bc-content-component:first-of-type, .bc-profiles .bc-content-component--media:first-of-type, .bc-profiles .bc-content-component--media-padded:first-of-type, .bc-profiles .bc-content-component--text:first-of-type {
   margin-bottom: calc(var(--vertical-unit) * 1); }
 
-@media screen and (min-width: 860px) {
-  .bc-profiles .bc-grid, .bc-profiles .bc-grid--narrow-cols, .bc-profiles .bc-grid--collapsed, .bc-profiles .bc-grid--auto, .bc-profiles .bc-grid--x2, .bc-profiles .bc-grid--x4, .bc-profiles [class~="bc-grid--x"] {
-    grid-template-columns: repeat(3, 1fr); } }
+.bc-profiles .bc-grid, .bc-profiles .bc-grid--narrow-cols, .bc-profiles .bc-grid--collapsed, .bc-profiles .bc-grid--auto, .bc-profiles .bc-grid--x2, .bc-profiles .bc-grid--x4, .bc-profiles [class~="bc-grid--x"] {
+  width: 100%; }
+  @media screen and (min-width: 860px) {
+    .bc-profiles .bc-grid, .bc-profiles .bc-grid--narrow-cols, .bc-profiles .bc-grid--collapsed, .bc-profiles .bc-grid--auto, .bc-profiles .bc-grid--x2, .bc-profiles .bc-grid--x4, .bc-profiles [class~="bc-grid--x"] {
+      grid-template-columns: repeat(3, 1fr); } }
 
 .bc-profiles .bc-profile__title {
   font-weight: var(--bold-font-weight); }
