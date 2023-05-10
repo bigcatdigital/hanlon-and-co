@@ -259,6 +259,82 @@ iframe
 		background-color: #ededed
 		border-color: var(--shade-08) 
 /* Custom utils */
+.bc-has-ampersand
+ position: relative
+ z-index: 10
+.bc-has-ampersand
+	#ampersand-disc
+		position: absolute
+		width: var(--top-left-radius)
+		height: var(--top-left-radius)
+		top: calc(-1 * (var(--top-left-radius) * 0.5))
+		left: calc(50% - (var(--top-left-radius) * 0.5))
+	#disk
+		fill: var(--white)
+	#ampersand
+		fill: var(--brand-secondary)
+	&--minor
+		@extend .bc-has-ampersand
+		#ampersand 
+			fill: var(--shade-a0)
+
+.bc-has-border-rad-next
+	padding-bottom: var(--top-left-radius)
+
+.bc-has-border-rad, .bc-has-border-rad--bottom
+	background-color: transparent 
+	&__wrap, &__wrap--bottom
+		position: relative
+		width: 100%
+		background-color: var(--white)
+		z-index: 20
+		#border-radius-top-right
+			position: absolute
+			width: var(--top-left-radius)
+			height: var(--top-left-radius) 
+		#border-radius__curve
+			fill: var(--white)
+	&__wrap
+		&.bc-has-border-rad__wrap--bottom
+			margin-top: calc(var(--top-left-radius) * -1)
+		margin-top: calc(var(--top-left-radius) * -1)
+		border-top-left-radius: var(--top-left-radius) 
+		#border-radius-top-right
+			top: calc((-1 * var(--top-left-radius)) + 1px)
+			right: 0
+		&--bottom
+			margin-top: auto
+			border-bottom-right-radius: var(--top-left-radius) 
+			#border-radius-top-right
+				&.bottom-left
+					top: 100%
+					left: 0
+					transform: rotate(180deg)
+		&--footer
+			background-color: var(--brand-primary)
+			.bc-container
+				background-color: transparent 
+			#border-radius__curve
+				fill: var(--brand-primary)
+.bc-container
+	.bc-has-border-rad
+		&__wrap, &__wrap--bottom
+			width: calc(100% + var(--gutter))
+			padding-left: calc(var(--gutter) * 0.5)
+			padding-right: calc(var(--gutter) * 0.5)
+			margin-left: calc(var(--gutter) * 0.5 * -1)
+			margin-right: calc(var(--gutter) * 0.5 * -1)
+	.bc-content-component
+		.bc-has-border-rad
+			&__wrap, &__wrap--bottom 
+				width: calc(100% + var(--gutter) * 2)
+				padding-left: calc(var(--gutter))
+				padding-right: calc(var(--gutter))
+				margin-left: calc(var(--gutter) * -1)
+				margin-right: calc(var(--gutter) * -1)
+
+
+//background-image: linear-gradient(0deg, rgba($white, 0), var(--white))
 @mixin makeTextColor($text-color)
 	color: $text-color
 	h1, h2, h3, h4, h5, a, p, ul, li, blockquote, .bc-arrow-link .svg-icon, .flickity-button-icon
@@ -657,9 +733,11 @@ iframe
 						height: 100%		
 						opacity: 0.76
 	&.bc-hero--full-screen
-		height: calc(100vh - var(--header-height))
-		box-shadow: 0px 16px 24px rgba($black, 0.12) 
+		height: calc(100vh + var(--top-left-radius)) 
+		//box-shadow: 0px 16px 24px rgba($black, 0.12) 
 		z-index: 2
+		&.bc-has-border-rad-next
+			padding-bottom: calc((var(--vertical-unit) * 3) + var(--top-left-radius))
 	@media screen and (min-width: $tablet) 
 		&.bc-inner-page-heading
 			.bc-hero__body
@@ -800,8 +878,8 @@ iframe
 			a 
 				text-decoration: underline
 				font-weight: var(--link-active-weight)
-
-.bc-testimonials		
+.bc-testimonials	
+	background-color: var(--shade-f0)	
 	&.bc-container
 		padding-top: 		calc(var(--vertical-unit) * 4)
 		padding-bottom: calc(var(--vertical-unit) * 5)
@@ -907,8 +985,8 @@ iframe
 	&.bc-container
 		padding-top: 		calc(var(--vertical-unit) * 3.5)
 		padding-bottom: calc(var(--vertical-unit) * 2.5)
+	
 	position: relative
-	background-color: var(--white)
 	.bc-feature-header
 		margin-bottom: calc(var(--vertical-unit) * 2.5)
 	@media screen and (max-width: calc(#{$tablet-large} - 1px))
@@ -922,6 +1000,7 @@ iframe
 			gap: 0
 		&__area
 			position: relative
+			overflow: hidden
 			width: 100%
 		&__media
 			picture
@@ -991,7 +1070,6 @@ iframe
 		margin-left:  calc(var(--gutter) * 0.5 * -1)
 		margin-right: calc(var(--gutter) * 0.5 * -1)
 		width: calc(100% + var(--gutter))
-		background-image: linear-gradient(0deg, rgba($white, 0), var(--white))
 		&.bc-content-component
 			padding-top: 0
 		&__header 
@@ -1070,7 +1148,9 @@ iframe
 		> a 
 			font-weight: var(--font-weight)
 .bc-about-us
+	margin-top: calc(var(--top-left-radius) * -1)
 	background-color: var(--white)
+	z-index: 10
 	&.bc-container
 		padding: 0
 .bc-two-column-layout--wide
@@ -1078,28 +1158,15 @@ iframe
 		&__media
 			display: block
 			@include objectEmbed
-			padding-top: 100% 
+			padding-top: calc(100% + var(--top-left-radius))
 			@media screen and (min-width: $tablet) and (orientation: portrait)
-				padding-top: calc(9 / 16 * 100%)
+				padding-top: calc((9 / 16 * 100%) + var(--top-left-radius))
 	& &__text
 		position: relative
 		@include makeFlexbox(column, center, flex-start)
-		padding: calc(var(--vertical-unit)*3) calc((var(--gutter) * 2))
+		padding: calc(var(--vertical-unit) * 4) calc((var(--gutter) * 2))
 		.bc-arrow-link
 			margin-bottom: 0
-		.bc-abstract-dots
-			display: none
-			position: absolute
-			top: 		calc((var(--gutter) * 1))
-			right: 	calc((var(--gutter) * 1))
-			max-width:  7rem
-			max-height: 3.5rem
-			fill: var(--white)
-			opacity: 0.44
-			@media screen and (min-width: $tablet-large)
-				display: block
-				top: 		calc((var(--gutter) * 1.75))
-				right: 	calc((var(--gutter) * 2))
 	& &__heading
 		margin-top: 0
 		margin-bottom: calc(var(--vertical-unit) * 1)
@@ -1241,12 +1308,17 @@ iframe
 		color: var(--white)
 
 footer
-	box-shadow: 0px -16px 24px rgba($black, 0.12) 
 	h2 
 		font-family: var(--base-font)
 		font-size: var(--text-gr-01)
 	&.bc-container
+		padding-top: calc(var(--vertical-unit) * 3 + (var(--top-left-radius) * 0.5))
 		padding-bottom: calc(var(--vertical-unit) * 1.5)
+		background-color: var(--brand-primary)
+		p, ul, ol, blockquote, h1, h2, h3, h4, a
+			color: var(--white)
+		.svg-icon
+			fill: var(--white)
 	.bc-privacy-policy-link
 		margin-top: calc(var(--vertical-unit) * 2)
 		a 
