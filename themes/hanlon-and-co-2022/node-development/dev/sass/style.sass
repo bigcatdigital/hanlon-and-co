@@ -316,6 +316,16 @@ iframe
 				background-color: transparent 
 			#border-radius__curve
 				fill: var(--brand-primary)
+		&--inner-page-header
+			margin-bottom: calc(var(--vertical-unit) * 3) 
+			background-color: var(--shade-f0)
+			#border-radius__curve
+				fill: var(--shade-f0)
+		&--testimonials
+			background-color: var(--shade-f0)
+			#border-radius__curve
+				fill: var(--shade-f0)
+			
 .bc-container
 	.bc-has-border-rad
 		&__wrap, &__wrap--bottom
@@ -369,7 +379,7 @@ iframe
 			@include makeFlexbox($align: center)
 	margin-bottom: calc(var(--vertical-unit) * 0.382 )
 	font-family: var(--sans-font) 
-	font-size: var(--text-gr--2) 
+	font-size: var(--text-gr--1) 
 	font-weight: var(--light-weight)
 	text-transform: uppercase
 
@@ -395,8 +405,7 @@ iframe
 .bc-feature-header
 	position: relative
 	& &__col
-		max-width: #{(520 /18)}rem
-		p
+		p:not(.bc-content-label)
 			font-size: var(--text-gr-01)
 			font-weight: var(--light-weight)
 	& &__heading
@@ -733,11 +742,10 @@ iframe
 						height: 100%		
 						opacity: 0.76
 	&.bc-hero--full-screen
-		height: calc(100vh + var(--top-left-radius)) 
-		//box-shadow: 0px 16px 24px rgba($black, 0.12) 
+		height: calc(100vh + var(--top-left-radius))
 		z-index: 2
 		&.bc-has-border-rad-next
-			padding-bottom: calc((var(--vertical-unit) * 3) + var(--top-left-radius))
+			padding-bottom: calc((var(--vertical-unit) * 3) + (var(--top-left-radius) * 1.5))
 	@media screen and (min-width: $tablet) 
 		&.bc-inner-page-heading
 			.bc-hero__body
@@ -879,7 +887,6 @@ iframe
 				text-decoration: underline
 				font-weight: var(--link-active-weight)
 .bc-testimonials	
-	background-color: var(--shade-f0)	
 	&.bc-container
 		padding-top: 		calc(var(--vertical-unit) * 4)
 		padding-bottom: calc(var(--vertical-unit) * 5)
@@ -1148,9 +1155,7 @@ iframe
 		> a 
 			font-weight: var(--font-weight)
 .bc-about-us
-	margin-top: calc(var(--top-left-radius) * -1)
 	background-color: var(--white)
-	z-index: 10
 	&.bc-container
 		padding: 0
 .bc-two-column-layout--wide
@@ -1183,6 +1188,12 @@ iframe
 			padding-right: calc(var(--gutter) * 2)
 		
 .bc-inner-page
+	.bc-site-header
+		//background-color: var(--shade-f0)
+	& &-heading
+		margin-left: calc(var(--gutter) * 0.5 * -1)
+		padding: calc(var(--vertical-unit) * 3) calc(var(--gutter) * 1) calc(var(--vertical-unit) * 1)
+		width: calc(100% + var(--vertical-unit)) 
 	h2
 		font-family: var(--sans-font)
 	.bc-content-component
@@ -1209,12 +1220,7 @@ iframe
 		mix-blend-mode: none
 	.bc-content-label
 		color: inherit
-	&#main-site-content
-		.bc-container
-			&:first-of-type
-				padding-top: calc(var(--vertical-unit) * 3)
-			&:last-of-type
-				padding-bottom: calc(var(--vertical-unit) * 3)
+	
 	.bc-hero
 		&.bc-inner-page-heading 
 			padding-top: calc(var(--vertical-unit) * 3) 
@@ -1231,7 +1237,6 @@ iframe
 	.bc-container
 		&.bc-inner-page__main-section
 			padding-top: calc(var(--vertical-unit) * 1)
-			padding-bottom: calc(var(--vertical-unit) * 1) 
 	& &__section
 		background-image: linear-gradient(180deg, var(--white), $shade-f0)
 	& &__main-section
@@ -1262,6 +1267,9 @@ iframe
 		margin-bottom: 	calc(var(--vertical-unit) * 2)
 		hr
 			max-width: 50%
+.bc-faqs
+	&.bc-container
+		padding-bottom: calc((var(--vertical-unit) * 3) + var(--top-left-radius) * 1.5) !important
 .bc-profiles
 	.bc-content-component:first-of-type
 		margin-bottom: calc(var(--vertical-unit) * 1) 
@@ -1306,7 +1314,6 @@ iframe
 		left: var(--gutter)
 		bottom: var(--vertical-unit)
 		color: var(--white)
-
 footer
 	h2 
 		font-family: var(--base-font)

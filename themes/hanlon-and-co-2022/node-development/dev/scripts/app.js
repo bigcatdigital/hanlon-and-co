@@ -619,30 +619,46 @@ const bcFunctions = (function bcAppJS() {
 		}
 		/* Temporary - to make cookies block always show */
 		//set main cookie
-		bcSetCookie('bc-cookies-preferences', '', {
-			expires: new Date(Date.now() - (1 * 24 * 60 * 60 * 1000)).toUTCString()
-		});
-		if (bcGetCookie('bc-cookies-preferences') !== undefined || bcGetCookie('bc-cookies-preferences') !== '' ) {
-			bcSetCookie('bc-cookies-preferences', '', {
-				expires: new Date(Date.now() - (1 * 24 * 60 * 60 * 1000)).toUTCString()
-			});
-		}
+		// bcSetCookie('bc-cookies-preferences', '', {
+		// 	expires: new Date(Date.now() - (1 * 24 * 60 * 60 * 1000)).toUTCString()
+		// });
+		// if (bcGetCookie('bc-cookies-preferences') !== undefined || bcGetCookie('bc-cookies-preferences') !== '' ) {
+		// 	bcSetCookie('bc-cookies-preferences', '', {
+		// 		expires: new Date(Date.now() - (1 * 24 * 60 * 60 * 1000)).toUTCString()
+		// 	});
+		// }
 		//show the consent block
 		window.setTimeout(() => {
 			checkCookies('bc-cookies-preferences', () => {
 				theBody.classList.add('bc-cookies-not-set', 'bc-modal-visible');
-			});
+			}); 
 		}, 0);
 		//Consent button click handler
 		let cookiesConsent = document.querySelector('#bc-cookies-consent');
 		if (cookiesConsent) {
+			console.log(`Cookies consent script`);
 			cookiesConsent.addEventListener('click', (evt) => {
+				console.log('Click');
 				evt.preventDefault();
-				if (bcGetCookie('bc-cookies-preferences') !== undefined && bcGetCookie('bc-cookies-preferences') !== '') {
-					bcSetCookie('bc-cookies-preferences', 'submitted');
+
+				if (bcGetCookie('bc-cookies-preferences') !== 'submitted') {
+					console.log('Cookies preferences are not set. Set cookies all cookies');
+					let expiryDate = new Date(Date.now() + (28 * 24 * 60 * 60 * 1000)).toUTCString();
+
+					bcSetCookie('bc-ga-analytics', 'granted', { 
+						expires: expiryDate
+					});
+					
+					bcSetCookie('bc-google-ad-storage', 'granted', {
+						expires: expiryDate
+					});
+
+					bcSetCookie('bc-cookies-preferences', 'submitted', {
+						expires: expiryDate
+					});
 				}
-				theBody.classList.toggle('bc-cookies-not-set');
-				theBody.classList.toggle('bc-modal-visible');
+				theBody.classList.remove('bc-cookies-not-set');
+				theBody.classList.remove('bc-modal-visible');
 				document.querySelector('#bc-cookies-consent-block').classList.add('bc-cookies-set');
 			}); 
 		}
