@@ -26,10 +26,7 @@ h1, h2, h3, h4, h5
 	line-height: 1.35
 h2, h3, h4, h5
 	color: var(--text-black)
-h2:not(:first-child), h3:not(:first-child)
-	margin-top: calc(var(--vertical-unit) * 2)
-h2, h3, h4, h5
-	margin-bottom: calc(var(--vertical-unit) * 0.382 )
+h3, h4, h5
 	font-family: var(--sans-font)
 h1
 	font-family: var(--heading-font)
@@ -1158,6 +1155,8 @@ iframe
 	background-color: var(--white)
 	&.bc-container
 		padding: 0
+		p:not(.bc-intro-paragraph) 
+			margin-bottom: calc(var(--vertical-unit) * 0.5)
 .bc-two-column-layout--wide
 	& &__media
 		&__media
@@ -1188,14 +1187,11 @@ iframe
 			padding-right: calc(var(--gutter) * 2)
 		
 .bc-inner-page
-	.bc-site-header
-		//background-color: var(--shade-f0)
 	& &-heading
 		margin-left: calc(var(--gutter) * 0.5 * -1)
-		padding: calc(var(--vertical-unit) * 3) calc(var(--gutter) * 1) calc(var(--vertical-unit) * 1)
+		margin-bottom: 0
+		padding: calc(var(--vertical-unit) * 0) calc(var(--gutter) * 1) calc(var(--vertical-unit) * 1)
 		width: calc(100% + var(--vertical-unit)) 
-	h2
-		font-family: var(--sans-font)
 	.bc-content-component
 		&--media-padded 
 			@media screen and (min-width: $tablet-large) 
@@ -1209,10 +1205,7 @@ iframe
 	.bc-inner-page-heading
 		.bc-content-label
 			margin-bottom: 0
-		.bc-intro-paragraph
-			margin-bottom: 0
 		&__heading
-			margin-bottom: calc(var(--vertical-unit) * 0.5)
 			font-size: var(--text-gr-04)
 			color: var(--brand-primary)
 	.bc-media-overlay
@@ -1223,7 +1216,7 @@ iframe
 	
 	.bc-hero
 		&.bc-inner-page-heading 
-			padding-top: calc(var(--vertical-unit) * 3) 
+			padding-top: calc(var(--vertical-unit) * 3)  
 			padding-bottom: calc(var(--vertical-unit) * 3)
 			//border-bottom: 4px solid var(--brand-primary)
 			.bc-hero__heading
@@ -1263,7 +1256,7 @@ iframe
 	.bc-inner-page-hr
 		margin-left: auto
 		margin-right: auto
-		margin-top: 		calc(var(--vertical-unit) * 2)
+		margin-top: 		calc(var(--vertical-unit) * 0)
 		margin-bottom: 	calc(var(--vertical-unit) * 2)
 		hr
 			max-width: 50%
