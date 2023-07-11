@@ -84,12 +84,12 @@
 				<use xlink:href="assets/media/svg/icons/bc-svgs.svg#close-x"></use>
 			</svg>
 		</a>
-		<div id="site-main-navigation" aria-label="Main site navigation" class="bc-site-header__main-navigation ">
+		<div aria-label="Main site navigation" class="bc-site-header__main-navigation ">
 			<hr />
 			<div class="bc-site-header__main-navigation-wrap bc-content-component--text">
 				<ul role="navigation" id="menu-main-site-navigation"  class="menu">
 					<li class="bc-site-header__main-navigation__item"><a href="index.html">Home</a></li>
-					<li class="bc-site-header__main-navigation__item ">
+					<li class="bc-site-header__main-navigation__item">
 						<a href="javascript:void(0)" class="">Areas of Practice</a>
 						<ul class="">
 							<li class="bc-site-header__main-navigation__item"><a href="family-law.html">Family Law</a></li>
@@ -102,7 +102,31 @@
 					<li class="bc-site-header__main-navigation__item"><a href="about.html">About</a></li>
 					<li class="bc-site-header__main-navigation__item bc-contact-link "><a class="bc-scroll-link" href="#contact-us">Contact</a></li>
 				</ul>	
-				
+				<div id="show-hide-wrap" class="bc-show-hide-icon__wrap" style="display: none;">
+					<svg class="svg-icon bc-show-hide-icon bc-show-hide-icon__show">
+						<use xlink:href="assets/media/svg/icons/bc-svgs.svg#close-x"></use>
+					</svg>	
+				</div>
+				<script>
+					const mainNav = document.querySelector('#menu-main-site-navigation');
+					const navLis = mainNav.querySelectorAll('li');
+					navLis.forEach((navLi) =>  {
+						if (navLi.querySelector('ul')) {
+							const subMenu = navLi.querySelector('ul');
+							const showHideWrap = document.querySelector('#show-hide-wrap');
+							const newShowHideWrap = showHideWrap.cloneNode('deep');
+							newShowHideWrap.removeAttribute('id');
+							newShowHideWrap.setAttribute('style', '');
+							const navLiLink = navLi.querySelector('a');
+							navLiLink.appendChild(newShowHideWrap);
+							navLiLink.classList.add('bc-show-hide__header', 'bc-show-hide__toggle');
+
+							subMenu.style.maxHeight = 0;
+							subMenu.classList.add('bc-show-hide__body');
+							navLi.classList.add('bc-show-hide');
+						}
+					});
+				</script>
 			</div><!-- // .bc-site-header__main-navigation-wrap -->
 		</div><!-- // .bc-site-header__main-navigation  -->
 	</header><!-- // .bc-site-header -->
@@ -150,7 +174,7 @@
 						<h1 class="bc-feature-header__heading">We offer our clients a bespoke, professional legal service focussed on solution-oriented advice and strategy</h1>
 					</div><!-- // .bc-feature-header__col -->
 				</div><!-- // .bc-feature-header -->
-					<div class="bc-areas-of-practice__main bc-content-component bc-grid bc-match-height-wrap">
+					<div class="bc-areas-of-practice__main bc-content-component bc-grid">
 						<div class="bc-areas-of-practice__main__area">
 							<div class="bc-areas-of-practice__main__media">
 								<picture class="bc-areas-of-practice__main__media__media">
@@ -199,7 +223,7 @@
 			</article><!-- // .main areas of practice-->
 				<article class="bc-content-component">
 					<div class="bc-content-component bc-areas-of-practice__other">
-						<div class="bc-areas-of-practice__other__area bc-match-height">
+						<div class="bc-areas-of-practice__other__area">
 							<div class="bc-areas-of-practice__other__area__header">
 								<svg class="svg-icon bc-areas-of-practice__other__icon">
 									<use xlink:href="assets/media/svg/icons/bc-svgs.svg#litigation"></use> 
@@ -293,14 +317,14 @@
 				</article><!-- // .bc-content-component other areas of practice -->
 		</section><!-- // .bc-container.bc-areas-of-practice -->
 	</div><!-- // .bc-has-border-rad__wrap -->
-		<section class="bc-container bc-about-us">
-			<article class="bc-two-column-layout--wide bc-bg-brand-primary"> 
+		<section class="bc-container bc-about-us bc-has-border-rad-next">
+			<article class="bc-two-column-layout--wide"> 
 				<div class="bc-two-column-layout--wide__media">
 					<picture class="bc-two-column-layout--wide__media__media">
 						<img class="bc-is-filterable" src="assets/media/irish-family.jpg" alt="Placeholder image">
 					</picture>
 				</div>
-				<div class="bc-two-column-layout--wide__text">
+				<div class="bc-two-column-layout--wide__text bc-bg-brand-primary">
 					<p class="bc-content-label">How we work</p>
 					<h2 class="bc-bg-text bc-two-column-layout--wide__heading">These cases are perfectly simple and easy to distinguish. In a free hour, when our power of choice is untrammelled.</h2>
 					<p class="bc-arrow-link">
@@ -312,8 +336,15 @@
 				</div>
 			</article>
 		</section><!-- // .bc-container.bc-about-us -->
-		
-			<section class="bc-container bc-testimonials" aria-label="Flickity text slider">
+		<div class="bc-has-border-rad__wrap bc-testimonials">
+			<section class="bc-container bc-testimonials bc-has-border-rad" aria-label="Flickity text slider">
+				<svg id="border-radius-top-right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+					<defs>
+						<style>.cls-1{fill:none;}</style>
+					</defs>
+					<title>top-right-radius</title>
+					<path id="border-radius__curve" class="cls-1" d="M99.85,0c0,.51,0,1,0,1.51A98.49,98.49,0,0,1,1.4,100H100V0ZM0,100H1.4c-.47,0-.93,0-1.4,0Z"/>
+				</svg>
 				<div class="bc-content-component--text">
 					<h1 class="bc-content-label">Testimonials</h1> 
 				</div>
@@ -337,6 +368,7 @@
 					</article><!-- // .bc-card bc-card--plain-text -->
 				</div><!-- //.bc-flickity -->
 			</section><!-- // Flickity text slider -->
+		</div><!-- // .bc-has-border-rad__wrap -->
 	<div class="bc-has-border-rad__wrap bc-has-border-rad__wrap--footer">
 		<footer id="contact-us" class="bc-container">
 			<svg id="border-radius-top-right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">

@@ -309,13 +309,16 @@ const bcFunctions = (function bcAppJS() {
 	 * target: element target height as an integer
 	 * cb: a callback
 	*/
-	function bcShowHide($el, target, cb) {
+	function bcShowHide($el, targetHeight, cb) {
 		if (debug) {
 			console.log('bcShowHide function, target height:');	
-			console.log(target);	
+			console.log(targetHeight);	
 		}
-		target = Number.parseInt(target);
-		$el.style.height = target + 'px';
+		targetHeight = Number.parseInt(targetHeight);
+		requestAnimationFrame(() => {
+			$el.style.maxHeight = targetHeight + 'px';
+		});	
+		
 		if (typeof cb === 'function') {
 			$el.addEventListener('transitionend', () => {
 				requestAnimationFrame(() => {
@@ -340,23 +343,13 @@ const bcFunctions = (function bcAppJS() {
 		const showHideToggles = Array.from($showHideComponent.querySelectorAll('.bc-show-hide__toggle'));
 		showHideToggles.forEach(($showHideToggle) => {
 			const $showHideBody = $showHideToggle.nextElementSibling;
-			//Accordion closer in the accordion body - always closes the body if it is open
-			if ($showHideBody.querySelector('.bc-show-hide__hide')) {
-				const $showHideBodyClose = $showHideBody.querySelector('.bc-show-hide__hide');
-				$showHideBodyClose.addEventListener('click', () => {
-					if ($showHideToggle.classList.contains('bc-is-active')) { 
-						bcShowHide($showHideBody, 0);
-						$showHideToggle.classList.remove('bc-is-active');
-					}
-				});
-			}
-			
 			if (debug) {
 				console.log('Accordion body scrollHeight: ');
 				console.log($showHideBody.scrollHeight);
 				console.log('Accordion toggle classlist: ');
 				console.log($showHideToggle.classList);
 			}
+			//Show/hide toggle listener
 			$showHideToggle.addEventListener('click', (evt) => {
 				evt.preventDefault();
 				if ($showHideToggle.classList.contains('bc-is-active')) {
@@ -373,6 +366,16 @@ const bcFunctions = (function bcAppJS() {
 					$showHideToggle.classList.add('bc-is-active');	
 				}
 			});
+			//Accordion closer in the accordion body
+			if ($showHideBody.querySelector('.bc-show-hide__hide')) {
+				const $showHideBodyClose = $showHideBody.querySelector('.bc-show-hide__hide');
+				$showHideBodyClose.addEventListener('click', () => {
+					if ($showHideToggle.classList.contains('bc-is-active')) { 
+						bcShowHide($showHideBody, 0);
+						$showHideToggle.classList.remove('bc-is-active');
+					}
+				});
+			}
 		});
 	});
 	
@@ -425,6 +428,7 @@ const bcFunctions = (function bcAppJS() {
 				console.log(`Sliders idx: ${idx}`);
 			}
 			const sliderType = ($bcFlkSlider.classList.contains('bc-flickity--text-slider')) ? 'text-slider' : ($bcFlkSlider.classList.contains('bc-flickity--card-slider')) ? 'card-slider' : 'video-slider'; 
+			const slidesLen = $bcFlkSlider.querySelectorAll('.bc-flickity__slide').length;
 			if (debug) {
 				console.log(`Slider type: ${sliderType}`);
 			}
@@ -435,6 +439,7 @@ const bcFunctions = (function bcAppJS() {
 				groupCells: true,
 				cellSelector: '.bc-flickity__slide', 
 				prevNextButtons: (sliderType === 'text-slider' ) ? false : true,
+				pageDots: (slidesLen > 1) ? true : false
 			});
 			
 			if (sliderType === 'text-slider') {
@@ -556,8 +561,8 @@ const bcFunctions = (function bcAppJS() {
 				console.log('Found '+ matchHeightWraps.length + ' match height wrap(s)');
 			}
 			
-			let targetHeight = 0;
 			matchHeightWraps.forEach((el, idx) => {
+				let targetHeight = 0;
 				let $thisWrapper = el;
 				let matchElements = [];
 				if ($thisWrapper.querySelectorAll('.bc-match-height')) {

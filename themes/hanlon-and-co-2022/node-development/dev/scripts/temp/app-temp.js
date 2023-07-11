@@ -310,16 +310,18 @@ var bcFunctions = function bcAppJS() {
    * cb: a callback
   */
 
-  function bcShowHide($el, target, cb) {
+  function bcShowHide($el, targetHeight, cb) {
     var _arguments = arguments;
 
     if (debug) {
       console.log('bcShowHide function, target height:');
-      console.log(target);
+      console.log(targetHeight);
     }
 
-    target = Number.parseInt(target);
-    $el.style.height = target + 'px';
+    targetHeight = Number.parseInt(targetHeight);
+    requestAnimationFrame(function () {
+      $el.style.maxHeight = targetHeight + 'px';
+    });
 
     if (typeof cb === 'function') {
       $el.addEventListener('transitionend', function () {
@@ -349,24 +351,15 @@ var bcFunctions = function bcAppJS() {
 
     var showHideToggles = Array.from($showHideComponent.querySelectorAll('.bc-show-hide__toggle'));
     showHideToggles.forEach(function ($showHideToggle) {
-      var $showHideBody = $showHideToggle.nextElementSibling; //Accordion closer in the accordion body - always closes the body if it is open
-
-      if ($showHideBody.querySelector('.bc-show-hide__hide')) {
-        var $showHideBodyClose = $showHideBody.querySelector('.bc-show-hide__hide');
-        $showHideBodyClose.addEventListener('click', function () {
-          if ($showHideToggle.classList.contains('bc-is-active')) {
-            bcShowHide($showHideBody, 0);
-            $showHideToggle.classList.remove('bc-is-active');
-          }
-        });
-      }
+      var $showHideBody = $showHideToggle.nextElementSibling;
 
       if (debug) {
         console.log('Accordion body scrollHeight: ');
         console.log($showHideBody.scrollHeight);
         console.log('Accordion toggle classlist: ');
         console.log($showHideToggle.classList);
-      }
+      } //Show/hide toggle listener
+
 
       $showHideToggle.addEventListener('click', function (evt) {
         evt.preventDefault();
@@ -386,7 +379,17 @@ var bcFunctions = function bcAppJS() {
           bcShowHide($showHideBody, $showHideBody.scrollHeight);
           $showHideToggle.classList.add('bc-is-active');
         }
-      });
+      }); //Accordion closer in the accordion body
+
+      if ($showHideBody.querySelector('.bc-show-hide__hide')) {
+        var $showHideBodyClose = $showHideBody.querySelector('.bc-show-hide__hide');
+        $showHideBodyClose.addEventListener('click', function () {
+          if ($showHideToggle.classList.contains('bc-is-active')) {
+            bcShowHide($showHideBody, 0);
+            $showHideToggle.classList.remove('bc-is-active');
+          }
+        });
+      }
     });
   });
   /* Main site navigation */
@@ -445,6 +448,7 @@ var bcFunctions = function bcAppJS() {
       }
 
       var sliderType = $bcFlkSlider.classList.contains('bc-flickity--text-slider') ? 'text-slider' : $bcFlkSlider.classList.contains('bc-flickity--card-slider') ? 'card-slider' : 'video-slider';
+      var slidesLen = $bcFlkSlider.querySelectorAll('.bc-flickity__slide').length;
 
       if (debug) {
         console.log("Slider type: ".concat(sliderType));
@@ -455,7 +459,8 @@ var bcFunctions = function bcAppJS() {
         cellAlign: sliderType === 'card-slider' ? 'left' : 'center',
         groupCells: true,
         cellSelector: '.bc-flickity__slide',
-        prevNextButtons: sliderType === 'text-slider' ? false : true
+        prevNextButtons: sliderType === 'text-slider' ? false : true,
+        pageDots: slidesLen > 1 ? true : false
       });
 
       if (sliderType === 'text-slider') {
@@ -596,8 +601,8 @@ var bcFunctions = function bcAppJS() {
         console.log('Found ' + matchHeightWraps.length + ' match height wrap(s)');
       }
 
-      var targetHeight = 0;
       matchHeightWraps.forEach(function (el, idx) {
+        var targetHeight = 0;
         var $thisWrapper = el;
         var matchElements = [];
 
