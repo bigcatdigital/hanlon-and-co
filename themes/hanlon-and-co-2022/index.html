@@ -76,14 +76,22 @@
 			Hanlon <span>&amp;</span> Co. 
 		</a>
 		<a href="#main-site-content" class="bc-site-header__menu-skip bc-is-hidden" title="Skip site menu, to main site content"></a>
-		<a href="javascript:void(0)" aria-hidden="true" class="bc-site-header__menu-link" title="Site Menu">
-			<svg class="svg-icon bc-site-header__menu-link__menu ">
-				<use xlink:href="assets/media/svg/icons/bc-svgs.svg#menu-thin"></use>
-			</svg>
-			<svg class="svg-icon bc-site-header__menu-link__close ">
-				<use xlink:href="assets/media/svg/icons/bc-svgs.svg#close-x"></use>
-			</svg>
-		</a>
+		<div class="bc-site-header__nav-icons">
+			<div class="menu-chinese-english-site-links-container">
+				<ul id="menu-chinese-english-site-links" class="menu">
+					<li id="menu-item-704" class="bc-site-header__language-toggle--cn menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-704"><a href="http://localhost/hanlon-and-co-wp/">英文网站</a></li>
+					<li id="menu-item-705" class="bc-site-header__language-toggle--en menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-596 current_page_item menu-item-705"><a href="http://localhost/hanlon-and-co-wp/cn/" aria-current="page">中文网站</a></li>
+				</ul>
+			</div>
+			<a href="javascript:void(0)" aria-hidden="true" class="bc-site-header__menu-link" title="Site Menu">
+				<svg class="svg-icon bc-site-header__menu-link__menu ">
+					<use xlink:href="assets/media/svg/icons/bc-svgs.svg#menu-thin"></use>
+				</svg>
+				<svg class="svg-icon bc-site-header__menu-link__close ">
+					<use xlink:href="assets/media/svg/icons/bc-svgs.svg#close-x"></use>
+				</svg>
+			</a>
+		</div><!-- // .bc-site-header__nav-icons -->
 		<div aria-label="Main site navigation" class="bc-site-header__main-navigation ">
 			<hr />
 			<div class="bc-site-header__main-navigation-wrap bc-content-component--text">
@@ -167,154 +175,169 @@
 				<title>top-right-radius</title>
 				<path id="border-radius__curve" class="cls-1" d="M99.85,0c0,.51,0,1,0,1.51A98.49,98.49,0,0,1,1.4,100H100V0ZM0,100H1.4c-.47,0-.93,0-1.4,0Z"/>
 			</svg>
-			<article class="bc-content-component">
+			<article class="bc-content-component bc-match-height-wrap">
 				<div class="bc-content-component--text bc-feature-header bc-has-border-rad--bottom"> 
 					<div class="bc-feature-header__col">
 						<p class="bc-content-label">Areas of Practice</p>
 						<h1 class="bc-feature-header__heading">We offer our clients a bespoke, professional legal service focussed on solution-oriented advice and strategy</h1>
 					</div><!-- // .bc-feature-header__col -->
 				</div><!-- // .bc-feature-header -->
-					<div class="bc-areas-of-practice__main bc-content-component bc-grid">
-						<div class="bc-areas-of-practice__main__area">
-							<div class="bc-areas-of-practice__main__media">
-								<picture class="bc-areas-of-practice__main__media__media">
-									<img class="bc-is-filterable" data-filter-at="1" src="assets/media/irish-family.jpg" alt="Placeholder image">
-								</picture>
-							</div><!-- // .bc-two-column-layout__media-column -->
-							<a href="family-law.html" class="bc-areas-of-practice__main__text ">
-								<div class="bc-areas-of-practice__main__text__text bc-match-height">
-									<h2 class="bc-areas-of-practice__main__sub-head">Family Law</h2>
-									<p class="bc-areas-of-practice__main__description" data-hidden="true">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.</p>
-								</div>
-								<p class="bc-arrow-link">
-									<span>
-										Link to follow
-									</span>
-									<svg class="svg-icon">
-										<use xlink:href="assets/media/svg/icons/bc-svgs.svg#arrow"></use>
-									</svg>
-								</p>
-								<div class="bc-media-overlay"></div>
-							</a><!-- // .bc-two-column-layout__text-column -->
-						</div><!-- // .bc-areas-of-practice__main__area -->
-						<div class="bc-areas-of-practice__main__area">  
-							<div class="bc-areas-of-practice__main__media">
-								<picture class="bc-areas-of-practice__main__media__media">
-									<img class="bc-is-filterable" data-filter-at="1" src="assets/media/irish-family.jpg" alt="Placeholder image">
-								</picture>
-							</div><!-- // .bc-two-column-layout__media-column -->
-							<a href="family-law.html" class="bc-areas-of-practice__main__text ">
-								<div class="bc-areas-of-practice__main__text__text bc-match-height">
-									<h2 class="bc-areas-of-practice__main__sub-head">Personal Insolvency</h2>
-									<p class="bc-areas-of-practice__main__description" data-hidden="true">Sed ut perspiciatis unde omnis iste natus error sit.</p>
-								</div>
-								<p class="bc-arrow-link">
-									<span>
-										Link to follow
-									</span>
-									<svg class="svg-icon">
-										<use xlink:href="assets/media/svg/icons/bc-svgs.svg#arrow"></use>
-									</svg>
-								</p>
-								<div class="bc-media-overlay"></div>
-							</a><!-- // .bc-areas-of-practice__main__text -->
-						</div><!-- // .bc-areas-of-practice__main__area -->
-					</div><!-- // .bc-areas-of-practice__main -->	
+				<div class="bc-areas-of-practice__main bc-content-component bc-grid">
+					<div class="bc-areas-of-practice__main__area">
+						<div class="bc-areas-of-practice__main__media">
+							<picture class="bc-areas-of-practice__main__media__media">
+								<img class="bc-is-filterable" data-filter-at="1" src="assets/media/irish-family.jpg" alt="Placeholder image">
+							</picture>
+						</div><!-- // .bc-two-column-layout__media-column -->
+						<a href="family-law.html" class="bc-areas-of-practice__main__text ">
+							<div class="bc-areas-of-practice__main__text__text bc-match-height">
+								<h2 class="bc-areas-of-practice__main__sub-head">Family Law</h2>
+								<p class="bc-areas-of-practice__main__description" data-hidden="true">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.</p>
+							</div>
+							<p class="bc-arrow-link">
+								<span>
+									Link to follow
+								</span>
+								<svg class="svg-icon">
+									<use xlink:href="assets/media/svg/icons/bc-svgs.svg#arrow"></use>
+								</svg>
+							</p>
+							<div class="bc-media-overlay"></div>
+						</a><!-- // .bc-two-column-layout__text-column -->
+					</div><!-- // .bc-areas-of-practice__main__area -->
+					<div class="bc-areas-of-practice__main__area">  
+						<div class="bc-areas-of-practice__main__media">
+							<picture class="bc-areas-of-practice__main__media__media">
+								<img class="bc-is-filterable" data-filter-at="1" src="assets/media/irish-family.jpg" alt="Placeholder image">
+							</picture>
+						</div><!-- // .bc-two-column-layout__media-column -->
+						<a href="family-law.html" class="bc-areas-of-practice__main__text ">
+							<div class="bc-areas-of-practice__main__text__text bc-match-height">
+								<h2 class="bc-areas-of-practice__main__sub-head">Personal Insolvency</h2>
+								<p class="bc-areas-of-practice__main__description" data-hidden="true">Sed ut perspiciatis unde omnis iste natus error sit.</p>
+							</div>
+							<p class="bc-arrow-link">
+								<span>
+									Link to follow
+								</span>
+								<svg class="svg-icon">
+									<use xlink:href="assets/media/svg/icons/bc-svgs.svg#arrow"></use>
+								</svg>
+							</p>
+							<div class="bc-media-overlay"></div>
+						</a><!-- // .bc-areas-of-practice__main__text -->
+					</div><!-- // .bc-areas-of-practice__main__area -->
+				</div><!-- // .bc-areas-of-practice__main -->	
 			</article><!-- // .main areas of practice-->
-				<article class="bc-content-component">
-					<div class="bc-content-component bc-areas-of-practice__other">
-						<div class="bc-areas-of-practice__other__area">
-							<div class="bc-areas-of-practice__other__area__header">
-								<svg class="svg-icon bc-areas-of-practice__other__icon">
-									<use xlink:href="assets/media/svg/icons/bc-svgs.svg#litigation"></use> 
-								</svg>	
-								<h3 class="bc-areas-of-practice__other__area__heading">Personal injury</h3>
-							</div><!-- // .bc-areas-of-practice__other__header -->
-							<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.</p>
-							<p class="bc-arrow-link">
-								<a href="javascript:void()">Link to follow</a>
-								<svg class="svg-icon">
-									<use xlink:href="assets/media/svg/icons/bc-svgs.svg#arrow"></use>
-								</svg>
-							</p>
-						</div><!-- // .bc-areas-of-practice__other__area -->
-						<div class="bc-areas-of-practice__other__area bc-match-height">
-							<div class="bc-areas-of-practice__other__area__header">
-								<svg class="svg-icon bc-areas-of-practice__other__icon">
-									<use xlink:href="assets/media/svg/icons/bc-svgs.svg#probate"></use>
-								</svg>
-								<h3 class="bc-areas-of-practice__other__area__heading">Probate</h3>
-							</div><!-- // .bc-areas-of-practice__other__header -->
-							<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.</p>
-							<p class="bc-arrow-link">
-								<a href="javascript:void()">Link to follow</a>
-								<svg class="svg-icon">
-									<use xlink:href="assets/media/svg/icons/bc-svgs.svg#arrow"></use>
-								</svg>
-							</p>
-						</div><!-- // .bc-areas-of-practice__other__area -->
-						<div class="bc-areas-of-practice__other__area bc-match-height">
-							<div class="bc-areas-of-practice__other__area__header">
-								<svg class="svg-icon bc-areas-of-practice__other__icon">
-									<use xlink:href="assets/media/svg/icons/bc-svgs.svg#conveyancing"></use>
-								</svg>
-								<h3 class="bc-areas-of-practice__other__area__heading">Conveyancing</h3>
-							</div><!-- .bc-areas-of-practice__other__header -->
-							<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.</p>
-							<p class="bc-arrow-link">
-								<a href="javascript:void()">Link to follow</a>
-								<svg class="svg-icon">
-									<use xlink:href="assets/media/svg/icons/bc-svgs.svg#arrow"></use>
-								</svg>
-							</p>
-						</div><!-- // .bc-areas-of-practice__other__area -->
-						<div class="bc-areas-of-practice__other__area bc-match-height">
-							<div class="bc-areas-of-practice__other__area__header">
-								<svg class="svg-icon bc-areas-of-practice__other__icon">
-									<use xlink:href="assets/media/svg/icons/bc-svgs.svg#legal-will"></use>
-								</svg>
-								<h3 class="bc-areas-of-practice__other__area__heading">Wills</h3>
-							</div><!-- .bc-areas-of-practice__other__header -->
-							<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.</p>
-							<p class="bc-arrow-link">
-								<a href="javascript:void()">Link to follow</a>
-								<svg class="svg-icon">
-									<use xlink:href="assets/media/svg/icons/bc-svgs.svg#arrow"></use>
-								</svg>
-							</p>
-						</div><!-- // .bc-areas-of-practice__other__area // Wills-->
-						<div class="bc-areas-of-practice__other__area bc-match-height">
-							<div class="bc-areas-of-practice__other__area__header">
-								<svg class="svg-icon bc-areas-of-practice__other__icon">
-									<use xlink:href="assets/media/svg/icons/bc-svgs.svg#conveyancing"></use>
-								</svg>
-								<h3 class="bc-areas-of-practice__other__area__heading">Enduring Powers of Attorneys</h3>
-							</div><!-- .bc-areas-of-practice__other__header -->
-							<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.</p>
-							<p class="bc-arrow-link">
-								<a href="javascript:void()">Link to follow</a>
-								<svg class="svg-icon">
-									<use xlink:href="assets/media/svg/icons/bc-svgs.svg#arrow"></use>
-								</svg>
-							</p>
-						</div><!-- // .bc-areas-of-practice__other__area // Power or Attorneys-->
-						<div class="bc-areas-of-practice__other__area bc-match-height">
-							<div class="bc-areas-of-practice__other__area__header">
-								<svg class="svg-icon bc-areas-of-practice__other__icon">
-									<use xlink:href="assets/media/svg/icons/bc-svgs.svg#euro-2-a"></use>
-								</svg>
-								<h3 class="bc-areas-of-practice__other__area__heading">Bankruptcy</h3>
-							</div><!-- .bc-areas-of-practice__other__header -->
-							<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.</p>
-							<p class="bc-arrow-link">
-								<a href="javascript:void()">Link to follow</a>
-								<svg class="svg-icon">
-									<use xlink:href="assets/media/svg/icons/bc-svgs.svg#arrow"></use>
-								</svg>
-							</p>
-						</div><!-- // .bc-areas-of-practice__other__area // Bankruptcy-->
-					</div><!-- .bc-areas-of-practice__other -->
-				</article><!-- // .bc-content-component other areas of practice -->
+			<article class="bc-content-component">
+				<div class="bc-content-component bc-areas-of-practice__other">
+					<div class="bc-areas-of-practice__other__area">
+						<div class="bc-areas-of-practice__other__area__header">
+							<svg class="svg-icon bc-areas-of-practice__other__icon">
+								<use xlink:href="assets/media/svg/icons/bc-svgs.svg#litigation"></use> 
+							</svg>	
+							<h3 class="bc-areas-of-practice__other__area__heading">Personal injury</h3>
+						</div><!-- // .bc-areas-of-practice__other__header -->
+						<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.</p>
+						<p class="bc-arrow-link">
+							<a href="javascript:void()">Link to follow</a>
+							<svg class="svg-icon">
+								<use xlink:href="assets/media/svg/icons/bc-svgs.svg#arrow"></use>
+							</svg>
+						</p>
+					</div><!-- // .bc-areas-of-practice__other__area -->
+					<div class="bc-areas-of-practice__other__area bc-match-height">
+						<div class="bc-areas-of-practice__other__area__header">
+							<svg class="svg-icon bc-areas-of-practice__other__icon">
+								<use xlink:href="assets/media/svg/icons/bc-svgs.svg#probate"></use>
+							</svg>
+							<h3 class="bc-areas-of-practice__other__area__heading">Probate</h3>
+						</div><!-- // .bc-areas-of-practice__other__header -->
+						<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.</p>
+						<p class="bc-arrow-link">
+							<a href="javascript:void()">Link to follow</a>
+							<svg class="svg-icon">
+								<use xlink:href="assets/media/svg/icons/bc-svgs.svg#arrow"></use>
+							</svg>
+						</p>
+					</div><!-- // .bc-areas-of-practice__other__area -->
+					<div class="bc-areas-of-practice__other__area bc-match-height">
+						<div class="bc-areas-of-practice__other__area__header">
+							<svg class="svg-icon bc-areas-of-practice__other__icon">
+								<use xlink:href="assets/media/svg/icons/bc-svgs.svg#conveyancing"></use>
+							</svg>
+							<h3 class="bc-areas-of-practice__other__area__heading">Conveyancing</h3>
+						</div><!-- .bc-areas-of-practice__other__header -->
+						<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.</p>
+						<p class="bc-arrow-link">
+							<a href="javascript:void()">Link to follow</a>
+							<svg class="svg-icon">
+								<use xlink:href="assets/media/svg/icons/bc-svgs.svg#arrow"></use>
+							</svg>
+						</p>
+					</div><!-- // .bc-areas-of-practice__other__area -->
+					<div class="bc-areas-of-practice__other__area bc-match-height">
+						<div class="bc-areas-of-practice__other__area__header">
+							<svg class="svg-icon bc-areas-of-practice__other__icon">
+								<use xlink:href="assets/media/svg/icons/bc-svgs.svg#legal-will"></use>
+							</svg>
+							<h3 class="bc-areas-of-practice__other__area__heading">Wills</h3>
+						</div><!-- .bc-areas-of-practice__other__header -->
+						<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.</p>
+						<p class="bc-arrow-link">
+							<a href="javascript:void()">Link to follow</a>
+							<svg class="svg-icon">
+								<use xlink:href="assets/media/svg/icons/bc-svgs.svg#arrow"></use>
+							</svg>
+						</p>
+					</div><!-- // .bc-areas-of-practice__other__area // Wills-->
+					<div class="bc-areas-of-practice__other__area bc-match-height">
+						<div class="bc-areas-of-practice__other__area__header">
+							<svg class="svg-icon bc-areas-of-practice__other__icon">
+								<use xlink:href="assets/media/svg/icons/bc-svgs.svg#conveyancing"></use>
+							</svg>
+							<h3 class="bc-areas-of-practice__other__area__heading">Enduring Powers of Attorneys</h3>
+						</div><!-- .bc-areas-of-practice__other__header -->
+						<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.</p>
+						<p class="bc-arrow-link">
+							<a href="javascript:void()">Link to follow</a>
+							<svg class="svg-icon">
+								<use xlink:href="assets/media/svg/icons/bc-svgs.svg#arrow"></use>
+							</svg>
+						</p>
+					</div><!-- // .bc-areas-of-practice__other__area // Power or Attorneys-->
+					<div class="bc-areas-of-practice__other__area bc-match-height">
+						<div class="bc-areas-of-practice__other__area__header">
+							<svg class="svg-icon bc-areas-of-practice__other__icon">
+								<use xlink:href="assets/media/svg/icons/bc-svgs.svg#euro-2-a"></use>
+							</svg>
+							<h3 class="bc-areas-of-practice__other__area__heading">Bankruptcy</h3>
+						</div><!-- .bc-areas-of-practice__other__header -->
+						<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.</p>
+						<p class="bc-arrow-link">
+							<a href="javascript:void()">Link to follow</a>
+							<svg class="svg-icon">
+								<use xlink:href="assets/media/svg/icons/bc-svgs.svg#arrow"></use>
+							</svg>
+						</p>
+					</div><!-- // .bc-areas-of-practice__other__area // Bankruptcy-->
+				</div><!-- .bc-areas-of-practice__other -->
+			</article><!-- // .bc-content-component other areas of practice -->
+			<article class="bc-content-component bc-bg-brand-primary bc-big-text-feature bc-chinese-feature">
+				<div class="bc-text-component">
+					<p class="bc-content-label">Services in Chinese</p>
+					<div class="bc-is-cn">
+						<h2 class="bc-bg-text">我们为中国客户和爱尔兰中文客户提供一系列服务</h2>
+						<p>我们特别提供财产转让和家庭法领域的专业知识。</p>
+						<p class="bc-arrow-link">
+							<a href="javascript:void(0)">在这里阅读更多内容</a>
+							<svg class="svg-icon">
+								<use xlink:href="assets/media/svg/icons/bc-svgs.svg#arrow"></use>
+							</svg>
+						</p><!-- // .bc-arrow-link -->
+					</div><!-- // .bc-is-cn -->	
+				</div><!-- // .bc-text-component -->
+			</article><!-- // .bc-big-text-feature.bc-chinese-feature -->
 		</section><!-- // .bc-container.bc-areas-of-practice -->
 	</div><!-- // .bc-has-border-rad__wrap -->
 		<section class="bc-container bc-about-us bc-has-border-rad-next">
