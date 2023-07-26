@@ -50,7 +50,7 @@ body
 		.bc-inner-page--cn, .bc-is-cn
 			&.bc-is-english, .bc-is-english
 				font-family: var(--sans-font)
-				h1 
+				h1 , h2, h3
 					font-family: var(--serif-font)
 		.bc-is-english
 			font-family: var(--sans-font)
@@ -606,7 +606,7 @@ iframe
 		padding-right: calc(var(--gutter) * 0.5)
 		background-color: rgba($shade-f0, 0.5)
 		a 
-			font-weight: var(--font-weight)
+			font-weight: var(--bold-font-weight)
 		span
 			font-size: var(--text-gr--1)
 	& &__language-toggle--en
@@ -971,13 +971,14 @@ iframe
 				font-weight: var(--link-active-weight)
 .bc-testimonials	
 	&.bc-container
-		padding-top: 		calc(var(--vertical-unit) * 4)
-		padding-bottom: calc(var(--vertical-unit) * 7)
 		position: relative
+		padding-top: 		calc(var(--vertical-unit) * 4)
+		padding-bottom: calc((var(--vertical-unit) * 4.5) + var(--top-left-radius))
 	& .bc-content-component--text
 		margin-bottom: calc(var(--vertical-unit) * 0)	
 	.bc-content-label
 		margin-bottom: calc(var(--vertical-unit))
+		color: var(--text-black)
 	& &__quote-icon 
 		&.bc-content-component--text
 			display: block
@@ -1000,7 +1001,9 @@ iframe
 		font-size: var(--text-gr-00) 
 		font-weight: var(--light-weight)
 	.flickity-page-dots
-		bottom: calc(var(--vertical-unit) * 2 * -1)
+		position: relative
+		padding-top: var(--vertical-unit)
+		bottom: auto
 	.flickity-prev-next-button
 		transition: opacity 220ms ease-in
 		left: auto 
@@ -1048,14 +1051,10 @@ iframe
 	.bc-site-header__language-toggle--en
 		display: flex
 .bc-flickity--text-slider
-	@media screen and (max-width: calc(#{$tablet} - 1px))
-		.flickity-page-dots
-			bottom: calc(var(--vertical-unit)*0.75*-1)
 	@media screen and (min-width: $tablet)
 		margin-left:  auto
 		margin-right: auto
 		padding-bottom: 0
-		margin-bottom: calc(var(--vertical-unit) * 2)
 		max-width: 90%
 		.flickity-button
 			width: #{(44 / 14)}rem
@@ -1097,7 +1096,7 @@ iframe
 	@media screen and (max-width: calc(#{$tablet-large} - 1px))
 		padding-bottom: calc(var(--vertical-unit) * 1)
 	.bc-area-of-practice__area
-		@include makeFlexbox(column)
+		@include makeFlexbox(column, $justify: space-between)
 		padding: calc(var(--vertical-unit) * 1)  calc(var(--vertical-unit) * 0.5) 
 		transition: background-color 360ms ease-in
 		&__header
@@ -1186,6 +1185,7 @@ iframe
 		@media screen and (min-width: $tablet-large)	
 			.bc-areas-of-practice__main__media__media
 				padding-top: calc(8 / 10 * 100%)
+		
 	.bc-feature-sub-header__heading
 		margin-bottom: 0 
 		font-size: var(--text-gr-02)
@@ -1265,6 +1265,8 @@ iframe
 				height: calc(var(--text-gr-03) * 1.3)
 				width: calc(var(--text-gr-03) * 1.3)
 		.bc-areas-of-practice__other
+			.bc-areas-of-practice__other__area
+				justify-content: space-between
 			.bc-areas-of-practice__other__area__heading
 				font-family: var(--heading-font-cn)
 		.bc-area-of-practice-leader-para
@@ -1311,25 +1313,23 @@ iframe
 	.bc-arrow-link
 		font-size: var(--text-gr-00-5)
 .bc-two-column-layout--wide
-	padding-left:  calc(var(--gutter) * 0.5)
-	padding-right: calc(var(--gutter) * 0.5)
 	& &__media
 		&__media
 			display: block
 			@include objectEmbed
-			padding-top: calc(100% + var(--top-left-radius))
+			padding-top: calc(100%)
 			@media screen and (min-width: $tablet) and (orientation: portrait)
 				padding-top: calc((9 / 16 * 100%) + var(--top-left-radius))
 	& &__text
 		position: relative
 		@include makeFlexbox(column, center, flex-start)
-		padding: calc(var(--vertical-unit) * 4) calc((var(--gutter) * 2))
+		padding: calc(var(--vertical-unit) * 2) calc((var(--gutter) * 2))
 		.bc-arrow-link
 			margin-bottom: 0
 	& &__heading
 		margin-top: 0
 		margin-bottom: calc(var(--vertical-unit) * 1)
-	@media screen and (min-width: $tablet-large)
+	@media screen and (min-width: $tablet) 
 		display: grid
 		gap: 0
 		grid-template-columns: 1fr 1fr
@@ -1344,11 +1344,18 @@ iframe
 			grid-template-columns: 0.618fr 1fr
 			.bc-two-column-layout--wide__media__media
 				padding-top: calc(120%)
-				
+	@media screen and (min-width: $tablet-large)
+		& &__media
+			&__media
+				padding-top: calc(4/5*100%)
+	@media screen and (min-width: 1200px)
+		& &__media
+			&__media
+				padding-top: calc(2/3*100%)
 .bc-inner-page
 	.bc-two-column-layout--wide
-		padding-left: 	calc(var(--gutter) * 1.5)
-		padding-right: 	calc(var(--gutter) * 1.5)
+		padding-left: 	calc(var(--gutter) * 1)
+		padding-right: 	calc(var(--gutter) * 1)
 		background-color: transparent
 
 .bc-inner-page
@@ -1361,11 +1368,11 @@ iframe
 		width: calc(100% + var(--vertical-unit)) 
 		background-color: var(--white)
 		&.bc-has-border-rad-next 
-			padding-bottom: calc(var(--top-left-radius) + var(--vertical-unit) * 2) 
+			padding-bottom: calc(var(--top-left-radius) + var(--vertical-unit) * 2.5) 
 		@media screen and (min-width: $tablet)
 			padding-top: calc(var(--vertical-unit) * 4)
 			&.bc-has-border-rad-next 
-				padding-bottom: calc(var(--top-left-radius) + var(--vertical-unit) * 2.25) 
+				padding-bottom: calc(var(--top-left-radius) + var(--vertical-unit) * 3) 
 	.bc-content-component
 		&--media-padded 
 			@media screen and (min-width: $tablet-large) 
@@ -1405,9 +1412,9 @@ iframe
 			.bc-content-label
 				margin-bottom: calc(var(--vertical-unit) * 0.125)
 	.bc-container
+		&.bc-has-border-rad-next 
+			padding-bottom: calc((var(--vertical-unit) * 3) + var(--top-left-radius) * 0.75)
 		&.bc-inner-page__main-section
-			&.bc-has-border-rad-next 
-				padding-bottom: calc((var(--vertical-unit) * 3) + var(--top-left-radius) * 1.5)
 			padding-top: calc(var(--vertical-unit) * 0)
 			.bc-has-border-rad__wrap
 				background-color: var(--shade-f0)
@@ -1463,6 +1470,7 @@ iframe
 			border-top-width: 0.1rem
 			border-color: var(--brand-secondary)
 	.bc-areas-of-practice
+		padding-bottom: 0
 		.bc-areas-of-practice__other__area__header, p
 			margin-bottom: calc(var(--vertical-unit) * 0.5)
 		.bc-areas-of-practice__other__icon
@@ -1487,7 +1495,6 @@ iframe
 		& &__image
 			margin-bottom: 0
 		& &__text
-			background-color: var(--shade-f0)
 			padding: calc(var(--vertical-unit) * 1) calc(var(--vertical-unit) * 0.5)
 			font-weight: var(--light-weight)
 			font-style: italic
@@ -1522,7 +1529,6 @@ iframe
 		font-size: var(--text-gr-01)
 	&.bc-container
 		padding-top: calc(var(--vertical-unit) * 3 + (var(--top-left-radius) * 0.5))
-		background-color: var(--brand-primary)
 		p, ul, ol, blockquote, h1, h2, h3, h4, a
 			color: var(--white)
 		.svg-icon
@@ -1547,7 +1553,6 @@ iframe
 		padding: calc(var(--vertical-unit)) calc(var(--gutter) * 0.5)
 		font-size: var(--text-gr--1)
 		color: var(--white)
-		background-color: var(--brand-darker)
 		a 
 			color: var(--white)
 /* Modal window notification */
@@ -1685,6 +1690,3 @@ iframe
 		.bc-site-header__main-navigation__item
 			> a 
 				flex: 1 1 100%
-				
-
-		
