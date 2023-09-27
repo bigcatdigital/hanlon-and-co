@@ -509,6 +509,10 @@ const bcFunctions = (function bcAppJS() {
 				let targetHeight = 0;
 				let $thisWrapper = el;
 				let matchElements = [];
+				let minHeight = (el.dataset.matchMinHeight) ? el.dataset.matchMinHeight : 0 ;
+				if (window.outerWidth < minHeight) {
+					return; 
+				}
 				if ($thisWrapper.querySelectorAll('.bc-match-height')) {
 					matchElements = Array.from($thisWrapper.querySelectorAll('.bc-match-height'));
 					matchElements.forEach((matchElement, idx, thisArr) => {

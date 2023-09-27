@@ -605,6 +605,11 @@ var bcFunctions = function bcAppJS() {
         var targetHeight = 0;
         var $thisWrapper = el;
         var matchElements = [];
+        var minHeight = el.dataset.matchMinHeight ? el.dataset.matchMinHeight : 0;
+
+        if (window.outerWidth < minHeight) {
+          return;
+        }
 
         if ($thisWrapper.querySelectorAll('.bc-match-height')) {
           matchElements = Array.from($thisWrapper.querySelectorAll('.bc-match-height'));

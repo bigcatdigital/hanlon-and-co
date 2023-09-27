@@ -1218,7 +1218,7 @@ table {
   padding: calc(var(--vertical-unit) * 3) calc(var(--gutter) * 0.5); }
 
 .bc-content-component, .bc-content-component--media, .bc-content-component--media-padded, .bc-content-component--text {
-  margin-bottom: calc(var(--vertical-unit) * 2); }
+  margin-bottom: calc(var(--vertical-unit) * 1.5); }
   .bc-content-component:last-of-type, .bc-content-component--media:last-of-type, .bc-content-component--media-padded:last-of-type, .bc-content-component--text:last-of-type, .bc-content-component:last-child, .bc-content-component--media:last-child, .bc-content-component--media-padded:last-child, .bc-content-component--text:last-child {
     margin-bottom: 0; }
   .bc-content-component .bc-content-component, .bc-content-component--media .bc-content-component, .bc-content-component--media-padded .bc-content-component, .bc-content-component--text .bc-content-component, .bc-content-component .bc-content-component--media, .bc-content-component--media .bc-content-component--media, .bc-content-component--media-padded .bc-content-component--media, .bc-content-component--text .bc-content-component--media, .bc-content-component .bc-content-component--media-padded, .bc-content-component--media .bc-content-component--media-padded, .bc-content-component--media-padded .bc-content-component--media-padded, .bc-content-component--text .bc-content-component--media-padded, .bc-content-component .bc-content-component--text, .bc-content-component--media .bc-content-component--text, .bc-content-component--media-padded .bc-content-component--text, .bc-content-component--text .bc-content-component--text {
@@ -1496,6 +1496,20 @@ table {
       align-items: center; } }
   .bc-content-label .bc-match-height {
     transition: height 360ms ease-out; }
+
+.bc-inner-page-hr {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: calc(var(--vertical-unit) * 0.75);
+  margin-bottom: calc(var(--vertical-unit) * 0.75); }
+  .bc-inner-page-hr hr {
+    max-width: calc(32.8% * 0.382);
+    border-top-width: 0.1rem;
+    border-color: var(--brand-secondary); }
+  @media screen and (min-width: 768px) {
+    .bc-inner-page-hr {
+      margin-top: calc(var(--vertical-unit) * 1.5);
+      margin-bottom: calc(var(--vertical-unit) * 2); } }
 
 /* Hanlon & Co logo -- text */
 .bc-site-logo, .bc-site-logo--white {
@@ -1904,16 +1918,21 @@ table {
     height: 100%;
     opacity: 0.76; }
   .bc-hero.bc-hero--full-screen, .bc-hero--full-screen {
-    height: calc(100vh + var(--top-left-radius));
+    height: calc(100vh);
     z-index: 2; }
     .bc-hero.bc-hero--full-screen.bc-has-border-rad-next, .bc-hero--full-screen.bc-has-border-rad-next {
-      padding-bottom: calc((var(--vertical-unit) * 3) + (var(--top-left-radius) * 1.5)); }
+      padding-bottom: calc((var(--vertical-unit) * 5) + (var(--top-left-radius) * 1.5)); }
   @media screen and (min-width: 768px) {
+    .bc-hero.bc-hero--full-screen, .bc-hero--full-screen {
+      padding-bottom: calc((var(--vertical-unit) * 3) + (var(--top-left-radius) * 1.5)); }
     .bc-hero.bc-inner-page-heading .bc-hero__body, .bc-inner-page-heading.bc-hero--full-screen .bc-hero__body {
       padding-bottom: 0; }
     .bc-hero .bc-hero__heading, .bc-hero--full-screen .bc-hero__heading {
       margin-top: 0;
       margin-bottom: calc(var(--vertical-unit) / 2); } }
+  @media screen and (min-width: 1024px) {
+    .bc-hero.bc-hero--full-screen.bc-has-border-rad-next, .bc-hero--full-screen.bc-has-border-rad-next {
+      padding-bottom: calc((var(--vertical-unit) * 3) + (var(--top-left-radius) * 1.5)); } }
   .bc-hero .bc-feature-header, .bc-hero--full-screen .bc-feature-header, .bc-hero .bc-feature-header--hero, .bc-hero--full-screen .bc-feature-header--hero {
     color: inherit; }
 
@@ -2185,8 +2204,8 @@ table {
   .bc-areas-of-practice.bc-container, .bc-areas-of-practice.bc-hero, .bc-areas-of-practice.bc-hero--full-screen {
     padding-top: calc(var(--vertical-unit) * 4);
     padding-bottom: calc(var(--vertical-unit) * 2.5); }
-  .bc-areas-of-practice .bc-feature-header, .bc-areas-of-practice .bc-feature-header--hero {
-    margin-bottom: calc(var(--vertical-unit) * 3); }
+  .bc-areas-of-practice .bc-content-component.bc-main-areas, .bc-areas-of-practice .bc-main-areas.bc-content-component--media, .bc-areas-of-practice .bc-main-areas.bc-content-component--media-padded, .bc-areas-of-practice .bc-main-areas.bc-content-component--text {
+    margin-bottom: 0; }
   @media screen and (max-width: calc(1024px - 1px)) {
     .bc-areas-of-practice {
       padding-bottom: calc(var(--vertical-unit) * 1); } }
@@ -2232,8 +2251,7 @@ table {
     position: relative;
     overflow: hidden;
     padding-top: 56.25%;
-    min-width: 100%;
-    padding-top: 100%; }
+    min-width: 100%; }
     .bc-areas-of-practice .bc-areas-of-practice__main__media__media object, .bc-areas-of-practice .bc-areas-of-practice__main__media__media iframe, .bc-areas-of-practice .bc-areas-of-practice__main__media__media img {
       position: absolute;
       top: 0;
@@ -2243,23 +2261,17 @@ table {
       width: 100%;
       height: 100%; }
   .bc-areas-of-practice .bc-areas-of-practice__main__text {
-    position: absolute;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
     flex-wrap: nowrap;
     align-items: flex-start;
-    height: 100%;
-    width: 100%;
-    bottom: 0;
-    padding: calc(var(--gutter) * 1.5) calc(var(--vertical-unit));
+    padding: calc(var(--gutter) * 1) calc(var(--vertical-unit) * 0);
     background-color: transparent;
-    z-index: 20;
-    --this-timing: 200ms;
-    transition: box-shadow var(--this-timing) ease-in; }
+    --this-timing: 200ms; }
     .bc-areas-of-practice .bc-areas-of-practice__main__text .bc-arrow-link {
       margin-bottom: 0;
-      color: var(--white); }
+      color: var(--brand-primary); }
       .bc-areas-of-practice .bc-areas-of-practice__main__text .bc-arrow-link > span {
         font-weight: var(--bold-font-weight);
         position: relative;
@@ -2280,7 +2292,7 @@ table {
           .bc-areas-of-practice .bc-areas-of-practice__main__text .bc-arrow-link > span:active::after, .bc-areas-of-practice .bc-areas-of-practice__main__text .bc-arrow-link > span:hover::after, .bc-areas-of-practice .bc-areas-of-practice__main__text .bc-arrow-link > span:focus::after {
             height: 0.300rem; }
     .bc-areas-of-practice .bc-areas-of-practice__main__text .svg-icon {
-      fill: var(--white); }
+      fill: var(--brand-primary); }
     .bc-areas-of-practice .bc-areas-of-practice__main__text::after {
       display: none; }
     .bc-areas-of-practice .bc-areas-of-practice__main__text .bc-media-overlay {
@@ -2294,18 +2306,17 @@ table {
       height: 0.300rem; }
   .bc-areas-of-practice .bc-areas-of-practice__main__sub-head {
     font-family: var(--serif-font);
-    font-size: var(--text-gr-02-5);
+    font-size: var(--text-gr-02);
     margin-bottom: 0;
     margin-bottom: calc(var(--vertical-unit)*0.5);
     line-height: 1;
-    color: var(--white); }
+    color: var(--brand-primary); }
   .bc-areas-of-practice .bc-areas-of-practice__main__description {
     font-size: var(--text-gr-00);
     font-weight: var(--font-weight);
     overflow: hidden;
     margin-bottom: calc(var(--vertical-unit)*0.5);
-    transition: height 420ms ease-out;
-    color: var(--white); }
+    transition: height 420ms ease-out; }
   @media screen and (min-width: 768px) {
     .bc-areas-of-practice .bc-areas-of-practice__main {
       display: grid;
@@ -2313,9 +2324,6 @@ table {
       grid-template-columns: repeat(2, 1fr);
       gap: 1.5rem;
       row-gap: 1.5rem; } }
-  @media screen and (min-width: 1024px) {
-    .bc-areas-of-practice .bc-areas-of-practice__main .bc-areas-of-practice__main__media__media {
-      padding-top: calc(8 / 10 * 100%); } }
   .bc-areas-of-practice .bc-feature-sub-header__heading {
     margin-bottom: 0;
     font-size: var(--text-gr-02);
@@ -2368,7 +2376,7 @@ table {
         margin-top: 0;
         margin-bottom: 0;
         font-family: var(--serif-font);
-        font-size: var(--text-gr-01);
+        font-size: var(--text-gr-01-5);
         color: var(--brand-primary); }
       .bc-areas-of-practice .bc-areas-of-practice__other__area p {
         margin-bottom: calc(var(--vertical-unit) * 0.5); }
@@ -2383,7 +2391,7 @@ table {
     .bc-areas-of-practice .bc-areas-of-practice__other {
       display: grid;
       grid-template-rows: auto;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(2, 1fr);
       gap: var(--gutter);
       row-gap: var(--gutter); }
       .bc-areas-of-practice .bc-areas-of-practice__other.bc-areas-of-practice__other--2col {
@@ -2434,11 +2442,11 @@ table {
 
 /* Big text compoonent */
 .bc-big-text-feature {
-  padding-top: calc(var(--vertical-unit) * 3);
-  padding-bottom: calc(var(--vertical-unit) * 3); }
+  padding-top: calc(var(--vertical-unit) * 5);
+  padding-bottom: calc(var(--vertical-unit) * 5); }
   .bc-big-text-feature.bc-container, .bc-big-text-feature.bc-hero, .bc-big-text-feature.bc-hero--full-screen {
-    padding-top: calc(var(--vertical-unit) * 4);
-    padding-bottom: calc(var(--vertical-unit) * 4); }
+    padding-top: calc(var(--vertical-unit) * 5);
+    padding-bottom: calc(var(--vertical-unit) * 5); }
   .bc-big-text-feature .bc-text-component {
     display: flex;
     flex-direction: column;
@@ -2456,6 +2464,13 @@ table {
     .bc-big-text-feature .bc-arrow-link .svg-icon {
       max-width: calc(var(--text-gr-00-5) * 1.3);
       max-height: calc(var(--text-gr-00-5) * 1.3); }
+  @media screen and (min-width: 768px) {
+    .bc-big-text-feature {
+      padding-top: calc(var(--vertical-unit) * 4);
+      padding-bottom: calc(var(--vertical-unit) * 4); }
+      .bc-big-text-feature.bc-container, .bc-big-text-feature.bc-hero, .bc-big-text-feature.bc-hero--full-screen {
+        padding-top: calc(var(--vertical-unit) * 4);
+        padding-bottom: calc(var(--vertical-unit) * 4); } }
 
 .bc-about-us {
   background-color: var(--white);
@@ -2639,16 +2654,6 @@ table {
 
 .bc-inner-page .bc-object-embed {
   margin-bottom: var(--vertical-unit); }
-
-.bc-inner-page .bc-inner-page-hr {
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: calc(var(--vertical-unit) * 0);
-  margin-bottom: calc(var(--vertical-unit) * 2); }
-  .bc-inner-page .bc-inner-page-hr hr {
-    max-width: calc(32.8% * 0.382);
-    border-top-width: 0.1rem;
-    border-color: var(--brand-secondary); }
 
 .bc-inner-page .bc-areas-of-practice {
   padding-bottom: 0; }
