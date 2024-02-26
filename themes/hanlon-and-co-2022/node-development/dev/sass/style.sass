@@ -454,43 +454,48 @@ iframe
 	&--white
 		@extend .bc-site-logo
 		color: var(--white)
-	
 .bc-arrow-link
+	a
+		@include linkHover
+			&::after 
+				height: 0.300rem
+			+ .svg-icon
+				transform: scale(1.24)
 	.svg-icon
 		max-width: 	calc(var(--text-gr-00) * 1.3)
 		max-height: calc(var(--text-gr-00) * 1.3)
 		fill: var(--brand-primary)
+		transition: transform 240ms ease-out
 .bc-feature-header
+	margin-bottom: calc(var(--vertical-unit) * 3  )
 	position: relative
 	& &__col
 		p:not(.bc-content-label)
 			font-size: var(--text-gr-01)
-			font-weight: var(--light-weight)
 	& &__heading
 		position: relative
-		margin-bottom: calc(var(--vertical-unit) * 0.382)
 		font-size: var(--text-gr-03)
 		color: var(--brand-primary)
-		max-width: 32ch 
+		max-width: 38ch 
 	.bc-intro-paragraph 
 		position: relative
-		margin-bottom: 0
-		padding-bottom: calc(var(--vertical-unit) * 0.5)
-		font-weight: var(--light-weight)
-		//border-bottom: #{(3/14)}rem solid var(--shade-e0)
+		margin-bottom: calc(var(--vertical-unit))
+		padding-bottom: calc(var(--vertical-unit))
+		max-width: 72ch
+		a 
+			font-size: var(--text-gr-00)
+		*:last-child
+			margin-bottom: 0
 		&::after
-			//content: " "
+			content: " "
 			position: absolute
 			top: auto 
 			left: 0 
-			//bottom: calc((var(--vertical-unit) )  * -1 + #{(3/14)}rem) 
-			bottom: calc(-1 * #{(9/14)}rem) 
-			width: 100%
-			height: #{(1.5/14)}rem
-			background-color: var(--shade-e0)
+			bottom: calc(-4 * #{(3.82/14)}rem) 
+			width: 9%
+			height: #{(3.82/14)}rem
+			background-color: var(--brand-secondary)
 	&::before, &::after
-		//content: " "
-		
 		width: calc(var(--gutter) * 2)
 		background-color: var(--brand-secondary)
 	&::before 
@@ -506,7 +511,9 @@ iframe
 		background-color: var(--shade-e0)
 	&--hero
 		@extend .bc-feature-header
+		margin-bottom: 0
 		.bc-intro-paragraph
+			margin-bottom: 0
 			border-bottom: none
 		&::before 
 			height: 0
@@ -554,10 +561,17 @@ iframe
 		color: var(--shade-50)
 		margin-bottom: var(--vertical-unit)
 		
-.bc-intro-paragraph		
+.bc-intro-paragraph 
+	font-family: var(--base-font)
 	font-size: var(--text-gr-01)
-	//font-weight: var(--light-weight)
+	font-weight: var(--light-weight)
+	line-height: var(--line-height)
 	color: inherit
+	h2, h3, h4
+		font-family: var(--base-font)
+		font-size: var(--text-gr-01)
+		font-weight: var(--light-weight)
+		line-height: var(--line-height)
 #abstract-dots, .bc-abstract-dots
 	fill: var(--shade-d0)
 	.abstract-dot
@@ -853,7 +867,6 @@ iframe
 			&.bc-has-border-rad-next
 				padding-bottom: calc((var(--vertical-unit) * 3) + (var(--top-left-radius) * 1.5))
 	.bc-feature-header
-		//margin-bottom: calc(var(--vertical-unit)*0)
 		color: inherit
 
 /* Section hrs */
@@ -1126,7 +1139,6 @@ iframe
 			margin-bottom: 0
 			font-family: var(--serif-font)
 			font-size: var(--text-gr-01-5)
-			color: var(--brand-primary)
 		&__icon
 			height: calc(var(--text-gr-04) * 1)
 			width:  calc(var(--text-gr-04) * 1)
@@ -1182,7 +1194,6 @@ iframe
 			margin-bottom: 0
 			margin-bottom: calc(var(--vertical-unit)*0.5)
 			line-height: 1
-			color: var(--brand-primary)
 		&__description
 			font-size: var(--text-gr-00) 
 			font-weight: var(--font-weight)
@@ -1196,7 +1207,6 @@ iframe
 	.bc-feature-sub-header__heading
 		margin-bottom: 0 
 		font-size: var(--text-gr-02)
-		color: var(--brand-primary)
 	& &__other
 		margin-left:  calc(var(--gutter) * 0.5 * -1)
 		margin-right: calc(var(--gutter) * 0.5 * -1)
@@ -1217,6 +1227,7 @@ iframe
 					padding-left:  var(--gutter)
 					padding-right: var(--gutter)
 					margin-bottom: 0
+				
 				@media screen and (min-width: $tablet-large)
 					max-width: none
 					.bc-feature-header__col
@@ -1237,14 +1248,13 @@ iframe
 				margin-bottom: 0
 				font-family: var(--serif-font)
 				font-size: var(--text-gr-01-5)
-				color: var(--brand-primary)
 			p 
 				margin-bottom: calc(var(--vertical-unit) * 0.5)
 		&__icon
 			max-height: calc(var(--text-gr-03-5) * 1)
 			max-width:  calc(var(--text-gr-03-5) * 1)
 			margin-right: calc(var(--vertical-unit) * 1)
-			fill: var(--brand-primary)
+			fill: var(--text-black)
 		.bc-arrow-link
 			margin-bottom: 0
 	@media screen and (min-width: $tablet)
