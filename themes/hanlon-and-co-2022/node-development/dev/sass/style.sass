@@ -234,11 +234,11 @@ iframe
 				height: 0
 	& &__body
 		max-height: 0
-		padding-top:    0
-		//padding-bottom: calc(var(--vertical-unit) * 0.25)
+		padding-top: 		0
+		padding-bottom: 0
 		margin-bottom: calc(var(--vertical-unit) * 0.5)
 		overflow: hidden
-		transition: height 320ms ease-in, opacity 320ms ease-out, padding 240ms ease-out
+		transition: height 320ms ease-in, opacity 320ms ease-out
 	hr 
 		margin: 0
 		padding: 0
@@ -269,8 +269,9 @@ iframe
 			transform: rotate(90deg)
 	& &__toggle.bc-is-active + &__body 
 		opacity: 1
-		padding-top: 		var(--vertical-unit)
-		padding-bottom: var(--vertical-unit)
+		padding-top: 		calc(var(--vertical-unit) * 0.5)
+		padding-bottom: calc(var(--vertical-unit) * 0.5)
+		transition: height 320ms ease-in, opacity 320ms ease-out, padding 360ms ease-out 320ms
 .bc-inner-page--cn
 	.bc-show-hide
 		.bc-show-hide__header, .bc-show-hide__body
@@ -669,11 +670,7 @@ iframe
 				@include makeFlexbox(column)
 				font-family: var(--serif-font)
 				font-size: var(--text-gr-01) 
-				opacity: 0
-				transform-origin: 0 0  
-				transform: translateY(calc(var(--vertical-unit) * 0.5))
-				transition-duration: 0ms 
-				transition-delay: 0ms
+			
 				> ul 
 					margin-top: 	 calc(var(--vertical-unit) * 0)
 					margin-bottom: calc(var(--vertical-unit) * 0)
@@ -685,6 +682,12 @@ iframe
 						font-size: var(--text-gr-00)
 						font-family: var(--base-font)
 						font-weight: var(--font-weight)
+			> .bc-site-header__main-navigation__item
+				opacity: 0
+				transform-origin: 0 0  
+				transform: translateY(calc(var(--vertical-unit) * 0.5)) 
+				transition-duration: 0ms 
+				transition-delay: 0ms
 			li
 				padding: calc(var(--vertical-unit) / 2) calc(var(--gutter))
 	&.bc-is-active
@@ -752,15 +755,12 @@ iframe
 		.bc-show-hide-icon
 			fill: var(--white)
 		.bc-show-hide__body
-			transform: translateY(calc((var(--vertical-unit) * 0.75) * -1) )
-			transition: max-height 360ms ease-out 0ms, transform 380ms ease-out
-			.bc-site-header__main-navigation__item
-				opacity: 1
+			opacity: 0
+			transition: max-height 360ms ease-out, opacity 380ms ease-out, padding 380ms ease-out
 		.bc-show-hide__toggle.bc-is-active + .bc-show-hide__body
-			padding-top: 0
-			padding-bottom: 0
-			transform: translateY(0)
-			transition: max-height 360ms ease-out 0ms, transform 380ms ease-out
+			padding-bottom: calc(var(--vertical-unit) * 0.0)
+			opacity: 1	
+			transition: max-height 360ms ease-out, opacity 380ms ease-out, padding 380ms ease-out
 .bc-is-filterable
 	transition: filter 640ms ease-in
 	&--full-screen
@@ -1687,7 +1687,7 @@ iframe
 		margin-left:  auto
 		margin-right: auto
 
-#menu-main-site-navigation.menu
+#menu-main-site-navigation
 	padding-top: calc(var(--vertical-unit) * 1)
 	ul
 			margin-top: 0 
@@ -1704,3 +1704,27 @@ iframe
 		.bc-site-header__main-navigation__item
 			> a 
 				flex: 1 1 100%
+	.bc-show-hide
+		//.bc-show-hide__toggle 
+		//	&.bc-is-active + .bc-show-hide__body
+		//		.bc-site-header__main-navigation__item
+		//			transform: translateY(0)
+		//			opacity: 1
+		//			--delay: 280ms
+		//			transition: opacity 320ms ease-out, transform 380ms ease-out  
+		//			&:nth-of-type(1)
+		//				transition-delay: calc(0)
+		//			&:nth-of-type(2)
+		//				transition-delay: calc(var(--delay) * 1)
+		//			&:nth-of-type(3)
+		//				transition-delay: calc(var(--delay) * 2)
+		//			&:nth-of-type(4)
+		//				transition-delay: calc(var(--delay) * 3)
+		//			&:nth-of-type(5)
+		//				transition-delay: calc(var(--delay) * 4)
+		//			&:nth-of-type(6)
+		//				transition-delay: calc(var(--delay) * 5)
+		//			&:nth-of-type(7)
+		//				transition-delay: calc(var(--delay) * 6)
+		//			&:nth-of-type(8)
+		//				transition-delay: calc(var(--delay) * 7)

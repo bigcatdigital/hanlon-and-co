@@ -310,6 +310,8 @@ var bcFunctions = function bcAppJS() {
    * cb: a callback
   */
 
+  debug = true;
+
   function bcShowHide($el, targetHeight, cb) {
     var _arguments = arguments;
 
@@ -337,46 +339,50 @@ var bcFunctions = function bcAppJS() {
   var showHideComponents = Array.from(document.querySelectorAll('.bc-show-hide'));
 
   if (debug) {
-    console.log("Show/hide accordion components");
-    console.log("--------------------");
+    console.log("");
+    console.log("Show/hide accordion components:");
+    console.log("-------------------------------");
     console.log("Length: ".concat(showHideComponents.length));
+    console.log("");
   }
 
   showHideComponents.forEach(function ($showHideComponent, idx) {
     if (debug) {
-      console.log("Accordion component #".concat(idx + 1, ":"));
+      console.log("Accordion component #".concat(idx + 1, " classlist:"));
       console.log($showHideComponent.classList);
     } //Show hide toggles
 
 
     var showHideToggles = Array.from($showHideComponent.querySelectorAll('.bc-show-hide__toggle'));
-    showHideToggles.forEach(function ($showHideToggle) {
+    showHideToggles.forEach(function ($showHideToggle, idx) {
       var $showHideBody = $showHideToggle.nextElementSibling;
+      var showHideBodyHeight = $showHideBody.parentElement.classList.contains('bc-site-header__main-navigation__item') ? $showHideBody.scrollHeight + 14 * 1.5 * 0.5 : $showHideBody.scrollHeight;
 
       if (debug) {
-        console.log('Accordion body scrollHeight: ');
-        console.log($showHideBody.scrollHeight);
-        console.log('Accordion toggle classlist: ');
+        console.log("Accordion toggle #".concat(idx + 1, " classlist: "));
         console.log($showHideToggle.classList);
+        console.log("Accordion body #".concat(idx + 1, " scrollHeight: "));
+        console.log($showHideBody.scrollHeight);
       } //Show/hide toggle listener
 
 
       $showHideToggle.addEventListener('click', function (evt) {
         evt.preventDefault();
+        var thisDebug = false;
 
         if ($showHideToggle.classList.contains('bc-is-active')) {
-          if (debug) {
+          if (thisDebug) {
             console.log('This accordion body is active.');
           }
 
           bcShowHide($showHideBody, 0);
           $showHideToggle.classList.remove('bc-is-active');
         } else {
-          if (debug) {
+          if (thisDebug) {
             console.log('This accordion body is inactive.');
           }
 
-          bcShowHide($showHideBody, $showHideBody.scrollHeight);
+          bcShowHide($showHideBody, showHideBodyHeight);
           $showHideToggle.classList.add('bc-is-active');
         }
       }); //Accordion closer in the accordion body
@@ -392,10 +398,10 @@ var bcFunctions = function bcAppJS() {
       }
     });
   });
+  debug = false;
   /* Main site navigation */
 
   function mainNavigationSetup() {
-    debug = false;
     var $siteHeader = document.querySelector('.bc-site-header');
     var $siteHeaderMenuLink = document.querySelector('.bc-site-header__menu-link');
     var $siteHeaderMainNav = document.querySelector('.bc-site-header__main-navigation');
