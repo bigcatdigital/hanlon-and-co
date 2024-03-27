@@ -32,7 +32,6 @@ h1
 	font-family: var(--heading-font)
 	font-size: var(--text-gr-03)
 h2
-	font-family: var(--heading-font)
 	font-size: var(--text-gr-01)  
 h3
 	font-size: var(--text-gr-00)
@@ -303,7 +302,7 @@ iframe
 		font-weight: var(--font-weight)
 		color: var(--brand-primary)
 		background-color: var(--shade-f-1)
-		border-color: var(--shade-f0)
+		border-color: rgba($brand-primary, 0.24)
 		.svg-icon
 			fill: var(--brand-primary) 
 		@include linkHover
@@ -377,7 +376,7 @@ iframe
 			#border-radius__curve
 				fill: var(--shade-f0)
 		&.bc-testimonials
-			background-color: var(--shade-f0)
+			background-color: var(--shade-f-1)
 			#border-radius__curve
 				fill: var(--shade-f0)
 			&.bc-aop-tesitimonials
@@ -400,7 +399,11 @@ iframe
 				padding-right: calc(var(--gutter))
 				margin-left: calc(var(--gutter) * -1)
 				margin-right: calc(var(--gutter) * -1)
-
+.bc-max-width-96
+	@media screen and (min-width: $laptop)
+		max-width: 96%
+		margin-left: auto
+		margin-right: auto
 
 //background-image: linear-gradient(0deg, rgba($white, 0), var(--white))
 @mixin makeTextColor($text-color)
@@ -442,7 +445,8 @@ iframe
 	margin-bottom: calc(var(--vertical-unit) * 0.382 )
 	font-family: var(--sans-font) 
 	font-size: var(--text-gr--1) 
-	font-weight: var(--light-weight)
+	font-weight: var(--bold-font-weight)
+	color: var(--shade-90)
 	text-transform: uppercase
 	.bc-match-height
 		transition: height 360ms ease-out
@@ -454,8 +458,8 @@ iframe
 	margin-bottom: 	calc(var(--vertical-unit) * 0.75)
 	hr
 		max-width: calc(32.8% * 0.382)
-		border-top-width: 0.1rem
-		border-color: var(--brand-secondary)
+		border-top-width: 0.075rem
+		border-color: var(--shade-f-1)
 	@media screen and (min-width: $tablet)
 		margin-top: 		calc(var(--vertical-unit) * 1.5)
 		margin-bottom: 	calc(var(--vertical-unit) * 2)
@@ -490,27 +494,26 @@ iframe
 		.svg-icon
 			fill: var(--brand-primary)
 .bc-feature-header
-	margin-bottom: calc(var(--vertical-unit) * 3  )
+	margin-bottom: calc(var(--vertical-unit) * 1)
 	position: relative
 	& &__col
 		p:not(.bc-content-label)
-			font-size: var(--text-gr-01)
+			font-size: var(--text-gr-01) 
 	& &__heading
 		position: relative
-		font-size: var(--text-gr-03)
+		font-size: var(--text-gr-03-5)
 		color: var(--brand-primary)
 		max-width: 38ch 
 	.bc-intro-paragraph 
 		position: relative
 		margin-bottom: calc(var(--vertical-unit))
-		padding-bottom: calc(var(--vertical-unit))
 		max-width: 72ch
 		a 
 			font-size: var(--text-gr-00)
 		*:last-child
 			margin-bottom: 0
 		&::after
-			content: " "
+//			content: ""
 			position: absolute
 			top: auto 
 			left: 0 
@@ -819,9 +822,10 @@ iframe
 	.bc-site-logo, .bc-brand-tagline
 		color: inherit
 	.bc-site-logo
-		margin-bottom: calc(var(--vertical-unit) / 2)
+		margin-bottom: calc(var(--vertical-unit) * 0.5)
 		line-height: 1.1
 	.bc-brand-tagline
+		margin-bottom: calc(var(--vertical-unit) * 1)
 		font-size: var(--text-gr--1)
 		font-weight: var(--light-weight )
 		text-transform: uppercase
@@ -880,11 +884,11 @@ iframe
 		height: calc(100vh)
 		z-index: 2
 		&.bc-has-border-rad-next
-			padding-bottom: calc((var(--vertical-unit) * 5) + (var(--top-left-radius) * 1.5))
+			padding-bottom: calc((var(--vertical-unit) * 3) + (var(--top-left-radius) * 1.5))
 	@media screen and (min-width: $tablet) 
 		&.bc-hero--full-screen
 			&.bc-has-border-rad-next
-			padding-bottom: calc((var(--vertical-unit) * 3) + (var(--top-left-radius) * 1.5))
+				padding-bottom: calc((var(--vertical-unit) * 3) + (var(--top-left-radius) * 1.5))
 		&.bc-inner-page-heading
 			.bc-hero__body
 				padding-bottom: 0
@@ -894,9 +898,11 @@ iframe
 	@media screen and (min-width: $tablet-large) 
 		&.bc-hero--full-screen
 			&.bc-has-border-rad-next
-				padding-bottom: calc((var(--vertical-unit) * 3) + (var(--top-left-radius) * 1.5))
+				padding-bottom: calc((var(--vertical-unit) * 2) + (var(--top-left-radius) * 1.5))
 	.bc-feature-header
 		color: inherit
+	.bc-intro-paragraph, p:not(.bc-feature-header)
+		font-size: var(--text-gr-01-5)
 
 /* Section hrs */
 .bc-section-hrs 
@@ -1035,6 +1041,9 @@ iframe
 		position: relative
 		padding-top: 		calc(var(--vertical-unit) * 4)
 		padding-bottom: calc((var(--vertical-unit) * 4.5) + var(--top-left-radius))
+	& .bc-content-component
+		display: block
+
 	& .bc-content-component--text
 		margin-bottom: calc(var(--vertical-unit) * 0)	
 	.bc-content-label
@@ -1144,18 +1153,21 @@ iframe
 
 	.bc-flickity__slide
 		margin-top: calc(var(--gutter) * 0.5) 
-		padding: 0 calc(var(--gutter) * 0.5)
+		padding: 0 calc(var(--gutter) * 0)
 		background-color: transparent
 	
 .bc-areas-of-practice
 	position: relative
 	&.bc-container
-		padding-top: 		calc(var(--vertical-unit) * 4)
 		padding-bottom: calc(var(--vertical-unit) * 2.5)
 	.bc-content-component.bc-main-areas
-		margin-bottom: 0
+		margin-bottom: 0 
+	.bc-feature-header
+		margin-bottom: calc(var(--vertical-unit) * 2)
 	@media screen and (max-width: calc(#{$tablet-large} - 1px))
 		padding-bottom: calc(var(--vertical-unit) * 1)
+	@media screen and (min-wdth: $tablet-large) 
+		padding-top: 		calc(var(--vertical-unit) * 4)
 	.bc-area-of-practice__area
 		@include makeFlexbox(column, $justify: space-between)
 		padding: calc(var(--vertical-unit) * 1)  calc(var(--vertical-unit) * 0.5) 
@@ -1180,7 +1192,7 @@ iframe
 				margin-bottom: calc( var(--vertical-unit) * 1)
 	& &__main
 		&.bc-content-component, &.bc-content-component:last-of-type
-			margin-bottom: 	0 
+			margin-bottom: 	calc(var(--vertical-unit) * 0) 
 		&__area
 			position: relative
 			overflow: hidden
@@ -1190,7 +1202,9 @@ iframe
 			picture
 				display: block
 			&__media
-				@include objectEmbed
+				@include objectEmbed(#{(9 / 16) * 100%})
+				@media screen and (min-width: $laptop	)
+					padding-top: #{(9 / 21) * 100%}
 		&__text
 			@include makeFlexbox(column, flex-end)
 			padding: calc(var(--vertical-unit) * 1) calc(var(--gutter) * 0.5)
@@ -1218,12 +1232,13 @@ iframe
 						&::after
 							height: 0.300rem
 		&__sub-head
-			font-family: var(--serif-font)
-			font-size: var(--text-gr-02-5)  
+			//font-family: var(--serif-font)
+			font-size: var(--text-gr-02)  
+			font-weight: 600
 			margin-bottom: 0
 			margin-bottom: calc(var(--vertical-unit)*0.75)
 			line-height: 1
-			color: var(--brand-primary)
+			//color: var(--brand-primary)
 		&__description
 			font-size: var(--text-gr-00) 
 			font-weight: var(--font-weight)
@@ -1243,6 +1258,12 @@ iframe
 		width: calc(100% + var(--gutter))
 		&.bc-content-component
 			padding-top: 0
+		&__heading 
+			margin-bottom: calc(var(--vertical-unit) * 1)
+			&__text
+				font-size: var(--text-gr-02-5)
+				font-family: var(--serif-font)
+				color: var(--shade-70)
 		&__header 
 			&.bc-content-component--text.bc-feature-sub-header
 				margin-left:  calc(var(--gutter) * -1)
@@ -1276,14 +1297,13 @@ iframe
 			&__heading
 				margin-top: 0
 				margin-bottom: 0
-				font-family: var(--serif-font)
-				font-size: var(--text-gr-02)
-				color: var(--brand-primary)
+				font-size: var(--text-gr-01-5)
+				font-weight: 600
 			p 
 				margin-bottom: calc(var(--vertical-unit) * 0.85)
 		&__icon
-			max-width:  calc(var(--text-gr-04) * 1.25)
-			max-height: calc(var(--text-gr-04) * 1.25)
+			max-width:  calc(var(--text-gr-04) * 1)
+			max-height: calc(var(--text-gr-04) * 1)
 			margin-right: calc(var(--vertical-unit) * 1)
 			margin-bottom: calc(var(--vertical-unit) * 0.5)
 			fill: var(--brand-primary)
@@ -1300,6 +1320,9 @@ iframe
 				padding-bottom: calc( var(--vertical-unit) * 1)
 				.bc-arrow-link
 					margin-bottom: 0
+	@media screen and (min-width: $tablet-large)
+		& &__other 
+			grid-template-columns: repeat(3, 1fr)
 	&.bc-areas-of-practice--cn
 		.bc-area-of-practice__area__leader-para
 			font-weight: var(--bold-font-weight)
@@ -1336,6 +1359,7 @@ iframe
 .bc-big-text-feature
 	padding-top: 		calc(var(--vertical-unit) * 5)
 	padding-bottom: calc(var(--vertical-unit) * 5)
+	border-radius: calc(var(--top-left-radius) * 0.5)
 	&.bc-container
 		padding-top: 		calc(var(--vertical-unit) * 5)
 		padding-bottom: calc(var(--vertical-unit) * 5)
@@ -1365,9 +1389,9 @@ iframe
 	&.bc-container
 		p:not(.bc-intro-paragraph) 
 			margin-bottom: calc(var(--vertical-unit) * 0.5)
-	.bc-arrow-link
-		font-size: var(--text-gr-00-5)
 .bc-two-column-layout--wide
+	border-radius: calc(var(--top-left-radius) * 0.5) 
+	overflow: hidden
 	& &__media
 		&__media
 			display: block
@@ -1382,6 +1406,7 @@ iframe
 		.bc-arrow-link
 			margin-bottom: 0
 	& &__heading
+		font-family: var(--serif-font)
 		margin-top: 0
 		margin-bottom: calc(var(--vertical-unit) * 1)
 	@media screen and (min-width: $tablet) 

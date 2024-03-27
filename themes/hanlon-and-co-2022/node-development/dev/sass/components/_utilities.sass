@@ -79,12 +79,16 @@
 	$shade: nth($shade, 1)
 	.has-#{$name}-background 
 		background-color: $shade
-		h1, h2, h3, h4, h5, p, ul, blockquote, a
+		h1, h2, h3, h4, h5, p:not(.bc-button), ul, blockquote, a
 			color: $shade-invert 	
 		a
 			color: $shade-invert 
 			@include linkHover
 				color: $shade-invert
+		.bc-button
+			> a
+				@include linkHover
+					color: inherit
 		.svg-icon
 			fill: $shade-invert  	
 	
