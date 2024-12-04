@@ -105,21 +105,21 @@
     "flickity": "^2.2.2",
     "gsap": "^3.6.0",
     "install": "^0.13.0",
-    "npm": "^8.19.2"
+    "npm": "^10.9.1"
   },
   "devDependencies": {
     "@babel/cli": "^7.7.5",
     "@babel/core": "^7.7.5",
     "@babel/preset-env": "^7.7.6",
-    "autoprefixer": "^9.7.3",
+    "autoprefixer": "^10.4.20",
     "browserslist": "^4.7.3",
     "copyfiles": "^2.1.1",
     "critical": "^5.0.3",
     "csslint": "^1.0.5",
-    "cssnano": "^4.1.10",
+    "cssnano": "^7.0.6",
     "eslint": "^6.6.0",
     "live-server": "^1.1.0",
-    "node-sass": "^7.0.3",
+    "node-sass": "^9.0.0",
     "npm-watch": "^0.11.0",
     "postcss": "^8.4.21",
     "postcss-cli": "^10.0.0",
@@ -128,5 +128,8 @@
     "svgstore": "^3.0.0-2",
     "uglify-js": "^3.7.2",
     "yargs": "^15.0.2"
+  },
+	"overrides": {
+    "semver": "^7.5.3"
   }
 }

@@ -373,221 +373,221 @@
 /* Shading */
 .has-white-background {
   background-color: #fff; }
-  .has-white-background h1, .has-white-background h2, .has-white-background h3, .has-white-background h4, .has-white-background h5, .has-white-background p:not(.bc-button):not(.bc-button--secondary), .has-white-background ul, .has-white-background blockquote, .has-white-background a {
+  .has-white-background h1, .has-white-background h2, .has-white-background h3, .has-white-background h4, .has-white-background h5, .has-white-background p:not(.bc-button):not(.bc-button--gold):not(.bc-button--secondary), .has-white-background ul, .has-white-background blockquote, .has-white-background a {
     color: #4f4f50; }
   .has-white-background a {
     color: #4f4f50; }
     .has-white-background a:active, .has-white-background a:hover, .has-white-background a:focus {
       color: #4f4f50; }
-  .has-white-background .bc-button > a:active, .has-white-background .bc-button--secondary > a:active, .has-white-background .bc-button > a:hover, .has-white-background .bc-button--secondary > a:hover, .has-white-background .bc-button > a:focus, .has-white-background .bc-button--secondary > a:focus {
+  .has-white-background .bc-button > a:active, .has-white-background .bc-button--gold > a:active, .has-white-background .bc-button--secondary > a:active, .has-white-background .bc-button > a:hover, .has-white-background .bc-button--gold > a:hover, .has-white-background .bc-button--secondary > a:hover, .has-white-background .bc-button > a:focus, .has-white-background .bc-button--gold > a:focus, .has-white-background .bc-button--secondary > a:focus {
     color: inherit; }
   .has-white-background .svg-icon {
     fill: #4f4f50; }
 
 .has-shade-f-1-background {
   background-color: #f6f6f6; }
-  .has-shade-f-1-background h1, .has-shade-f-1-background h2, .has-shade-f-1-background h3, .has-shade-f-1-background h4, .has-shade-f-1-background h5, .has-shade-f-1-background p:not(.bc-button):not(.bc-button--secondary), .has-shade-f-1-background ul, .has-shade-f-1-background blockquote, .has-shade-f-1-background a {
+  .has-shade-f-1-background h1, .has-shade-f-1-background h2, .has-shade-f-1-background h3, .has-shade-f-1-background h4, .has-shade-f-1-background h5, .has-shade-f-1-background p:not(.bc-button):not(.bc-button--gold):not(.bc-button--secondary), .has-shade-f-1-background ul, .has-shade-f-1-background blockquote, .has-shade-f-1-background a {
     color: #4f4f50; }
   .has-shade-f-1-background a {
     color: #4f4f50; }
     .has-shade-f-1-background a:active, .has-shade-f-1-background a:hover, .has-shade-f-1-background a:focus {
       color: #4f4f50; }
-  .has-shade-f-1-background .bc-button > a:active, .has-shade-f-1-background .bc-button--secondary > a:active, .has-shade-f-1-background .bc-button > a:hover, .has-shade-f-1-background .bc-button--secondary > a:hover, .has-shade-f-1-background .bc-button > a:focus, .has-shade-f-1-background .bc-button--secondary > a:focus {
+  .has-shade-f-1-background .bc-button > a:active, .has-shade-f-1-background .bc-button--gold > a:active, .has-shade-f-1-background .bc-button--secondary > a:active, .has-shade-f-1-background .bc-button > a:hover, .has-shade-f-1-background .bc-button--gold > a:hover, .has-shade-f-1-background .bc-button--secondary > a:hover, .has-shade-f-1-background .bc-button > a:focus, .has-shade-f-1-background .bc-button--gold > a:focus, .has-shade-f-1-background .bc-button--secondary > a:focus {
     color: inherit; }
   .has-shade-f-1-background .svg-icon {
     fill: #4f4f50; }
 
 .has-shade-f0-background {
   background-color: #efeff0; }
-  .has-shade-f0-background h1, .has-shade-f0-background h2, .has-shade-f0-background h3, .has-shade-f0-background h4, .has-shade-f0-background h5, .has-shade-f0-background p:not(.bc-button):not(.bc-button--secondary), .has-shade-f0-background ul, .has-shade-f0-background blockquote, .has-shade-f0-background a {
+  .has-shade-f0-background h1, .has-shade-f0-background h2, .has-shade-f0-background h3, .has-shade-f0-background h4, .has-shade-f0-background h5, .has-shade-f0-background p:not(.bc-button):not(.bc-button--gold):not(.bc-button--secondary), .has-shade-f0-background ul, .has-shade-f0-background blockquote, .has-shade-f0-background a {
     color: #4f4f50; }
   .has-shade-f0-background a {
     color: #4f4f50; }
     .has-shade-f0-background a:active, .has-shade-f0-background a:hover, .has-shade-f0-background a:focus {
       color: #4f4f50; }
-  .has-shade-f0-background .bc-button > a:active, .has-shade-f0-background .bc-button--secondary > a:active, .has-shade-f0-background .bc-button > a:hover, .has-shade-f0-background .bc-button--secondary > a:hover, .has-shade-f0-background .bc-button > a:focus, .has-shade-f0-background .bc-button--secondary > a:focus {
+  .has-shade-f0-background .bc-button > a:active, .has-shade-f0-background .bc-button--gold > a:active, .has-shade-f0-background .bc-button--secondary > a:active, .has-shade-f0-background .bc-button > a:hover, .has-shade-f0-background .bc-button--gold > a:hover, .has-shade-f0-background .bc-button--secondary > a:hover, .has-shade-f0-background .bc-button > a:focus, .has-shade-f0-background .bc-button--gold > a:focus, .has-shade-f0-background .bc-button--secondary > a:focus {
     color: inherit; }
   .has-shade-f0-background .svg-icon {
     fill: #4f4f50; }
 
 .has-shade-e0-background {
   background-color: #dfdfe0; }
-  .has-shade-e0-background h1, .has-shade-e0-background h2, .has-shade-e0-background h3, .has-shade-e0-background h4, .has-shade-e0-background h5, .has-shade-e0-background p:not(.bc-button):not(.bc-button--secondary), .has-shade-e0-background ul, .has-shade-e0-background blockquote, .has-shade-e0-background a {
+  .has-shade-e0-background h1, .has-shade-e0-background h2, .has-shade-e0-background h3, .has-shade-e0-background h4, .has-shade-e0-background h5, .has-shade-e0-background p:not(.bc-button):not(.bc-button--gold):not(.bc-button--secondary), .has-shade-e0-background ul, .has-shade-e0-background blockquote, .has-shade-e0-background a {
     color: #4f4f50; }
   .has-shade-e0-background a {
     color: #4f4f50; }
     .has-shade-e0-background a:active, .has-shade-e0-background a:hover, .has-shade-e0-background a:focus {
       color: #4f4f50; }
-  .has-shade-e0-background .bc-button > a:active, .has-shade-e0-background .bc-button--secondary > a:active, .has-shade-e0-background .bc-button > a:hover, .has-shade-e0-background .bc-button--secondary > a:hover, .has-shade-e0-background .bc-button > a:focus, .has-shade-e0-background .bc-button--secondary > a:focus {
+  .has-shade-e0-background .bc-button > a:active, .has-shade-e0-background .bc-button--gold > a:active, .has-shade-e0-background .bc-button--secondary > a:active, .has-shade-e0-background .bc-button > a:hover, .has-shade-e0-background .bc-button--gold > a:hover, .has-shade-e0-background .bc-button--secondary > a:hover, .has-shade-e0-background .bc-button > a:focus, .has-shade-e0-background .bc-button--gold > a:focus, .has-shade-e0-background .bc-button--secondary > a:focus {
     color: inherit; }
   .has-shade-e0-background .svg-icon {
     fill: #4f4f50; }
 
 .has-shade-d0-background {
   background-color: #cfcfd0; }
-  .has-shade-d0-background h1, .has-shade-d0-background h2, .has-shade-d0-background h3, .has-shade-d0-background h4, .has-shade-d0-background h5, .has-shade-d0-background p:not(.bc-button):not(.bc-button--secondary), .has-shade-d0-background ul, .has-shade-d0-background blockquote, .has-shade-d0-background a {
+  .has-shade-d0-background h1, .has-shade-d0-background h2, .has-shade-d0-background h3, .has-shade-d0-background h4, .has-shade-d0-background h5, .has-shade-d0-background p:not(.bc-button):not(.bc-button--gold):not(.bc-button--secondary), .has-shade-d0-background ul, .has-shade-d0-background blockquote, .has-shade-d0-background a {
     color: #4f4f50; }
   .has-shade-d0-background a {
     color: #4f4f50; }
     .has-shade-d0-background a:active, .has-shade-d0-background a:hover, .has-shade-d0-background a:focus {
       color: #4f4f50; }
-  .has-shade-d0-background .bc-button > a:active, .has-shade-d0-background .bc-button--secondary > a:active, .has-shade-d0-background .bc-button > a:hover, .has-shade-d0-background .bc-button--secondary > a:hover, .has-shade-d0-background .bc-button > a:focus, .has-shade-d0-background .bc-button--secondary > a:focus {
+  .has-shade-d0-background .bc-button > a:active, .has-shade-d0-background .bc-button--gold > a:active, .has-shade-d0-background .bc-button--secondary > a:active, .has-shade-d0-background .bc-button > a:hover, .has-shade-d0-background .bc-button--gold > a:hover, .has-shade-d0-background .bc-button--secondary > a:hover, .has-shade-d0-background .bc-button > a:focus, .has-shade-d0-background .bc-button--gold > a:focus, .has-shade-d0-background .bc-button--secondary > a:focus {
     color: inherit; }
   .has-shade-d0-background .svg-icon {
     fill: #4f4f50; }
 
 .has-shade-c0-background {
   background-color: #afafb0; }
-  .has-shade-c0-background h1, .has-shade-c0-background h2, .has-shade-c0-background h3, .has-shade-c0-background h4, .has-shade-c0-background h5, .has-shade-c0-background p:not(.bc-button):not(.bc-button--secondary), .has-shade-c0-background ul, .has-shade-c0-background blockquote, .has-shade-c0-background a {
+  .has-shade-c0-background h1, .has-shade-c0-background h2, .has-shade-c0-background h3, .has-shade-c0-background h4, .has-shade-c0-background h5, .has-shade-c0-background p:not(.bc-button):not(.bc-button--gold):not(.bc-button--secondary), .has-shade-c0-background ul, .has-shade-c0-background blockquote, .has-shade-c0-background a {
     color: #4f4f50; }
   .has-shade-c0-background a {
     color: #4f4f50; }
     .has-shade-c0-background a:active, .has-shade-c0-background a:hover, .has-shade-c0-background a:focus {
       color: #4f4f50; }
-  .has-shade-c0-background .bc-button > a:active, .has-shade-c0-background .bc-button--secondary > a:active, .has-shade-c0-background .bc-button > a:hover, .has-shade-c0-background .bc-button--secondary > a:hover, .has-shade-c0-background .bc-button > a:focus, .has-shade-c0-background .bc-button--secondary > a:focus {
+  .has-shade-c0-background .bc-button > a:active, .has-shade-c0-background .bc-button--gold > a:active, .has-shade-c0-background .bc-button--secondary > a:active, .has-shade-c0-background .bc-button > a:hover, .has-shade-c0-background .bc-button--gold > a:hover, .has-shade-c0-background .bc-button--secondary > a:hover, .has-shade-c0-background .bc-button > a:focus, .has-shade-c0-background .bc-button--gold > a:focus, .has-shade-c0-background .bc-button--secondary > a:focus {
     color: inherit; }
   .has-shade-c0-background .svg-icon {
     fill: #4f4f50; }
 
 .has-shade-b0-background {
   background-color: #bfbfc0; }
-  .has-shade-b0-background h1, .has-shade-b0-background h2, .has-shade-b0-background h3, .has-shade-b0-background h4, .has-shade-b0-background h5, .has-shade-b0-background p:not(.bc-button):not(.bc-button--secondary), .has-shade-b0-background ul, .has-shade-b0-background blockquote, .has-shade-b0-background a {
+  .has-shade-b0-background h1, .has-shade-b0-background h2, .has-shade-b0-background h3, .has-shade-b0-background h4, .has-shade-b0-background h5, .has-shade-b0-background p:not(.bc-button):not(.bc-button--gold):not(.bc-button--secondary), .has-shade-b0-background ul, .has-shade-b0-background blockquote, .has-shade-b0-background a {
     color: #4f4f50; }
   .has-shade-b0-background a {
     color: #4f4f50; }
     .has-shade-b0-background a:active, .has-shade-b0-background a:hover, .has-shade-b0-background a:focus {
       color: #4f4f50; }
-  .has-shade-b0-background .bc-button > a:active, .has-shade-b0-background .bc-button--secondary > a:active, .has-shade-b0-background .bc-button > a:hover, .has-shade-b0-background .bc-button--secondary > a:hover, .has-shade-b0-background .bc-button > a:focus, .has-shade-b0-background .bc-button--secondary > a:focus {
+  .has-shade-b0-background .bc-button > a:active, .has-shade-b0-background .bc-button--gold > a:active, .has-shade-b0-background .bc-button--secondary > a:active, .has-shade-b0-background .bc-button > a:hover, .has-shade-b0-background .bc-button--gold > a:hover, .has-shade-b0-background .bc-button--secondary > a:hover, .has-shade-b0-background .bc-button > a:focus, .has-shade-b0-background .bc-button--gold > a:focus, .has-shade-b0-background .bc-button--secondary > a:focus {
     color: inherit; }
   .has-shade-b0-background .svg-icon {
     fill: #4f4f50; }
 
 .has-shade-a0-background {
   background-color: #9f9fa0; }
-  .has-shade-a0-background h1, .has-shade-a0-background h2, .has-shade-a0-background h3, .has-shade-a0-background h4, .has-shade-a0-background h5, .has-shade-a0-background p:not(.bc-button):not(.bc-button--secondary), .has-shade-a0-background ul, .has-shade-a0-background blockquote, .has-shade-a0-background a {
+  .has-shade-a0-background h1, .has-shade-a0-background h2, .has-shade-a0-background h3, .has-shade-a0-background h4, .has-shade-a0-background h5, .has-shade-a0-background p:not(.bc-button):not(.bc-button--gold):not(.bc-button--secondary), .has-shade-a0-background ul, .has-shade-a0-background blockquote, .has-shade-a0-background a {
     color: #4f4f50; }
   .has-shade-a0-background a {
     color: #4f4f50; }
     .has-shade-a0-background a:active, .has-shade-a0-background a:hover, .has-shade-a0-background a:focus {
       color: #4f4f50; }
-  .has-shade-a0-background .bc-button > a:active, .has-shade-a0-background .bc-button--secondary > a:active, .has-shade-a0-background .bc-button > a:hover, .has-shade-a0-background .bc-button--secondary > a:hover, .has-shade-a0-background .bc-button > a:focus, .has-shade-a0-background .bc-button--secondary > a:focus {
+  .has-shade-a0-background .bc-button > a:active, .has-shade-a0-background .bc-button--gold > a:active, .has-shade-a0-background .bc-button--secondary > a:active, .has-shade-a0-background .bc-button > a:hover, .has-shade-a0-background .bc-button--gold > a:hover, .has-shade-a0-background .bc-button--secondary > a:hover, .has-shade-a0-background .bc-button > a:focus, .has-shade-a0-background .bc-button--gold > a:focus, .has-shade-a0-background .bc-button--secondary > a:focus {
     color: inherit; }
   .has-shade-a0-background .svg-icon {
     fill: #4f4f50; }
 
 .has-shade-90-background {
   background-color: #8f8f90; }
-  .has-shade-90-background h1, .has-shade-90-background h2, .has-shade-90-background h3, .has-shade-90-background h4, .has-shade-90-background h5, .has-shade-90-background p:not(.bc-button):not(.bc-button--secondary), .has-shade-90-background ul, .has-shade-90-background blockquote, .has-shade-90-background a {
+  .has-shade-90-background h1, .has-shade-90-background h2, .has-shade-90-background h3, .has-shade-90-background h4, .has-shade-90-background h5, .has-shade-90-background p:not(.bc-button):not(.bc-button--gold):not(.bc-button--secondary), .has-shade-90-background ul, .has-shade-90-background blockquote, .has-shade-90-background a {
     color: #4f4f50; }
   .has-shade-90-background a {
     color: #4f4f50; }
     .has-shade-90-background a:active, .has-shade-90-background a:hover, .has-shade-90-background a:focus {
       color: #4f4f50; }
-  .has-shade-90-background .bc-button > a:active, .has-shade-90-background .bc-button--secondary > a:active, .has-shade-90-background .bc-button > a:hover, .has-shade-90-background .bc-button--secondary > a:hover, .has-shade-90-background .bc-button > a:focus, .has-shade-90-background .bc-button--secondary > a:focus {
+  .has-shade-90-background .bc-button > a:active, .has-shade-90-background .bc-button--gold > a:active, .has-shade-90-background .bc-button--secondary > a:active, .has-shade-90-background .bc-button > a:hover, .has-shade-90-background .bc-button--gold > a:hover, .has-shade-90-background .bc-button--secondary > a:hover, .has-shade-90-background .bc-button > a:focus, .has-shade-90-background .bc-button--gold > a:focus, .has-shade-90-background .bc-button--secondary > a:focus {
     color: inherit; }
   .has-shade-90-background .svg-icon {
     fill: #4f4f50; }
 
 .has-shade-80-background {
   background-color: #7f7f80; }
-  .has-shade-80-background h1, .has-shade-80-background h2, .has-shade-80-background h3, .has-shade-80-background h4, .has-shade-80-background h5, .has-shade-80-background p:not(.bc-button):not(.bc-button--secondary), .has-shade-80-background ul, .has-shade-80-background blockquote, .has-shade-80-background a {
+  .has-shade-80-background h1, .has-shade-80-background h2, .has-shade-80-background h3, .has-shade-80-background h4, .has-shade-80-background h5, .has-shade-80-background p:not(.bc-button):not(.bc-button--gold):not(.bc-button--secondary), .has-shade-80-background ul, .has-shade-80-background blockquote, .has-shade-80-background a {
     color: #4f4f50; }
   .has-shade-80-background a {
     color: #4f4f50; }
     .has-shade-80-background a:active, .has-shade-80-background a:hover, .has-shade-80-background a:focus {
       color: #4f4f50; }
-  .has-shade-80-background .bc-button > a:active, .has-shade-80-background .bc-button--secondary > a:active, .has-shade-80-background .bc-button > a:hover, .has-shade-80-background .bc-button--secondary > a:hover, .has-shade-80-background .bc-button > a:focus, .has-shade-80-background .bc-button--secondary > a:focus {
+  .has-shade-80-background .bc-button > a:active, .has-shade-80-background .bc-button--gold > a:active, .has-shade-80-background .bc-button--secondary > a:active, .has-shade-80-background .bc-button > a:hover, .has-shade-80-background .bc-button--gold > a:hover, .has-shade-80-background .bc-button--secondary > a:hover, .has-shade-80-background .bc-button > a:focus, .has-shade-80-background .bc-button--gold > a:focus, .has-shade-80-background .bc-button--secondary > a:focus {
     color: inherit; }
   .has-shade-80-background .svg-icon {
     fill: #4f4f50; }
 
 .has-shade-70-background {
   background-color: #6f6f70; }
-  .has-shade-70-background h1, .has-shade-70-background h2, .has-shade-70-background h3, .has-shade-70-background h4, .has-shade-70-background h5, .has-shade-70-background p:not(.bc-button):not(.bc-button--secondary), .has-shade-70-background ul, .has-shade-70-background blockquote, .has-shade-70-background a {
+  .has-shade-70-background h1, .has-shade-70-background h2, .has-shade-70-background h3, .has-shade-70-background h4, .has-shade-70-background h5, .has-shade-70-background p:not(.bc-button):not(.bc-button--gold):not(.bc-button--secondary), .has-shade-70-background ul, .has-shade-70-background blockquote, .has-shade-70-background a {
     color: #4f4f50; }
   .has-shade-70-background a {
     color: #4f4f50; }
     .has-shade-70-background a:active, .has-shade-70-background a:hover, .has-shade-70-background a:focus {
       color: #4f4f50; }
-  .has-shade-70-background .bc-button > a:active, .has-shade-70-background .bc-button--secondary > a:active, .has-shade-70-background .bc-button > a:hover, .has-shade-70-background .bc-button--secondary > a:hover, .has-shade-70-background .bc-button > a:focus, .has-shade-70-background .bc-button--secondary > a:focus {
+  .has-shade-70-background .bc-button > a:active, .has-shade-70-background .bc-button--gold > a:active, .has-shade-70-background .bc-button--secondary > a:active, .has-shade-70-background .bc-button > a:hover, .has-shade-70-background .bc-button--gold > a:hover, .has-shade-70-background .bc-button--secondary > a:hover, .has-shade-70-background .bc-button > a:focus, .has-shade-70-background .bc-button--gold > a:focus, .has-shade-70-background .bc-button--secondary > a:focus {
     color: inherit; }
   .has-shade-70-background .svg-icon {
     fill: #4f4f50; }
 
 .has-shade-60-background {
   background-color: #5f5f60; }
-  .has-shade-60-background h1, .has-shade-60-background h2, .has-shade-60-background h3, .has-shade-60-background h4, .has-shade-60-background h5, .has-shade-60-background p:not(.bc-button):not(.bc-button--secondary), .has-shade-60-background ul, .has-shade-60-background blockquote, .has-shade-60-background a {
+  .has-shade-60-background h1, .has-shade-60-background h2, .has-shade-60-background h3, .has-shade-60-background h4, .has-shade-60-background h5, .has-shade-60-background p:not(.bc-button):not(.bc-button--gold):not(.bc-button--secondary), .has-shade-60-background ul, .has-shade-60-background blockquote, .has-shade-60-background a {
     color: #fff; }
   .has-shade-60-background a {
     color: #fff; }
     .has-shade-60-background a:active, .has-shade-60-background a:hover, .has-shade-60-background a:focus {
       color: #fff; }
-  .has-shade-60-background .bc-button > a:active, .has-shade-60-background .bc-button--secondary > a:active, .has-shade-60-background .bc-button > a:hover, .has-shade-60-background .bc-button--secondary > a:hover, .has-shade-60-background .bc-button > a:focus, .has-shade-60-background .bc-button--secondary > a:focus {
+  .has-shade-60-background .bc-button > a:active, .has-shade-60-background .bc-button--gold > a:active, .has-shade-60-background .bc-button--secondary > a:active, .has-shade-60-background .bc-button > a:hover, .has-shade-60-background .bc-button--gold > a:hover, .has-shade-60-background .bc-button--secondary > a:hover, .has-shade-60-background .bc-button > a:focus, .has-shade-60-background .bc-button--gold > a:focus, .has-shade-60-background .bc-button--secondary > a:focus {
     color: inherit; }
   .has-shade-60-background .svg-icon {
     fill: #fff; }
 
 .has-shade-50-background {
   background-color: #4f4f50; }
-  .has-shade-50-background h1, .has-shade-50-background h2, .has-shade-50-background h3, .has-shade-50-background h4, .has-shade-50-background h5, .has-shade-50-background p:not(.bc-button):not(.bc-button--secondary), .has-shade-50-background ul, .has-shade-50-background blockquote, .has-shade-50-background a {
+  .has-shade-50-background h1, .has-shade-50-background h2, .has-shade-50-background h3, .has-shade-50-background h4, .has-shade-50-background h5, .has-shade-50-background p:not(.bc-button):not(.bc-button--gold):not(.bc-button--secondary), .has-shade-50-background ul, .has-shade-50-background blockquote, .has-shade-50-background a {
     color: #fff; }
   .has-shade-50-background a {
     color: #fff; }
     .has-shade-50-background a:active, .has-shade-50-background a:hover, .has-shade-50-background a:focus {
       color: #fff; }
-  .has-shade-50-background .bc-button > a:active, .has-shade-50-background .bc-button--secondary > a:active, .has-shade-50-background .bc-button > a:hover, .has-shade-50-background .bc-button--secondary > a:hover, .has-shade-50-background .bc-button > a:focus, .has-shade-50-background .bc-button--secondary > a:focus {
+  .has-shade-50-background .bc-button > a:active, .has-shade-50-background .bc-button--gold > a:active, .has-shade-50-background .bc-button--secondary > a:active, .has-shade-50-background .bc-button > a:hover, .has-shade-50-background .bc-button--gold > a:hover, .has-shade-50-background .bc-button--secondary > a:hover, .has-shade-50-background .bc-button > a:focus, .has-shade-50-background .bc-button--gold > a:focus, .has-shade-50-background .bc-button--secondary > a:focus {
     color: inherit; }
   .has-shade-50-background .svg-icon {
     fill: #fff; }
 
 .has-shade-40-background {
   background-color: #3f3f40; }
-  .has-shade-40-background h1, .has-shade-40-background h2, .has-shade-40-background h3, .has-shade-40-background h4, .has-shade-40-background h5, .has-shade-40-background p:not(.bc-button):not(.bc-button--secondary), .has-shade-40-background ul, .has-shade-40-background blockquote, .has-shade-40-background a {
+  .has-shade-40-background h1, .has-shade-40-background h2, .has-shade-40-background h3, .has-shade-40-background h4, .has-shade-40-background h5, .has-shade-40-background p:not(.bc-button):not(.bc-button--gold):not(.bc-button--secondary), .has-shade-40-background ul, .has-shade-40-background blockquote, .has-shade-40-background a {
     color: #fff; }
   .has-shade-40-background a {
     color: #fff; }
     .has-shade-40-background a:active, .has-shade-40-background a:hover, .has-shade-40-background a:focus {
       color: #fff; }
-  .has-shade-40-background .bc-button > a:active, .has-shade-40-background .bc-button--secondary > a:active, .has-shade-40-background .bc-button > a:hover, .has-shade-40-background .bc-button--secondary > a:hover, .has-shade-40-background .bc-button > a:focus, .has-shade-40-background .bc-button--secondary > a:focus {
+  .has-shade-40-background .bc-button > a:active, .has-shade-40-background .bc-button--gold > a:active, .has-shade-40-background .bc-button--secondary > a:active, .has-shade-40-background .bc-button > a:hover, .has-shade-40-background .bc-button--gold > a:hover, .has-shade-40-background .bc-button--secondary > a:hover, .has-shade-40-background .bc-button > a:focus, .has-shade-40-background .bc-button--gold > a:focus, .has-shade-40-background .bc-button--secondary > a:focus {
     color: inherit; }
   .has-shade-40-background .svg-icon {
     fill: #fff; }
 
 .has-shade-30-background {
   background-color: #2f2f30; }
-  .has-shade-30-background h1, .has-shade-30-background h2, .has-shade-30-background h3, .has-shade-30-background h4, .has-shade-30-background h5, .has-shade-30-background p:not(.bc-button):not(.bc-button--secondary), .has-shade-30-background ul, .has-shade-30-background blockquote, .has-shade-30-background a {
+  .has-shade-30-background h1, .has-shade-30-background h2, .has-shade-30-background h3, .has-shade-30-background h4, .has-shade-30-background h5, .has-shade-30-background p:not(.bc-button):not(.bc-button--gold):not(.bc-button--secondary), .has-shade-30-background ul, .has-shade-30-background blockquote, .has-shade-30-background a {
     color: #fff; }
   .has-shade-30-background a {
     color: #fff; }
     .has-shade-30-background a:active, .has-shade-30-background a:hover, .has-shade-30-background a:focus {
       color: #fff; }
-  .has-shade-30-background .bc-button > a:active, .has-shade-30-background .bc-button--secondary > a:active, .has-shade-30-background .bc-button > a:hover, .has-shade-30-background .bc-button--secondary > a:hover, .has-shade-30-background .bc-button > a:focus, .has-shade-30-background .bc-button--secondary > a:focus {
+  .has-shade-30-background .bc-button > a:active, .has-shade-30-background .bc-button--gold > a:active, .has-shade-30-background .bc-button--secondary > a:active, .has-shade-30-background .bc-button > a:hover, .has-shade-30-background .bc-button--gold > a:hover, .has-shade-30-background .bc-button--secondary > a:hover, .has-shade-30-background .bc-button > a:focus, .has-shade-30-background .bc-button--gold > a:focus, .has-shade-30-background .bc-button--secondary > a:focus {
     color: inherit; }
   .has-shade-30-background .svg-icon {
     fill: #fff; }
 
 .has-shade-20-background {
   background-color: #1f1f20; }
-  .has-shade-20-background h1, .has-shade-20-background h2, .has-shade-20-background h3, .has-shade-20-background h4, .has-shade-20-background h5, .has-shade-20-background p:not(.bc-button):not(.bc-button--secondary), .has-shade-20-background ul, .has-shade-20-background blockquote, .has-shade-20-background a {
+  .has-shade-20-background h1, .has-shade-20-background h2, .has-shade-20-background h3, .has-shade-20-background h4, .has-shade-20-background h5, .has-shade-20-background p:not(.bc-button):not(.bc-button--gold):not(.bc-button--secondary), .has-shade-20-background ul, .has-shade-20-background blockquote, .has-shade-20-background a {
     color: #fff; }
   .has-shade-20-background a {
     color: #fff; }
     .has-shade-20-background a:active, .has-shade-20-background a:hover, .has-shade-20-background a:focus {
       color: #fff; }
-  .has-shade-20-background .bc-button > a:active, .has-shade-20-background .bc-button--secondary > a:active, .has-shade-20-background .bc-button > a:hover, .has-shade-20-background .bc-button--secondary > a:hover, .has-shade-20-background .bc-button > a:focus, .has-shade-20-background .bc-button--secondary > a:focus {
+  .has-shade-20-background .bc-button > a:active, .has-shade-20-background .bc-button--gold > a:active, .has-shade-20-background .bc-button--secondary > a:active, .has-shade-20-background .bc-button > a:hover, .has-shade-20-background .bc-button--gold > a:hover, .has-shade-20-background .bc-button--secondary > a:hover, .has-shade-20-background .bc-button > a:focus, .has-shade-20-background .bc-button--gold > a:focus, .has-shade-20-background .bc-button--secondary > a:focus {
     color: inherit; }
   .has-shade-20-background .svg-icon {
     fill: #fff; }
 
 .has-shade-10-background {
   background-color: #0f0f10; }
-  .has-shade-10-background h1, .has-shade-10-background h2, .has-shade-10-background h3, .has-shade-10-background h4, .has-shade-10-background h5, .has-shade-10-background p:not(.bc-button):not(.bc-button--secondary), .has-shade-10-background ul, .has-shade-10-background blockquote, .has-shade-10-background a {
+  .has-shade-10-background h1, .has-shade-10-background h2, .has-shade-10-background h3, .has-shade-10-background h4, .has-shade-10-background h5, .has-shade-10-background p:not(.bc-button):not(.bc-button--gold):not(.bc-button--secondary), .has-shade-10-background ul, .has-shade-10-background blockquote, .has-shade-10-background a {
     color: #fff; }
   .has-shade-10-background a {
     color: #fff; }
     .has-shade-10-background a:active, .has-shade-10-background a:hover, .has-shade-10-background a:focus {
       color: #fff; }
-  .has-shade-10-background .bc-button > a:active, .has-shade-10-background .bc-button--secondary > a:active, .has-shade-10-background .bc-button > a:hover, .has-shade-10-background .bc-button--secondary > a:hover, .has-shade-10-background .bc-button > a:focus, .has-shade-10-background .bc-button--secondary > a:focus {
+  .has-shade-10-background .bc-button > a:active, .has-shade-10-background .bc-button--gold > a:active, .has-shade-10-background .bc-button--secondary > a:active, .has-shade-10-background .bc-button > a:hover, .has-shade-10-background .bc-button--gold > a:hover, .has-shade-10-background .bc-button--secondary > a:hover, .has-shade-10-background .bc-button > a:focus, .has-shade-10-background .bc-button--gold > a:focus, .has-shade-10-background .bc-button--secondary > a:focus {
     color: inherit; }
   .has-shade-10-background .svg-icon {
     fill: #fff; }
@@ -1380,24 +1380,33 @@ table {
 .bc-inner-page--cn .bc-show-hide .bc-show-hide__header h2, .bc-inner-page--cn .bc-show-hide .bc-show-hide__header h3, .bc-inner-page--cn .bc-show-hide .bc-show-hide__header h4, .bc-inner-page--cn .bc-show-hide .bc-show-hide__header h5, .bc-inner-page--cn .bc-show-hide .bc-show-hide__header h6, .bc-inner-page--cn .bc-show-hide .bc-show-hide__body h2, .bc-inner-page--cn .bc-show-hide .bc-show-hide__body h3, .bc-inner-page--cn .bc-show-hide .bc-show-hide__body h4, .bc-inner-page--cn .bc-show-hide .bc-show-hide__body h5, .bc-inner-page--cn .bc-show-hide .bc-show-hide__body h6 {
   font-family: var(--heading-font-cn); }
 
-.bc-button, .bc-button--secondary {
+.bc-button, .bc-button--gold, .bc-button--secondary {
   padding: calc(var(--vertical-unit) * 0.45) calc(var(--gutter) *  0.8);
   font-weight: var(--bold-font-weight);
   border: 1px solid var(--brand-primary);
   border-radius: calc(var(--vertical-unit));
   background-color: #274a91;
-  color: var(--white);
-  transition: background-color 360ms ease-out, box-shadow 220ms ease-out; }
-  .bc-button > a, .bc-button--secondary > a {
-    color: inherit; }
-  .bc-button .svg-icon, .bc-button--secondary .svg-icon {
+  color: var(--white); }
+  .bc-button > a, .bc-button--gold > a, .bc-button--secondary > a {
+    color: inherit;
+    transition: background-color 360ms ease-out, box-shadow 220ms ease-out; }
+  .bc-button .svg-icon, .bc-button--gold .svg-icon, .bc-button--secondary .svg-icon {
     fill: var(--white); }
-  .bc-button:active, .bc-button--secondary:active, .bc-button:hover, .bc-button--secondary:hover, .bc-button:focus, .bc-button--secondary:focus {
+  .bc-button:active, .bc-button--gold:active, .bc-button--secondary:active, .bc-button:hover, .bc-button--gold:hover, .bc-button--secondary:hover, .bc-button:focus, .bc-button--gold:focus, .bc-button--secondary:focus {
     cursor: pointer;
     color: var(--white);
     background-color: var(--brand-primary); }
-    .bc-button:active::after, .bc-button--secondary:active::after, .bc-button:hover::after, .bc-button--secondary:hover::after, .bc-button:focus::after, .bc-button--secondary:focus::after {
+    .bc-button:active::after, .bc-button--gold:active::after, .bc-button--secondary:active::after, .bc-button:hover::after, .bc-button--gold:hover::after, .bc-button--secondary:hover::after, .bc-button:focus::after, .bc-button--gold:focus::after, .bc-button--secondary:focus::after {
       height: 0; }
+  .bc-button--gold {
+    font-weight: var(--bold-font-weight);
+    color: var(--white);
+    background-color: var(--brand-secondary);
+    border-color: white; }
+    .bc-button--gold .svg-icon {
+      fill: var(--white); }
+    .bc-button--gold:active, .bc-button--gold:hover, .bc-button--gold:focus {
+      background-color: #775811; }
   .bc-button--secondary {
     font-weight: var(--font-weight);
     color: var(--brand-primary);
@@ -1518,9 +1527,9 @@ table {
     fill: #fff; }
   .bc-bg-brand-primary .flickity-page-dots .dot {
     background-color: #fff; }
-  .bc-bg-brand-primary .bc-button, .bc-bg-brand-primary .bc-button--secondary {
+  .bc-bg-brand-primary .bc-button, .bc-bg-brand-primary .bc-button--gold, .bc-bg-brand-primary .bc-button--secondary {
     color: var(--brand-primary); }
-    .bc-bg-brand-primary .bc-button > a, .bc-bg-brand-primary .bc-button--secondary > a {
+    .bc-bg-brand-primary .bc-button > a, .bc-bg-brand-primary .bc-button--gold > a, .bc-bg-brand-primary .bc-button--secondary > a {
       color: var(--brand-primary); }
 
 .bc-bg-shade-f0 {
@@ -1532,9 +1541,9 @@ table {
     fill: #4f4f50; }
   .bc-bg-shade-f0 .flickity-page-dots .dot {
     background-color: #4f4f50; }
-  .bc-bg-shade-f0 .bc-button, .bc-bg-shade-f0 .bc-button--secondary {
+  .bc-bg-shade-f0 .bc-button, .bc-bg-shade-f0 .bc-button--gold, .bc-bg-shade-f0 .bc-button--secondary {
     color: var(--brand-primary); }
-    .bc-bg-shade-f0 .bc-button > a, .bc-bg-shade-f0 .bc-button--secondary > a {
+    .bc-bg-shade-f0 .bc-button > a, .bc-bg-shade-f0 .bc-button--gold > a, .bc-bg-shade-f0 .bc-button--secondary > a {
       color: var(--brand-primary); }
 
 .bc-bg-brand-primary .bc-object-embed, .bc-bg-brand-secondary .bc-object-embed, .bc-bg-shade-f0 .bc-object-embed {
@@ -1612,7 +1621,7 @@ table {
   fill: var(--brand-primary);
   transition: transform 180ms ease-out; }
 
-.bc-arrow-link.bc-button .svg-icon, .bc-arrow-link.bc-button--secondary .svg-icon {
+.bc-arrow-link.bc-button .svg-icon, .bc-arrow-link.bc-button--gold .svg-icon, .bc-arrow-link.bc-button--secondary .svg-icon {
   fill: var(--white); }
 
 .bc-arrow-link.bc-button--secondary .svg-icon {
@@ -2822,7 +2831,7 @@ table {
     color: var(--white); }
 
 /* Modal window notification */
-.bc-cookies-consent, .bc-modal {
+.bc-cookies-consent, .bc-site-survey, .bc-modal {
   position: fixed;
   top: 100%;
   left: 0;
@@ -2839,40 +2848,39 @@ table {
   justify-content: flex-end;
   flex-wrap: nowrap;
   align-items: flex-start; }
-  .bc-cookies-consent .bc-cookies-consent__block, .bc-modal .bc-cookies-consent__block, .bc-cookies-consent .bc-modal__block, .bc-modal .bc-modal__block {
+  .bc-cookies-consent .bc-cookies-consent__block, .bc-site-survey .bc-cookies-consent__block, .bc-modal .bc-cookies-consent__block, .bc-cookies-consent .bc-site-survey__block, .bc-site-survey .bc-site-survey__block, .bc-modal .bc-site-survey__block, .bc-cookies-consent .bc-modal__block, .bc-site-survey .bc-modal__block, .bc-modal .bc-modal__block {
     width: 100%;
     padding: calc(var(--gutter) * 1.5) var(--vertical-unit);
     background-color: var(--white);
     border-top: 0.42857rem solid var(--brand-primary);
     transition: transform 360ms ease-out 360ms; }
     @media screen and (min-width: 839px) {
-      .bc-cookies-consent .bc-cookies-consent__block, .bc-modal .bc-cookies-consent__block, .bc-cookies-consent .bc-modal__block, .bc-modal .bc-modal__block {
+      .bc-cookies-consent .bc-cookies-consent__block, .bc-site-survey .bc-cookies-consent__block, .bc-modal .bc-cookies-consent__block, .bc-cookies-consent .bc-site-survey__block, .bc-site-survey .bc-site-survey__block, .bc-modal .bc-site-survey__block, .bc-cookies-consent .bc-modal__block, .bc-site-survey .bc-modal__block, .bc-modal .bc-modal__block {
         padding-top: calc(var(--vertical-unit) * 0.75);
         padding-bottom: calc(var(--vertical-unit));
         margin-left: auto;
         margin-bottom: var(--vertical-unit);
         margin-right: auto;
         max-width: var(--text-max-width); } }
-  .bc-cookies-consent .bc-cookies-consent__heading, .bc-modal .bc-cookies-consent__heading, .bc-cookies-consent .bc-modal__heading, .bc-modal .bc-modal__heading {
+  .bc-cookies-consent .bc-cookies-consent__heading, .bc-site-survey .bc-cookies-consent__heading, .bc-modal .bc-cookies-consent__heading, .bc-cookies-consent .bc-site-survey__heading, .bc-site-survey .bc-site-survey__heading, .bc-modal .bc-site-survey__heading, .bc-cookies-consent .bc-modal__heading, .bc-site-survey .bc-modal__heading, .bc-modal .bc-modal__heading {
     font-size: var(--text-gr-02-5); }
-  .bc-cookies-consent .bc-cookies-consent__heading, .bc-cookies-consent p, .bc-modal .bc-cookies-consent__heading, .bc-modal p, .bc-cookies-consent .bc-modal__heading, .bc-modal .bc-modal__heading {
+  .bc-cookies-consent .bc-cookies-consent__heading, .bc-cookies-consent p, .bc-site-survey .bc-cookies-consent__heading, .bc-site-survey p, .bc-modal .bc-cookies-consent__heading, .bc-modal p, .bc-cookies-consent .bc-site-survey__heading, .bc-site-survey .bc-site-survey__heading, .bc-modal .bc-site-survey__heading, .bc-cookies-consent .bc-modal__heading, .bc-site-survey .bc-modal__heading, .bc-modal .bc-modal__heading {
     margin-bottom: calc(var(--vertical-unit) * 0.5); }
-  .bc-cookies-consent p:last-of-type, .bc-modal p:last-of-type {
+  .bc-cookies-consent p:last-of-type, .bc-site-survey p:last-of-type, .bc-modal p:last-of-type {
     margin-bottom: calc(var(--vertical-unit) * 1); }
-  .bc-cookies-consent .bc-cookies-consent__btns, .bc-modal .bc-cookies-consent__btns, .bc-cookies-consent .bc-modal__btns, .bc-modal .bc-modal__btns {
+  .bc-cookies-consent .bc-cookies-consent__btns, .bc-site-survey .bc-cookies-consent__btns, .bc-modal .bc-cookies-consent__btns, .bc-cookies-consent .bc-site-survey__btns, .bc-site-survey .bc-site-survey__btns, .bc-modal .bc-site-survey__btns, .bc-cookies-consent .bc-modal__btns, .bc-site-survey .bc-modal__btns, .bc-modal .bc-modal__btns {
     justify-content: space-between;
     align-items: stretch; }
-    .bc-cookies-consent .bc-cookies-consent__btns .bc-button, .bc-cookies-consent .bc-cookies-consent__btns .bc-button--secondary, .bc-cookies-consent .bc-cookies-consent__btns a, .bc-modal .bc-cookies-consent__btns .bc-button, .bc-modal .bc-cookies-consent__btns .bc-button--secondary, .bc-modal .bc-cookies-consent__btns a, .bc-cookies-consent .bc-modal__btns .bc-button, .bc-cookies-consent .bc-modal__btns .bc-button--secondary, .bc-cookies-consent .bc-modal__btns a, .bc-modal .bc-modal__btns .bc-button, .bc-modal .bc-modal__btns .bc-button--secondary, .bc-modal .bc-modal__btns a {
+    .bc-cookies-consent .bc-cookies-consent__btns .bc-button, .bc-cookies-consent .bc-cookies-consent__btns .bc-button--gold, .bc-cookies-consent .bc-cookies-consent__btns .bc-button--secondary, .bc-cookies-consent .bc-cookies-consent__btns a, .bc-site-survey .bc-cookies-consent__btns .bc-button, .bc-site-survey .bc-cookies-consent__btns .bc-button--gold, .bc-site-survey .bc-cookies-consent__btns .bc-button--secondary, .bc-site-survey .bc-cookies-consent__btns a, .bc-modal .bc-cookies-consent__btns .bc-button, .bc-modal .bc-cookies-consent__btns .bc-button--gold, .bc-modal .bc-cookies-consent__btns .bc-button--secondary, .bc-modal .bc-cookies-consent__btns a, .bc-cookies-consent .bc-site-survey__btns .bc-button, .bc-cookies-consent .bc-site-survey__btns .bc-button--gold, .bc-cookies-consent .bc-site-survey__btns .bc-button--secondary, .bc-cookies-consent .bc-site-survey__btns a, .bc-site-survey .bc-site-survey__btns .bc-button, .bc-site-survey .bc-site-survey__btns .bc-button--gold, .bc-site-survey .bc-site-survey__btns .bc-button--secondary, .bc-site-survey .bc-site-survey__btns a, .bc-modal .bc-site-survey__btns .bc-button, .bc-modal .bc-site-survey__btns .bc-button--gold, .bc-modal .bc-site-survey__btns .bc-button--secondary, .bc-modal .bc-site-survey__btns a, .bc-cookies-consent .bc-modal__btns .bc-button, .bc-cookies-consent .bc-modal__btns .bc-button--gold, .bc-cookies-consent .bc-modal__btns .bc-button--secondary, .bc-cookies-consent .bc-modal__btns a, .bc-site-survey .bc-modal__btns .bc-button, .bc-site-survey .bc-modal__btns .bc-button--gold, .bc-site-survey .bc-modal__btns .bc-button--secondary, .bc-site-survey .bc-modal__btns a, .bc-modal .bc-modal__btns .bc-button, .bc-modal .bc-modal__btns .bc-button--gold, .bc-modal .bc-modal__btns .bc-button--secondary, .bc-modal .bc-modal__btns a {
       flex: 1 1 50%;
-      font-size: var(--text--1);
-      font-weight: var(--font-weight);
+      font-size: var(--text-1);
       text-align: center; }
-      .bc-cookies-consent .bc-cookies-consent__btns .bc-button:active::after, .bc-cookies-consent .bc-cookies-consent__btns .bc-button--secondary:active::after, .bc-cookies-consent .bc-cookies-consent__btns .bc-button:hover::after, .bc-cookies-consent .bc-cookies-consent__btns .bc-button--secondary:hover::after, .bc-cookies-consent .bc-cookies-consent__btns .bc-button:focus::after, .bc-cookies-consent .bc-cookies-consent__btns .bc-button--secondary:focus::after, .bc-cookies-consent .bc-cookies-consent__btns a:active::after, .bc-cookies-consent .bc-cookies-consent__btns a:hover::after, .bc-cookies-consent .bc-cookies-consent__btns a:focus::after, .bc-modal .bc-cookies-consent__btns .bc-button:active::after, .bc-modal .bc-cookies-consent__btns .bc-button--secondary:active::after, .bc-modal .bc-cookies-consent__btns .bc-button:hover::after, .bc-modal .bc-cookies-consent__btns .bc-button--secondary:hover::after, .bc-modal .bc-cookies-consent__btns .bc-button:focus::after, .bc-modal .bc-cookies-consent__btns .bc-button--secondary:focus::after, .bc-modal .bc-cookies-consent__btns a:active::after, .bc-modal .bc-cookies-consent__btns a:hover::after, .bc-modal .bc-cookies-consent__btns a:focus::after, .bc-cookies-consent .bc-modal__btns .bc-button:active::after, .bc-cookies-consent .bc-modal__btns .bc-button--secondary:active::after, .bc-cookies-consent .bc-modal__btns .bc-button:hover::after, .bc-cookies-consent .bc-modal__btns .bc-button--secondary:hover::after, .bc-cookies-consent .bc-modal__btns .bc-button:focus::after, .bc-cookies-consent .bc-modal__btns .bc-button--secondary:focus::after, .bc-cookies-consent .bc-modal__btns a:active::after, .bc-cookies-consent .bc-modal__btns a:hover::after, .bc-cookies-consent .bc-modal__btns a:focus::after, .bc-modal .bc-modal__btns .bc-button:active::after, .bc-modal .bc-modal__btns .bc-button--secondary:active::after, .bc-modal .bc-modal__btns .bc-button:hover::after, .bc-modal .bc-modal__btns .bc-button--secondary:hover::after, .bc-modal .bc-modal__btns .bc-button:focus::after, .bc-modal .bc-modal__btns .bc-button--secondary:focus::after, .bc-modal .bc-modal__btns a:active::after, .bc-modal .bc-modal__btns a:hover::after, .bc-modal .bc-modal__btns a:focus::after {
+      .bc-cookies-consent .bc-cookies-consent__btns .bc-button:active::after, .bc-cookies-consent .bc-cookies-consent__btns .bc-button--gold:active::after, .bc-cookies-consent .bc-cookies-consent__btns .bc-button--secondary:active::after, .bc-cookies-consent .bc-cookies-consent__btns .bc-button:hover::after, .bc-cookies-consent .bc-cookies-consent__btns .bc-button--gold:hover::after, .bc-cookies-consent .bc-cookies-consent__btns .bc-button--secondary:hover::after, .bc-cookies-consent .bc-cookies-consent__btns .bc-button:focus::after, .bc-cookies-consent .bc-cookies-consent__btns .bc-button--gold:focus::after, .bc-cookies-consent .bc-cookies-consent__btns .bc-button--secondary:focus::after, .bc-cookies-consent .bc-cookies-consent__btns a:active::after, .bc-cookies-consent .bc-cookies-consent__btns a:hover::after, .bc-cookies-consent .bc-cookies-consent__btns a:focus::after, .bc-site-survey .bc-cookies-consent__btns .bc-button:active::after, .bc-site-survey .bc-cookies-consent__btns .bc-button--gold:active::after, .bc-site-survey .bc-cookies-consent__btns .bc-button--secondary:active::after, .bc-site-survey .bc-cookies-consent__btns .bc-button:hover::after, .bc-site-survey .bc-cookies-consent__btns .bc-button--gold:hover::after, .bc-site-survey .bc-cookies-consent__btns .bc-button--secondary:hover::after, .bc-site-survey .bc-cookies-consent__btns .bc-button:focus::after, .bc-site-survey .bc-cookies-consent__btns .bc-button--gold:focus::after, .bc-site-survey .bc-cookies-consent__btns .bc-button--secondary:focus::after, .bc-site-survey .bc-cookies-consent__btns a:active::after, .bc-site-survey .bc-cookies-consent__btns a:hover::after, .bc-site-survey .bc-cookies-consent__btns a:focus::after, .bc-modal .bc-cookies-consent__btns .bc-button:active::after, .bc-modal .bc-cookies-consent__btns .bc-button--gold:active::after, .bc-modal .bc-cookies-consent__btns .bc-button--secondary:active::after, .bc-modal .bc-cookies-consent__btns .bc-button:hover::after, .bc-modal .bc-cookies-consent__btns .bc-button--gold:hover::after, .bc-modal .bc-cookies-consent__btns .bc-button--secondary:hover::after, .bc-modal .bc-cookies-consent__btns .bc-button:focus::after, .bc-modal .bc-cookies-consent__btns .bc-button--gold:focus::after, .bc-modal .bc-cookies-consent__btns .bc-button--secondary:focus::after, .bc-modal .bc-cookies-consent__btns a:active::after, .bc-modal .bc-cookies-consent__btns a:hover::after, .bc-modal .bc-cookies-consent__btns a:focus::after, .bc-cookies-consent .bc-site-survey__btns .bc-button:active::after, .bc-cookies-consent .bc-site-survey__btns .bc-button--gold:active::after, .bc-cookies-consent .bc-site-survey__btns .bc-button--secondary:active::after, .bc-cookies-consent .bc-site-survey__btns .bc-button:hover::after, .bc-cookies-consent .bc-site-survey__btns .bc-button--gold:hover::after, .bc-cookies-consent .bc-site-survey__btns .bc-button--secondary:hover::after, .bc-cookies-consent .bc-site-survey__btns .bc-button:focus::after, .bc-cookies-consent .bc-site-survey__btns .bc-button--gold:focus::after, .bc-cookies-consent .bc-site-survey__btns .bc-button--secondary:focus::after, .bc-cookies-consent .bc-site-survey__btns a:active::after, .bc-cookies-consent .bc-site-survey__btns a:hover::after, .bc-cookies-consent .bc-site-survey__btns a:focus::after, .bc-site-survey .bc-site-survey__btns .bc-button:active::after, .bc-site-survey .bc-site-survey__btns .bc-button--gold:active::after, .bc-site-survey .bc-site-survey__btns .bc-button--secondary:active::after, .bc-site-survey .bc-site-survey__btns .bc-button:hover::after, .bc-site-survey .bc-site-survey__btns .bc-button--gold:hover::after, .bc-site-survey .bc-site-survey__btns .bc-button--secondary:hover::after, .bc-site-survey .bc-site-survey__btns .bc-button:focus::after, .bc-site-survey .bc-site-survey__btns .bc-button--gold:focus::after, .bc-site-survey .bc-site-survey__btns .bc-button--secondary:focus::after, .bc-site-survey .bc-site-survey__btns a:active::after, .bc-site-survey .bc-site-survey__btns a:hover::after, .bc-site-survey .bc-site-survey__btns a:focus::after, .bc-modal .bc-site-survey__btns .bc-button:active::after, .bc-modal .bc-site-survey__btns .bc-button--gold:active::after, .bc-modal .bc-site-survey__btns .bc-button--secondary:active::after, .bc-modal .bc-site-survey__btns .bc-button:hover::after, .bc-modal .bc-site-survey__btns .bc-button--gold:hover::after, .bc-modal .bc-site-survey__btns .bc-button--secondary:hover::after, .bc-modal .bc-site-survey__btns .bc-button:focus::after, .bc-modal .bc-site-survey__btns .bc-button--gold:focus::after, .bc-modal .bc-site-survey__btns .bc-button--secondary:focus::after, .bc-modal .bc-site-survey__btns a:active::after, .bc-modal .bc-site-survey__btns a:hover::after, .bc-modal .bc-site-survey__btns a:focus::after, .bc-cookies-consent .bc-modal__btns .bc-button:active::after, .bc-cookies-consent .bc-modal__btns .bc-button--gold:active::after, .bc-cookies-consent .bc-modal__btns .bc-button--secondary:active::after, .bc-cookies-consent .bc-modal__btns .bc-button:hover::after, .bc-cookies-consent .bc-modal__btns .bc-button--gold:hover::after, .bc-cookies-consent .bc-modal__btns .bc-button--secondary:hover::after, .bc-cookies-consent .bc-modal__btns .bc-button:focus::after, .bc-cookies-consent .bc-modal__btns .bc-button--gold:focus::after, .bc-cookies-consent .bc-modal__btns .bc-button--secondary:focus::after, .bc-cookies-consent .bc-modal__btns a:active::after, .bc-cookies-consent .bc-modal__btns a:hover::after, .bc-cookies-consent .bc-modal__btns a:focus::after, .bc-site-survey .bc-modal__btns .bc-button:active::after, .bc-site-survey .bc-modal__btns .bc-button--gold:active::after, .bc-site-survey .bc-modal__btns .bc-button--secondary:active::after, .bc-site-survey .bc-modal__btns .bc-button:hover::after, .bc-site-survey .bc-modal__btns .bc-button--gold:hover::after, .bc-site-survey .bc-modal__btns .bc-button--secondary:hover::after, .bc-site-survey .bc-modal__btns .bc-button:focus::after, .bc-site-survey .bc-modal__btns .bc-button--gold:focus::after, .bc-site-survey .bc-modal__btns .bc-button--secondary:focus::after, .bc-site-survey .bc-modal__btns a:active::after, .bc-site-survey .bc-modal__btns a:hover::after, .bc-site-survey .bc-modal__btns a:focus::after, .bc-modal .bc-modal__btns .bc-button:active::after, .bc-modal .bc-modal__btns .bc-button--gold:active::after, .bc-modal .bc-modal__btns .bc-button--secondary:active::after, .bc-modal .bc-modal__btns .bc-button:hover::after, .bc-modal .bc-modal__btns .bc-button--gold:hover::after, .bc-modal .bc-modal__btns .bc-button--secondary:hover::after, .bc-modal .bc-modal__btns .bc-button:focus::after, .bc-modal .bc-modal__btns .bc-button--gold:focus::after, .bc-modal .bc-modal__btns .bc-button--secondary:focus::after, .bc-modal .bc-modal__btns a:active::after, .bc-modal .bc-modal__btns a:hover::after, .bc-modal .bc-modal__btns a:focus::after {
         height: 0; }
-  .bc-cookies-consent .bc-cookies-consent__learn-more, .bc-modal .bc-cookies-consent__learn-more, .bc-cookies-consent .bc-modal__learn-more, .bc-modal .bc-modal__learn-more {
+  .bc-cookies-consent .bc-cookies-consent__learn-more, .bc-site-survey .bc-cookies-consent__learn-more, .bc-modal .bc-cookies-consent__learn-more, .bc-cookies-consent .bc-site-survey__learn-more, .bc-site-survey .bc-site-survey__learn-more, .bc-modal .bc-site-survey__learn-more, .bc-cookies-consent .bc-modal__learn-more, .bc-site-survey .bc-modal__learn-more, .bc-modal .bc-modal__learn-more {
     background-color: var(--white);
     color: var(--brand-primary); }
-  .bc-cookies-consent .bc-cookies-consent__btns-wrap, .bc-modal .bc-cookies-consent__btns-wrap, .bc-cookies-consent .bc-modal__btns-wrap, .bc-modal .bc-modal__btns-wrap {
+  .bc-cookies-consent .bc-cookies-consent__btns-wrap, .bc-site-survey .bc-cookies-consent__btns-wrap, .bc-modal .bc-cookies-consent__btns-wrap, .bc-cookies-consent .bc-site-survey__btns-wrap, .bc-site-survey .bc-site-survey__btns-wrap, .bc-modal .bc-site-survey__btns-wrap, .bc-cookies-consent .bc-modal__btns-wrap, .bc-site-survey .bc-modal__btns-wrap, .bc-modal .bc-modal__btns-wrap {
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
@@ -2883,6 +2891,43 @@ table {
 #bc-cookies-consent-block.bc-cookies-set .bc-cookies-consent__block {
   transform: translateY(150%) !important; }
 
+.bc-site-survey h1 {
+  font-size: var(--text-gr-02-5); }
+
+.bc-site-survey .bc-small {
+  font-weight: var(--light-weight); }
+
+.bc-site-survey .bc-modal__block {
+  border-bottom: 0.42857rem solid var(--brand-primary);
+  border-radius: calc(var(--top-left-radius) * 0.25); }
+
+@media screen and (min-width: 839px) {
+  .bc-site-survey .bc-modal__block {
+    padding-top: calc(var(--vertical-unit) * 1.25);
+    padding-bottom: calc(var(--vertical-unit) * 1.25);
+    max-width: 38.2%; } }
+
+.bc-site-survey .bc-cookies-consent__btns {
+  margin-top: calc(var(--vertical-unit) * 1.25); }
+
+.bc-site-survey .bc-cookies-consent__btns-wrap {
+  flex-direction: column;
+  align-items: center; }
+
+.bc-site-survey .bc-cookies-consent__btns .bc-button, .bc-site-survey .bc-cookies-consent__btns .bc-button--gold, .bc-site-survey .bc-cookies-consent__btns .bc-button--secondary {
+  flex: 1 1 100%;
+  width: 100%;
+  font-size: var(--text-01);
+  font-weight: var(--font-weight);
+  margin-bottom: calc(var(--vertical-unit) * 0.25); }
+
+.bc-site-survey .bc-cookies-consent__btns a:not(.bc-button):not(.bc-button--gold):not(.bc-button--secondary) {
+  font-weight: var(--font-weight); }
+  .bc-site-survey .bc-cookies-consent__btns a:not(.bc-button):not(.bc-button--gold):not(.bc-button--secondary)::after {
+    height: 1px; }
+  .bc-site-survey .bc-cookies-consent__btns a:not(.bc-button):not(.bc-button--gold):not(.bc-button--secondary):active::after, .bc-site-survey .bc-cookies-consent__btns a:not(.bc-button):not(.bc-button--gold):not(.bc-button--secondary):hover::after, .bc-site-survey .bc-cookies-consent__btns a:not(.bc-button):not(.bc-button--gold):not(.bc-button--secondary):focus::after {
+    height: 0.300rem; }
+
 .bc-modal-visible .bc-modal {
   top: 0;
   opacity: 1;
@@ -2891,9 +2936,25 @@ table {
     transform: translateY(0);
     transition-delay: 360ms; }
 
-.bc-privacy-form .bc-button, .bc-privacy-form .bc-button--secondary {
+.bc-cookies-modal-visible .bc-cookies-modal {
+  top: 0;
+  opacity: 1;
+  transition: opacity 360ms ease-in 0ms; }
+  .bc-cookies-modal-visible .bc-cookies-modal .bc-modal__block {
+    transform: translateY(0);
+    transition-delay: 360ms; }
+
+.bc-survey-modal-visible .bc-survey-modal {
+  top: 0;
+  opacity: 1;
+  transition: opacity 360ms ease-in 0ms; }
+  .bc-survey-modal-visible .bc-survey-modal .bc-modal__block {
+    transform: translateY(0);
+    transition-delay: 360ms; }
+
+.bc-privacy-form .bc-button, .bc-privacy-form .bc-button--gold, .bc-privacy-form .bc-button--secondary {
   margin-top: var(--vertical-unit); }
-  .bc-privacy-form .bc-button:first-of-type, .bc-privacy-form .bc-button--secondary:first-of-type {
+  .bc-privacy-form .bc-button:first-of-type, .bc-privacy-form .bc-button--gold:first-of-type, .bc-privacy-form .bc-button--secondary:first-of-type {
     margin-right: calc(var(--vertical-unit) * 0.25); }
 
 /* Snack bar */

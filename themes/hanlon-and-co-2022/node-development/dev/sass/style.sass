@@ -286,7 +286,7 @@ iframe
 	color: var(--white)
 	> a
 		color: inherit
-	transition: background-color 360ms ease-out, box-shadow 220ms ease-out
+		transition: background-color 360ms ease-out, box-shadow 220ms ease-out
 	.svg-icon
 		fill: var(--white) 
 	@include linkHover
@@ -297,6 +297,16 @@ iframe
 		//box-shadow: 3px 3px 8px 4px rgba($black, 0.12), -3px -3px 8px 4px rgba($black, 0.12)
 		&::after 
 			height: 0
+	&--gold 
+		@extend .bc-button
+		font-weight: var(--bold-font-weight)
+		color: var(--white)
+		background-color: var(--brand-secondary)
+		border-color: rgba($white, 1)
+		.svg-icon
+			fill: var(--white) 
+		@include linkHover
+			background-color: darken($brand-secondary, 10%)
 	&--secondary 
 		@extend .bc-button
 		font-weight: var(--font-weight)
@@ -1627,7 +1637,7 @@ iframe
 		a 
 			color: var(--white)
 /* Modal window notification */
-.bc-cookies-consent, .bc-modal
+.bc-cookies-consent, .bc-site-survey, .bc-modal
 	position: fixed
 	top: 100%
 	left: 0
@@ -1664,13 +1674,11 @@ iframe
 		align-items: stretch
 		.bc-button, a 
 			flex: 1 1 50%
-			font-size: var(--text--1)
-			font-weight: var(--font-weight)
+			font-size: var(--text-1)
 			text-align: center	
 			@include linkHover
 				&::after
 					height: 0
-			
 	& &__learn-more
 		background-color: var(--white)
 		color: var(--brand-primary)
@@ -1681,14 +1689,57 @@ iframe
 	&.bc-cookies-set
 		.bc-cookies-consent__block
 			transform: translateY(150%) !important 
+.bc-site-survey
+	h1 
+		font-size: var(--text-gr-02-5)
+	.bc-small
+		font-weight: var(--light-weight)
+	.bc-modal__block
+		border-bottom: #{(6/14)}rem solid var(--brand-primary)
+		border-radius: calc(var(--top-left-radius) * 0.25)
+	@media screen and (min-width: 839px)
+		.bc-modal__block
+			padding-top: calc(var(--vertical-unit) * 1.25)
+			padding-bottom: calc(var(--vertical-unit) * 1.25)
+			max-width: 38.2%
+	.bc-cookies-consent__btns
+		margin-top: calc(var(--vertical-unit) * 1.25)
+	.bc-cookies-consent__btns-wrap
+		flex-direction: column
+		align-items: center
+	.bc-cookies-consent__btns 
+		.bc-button
+			flex: 1 1 100%
+			width: 100%
+			font-size: var(--text-01)
+			font-weight: var(--font-weight)
+			margin-bottom: calc(var(--vertical-unit) * 0.25)
+		a:not(.bc-button)
+			font-weight: var(--font-weight)
+			&::after
+				height: 1px
+			@include linkHover
+				&::after
+					height: 0.300rem
+@mixin showModal
+	top: 0
+	opacity: 1
+	transition: opacity 360ms ease-in 0ms
+	.bc-modal__block
+		transform: translateY(0)
+		transition-delay: 360ms 
+
 .bc-modal-visible
 	.bc-modal
-		top: 0
-		opacity: 1
-		transition: opacity 360ms ease-in 0ms
-		.bc-modal__block
-			transform: translateY(0)
-			transition-delay: 360ms 
+		@include showModal
+.bc-cookies-modal-visible
+	.bc-cookies-modal
+		@include showModal
+.bc-survey-modal-visible
+	.bc-survey-modal
+		@include showModal
+.bc-site-survey-visible, .bc-site-survey-visible
+	.bc-modal, .bc-cookies-consent, .bc-site-survey
 .bc-privacy-form
 	.bc-button
 		margin-top: var(--vertical-unit)

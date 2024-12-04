@@ -631,32 +631,31 @@ const bcFunctions = (function bcAppJS() {
 			theBody.classList.remove('bc-page-loading');
 			theBody.classList.add('bc-page-loaded');
 		}
-		/* Temporary - to make cookies block always show */
-		//set main cookie
-		// bcSetCookie('bc-cookies-preferences', '', {
-		// 	expires: new Date(Date.now() - (1 * 24 * 60 * 60 * 1000)).toUTCString()
-		// });
-		// if (bcGetCookie('bc-cookies-preferences') !== undefined || bcGetCookie('bc-cookies-preferences') !== '' ) {
-		// 	bcSetCookie('bc-cookies-preferences', '', {
-		// 		expires: new Date(Date.now() - (1 * 24 * 60 * 60 * 1000)).toUTCString()
-		// 	});
-		// }
-		//show the consent block
+		
+		/** 
+		 ** Cookies consent 
+		**/
 		window.setTimeout(() => {
 			checkCookies('bc-cookies-preferences', () => {
-				theBody.classList.add('bc-cookies-not-set', 'bc-modal-visible');
+				theBody.classList.add('bc-cookies-not-set', 'bc-cookies-modal-visible');
 			}); 
 		}, 0);
-		//Consent button click handler
+		/* Cookies consent click handler */
 		let cookiesConsent = document.querySelector('#bc-cookies-consent');
 		if (cookiesConsent) {
-			console.log(`Cookies consent script`);
+			if (debug) {
+				console.log(`Cookies consent script`);
+			}
 			cookiesConsent.addEventListener('click', (evt) => {
-				console.log('Click');
+				if (debug) {
+					console.log('Click consent eventlistener.');
+				}
 				evt.preventDefault();
 
 				if (bcGetCookie('bc-cookies-preferences') !== 'submitted') {
-					console.log('Cookies preferences are not set. Set cookies all cookies');
+					if (debug) {
+						console.log('Cookies preferences are not set. Set cookies all cookies');
+					}
 					let expiryDate = new Date(Date.now() + (28 * 24 * 60 * 60 * 1000)).toUTCString();
 
 					bcSetCookie('bc-ga-analytics', 'granted', { 
@@ -672,19 +671,19 @@ const bcFunctions = (function bcAppJS() {
 					});
 				}
 				theBody.classList.remove('bc-cookies-not-set');
-				theBody.classList.remove('bc-modal-visible');
+				theBody.classList.remove('bc-cookies-modal-visible');
 				document.querySelector('#bc-cookies-consent-block').classList.add('bc-cookies-set');
 			}); 
 		}
 	});
 	let cookiesDone = false;
+	/* Check if cookie set */
 	function checkCookies(cookieName, cbFn) {
 		if (bcGetCookie(cookieName) !== undefined && bcGetCookie(cookieName) !== '') {
 			return true;
 		}
 		cbFn();
 	}
-
 	/* Cookie funcitons */
 	function bcSetCookie(cname, cvalue, opts) {
 		let newCookie = cname + '=' + encodeURI(cvalue);
@@ -711,6 +710,111 @@ const bcFunctions = (function bcAppJS() {
 			return row.startsWith(cname);
 		}); 
 		return (thisCookie) ? thisCookie.split('=')[1] : undefined ;
+	}
+
+	/**
+	 * Site exit survey functions
+	**/
+	let theBody = document.querySelector('html');
+	window.setTimeout(() => {
+		debug = true;
+		//bcSetCookie('site-survey-response', undefined);
+		if (debug) {
+			console.log('Start survey timeout');
+			console.log(`sitesurvey cookie is: ${bcGetCookie('site-survey-response')}`);
+			console.log(`${bcGetCookie('site-survey-response') === undefined}`);
+		}
+
+		
+		if (bcGetCookie('site-survey-response') === undefined) {
+			console.log('Site survey cookie not set');
+			doSiteSurvey();		
+		}
+	}, 5*1000);
+
+	// window.addEventListener('beforeunload', (evt) => {
+	// 	evt.preventDefault();
+	// 	debug = true;
+	// 	if (debug) {
+	// 		console.log('Start survey timeout');
+	// 		console.log(`sitesurvey cookie is: ${bcGetCookie('showSurveyModal();')}`);
+	// 	}
+	// 	if (bcGetCookie('site-survey-response') === undefined) {
+	// 		doSiteSurvey();		
+	// 	}
+	// });
+	function doSiteSurvey() {
+		if (debug) {
+			console.log('doSiteSurvey');
+		}
+		showSurveyModal();
+		/* User takes survey */
+		
+		/* User takes survey */
+		let takeSurvey = document.querySelector('#bc-take-survey');
+		let rejectSurvey = document.querySelector('#bc-reject-survey');
+		if (debug) {
+			console.log(takeSurvey, rejectSurvey);
+		}
+		if (takeSurvey) {
+			if (debug) {
+				console.log('Take survey');
+			}
+			takeSurvey.addEventListener('click', (evt) => {
+				if (debug) {
+					console.log('takeSurvey click handler');
+				}
+				evt.preventDefault();
+				let expiry = new Date();
+				expiry.setMonth(expiry.getMonth() + 1);
+				bcSetCookie('site-survey-response', 'taken', {'expires' : expiry});
+				if (debug) {
+					console.log(bcGetCookie('site-survey-response'));
+				}
+				window.open(takeSurvey.getAttribute('href'));
+				hideSurveyModal();
+			});
+		}
+		/* User rejects survey */
+		
+		if (rejectSurvey) {
+			if (debug) {
+				console.log('Reject survey');
+			}
+			rejectSurvey.addEventListener('click', (evt) => {
+				if (debug) {
+					console.log('Reject survey event handler');
+				}
+				evt.preventDefault();
+				let expiry = new Date();
+				expiry.setMonth(expiry.getMonth() + 1);
+				bcSetCookie('site-survey-response', 'rejected', {'expires' : expiry});
+				if (debug) {
+					console.log(bcGetCookie('site-survey-response'));
+				}
+				hideSurveyModal();
+				
+			});
+		}
+		debug = false;
+	}
+	
+	/* Show survey */
+	function showSurveyModal() {
+		if (debug) {
+			console.log(`showSurveyModal()`);
+		}
+		if (document.querySelector('#bc-site-survey')) {
+			theBody.classList.add('bc-survey-modal-visible');
+		}
+	}
+	function hideSurveyModal() {
+		if (debug) {
+			console.log('hideSurveyModal()');	
+		}
+		if (document.querySelector('#bc-site-survey')) {
+			theBody.classList.remove('bc-survey-modal-visible');
+		}
 	}
 
 	/* Snack bar */
