@@ -666,10 +666,13 @@ var bcFunctions = function bcAppJS() {
   }
   /* Cookie funcitons */
   function bcSetCookie(cname, cvalue, opts) {
+    if (debug) {
+      console.log('Debug:: bcSetCookie context');
+    }
     var newCookie = cname + '=' + encodeURI(cvalue);
     if (_typeof(opts) === 'object') {
       if (debug) {
-        console.log('opts is an object');
+        console.log('Debug:: opts parameter is an object');
       }
       var optNames = Object.getOwnPropertyNames(opts);
       optNames.forEach(function (key) {
@@ -677,7 +680,7 @@ var bcFunctions = function bcAppJS() {
       });
     }
     if (debug) {
-      console.log('New cookie is: ' + newCookie);
+      console.log('Debug:: new cookie is: ' + newCookie);
     }
     document.cookie = newCookie;
     if (debug) {
@@ -695,16 +698,30 @@ var bcFunctions = function bcAppJS() {
   /**
    * Site exit survey functions
   **/
+  debug = false;
   var theBody = document.querySelector('html');
+  var surveyTimeout = 40 * 1000;
+  if (debug) {
+    surveyTimeout = 5 * 1000;
+  }
   window.setTimeout(function () {
+    debug = false;
     if (debug) {
-      console.log('Start survey timeout');
-      console.log("sitesurvey cookie is: ".concat(bcGetCookie('showSurveyModal();')));
+      var expires = new Date('1970', '01', '01');
+      console.log(expires);
+      bcSetCookie('site-survey-response', undefined, {
+        'expires': new Date()
+      });
+      console.log("Debug:: sitesurvey cookie is: ".concat(bcGetCookie('site-survey-response')));
     }
     if (bcGetCookie('site-survey-response') === undefined) {
+      if (debug) {
+        console.log('Debug:: Site survey cookie not set');
+      }
       doSiteSurvey();
     }
-  }, 45 * 1000);
+    return true;
+  }, surveyTimeout);
 
   // window.addEventListener('beforeunload', (evt) => {
   // 	evt.preventDefault();
@@ -719,25 +736,21 @@ var bcFunctions = function bcAppJS() {
   // });
   function doSiteSurvey() {
     if (debug) {
-      console.log('doSiteSurvey');
-    }
-    if (bcGetCookie('site-survey-response') !== undefined) {
-      return;
+      console.log('Debug:: doSiteSurvey context');
     }
     showSurveyModal();
-    /* User takes survey */
-
     /* User takes survey */
     var takeSurvey = document.querySelector('#bc-take-survey');
     var rejectSurvey = document.querySelector('#bc-reject-survey');
     if (debug) {
-      console.log(takeSurvey, rejectSurvey);
+      console.log("Debug: takeSurvey a: ".concat(takeSurvey));
+      console.log("Debug: rejectSurvey a: ".concat(rejectSurvey));
     }
     if (takeSurvey) {
-      console.log('Take survey');
       takeSurvey.addEventListener('click', function (evt) {
+        debug = true;
         if (debug) {
-          console.log('takeSurvey click handler');
+          console.log('Debug:: takeSurvey click handler context');
         }
         evt.preventDefault();
         var expiry = new Date();
@@ -746,19 +759,17 @@ var bcFunctions = function bcAppJS() {
           'expires': expiry
         });
         if (debug) {
-          console.log(bcGetCookie('site-survey-response'));
+          console.log("Debug:: site-survey-response cookie: ".concat(bcGetCookie('site-survey-response')));
         }
-        window.open(takeSurvey.getAttribute('href'));
         hideSurveyModal();
+        window.open(takeSurvey.getAttribute('href'));
       });
     }
     /* User rejects survey */
-
     if (rejectSurvey) {
-      console.log('Reject survey');
       rejectSurvey.addEventListener('click', function (evt) {
         if (debug) {
-          console.log('Reject survey event handler');
+          console.log('Debug:: Reject survey event handler context');
         }
         evt.preventDefault();
         var expiry = new Date();
@@ -767,7 +778,7 @@ var bcFunctions = function bcAppJS() {
           'expires': expiry
         });
         if (debug) {
-          console.log(bcGetCookie('site-survey-response'));
+          console.log("Debug:: site-survey-response cookie: ".concat(bcGetCookie('site-survey-response')));
         }
         hideSurveyModal();
       });
@@ -778,7 +789,7 @@ var bcFunctions = function bcAppJS() {
   /* Show survey */
   function showSurveyModal() {
     if (debug) {
-      console.log("showSurveyModal()");
+      console.log("Debug:: showSurveyModal() context");
     }
     if (document.querySelector('#bc-site-survey')) {
       theBody.classList.add('bc-survey-modal-visible');
@@ -786,7 +797,7 @@ var bcFunctions = function bcAppJS() {
   }
   function hideSurveyModal() {
     if (debug) {
-      console.log('hideSurveyModal()');
+      console.log('Debug:: hideSurveyModal() context');
     }
     if (document.querySelector('#bc-site-survey')) {
       theBody.classList.remove('bc-survey-modal-visible');

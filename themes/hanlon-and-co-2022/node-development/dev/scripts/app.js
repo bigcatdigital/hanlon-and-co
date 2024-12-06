@@ -686,10 +686,13 @@ const bcFunctions = (function bcAppJS() {
 	}
 	/* Cookie funcitons */
 	function bcSetCookie(cname, cvalue, opts) {
+		if (debug) {
+			console.log('Debug:: bcSetCookie context');
+		}
 		let newCookie = cname + '=' + encodeURI(cvalue);
 		if (typeof opts === 'object') {
 			if (debug) {
-				console.log('opts is an object');
+				console.log('Debug:: opts parameter is an object');
 			}
 			let optNames = Object.getOwnPropertyNames(opts);
 			optNames.forEach((key) => {
@@ -697,7 +700,7 @@ const bcFunctions = (function bcAppJS() {
 			});
 		}
 		if (debug) {
-			console.log('New cookie is: '+newCookie);
+			console.log('Debug:: new cookie is: '+newCookie);
 		}
 		document.cookie	= newCookie; 
 		if (debug) {
@@ -715,22 +718,30 @@ const bcFunctions = (function bcAppJS() {
 	/**
 	 * Site exit survey functions
 	**/
+	debug = false;
 	let theBody = document.querySelector('html');
+	let surveyTimeout = 40*1000;
+	if (debug) {
+		surveyTimeout = 5*1000;
+	}
 	window.setTimeout(() => {
-		debug = true;
-		//bcSetCookie('site-survey-response', undefined);
+		debug = false;
 		if (debug) {
-			console.log('Start survey timeout');
-			console.log(`sitesurvey cookie is: ${bcGetCookie('site-survey-response')}`);
-			console.log(`${bcGetCookie('site-survey-response') === undefined}`);
+			let expires = new Date('1970', '01', '01');
+			console.log(expires);
+			bcSetCookie('site-survey-response', undefined, {
+				'expires': new Date()
+			});
+			console.log(`Debug:: sitesurvey cookie is: ${bcGetCookie('site-survey-response')}`);
 		}
-
-		
 		if (bcGetCookie('site-survey-response') === undefined) {
-			console.log('Site survey cookie not set');
+			if (debug) {
+				console.log('Debug:: Site survey cookie not set');
+			}
 			doSiteSurvey();		
 		}
-	}, 5*1000);
+		return true;
+	}, surveyTimeout);
 
 	// window.addEventListener('beforeunload', (evt) => {
 	// 	evt.preventDefault();
@@ -745,55 +756,47 @@ const bcFunctions = (function bcAppJS() {
 	// });
 	function doSiteSurvey() {
 		if (debug) {
-			console.log('doSiteSurvey');
+			console.log('Debug:: doSiteSurvey context');
 		}
 		showSurveyModal();
-		/* User takes survey */
-		
 		/* User takes survey */
 		let takeSurvey = document.querySelector('#bc-take-survey');
 		let rejectSurvey = document.querySelector('#bc-reject-survey');
 		if (debug) {
-			console.log(takeSurvey, rejectSurvey);
+			console.log(`Debug: takeSurvey a: ${takeSurvey}`);
+			console.log(`Debug: rejectSurvey a: ${rejectSurvey}`);
 		}
 		if (takeSurvey) {
-			if (debug) {
-				console.log('Take survey');
-			}
 			takeSurvey.addEventListener('click', (evt) => {
+				debug = true;
 				if (debug) {
-					console.log('takeSurvey click handler');
+					console.log('Debug:: takeSurvey click handler context');
 				}
 				evt.preventDefault();
 				let expiry = new Date();
 				expiry.setMonth(expiry.getMonth() + 1);
 				bcSetCookie('site-survey-response', 'taken', {'expires' : expiry});
 				if (debug) {
-					console.log(bcGetCookie('site-survey-response'));
+					console.log(`Debug:: site-survey-response cookie: ${bcGetCookie('site-survey-response')}`);
 				}
-				window.open(takeSurvey.getAttribute('href'));
 				hideSurveyModal();
+				window.open(takeSurvey.getAttribute('href'));
 			});
 		}
 		/* User rejects survey */
-		
 		if (rejectSurvey) {
-			if (debug) {
-				console.log('Reject survey');
-			}
 			rejectSurvey.addEventListener('click', (evt) => {
 				if (debug) {
-					console.log('Reject survey event handler');
+					console.log('Debug:: Reject survey event handler context');
 				}
 				evt.preventDefault();
 				let expiry = new Date();
 				expiry.setMonth(expiry.getMonth() + 1);
 				bcSetCookie('site-survey-response', 'rejected', {'expires' : expiry});
 				if (debug) {
-					console.log(bcGetCookie('site-survey-response'));
+					console.log(`Debug:: site-survey-response cookie: ${bcGetCookie('site-survey-response')}`);
 				}
 				hideSurveyModal();
-				
 			});
 		}
 		debug = false;
@@ -802,7 +805,7 @@ const bcFunctions = (function bcAppJS() {
 	/* Show survey */
 	function showSurveyModal() {
 		if (debug) {
-			console.log(`showSurveyModal()`);
+			console.log(`Debug:: showSurveyModal() context`); 
 		}
 		if (document.querySelector('#bc-site-survey')) {
 			theBody.classList.add('bc-survey-modal-visible');
@@ -810,7 +813,7 @@ const bcFunctions = (function bcAppJS() {
 	}
 	function hideSurveyModal() {
 		if (debug) {
-			console.log('hideSurveyModal()');	
+			console.log('Debug:: hideSurveyModal() context');	
 		}
 		if (document.querySelector('#bc-site-survey')) {
 			theBody.classList.remove('bc-survey-modal-visible');
@@ -826,8 +829,6 @@ const bcFunctions = (function bcAppJS() {
 			$docBody.classList.remove('bc-snack-bar-visible');
 		});
 	}
-	
-	
 	function showSnackBar($trigger) {
 		let $docBody = document.querySelector('body');
 		$docBody.classList.add('bc-snack-bar-visible');
