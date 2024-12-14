@@ -728,13 +728,14 @@ const bcFunctions = (function bcAppJS() {
 				}
 				theBody.classList.remove('bc-cookies-not-set');
 				theBody.classList.remove('bc-cookies-modal-visible');
+				theBody.classList.remove('bc-modal-visible');
 				document.querySelector('#bc-cookies-consent-block').classList.add('bc-cookies-set');
 			}); 
 		}
 	});
 	let cookiesDone = false;
 	/* Check if cookie set */
-	function checkCookies(cookieName, cbFn) {
+	function checkCookies(cookieName, cbFn) { 
 		if (bcGetCookie(cookieName) !== undefined && bcGetCookie(cookieName) !== '') {
 			return true;
 		}
@@ -776,7 +777,7 @@ const bcFunctions = (function bcAppJS() {
 	**/
 	debug = false;
 	let theBody = document.querySelector('html');
-	let surveyTimeout = 40*1000;
+	let surveyTimeout = 32*1000;
 	if (debug) {
 		surveyTimeout = 5*1000;
 	}
@@ -811,6 +812,7 @@ const bcFunctions = (function bcAppJS() {
 	// 	}
 	// });
 	function doSiteSurvey() {
+		debug = false;
 		if (debug) {
 			console.log('Debug:: doSiteSurvey context');
 		}
@@ -824,7 +826,7 @@ const bcFunctions = (function bcAppJS() {
 		}
 		if (takeSurvey) {
 			takeSurvey.addEventListener('click', (evt) => {
-				debug = true;
+				debug = false;
 				if (debug) {
 					console.log('Debug:: takeSurvey click handler context');
 				}
@@ -872,6 +874,7 @@ const bcFunctions = (function bcAppJS() {
 			console.log('Debug:: hideSurveyModal() context');	
 		}
 		if (document.querySelector('#bc-site-survey')) {
+			theBody.classList.remove('bc-modal-visible'); 
 			theBody.classList.remove('bc-survey-modal-visible');
 		}
 	}

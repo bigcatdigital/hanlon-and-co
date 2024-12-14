@@ -741,6 +741,15 @@ iframe {
 .bc-icon-links .svg-icon {
   transition: transform 200ms ease-out; }
 
+.bc-icon-inline {
+  display: flex;
+  align-items: center; }
+  .bc-icon-inline .svg-icon {
+    margin-right: calc(var(--gutter)*0.25);
+    max-width: var(--text-gr-00-5);
+    max-height: var(--text-gr-00-5);
+    fill: var(--text-black); }
+
 @media screen and (min-width: 600px) {
   html {
     font-size: 16px; } }
@@ -2894,12 +2903,21 @@ table {
 .bc-site-survey h1 {
   font-size: var(--text-gr-02-5); }
 
+.bc-site-survey .bc-intro-paragraph {
+  font-size: var(--text-gr-00-5);
+  font-weight: var(--font-weight);
+  margin-bottom: var(--vertical-unit); }
+
 .bc-site-survey .bc-small {
   font-weight: var(--light-weight); }
 
 .bc-site-survey .bc-modal__block {
+  transform: translateY(100%);
+  margin-left: auto;
+  margin-right: auto;
   border-bottom: 0.42857rem solid var(--brand-primary);
-  border-radius: calc(var(--top-left-radius) * 0.25); }
+  border-radius: calc(var(--top-left-radius) * 0.25);
+  width: 88%; }
 
 @media screen and (min-width: 839px) {
   .bc-site-survey .bc-modal__block {
@@ -2931,7 +2949,7 @@ table {
 .bc-modal-visible .bc-modal {
   top: 0;
   opacity: 1;
-  transition: opacity 360ms ease-in 0ms; }
+  transition: opacity 360ms ease-out 0ms; }
   .bc-modal-visible .bc-modal .bc-modal__block {
     transform: translateY(0);
     transition-delay: 360ms; }
@@ -2939,7 +2957,7 @@ table {
 .bc-cookies-modal-visible .bc-cookies-modal {
   top: 0;
   opacity: 1;
-  transition: opacity 360ms ease-in 0ms; }
+  transition: opacity 360ms ease-out 0ms; }
   .bc-cookies-modal-visible .bc-cookies-modal .bc-modal__block {
     transform: translateY(0);
     transition-delay: 360ms; }
@@ -2947,10 +2965,12 @@ table {
 .bc-survey-modal-visible .bc-survey-modal {
   top: 0;
   opacity: 1;
-  transition: opacity 360ms ease-in 0ms; }
+  transition: opacity 360ms ease-out 0ms; }
   .bc-survey-modal-visible .bc-survey-modal .bc-modal__block {
     transform: translateY(0);
     transition-delay: 360ms; }
+  .bc-survey-modal-visible .bc-survey-modal .bc-modal__block {
+    transform: translateY(-10%); }
 
 .bc-privacy-form .bc-button, .bc-privacy-form .bc-button--gold, .bc-privacy-form .bc-button--secondary {
   margin-top: var(--vertical-unit); }
@@ -3026,3 +3046,5 @@ table {
     color: var(--white); }
   #menu-main-site-navigation .bc-site-header__main-navigation__item .bc-site-header__main-navigation__item > a {
     flex: 1 1 100%; }
+
+/*# sourceMappingURL=style.css.map */
