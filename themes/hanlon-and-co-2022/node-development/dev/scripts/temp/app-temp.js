@@ -699,14 +699,15 @@ var bcFunctions = function bcAppJS() {
   /**
    * Site exit survey functions
   **/
-  debug = false;
+  debug = true;
   var theBody = document.querySelector('html');
-  var surveyTimeout = 32 * 1000;
+  var surveyTimeout = 10 * 1000;
   if (debug) {
     surveyTimeout = 5 * 1000;
+    console.log("[debug]: ".concat(surveyTimeout));
   }
   window.setTimeout(function () {
-    debug = false;
+    debug = true;
     if (debug) {
       var expires = new Date('1970', '01', '01');
       console.log(expires);
@@ -790,20 +791,24 @@ var bcFunctions = function bcAppJS() {
 
   /* Show survey */
   function showSurveyModal() {
+    var $surveyBlock = document.querySelector('#bc-site-survey');
     if (debug) {
       console.log("Debug:: showSurveyModal() context");
     }
-    if (document.querySelector('#bc-site-survey')) {
+    if ($surveyBlock && $surveyBlock !== undefined) {
       theBody.classList.add('bc-survey-modal-visible');
+      $surveyBlock.classList.add('bc-is-active');
     }
   }
   function hideSurveyModal() {
+    var $surveyBlock = document.querySelector('#bc-site-survey');
     if (debug) {
       console.log('Debug:: hideSurveyModal() context');
     }
-    if (document.querySelector('#bc-site-survey')) {
+    if ($surveyBlock && $surveyBlock !== undefined) {
       theBody.classList.remove('bc-modal-visible');
       theBody.classList.remove('bc-survey-modal-visible');
+      $surveyBlock.classList.remove('bc-is-active');
     }
   }
 

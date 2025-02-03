@@ -1700,21 +1700,45 @@ iframe
 		.bc-cookies-consent__block
 			transform: translateY(150%) !important 
 .bc-site-survey
+	padding-top: 0
+	&.bc-is-active
+		.bc-modal__block
+			padding-top: calc(var(--vertical-unit))
+	&.bc-is-lowered
+		.bc-modal__block
+			transform: translateY(calc(100% - 3rem))
+	& &__header
+		@include makeFlexbox($justify: space-between, $align: center)
+		margin-bottom: calc(var(--vertical-unit) * 0.5)
+		.svg-icon
+			max-width: 	var(--text-gr-01)
+			max-height: var(--text-gr-01)
+			transform: rotate(90deg) 
 	h1 
 		font-size: var(--text-gr-02-5)
+		margin-bottom: 0
 	.bc-intro-paragraph
 		font-size: var(--text-gr-00-5)
 		font-weight: var(--font-weight)
 		margin-bottom: var(--vertical-unit)
 	.bc-small
 		font-weight: var(--light-weight)
+	.bc-icon-inline 
+		align-items: flex-start
+		.svg-icon
+			margin-top: calc(var(--vertical-unit) * 0.125)
 	.bc-modal__block
-		transform: translateY(100%)
+		padding-top: calc(var(--vertical-unit) * 0.5)
 		margin-left: auto
 		margin-right: auto
 		border-bottom: #{(6/14)}rem solid var(--brand-primary)
 		border-radius: calc(var(--top-left-radius) * 0.25)
 		width: 88%
+		transform: translateY(100%)
+		transition-property: transform, padding-top
+		transition-duration: 360ms
+		transition-timing-function: ease-out
+
 	@media screen and (min-width: 839px)
 		.bc-modal__block
 			padding-top: calc(var(--vertical-unit) * 1.25)
@@ -1726,11 +1750,11 @@ iframe
 		flex-direction: column
 		align-items: center
 	.bc-cookies-consent__btns 
-		.bc-button
+		.bc-button 
 			flex: 1 1 100%
 			width: 100%
 			font-size: var(--text-01)
-			font-weight: var(--font-weight)
+			font-weight: var(--bold-font-weight)
 			margin-bottom: calc(var(--vertical-unit) * 0.25)
 		a:not(.bc-button)
 			font-weight: var(--font-weight)
