@@ -721,6 +721,9 @@ const bcFunctions = (function bcAppJS() {
 					bcSetCookie('bc-google-ad-storage', 'granted', {
 						expires: expiryDate
 					});
+					/* bcSetCookie('bc-hotjar-ok', 'yes', {
+						expires: expiryDate
+					}); */
 
 					bcSetCookie('bc-cookies-preferences', 'submitted', {
 						expires: expiryDate
